@@ -1,1 +1,5 @@
-{}
+{
+  "features": {
+    "ghcr.io/devcontainers-community/features/deno:1": {}
+  }
+}
