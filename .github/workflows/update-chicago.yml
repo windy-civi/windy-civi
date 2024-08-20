@@ -1,0 +1,30 @@
+name: Update Chicago Legislation
+
+on:
+  schedule:
+    - cron: "0 22 * * *" # Run daily at 22:00 UTC (5pm Central)
+
+  # Allow manual running from Github Actions tab
+  workflow_dispatch:
+    inputs:
+      skip_cache:
+        type: boolean
+        description: Skip Cache - Force update all legislation?
+
+jobs:
+  update_chicago_legislation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pre Run
+        uses: ./.github/workflows/compose/pre-run
+      - name: Update Chicago
+        env:
+          LEGISCAN_API_KEY: ${{ secrets.LEGISCAN_API_KEY }}
+          SKIP_CACHE: ${{inputs.skip_cache}}
+          LOCALE: "chicago"
+        run: cd scraper && npm run scrape
+      - name: Publish
+        uses: ./.github/workflows/compose/publish
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
