@@ -1,0 +1,2 @@
+export FLYCTL_INSTALL="/home/gitpod/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
