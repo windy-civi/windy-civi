@@ -3,19 +3,20 @@ import { css, Skin, Spacing } from "~app/modules/design-system/styles";
 
 interface StyleComponent {
   style?: Style.Properties;
+  children: React.ReactNode;
 }
 
 export const Card: React.FC<StyleComponent> = ({ children, style }) => (
   <div {...css({ ...styles.card, ...(style || {}) })}>{children}</div>
 );
 
-export const CardSection: React.FC = ({ children }) => (
+export const CardSection: React.FC<{ children: React.ReactNode; }> = ({ children }) => (
   <section style={{ margin: Spacing.FOUR, fontSize: "0.9rem" }}>
     {children}
   </section>
 );
 
-export const CardTitle: React.FC = ({ children }) => (
+export const CardTitle: React.FC<{ children: React.ReactNode; }> = ({ children }) => (
   <h2
     style={{
       fontWeight: "bold",

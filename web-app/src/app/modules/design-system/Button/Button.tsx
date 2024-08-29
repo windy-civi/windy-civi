@@ -4,6 +4,7 @@ export const Button: React.FC<{
   onClick: () => void;
   className?: string;
   type?: "default" | "call-to-action";
+  children: React.ReactNode;
 }> = ({ onClick, children, className, type }) => {
   let typeClass = "";
   switch (type) {

@@ -3,6 +3,7 @@ import { classNames } from "../styles";
 type DividerProps = {
   className?: string;
   type?: "black" | "white";
+  children?: React.ReactNode;
 };
 
 export const Divider: React.FC<DividerProps> = ({
