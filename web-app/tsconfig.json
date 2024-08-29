@@ -20,8 +20,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "~app/*": ["../remix-app/app/*"],
-      "~/*": ["../remix-app/app/modules/*"]
+      "~app/*": ["./src/app/*"],
+      "~/*": ["./src/app/modules/*"]
     },
   },
   "include": [
