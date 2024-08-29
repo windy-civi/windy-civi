@@ -4,6 +4,7 @@
   "scripts": {
     "get-cache": "npx ts-node cache-grabber/run",
     "scrape": "npx ts-node scrapers/run",
+    "scrape-il-test": "npx ts-node scrapers/localities/illinois.ilga",
     "gpt": "npx ts-node gpt-summaries/run",
     "wiki": "npx ts-node wiki-summaries/run",
     "postinstall": "tsc api/*.ts --outDir dist_api --declaration --declarationMap --sourceMap"
