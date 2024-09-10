@@ -1,8 +1,8 @@
 //  https://www.w3schools.com/js/js_cookies.asp
 export function getCookieFromString(cookieString: string, cname: string) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(cookieString);
-  let ca = decodedCookie.split(";");
+  const name = cname + "=";
+  const decodedCookie = decodeURIComponent(cookieString);
+  const ca = decodedCookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == " ") {
@@ -57,7 +57,7 @@ export const cookieFactory = (doc: typeof document) => {
 };
 
 export function formatDate(date?: string) {
-  var d = date ? new Date(date) : new Date(),
+  let d = date ? new Date(date) : new Date(),
     month = "" + (d.getMonth() + 1),
     day = "" + d.getDate(),
     year = d.getFullYear();

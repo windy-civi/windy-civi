@@ -1,16 +1,15 @@
 import invariant from "tiny-invariant";
-import ENVIRONMENT_VARIABLES from "../../setup-scripts/env";
 
 export type Env = {
-  [K in typeof ENVIRONMENT_VARIABLES[number]]: string;
+  [k: string]: string;
 };
 
-export const getEnv = (processEnv: typeof process.env): Env => {
-  return ENVIRONMENT_VARIABLES.reduce((env, e) => {
-    const value = processEnv[e];
-    // verify env exists
-    invariant(typeof value === "string", `⛔️ ${e} env var not set.`);
-    env[e] = value;
-    return env;
-  }, {} as Env);
+export const getEnv = (env: ImportMetaEnv): Env => {
+  return {
+    GOOGLE_API_KEY: "REPLACE_THIS_TO_GOOGLE_API_KEY",
+    LEGISCAN_API_KEY: "REPLACE_THIS_TO_LEGISCAN_API_KEY",
+    SESSION_SECRET: "super-duper-s3cret",
+    FORMATTED_ADDRESS_SEARCH_KEY: "address",
+    REP_LEVEL_SEARCH_KEY: "level",
+  };
 };

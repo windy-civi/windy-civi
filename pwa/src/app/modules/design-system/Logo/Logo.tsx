@@ -1,4 +1,4 @@
-import civiLogo from "~/app-shell/assets/civi-temp-logo.png";
+import civiLogo from "../../app-shell/assets/civi-temp-logo.png";
 
 export const Logo = () => {
   return (

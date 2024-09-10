@@ -1,6 +1,9 @@
-import type { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData, useSearchParams } from "@remix-run/react";
+import {
+  json,
+  useLoaderData,
+  useSearchParams,
+  type LoaderFunction,
+} from "react-router-dom";
 import { getEnv } from "~app/modules/config";
 
 import { useEffect, useState } from "react";
@@ -107,7 +110,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       ? savedPreferences
       : DEFAULT_FILTERS;
 
-  const env = getEnv(process.env);
+  const env = getEnv(import.meta.env);
 
   const filteredLegislation = await getFilteredLegislation({
     env,
@@ -122,16 +125,8 @@ export const loader: LoaderFunction = async ({ request }) => {
   });
 };
 
-interface ActionData {
-  errors?: {};
-}
-
-export const action: ActionFunction = async ({ request }) => {
-  return json<ActionData>({}, { status: 200 });
-};
-
 export default function ForYouPage() {
-  const result = useLoaderData<FeedProps>();
+  const result = useLoaderData() as FeedProps;
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [globalState, setGlobalState] = useState(result.globalState);
