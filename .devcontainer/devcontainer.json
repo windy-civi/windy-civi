@@ -2,7 +2,18 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
-    }  
+    }
   },
-  "postCreateCommand": "sh ../scripts/setup.sh"
+  "postCreateCommand": "sh ../scripts/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.vscode-github-actions",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
 }
