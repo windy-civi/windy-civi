@@ -1,4 +1,4 @@
-name: Scraper
+name: Scraper Summaries
 
 on:
   schedule:
