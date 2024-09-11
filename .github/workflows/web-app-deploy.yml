@@ -51,15 +51,15 @@ jobs:
           node-version: 18
 
       - name: 📥 Download deps
-        working-directory: web-app
         env:
           # Required for .env creation
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: npm i
-
-      - name: 📥 build
         working-directory: web-app
-        run: npm run build && echo "$GOOGLE_API_KEY"
+        run: npm i && echo "$GOOGLE_API_KEY"
+
+      # - name: 📥 build
+      #   working-directory: web-app
+      #   run: npm run build
 
       # - name: Upload artifact to GitHub Pages
       #   uses: actions/upload-pages-artifact@v2
