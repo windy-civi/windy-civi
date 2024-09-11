@@ -4,7 +4,7 @@
       "version": "18"
     }
   },
-  "postCreateCommand": "sh ../scripts/setup.sh",
+  "postCreateCommand": "sh ./setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
