@@ -1,5 +1,5 @@
-import { CiviGptLegislationData, Locales } from "../api";
-import { forEachLocale } from "../api/utils";
+import { CiviGptLegislationData, Locales } from "@windycivi/domain/types";
+import { forEachLocale } from "@windycivi/domain/utils";
 import { getCachedGpt, getCachedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
 import { writeGptJSON } from "../fs/write-file";

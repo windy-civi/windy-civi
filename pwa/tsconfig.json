@@ -18,7 +18,7 @@
     "paths": {
       "~app/*": ["./src/app/*"],
       "~/*": ["./src/app/modules/*"],
-      "~api/*": ["../api/*"]
+      "@windycivi/domain/*": ["../domain/*"]
     },
 
     /* Linting */

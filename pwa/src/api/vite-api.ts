@@ -3,7 +3,7 @@ import {
   Locales,
   CiviLegislationData,
   CiviGptLegislationData,
-} from "~api/types";
+} from "@windycivi/domain/types";
 
 export const civiLegislationApi = {
   getLegislationData: (locale: Locales): Promise<CiviLegislationData[]> => {

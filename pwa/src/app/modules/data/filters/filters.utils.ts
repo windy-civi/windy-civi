@@ -1,4 +1,3 @@
-import e from "express";
 import { WindyCiviBill } from "../types";
 import type { RepLevel } from "./filters.constants";
 import {
@@ -24,9 +23,7 @@ export const getLocale = (
     : null;
 };
 
-export const getAddress = <T extends unknown>(
-  location: T
-): string | Nullish => {
+export const getAddress = <T>(location: T): string | Nullish => {
   if (isAddressFilter(location)) {
     return location.address;
   }
@@ -47,7 +44,7 @@ export const isAddressFilter = (
 };
 
 export const isNullish = (location: unknown | Nullish): location is Nullish => {
-  return [null, "", undefined].includes(location as any);
+  return [null, "", undefined].includes(location as string | null | undefined);
 };
 
 export const isSupportedLocale = (
@@ -209,7 +206,7 @@ export const findOverlap = (arr1: string[], arr2: string[]): string | false => {
 };
 
 export const findStringOverlap = (arr1: string[], arr2: string[]) => {
-  let overlap = [];
+  const overlap = [];
 
   for (let i = 0; i < arr1.length; i++) {
     for (let j = 0; j < arr2.length; j++) {

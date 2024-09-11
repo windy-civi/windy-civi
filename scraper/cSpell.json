@@ -1,9 +1,28 @@
 {
-    "words": [
-        "civi",
-        "councilmatic",
-        "legiscan",
-        "legislations",
-        "masterlist"
-    ]
+  "words": [
+    "AIAPI",
+    "ballotpedia",
+    "billaction",
+    "billsponsorship",
+    "bioguide",
+    "civi",
+    "codepaths",
+    "councilmatic",
+    "Datamade",
+    "knowwho",
+    "legiscan",
+    "legislations",
+    "masterlist",
+    "OPENAI",
+    "opensecrets",
+    "prefile",
+    "sast",
+    "sasts",
+    "sldl",
+    "sldu",
+    "typecheck",
+    "voteevent",
+    "votesmart",
+    "windycivi"
+  ]
 }

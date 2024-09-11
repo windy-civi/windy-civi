@@ -4,9 +4,9 @@ import {
   CiviGptLegislationData,
   CiviLegislationData,
   Locales,
-  civiLegislationApi,
-} from "../../api";
+} from "../../domain";
 import { getFsGpt, getFsLegislation } from "../fs/read-file";
+import { civiLegislationApi } from "../api/api";
 
 const getLegislation = async (
   locale: Locales

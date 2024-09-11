@@ -24,8 +24,4 @@ dev-dist
 *.sln
 *.sw?
 
-
-# Pull Release Data
-data
-
 .env

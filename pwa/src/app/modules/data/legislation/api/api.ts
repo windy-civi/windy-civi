@@ -2,7 +2,7 @@ import type {
   CiviGptLegislationData,
   CiviLegislationData,
   Locales,
-} from "~api/types";
+} from "../../../../../../../domain/types";
 import { civiLegislationApi } from "../../../../../api/vite-api";
 import { DataStores } from "../../filters";
 import { LegislationResult } from "../legislation.types";

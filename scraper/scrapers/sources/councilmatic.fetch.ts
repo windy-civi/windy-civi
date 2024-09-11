@@ -66,7 +66,7 @@ const fetchJSONWithRetries = async <T extends object>(
  * Retry with exponential backoff with max wait time of 8 seconds
  * and golang style [res, err] return
  */
-const asyncWithRetries = async <T extends any>(
+const asyncWithRetries = async <T>(
   asyncFunc: () => Promise<T>,
   retries = 3,
   shouldRetry?: (error: unknown) => boolean

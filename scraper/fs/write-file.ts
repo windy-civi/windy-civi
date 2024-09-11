@@ -1,6 +1,10 @@
+import {
+  CiviGptLegislationData,
+  CiviLegislationData,
+  Locales,
+} from "@windycivi/domain/types";
 import fs from "fs";
 import path from "path";
-import { CiviGptLegislationData, CiviLegislationData, Locales } from "../api";
 
 export const legislationDistFolder = path.join(
   __dirname,
