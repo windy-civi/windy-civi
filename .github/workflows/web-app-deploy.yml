@@ -36,7 +36,7 @@ jobs:
 
   build-web-app:
     # only deploy main branch on pushes
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+    # if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 
     name: 🏗️ Build Web App
     runs-on: ubuntu-latest
