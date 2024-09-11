@@ -1,4 +1,5 @@
 {
+  "ignorePaths": ["dist_legislation"],
   "words": [
     "AIAPI",
     "ballotpedia",

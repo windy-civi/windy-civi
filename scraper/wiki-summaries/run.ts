@@ -1,4 +1,4 @@
-import { CiviWikiLegislationData } from "@windycivi/domain/types";
+import { CiviWikiLegislationData } from "../../domain/types";
 import axios, { AxiosError } from "axios";
 import { getGoogleSheetAPIKey } from "../config/env";
 import { writeJSON } from "../fs/write-file";

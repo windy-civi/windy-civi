@@ -1,4 +1,4 @@
-import { forEachLocale } from "@windycivi/domain/utils";
+import { forEachLocale } from "../../domain/utils";
 import { getLocale, getShouldSkipCache } from "../config/env";
 import { writeLegislationJSON } from "../fs/write-file";
 import { api } from "./api";

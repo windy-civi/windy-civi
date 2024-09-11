@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint:
-    name: ⬣ Quality Tests
+    name: ⬣ Scraper Quailty Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -29,4 +29,4 @@ jobs:
 
       - name: 🔬 Quality
         working-directory: scraper
-        run: npm run validate
+        run: npm run quailty

@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint:
-    name: ⬣ Quality Tests
+    name: ⬣ Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -22,14 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: 📥 Download deps
-        working-directory: scraper
-        run: npm i
-
-      - name: 🔬 Quality
-        working-directory: scraper
-        run: npm run quality
 
       - name: 📥 Download deps
         working-directory: web-app

@@ -1,4 +1,4 @@
-import { isLocale } from "@windycivi/domain/utils";
+import { isLocale } from "../../domain/utils";
 
 export const getShouldSkipCache = () => {
   const skipCache =
