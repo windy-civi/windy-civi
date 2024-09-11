@@ -1,4 +1,4 @@
-import { locales, Locales } from "./types";
+import { locales, Locales } from "../../domain/types";
 
 export const civiLegislationApi = {
   getLegislationDataUrl: (locale: Locales): string => {

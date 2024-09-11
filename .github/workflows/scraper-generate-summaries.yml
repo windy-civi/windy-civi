@@ -1,0 +1,38 @@
+name: Scraper Summaries
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at 0:00 UTC (7pm Central)
+
+  # Allow manual running from Github Actions tab
+  workflow_dispatch:
+    inputs:
+      locale:
+        type: string
+        description: Run only on 1 locale
+      skip_cache:
+        type: boolean
+        description: Skip Cache - Force update all summaries?
+
+jobs:
+  update_summaries:
+    name: Generate Summaries
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pre Run
+        uses: ./.github/workflows/compose/pre-run
+      - name: Run GPT
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SKIP_CACHE: ${{inputs.skip_cache}}
+          LOCALE: ${{inputs.locale}}
+        run: cd scraper && npm run gpt
+      - name: Run Wiki
+        env:
+          GOOGLE_SPREADSHEET_API_KEY: ${{ secrets.GOOGLE_SPREADSHEET_API_KEY }}
+        run: cd scraper && npm run wiki
+      - name: Publish
+        uses: ./.github/workflows/compose/publish
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 // Download Current release data from the API and write it to the filesystem
 
-import { forEachLocale } from "../api/utils";
+import { forEachLocale } from "../../domain/utils";
 import { writeGptJSON, writeLegislationJSON } from "../fs/write-file";
 import { getCachedGpt, getCachedLegislation } from "./get";
 
