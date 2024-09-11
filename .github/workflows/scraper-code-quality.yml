@@ -6,7 +6,7 @@ on:
 
 jobs:
   lint:
-    name: ⬣ Scraper Quailty Checks
+    name: Scraper Quailty Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Download deps
+      - name: 📥 NPM Install
         working-directory: scraper
         run: npm i
 
