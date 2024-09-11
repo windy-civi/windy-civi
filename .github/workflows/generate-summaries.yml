@@ -1,4 +1,4 @@
-name: Generate Summaries
+name: Scraper
 
 on:
   schedule:
@@ -16,6 +16,7 @@ on:
 
 jobs:
   update_summaries:
+    name: Generate Summaries
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

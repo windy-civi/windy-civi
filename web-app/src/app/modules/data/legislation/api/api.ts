@@ -20,7 +20,6 @@ const getCachedLegislationData = async (
 
   const legislation = await civiLegislationApi.getLegislationData(name);
 
-  console.log({ legislation });
   // set cache
   // legislationCache.set(cacheKey, legislation);
 
