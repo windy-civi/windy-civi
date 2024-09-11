@@ -28,7 +28,7 @@ export const Grid: React.FC<StyleComponent> = ({
   <section
     className={classNames(
       "grid grid-cols-1 lg:grid-cols-[minmax(300px,_500px)_1fr]",
-      className
+      className,
     )}
     style={style}
   >

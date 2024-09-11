@@ -3,7 +3,7 @@ import { RepLevel } from "../filters";
 // TODO: Move to backend
 export const mapToReadableStatus = (
   level: RepLevel,
-  status: string
+  status: string,
 ): { name: string; type: "in-progress" | "pass" | "fail" } => {
   switch (level) {
     case RepLevel.City:
@@ -66,6 +66,6 @@ export const getLastStatus = (status: unknown): string => {
 const toTitleCase = (str: string) => {
   return str.replace(
     /\w\S*/g,
-    (text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    (text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase(),
   );
 };

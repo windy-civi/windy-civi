@@ -2,7 +2,7 @@ import {
   CiviGptLegislationData,
   CiviLegislationData,
   Locales,
-} from "@windycivi/domain/types";
+} from "../../domain/types";
 import fs from "fs";
 import path from "path";
 

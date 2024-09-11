@@ -57,7 +57,7 @@ export const RepresentativeCard = (s: OfficialOffice) => {
 export const Legislator = (
   person: ReturnType<typeof getLegislators>[0] & {
     onClick: (key: string) => void;
-  }
+  },
 ) => {
   return (
     <span
@@ -80,7 +80,7 @@ type LegislatorsFunc = {
 export const Legislators = ({ offices, showAllReps }: LegislatorsFunc) => {
   const [officeToShow, setShowOfficeToShow] = useState("");
   const officialOffice = offices?.find(
-    (office) => getRepKey(office) === officeToShow
+    (office) => getRepKey(office) === officeToShow,
   );
   return (
     <>
@@ -136,7 +136,7 @@ export const LegislatorsToggle = (props: LegislatorsFunc) => {
 };
 
 export const LegislatorsInfo = (
-  props: LegislatorsFunc & { className?: string }
+  props: LegislatorsFunc & { className?: string },
 ) => {
   const legislators = getLegislators(props.offices);
   if (!legislators.length) {

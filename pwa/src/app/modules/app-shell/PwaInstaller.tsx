@@ -36,7 +36,7 @@ export interface BeforeInstallPromptEvent extends Event {
 
 type CanInstallCallback = (
   canInstall: boolean,
-  install?: () => Promise<boolean>
+  install?: () => Promise<boolean>,
 ) => void;
 
 class PwaInstallHandler {
@@ -108,7 +108,7 @@ class PwaInstallHandler {
    */
   public removeListener(callback: CanInstallCallback): void {
     this.callbacks = this.callbacks.filter(
-      (otherCallback) => callback !== otherCallback
+      (otherCallback) => callback !== otherCallback,
     );
   }
 }
@@ -191,7 +191,7 @@ const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
         <div
           className={classNames(
             "flex items-center justify-center gap-3 bg-black bg-opacity-60 text-white opacity-90 shadow-lg backdrop-blur-2xl",
-            android ? "p-4" : "p-1"
+            android ? "p-4" : "p-1",
           )}
         >
           <div className="text-sm opacity-70">

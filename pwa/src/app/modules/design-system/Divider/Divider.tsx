@@ -29,7 +29,7 @@ const HR = ({ className, type }: DividerProps) => (
       "flex-1",
       "border-dashed opacity-30",
       type === "white" ? "border-white" : "border-black",
-      className
+      className,
     )}
   />
 );

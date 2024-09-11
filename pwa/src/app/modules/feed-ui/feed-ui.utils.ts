@@ -20,7 +20,7 @@ export function setCookieInDom(
   doc: typeof document,
   cookieName: string,
   cookieValue: string,
-  expirationDays: number | "DELETE"
+  expirationDays: number | "DELETE",
 ) {
   let expires = "";
   if (expirationDays === "DELETE") {
@@ -49,7 +49,7 @@ export const cookieFactory = (doc: typeof document) => {
     set: (
       cookieName: string,
       cookieValue: string,
-      expirationDays: number = 10065
+      expirationDays: number = 10065,
     ) => setCookieInDom(doc, cookieName, cookieValue, expirationDays),
     delete: (cookieName: string) =>
       setCookieInDom(doc, cookieName, "", "DELETE"),

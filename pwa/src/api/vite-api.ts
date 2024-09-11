@@ -15,30 +15,34 @@ export const civiLegislationApi = {
   locales,
 };
 
+// todo: this depends on the scraper repo to be installed, and the legislation to be there. Make this more decoupled.
+
 const legislationApi: Record<Locales, () => Promise<CiviLegislationData[]>> = {
   chicago: () =>
-    import("./data_cache/chicago.legislation.json").then((m) => m.default) as Promise<
-      CiviLegislationData[]
-    >,
+    import("../../../scraper/dist_legislation/chicago.legislation.json").then(
+      (m) => m.default,
+    ) as Promise<CiviLegislationData[]>,
   illinois: () =>
-    import("./data_cache/illinois.legislation.json").then((m) => m.default),
+    import("../../../scraper/dist_legislation/illinois.legislation.json").then(
+      (m) => m.default,
+    ),
   usa: () =>
-    import("./data_cache/usa.legislation.json").then(
+    import("../../../scraper/dist_legislation/usa.legislation.json").then(
       (m) => m.default,
     ) as unknown as Promise<CiviLegislationData[]>,
 };
 
 const gptApi: Record<Locales, () => Promise<CiviGptLegislationData>> = {
   chicago: () =>
-    import("./data_cache/chicago.legislation.gpt.json").then(
-      (m) => m.default,
-    ) as unknown as Promise<CiviGptLegislationData>,
+    import(
+      "../../../scraper/dist_legislation/chicago.legislation.gpt.json"
+    ).then((m) => m.default) as unknown as Promise<CiviGptLegislationData>,
   illinois: () =>
-    import("./data_cache/illinois.legislation.gpt.json").then(
-      (m) => m.default,
-    ) as unknown as Promise<CiviGptLegislationData>,
+    import(
+      "../../../scraper/dist_legislation/illinois.legislation.gpt.json"
+    ).then((m) => m.default) as unknown as Promise<CiviGptLegislationData>,
   usa: () =>
-    import("./data_cache/usa.legislation.gpt.json").then(
+    import("../../../scraper/dist_legislation/usa.legislation.gpt.json").then(
       (m) => m.default,
     ) as unknown as Promise<CiviGptLegislationData>,
 };

@@ -98,7 +98,7 @@ const LocationFilterContainer = (props: {
       <div>
         <div
           className={classNames(
-            "flex-1 rounded-md bg-black bg-opacity-30 shadow-md"
+            "flex-1 rounded-md bg-black bg-opacity-30 shadow-md",
           )}
         >
           <AddressLookup
@@ -210,7 +210,7 @@ export const LevelFilter = (props: FeedProps) => {
 };
 
 export const YourFilterSummary = (
-  props: FeedFilterProps & { setIsExploring: (b: boolean) => void }
+  props: FeedFilterProps & { setIsExploring: (b: boolean) => void },
 ) => {
   const locationInfoText = getLocationInformationText(props.filters.location);
   const locationName = getLocation(props.filters.location);
@@ -259,7 +259,7 @@ export const YourFilterSummary = (
           className="underline"
           onClick={() => {
             const confirm = window.confirm(
-              "Are you sure you want to reset everything? All preferences will be lost"
+              "Are you sure you want to reset everything? All preferences will be lost",
             );
             if (confirm) {
               props.deleteAllData();
@@ -354,7 +354,7 @@ const FilterTitle: React.FC<{
       <span
         className={classNames(
           "rounded-sm font-bold uppercase text-white opacity-70",
-          props.largeTitle ? "text-md lg:text-lg" : "text-sm"
+          props.largeTitle ? "text-md lg:text-lg" : "text-sm",
         )}
       >
         {props.children}
@@ -366,7 +366,7 @@ const FilterTitle: React.FC<{
 export const BillFilters = (
   props: FeedFilterProps & {
     title: string;
-  }
+  },
 ) => {
   const introMode = props.globalState.route === RouteOption.INTRO;
   const [filterState, setFilterState] = useState<FilterParams>(props.filters);
@@ -404,7 +404,7 @@ export const BillFilters = (
       <div className="flex justify-center">
         <div
           className={classNames(
-            "flex w-full max-w-screen-md flex-col justify-center"
+            "flex w-full max-w-screen-md flex-col justify-center",
           )}
         >
           {/* Location Filter */}

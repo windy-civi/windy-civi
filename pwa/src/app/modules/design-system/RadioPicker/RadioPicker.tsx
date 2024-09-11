@@ -15,7 +15,7 @@ interface Option<T> {
 export const getRadioStyle = (
   type: "transparent" | "solid",
   isSelected: boolean,
-  location?: OptionLocation
+  location?: OptionLocation,
 ) => {
   if (type === "transparent") {
     return classNames(
@@ -24,7 +24,7 @@ export const getRadioStyle = (
         isSelected
           ? "opacity-100 border-opacity-50"
           : "opacity-70 border-opacity-0"
-      }`
+      }`,
     );
   } else {
     return classNames(
@@ -34,7 +34,7 @@ export const getRadioStyle = (
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-black bg-opacity-50" : "bg-black bg-opacity-20"}`
+      `${isSelected ? "bg-black bg-opacity-50" : "bg-black bg-opacity-20"}`,
     );
   }
 };
@@ -88,7 +88,7 @@ export const RadioPicker = <T extends unknown>({
             className={classNames(
               optionClassName,
               getRadioStyle(type || "solid", isSelected, location),
-              option.className?.(isSelected, location)
+              option.className?.(isSelected, location),
             )}
           >
             {option.label}

@@ -164,7 +164,7 @@ const Bill = ({
     <article
       style={glow ? newBillGlow : {}}
       className={classNames(
-        "mt-4 flex select-text flex-col gap-y-2 rounded border border-gray-200 bg-white p-4"
+        "mt-4 flex select-text flex-col gap-y-2 rounded border border-gray-200 bg-white p-4",
       )}
     >
       {allTags && (
@@ -185,7 +185,7 @@ const Bill = ({
             "inline-block rounded px-2 text-sm uppercase",
             readableStatus.type === "pass" && "bg-green-200",
             readableStatus.type === "in-progress" && "bg-blue-200",
-            readableStatus.type === "fail" && "bg-red-200"
+            readableStatus.type === "fail" && "bg-red-200",
           )}
           rel="noreferrer"
         >

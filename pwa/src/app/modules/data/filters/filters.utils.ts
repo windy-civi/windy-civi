@@ -16,7 +16,7 @@ import type {
 } from "./filters.types";
 
 export const getLocale = (
-  formattedAddress: string | Nullish
+  formattedAddress: string | Nullish,
 ): null | Locales => {
   return formattedAddress && /Chicago, IL/gi.test(formattedAddress)
     ? "Chicago"
@@ -31,7 +31,7 @@ export const getAddress = <T>(location: T): string | Nullish => {
 };
 
 export const isAddressFilter = (
-  location: unknown
+  location: unknown,
 ): location is AddressFilter => {
   if (
     typeof location === "object" &&
@@ -48,7 +48,7 @@ export const isNullish = (location: unknown | Nullish): location is Nullish => {
 };
 
 export const isSupportedLocale = (
-  locationParam: unknown
+  locationParam: unknown,
 ): locationParam is SupportedLocale => {
   if (isAddressFilter(locationParam)) {
     return false;
@@ -57,18 +57,18 @@ export const isSupportedLocale = (
     return false;
   }
   return Object.values(SupportedLocale).includes(
-    locationParam as SupportedLocale
+    locationParam as SupportedLocale,
   );
 };
 
 export const getLocation = (
-  location: string | AddressFilter | Nullish
+  location: string | AddressFilter | Nullish,
 ): string | null => {
   return isAddressFilter(location) ? location.address : location || null;
 };
 
 export const createLocationFilterFromString = (
-  locationParam: unknown
+  locationParam: unknown,
 ): LocationFilter =>
   isSupportedLocale(locationParam)
     ? locationParam
@@ -87,7 +87,7 @@ const isAddressChicago = (location: LocationFilter) =>
   isAddressFilter(location) &&
   stringIsInAddress(
     ["Chicago, IL", "Chicago,IL", "Chicago, Illinois", "Chicago,Illinois"],
-    location
+    location,
   );
 
 // State Level
@@ -103,7 +103,7 @@ export const isLocationIL = (location: LocationFilter) =>
 
 const stringIsInAddress = (variations: string[], location: AddressFilter) =>
   variations.some((str) =>
-    location.address.toLowerCase().includes(str.toLowerCase())
+    location.address.toLowerCase().includes(str.toLowerCase()),
   );
 
 export const hasTags = (tags: unknown): tags is string[] => {
@@ -111,7 +111,7 @@ export const hasTags = (tags: unknown): tags is string[] => {
 };
 
 export const getTagsBeingFiltered = (
-  filters: Pick<FilterParams, "tags" | "availableTags">
+  filters: Pick<FilterParams, "tags" | "availableTags">,
 ) => {
   return hasTags(filters?.tags) ? filters.tags : filters.availableTags;
 };
@@ -121,7 +121,7 @@ export const stringifyTags = (tags: string[]) => {
 };
 
 export const parseTagsString = (
-  tags: string | null | undefined
+  tags: string | null | undefined,
 ): string[] | null => {
   const parsed = tags?.split(",").filter((tag) => tag.length > 0);
   return hasTags(parsed) ? parsed : null;

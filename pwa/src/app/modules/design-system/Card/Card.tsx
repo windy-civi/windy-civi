@@ -8,7 +8,7 @@ interface StyleComponent {
 
 type FC = {
   children?: React.ReactNode;
-}
+};
 
 export const Card: React.FC<StyleComponent> = ({ children, style }) => (
   <div {...css({ ...styles.card, ...(style || {}) })}>{children}</div>
