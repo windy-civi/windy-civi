@@ -29,4 +29,4 @@ jobs:
 
       - name: 🔬 Quality
         working-directory: scraper
-        run: npm run quailty
+        run: npm run quality
