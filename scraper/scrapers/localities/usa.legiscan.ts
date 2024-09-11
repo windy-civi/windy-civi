@@ -1,4 +1,4 @@
-import { CiviLegislationData } from "../../api/types";
+import { CiviLegislationData } from "../../../domain/types";
 import { getCiviLegislationBills } from "../sources/legiscan";
 import { filterMasterList, legiscanToCivi } from "./usa.selector";
 

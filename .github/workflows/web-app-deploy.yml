@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema
+name: Web App
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  merge_group:
+
+jobs:
+  lint:
+    name: ⬣ Web App Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📥 Download deps
+        working-directory: web-app
+        run: npm i
+
+      - name: 🔬 Quality
+        working-directory: web-app
+        run: npm run quality
+
+  build-web-app:
+    # only deploy main branch on pushes
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+
+    name: 🏗️ Build Web App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📥 Download deps
+        working-directory: web-app
+        run: npm i
+
+      - name: 📥 build
+        working-directory: web-app
+        run: npm run build
+
+      - name: Upload artifact to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./web-app/dist
+
+  deploy:
+    # only deploy main branch on pushes
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+
+    needs: [build-web-app]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write # Required to deploy to GitHub Pages
+      id-token: write # Required for OpenID Connect (OIDC) authentication
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

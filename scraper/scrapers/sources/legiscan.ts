@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CiviLegislationData, Locales } from "../../api";
+import { CiviLegislationData, Locales } from "../../../domain";
 import { getLegiscanAPIKey } from "../../config/env";
 import {
   GetBillByIdResponse,

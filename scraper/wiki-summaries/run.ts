@@ -1,7 +1,7 @@
+import { CiviWikiLegislationData } from "../../domain/types";
 import axios, { AxiosError } from "axios";
-import { writeJSON } from "../fs/write-file";
-import { CiviWikiLegislationData } from "../api";
 import { getGoogleSheetAPIKey } from "../config/env";
+import { writeJSON } from "../fs/write-file";
 import { SHEET, SPREADSHEET_ID } from "./constants";
 
 type StringKeysOfCiviGoogleSheet = keyof Omit<CiviWikiLegislationData, "tags">;
