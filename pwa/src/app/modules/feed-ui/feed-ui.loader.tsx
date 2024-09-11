@@ -16,8 +16,9 @@ export const loader: LoaderFunction = async ({ request }) => {
   const globalState = DEFAULT_GLOBAL_STATE;
 
   // Feed State is in Cookies
-  const cookieHeader = request.headers.get("Cookie");
+  const cookieHeader = document.cookie;
   let savedPreferences: FilterParams | null = null;
+
   if (cookieHeader) {
     const location = getCookieFromString(cookieHeader, "location");
     const level = getCookieFromString(cookieHeader, "level");
