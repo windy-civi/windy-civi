@@ -59,12 +59,12 @@ jobs:
           # Required for .env creation
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         working-directory: web-app
-        run: npm run build
+        run: npm run build && echo "$GOOGLE_API_KEY"
 
-      - name: Upload artifact to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./web-app/dist
+      # - name: Upload artifact to GitHub Pages
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     path: ./web-app/dist
 
   deploy:
     # only deploy main branch on pushes
