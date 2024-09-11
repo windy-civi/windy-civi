@@ -9,7 +9,7 @@ import { LegislationResult } from "../legislation.types";
 // import { legislationCache } from "./legislation-cache";
 
 const getCachedLegislationData = async (
-  name: Locales
+  name: Locales,
 ): Promise<CiviLegislationData[]> => {
   // const cacheKey = `civi-legislation-data:${name}`;
 
@@ -27,7 +27,7 @@ const getCachedLegislationData = async (
 };
 
 const getCachedLegislationGptData = async (
-  name: Locales
+  name: Locales,
 ): Promise<CiviGptLegislationData> => {
   // const cacheKey = `civi-legislation-gpt-data:${name}`;
 
@@ -44,7 +44,7 @@ const getCachedLegislationGptData = async (
 };
 
 export const getLegislations = async (
-  locale: DataStores
+  locale: DataStores,
 ): Promise<LegislationResult> => {
   console.log("getting bills for", locale);
   let legislation: CiviLegislationData[] = [];
