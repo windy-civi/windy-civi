@@ -52,12 +52,12 @@ jobs:
 
       - name: 📥 Download deps
         working-directory: web-app
-        run: npm i
-
-      - name: 📥 build
         env:
           # Required for .env creation
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: npm i
+
+      - name: 📥 build
         working-directory: web-app
         run: npm run build && echo "$GOOGLE_API_KEY"
 
