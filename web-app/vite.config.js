@@ -4,7 +4,9 @@ import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "",
+  // This base is based on where it is deployed currently on github pages.
+  // Needs to be changed if deployed elsewhere. (e.g custom domain)
+  base: "/windy-civi/",
   plugins: [
     react(),
     tsconfigPaths(),
