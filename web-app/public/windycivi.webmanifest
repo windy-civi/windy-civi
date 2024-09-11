@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "Windy Civi",
   "short_name": "Windy Civi",
   "description": "Get Updates On Legislation You Care About",

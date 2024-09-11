@@ -8,18 +8,13 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     VitePWA({
-      registerType: "prompt",
+      registerType: "autoUpdate",
       injectRegister: false,
       pwaAssets: {
         disabled: false,
         config: true,
       },
-      manifest: {
-        name: "Windy Civi",
-        short_name: "Windy Civi",
-        description: "Stay Updated On Bills That Impact You",
-        theme_color: "#ff1d87",
-      },
+      manifest: false,
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         cleanupOutdatedCaches: true,
