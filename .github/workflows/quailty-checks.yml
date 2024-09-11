@@ -33,9 +33,9 @@ jobs:
         run: npm run validate
 
       - name: 📥 Download deps
-        working-directory: pwa
+        working-directory: web-app
         run: npm i
 
       - name: 🔬 Quality
-        working-directory: pwa
+        working-directory: web-app
         run: npm run validate
