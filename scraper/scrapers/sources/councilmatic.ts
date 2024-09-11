@@ -1,5 +1,5 @@
 import { isBefore, subDays } from "date-fns";
-import { CiviLegislationData } from "../../api";
+import { CiviLegislationData } from "../../../api";
 import { Bill, Sponsor, Vote } from "./councilmatic.types";
 import {
   getSQLForBillSponsors,

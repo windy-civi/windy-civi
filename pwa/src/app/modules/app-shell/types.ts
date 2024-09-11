@@ -1,3 +1,3 @@
 export type Config = {
-  apiKey: string;
+  GOOGLE_API_KEY: string;
 };

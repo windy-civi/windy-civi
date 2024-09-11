@@ -1,17 +1,12 @@
 import type { FC } from "react";
-import { useEffect, useState } from "react";
 import AppContext from "./AppContext";
-import type { Config } from "./types";
+import { Env } from "../config";
 
-const AppProvider: FC<{ value: Config }> = ({ children, value }) => {
-  const [config, setConfig] = useState<Config | null>(null);
-  useEffect(() => {
-    if (value && !config) {
-      setConfig(value);
-    }
-  }, [config, value]);
-
-  return <AppContext.Provider value={config}>{children}</AppContext.Provider>;
+const AppProvider: FC<{ value: Env; children: React.ReactNode }> = ({
+  children,
+  value,
+}) => {
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
 export default AppProvider;

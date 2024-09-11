@@ -1,53 +1,45 @@
-import axios from "axios";
 import type {
   CiviGptLegislationData,
   CiviLegislationData,
-} from "../../../../temp-civi-legislation-data/dist_api/types";
-import { civiLegislationApi } from "../../../../temp-civi-legislation-data/dist_api/api";
+  Locales,
+} from "~api/types";
+import { civiLegislationApi } from "../../../../../api/vite-api";
 import { DataStores } from "../../filters";
 import { LegislationResult } from "../legislation.types";
-import { legislationCache } from "./legislation-cache";
+// import { legislationCache } from "./legislation-cache";
 
 const getCachedLegislationData = async (
-  name: Parameters<typeof civiLegislationApi.getLegislationDataUrl>[0]
+  name: Locales
 ): Promise<CiviLegislationData[]> => {
-  const cacheKey = `civi-legislation-data:${name}`;
+  // const cacheKey = `civi-legislation-data:${name}`;
 
   // return cache if it exists
-  if (legislationCache.has(cacheKey)) {
-    return legislationCache.get(cacheKey) as CiviLegislationData[];
-  }
+  // if (legislationCache.has(cacheKey)) {
+  //   return legislationCache.get(cacheKey) as CiviLegislationData[];
+  // }
 
-  const result = await axios.get<CiviLegislationData[]>(
-    civiLegislationApi.getLegislationDataUrl(name)
-  );
+  const legislation = await civiLegislationApi.getLegislationData(name);
 
-  const legislation = result.data;
-
+  console.log({ legislation });
   // set cache
-  legislationCache.set(cacheKey, legislation);
+  // legislationCache.set(cacheKey, legislation);
 
   return legislation;
 };
 
 const getCachedLegislationGptData = async (
-  name: Parameters<typeof civiLegislationApi.getLegislationDataUrl>[0]
+  name: Locales
 ): Promise<CiviGptLegislationData> => {
-  const cacheKey = `civi-legislation-gpt-data:${name}`;
+  // const cacheKey = `civi-legislation-gpt-data:${name}`;
 
   // return cache if it exists
-  if (legislationCache.has(cacheKey)) {
-    return legislationCache.get(cacheKey) as CiviGptLegislationData;
-  }
-
-  const result = await axios.get<CiviGptLegislationData>(
-    civiLegislationApi.getGptLegislationUrl(name)
-  );
-
-  const legislation = result.data;
+  // if (legislationCache.has(cacheKey)) {
+  //   return legislationCache.get(cacheKey) as CiviGptLegislationData;
+  // }
+  const legislation = await civiLegislationApi.getGptLegislation(name);
 
   // set cache
-  legislationCache.set(cacheKey, legislation);
+  // legislationCache.set(cacheKey, legislation);
 
   return legislation;
 };

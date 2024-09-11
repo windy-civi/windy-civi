@@ -23,3 +23,9 @@ dev-dist
 *.njsproj
 *.sln
 *.sw?
+
+
+# Pull Release Data
+data
+
+.env

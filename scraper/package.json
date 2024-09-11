@@ -5,12 +5,11 @@
     "get-cache": "npx ts-node cache-grabber/run",
     "scrape": "npx ts-node scrapers/run",
     "gpt": "npx ts-node gpt-summaries/run",
-    "wiki": "npx ts-node wiki-summaries/run",
-    "postinstall": "tsc api/*.ts --outDir dist_api --declaration --declarationMap --sourceMap"
+    "wiki": "npx ts-node wiki-summaries/run"
   },
   "main": "dist_api/index.js",
   "devDependencies": {
-    "@types/node": "18.14.1",
+    "@types/node": "^18.14.1",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "axios": "^1.3.4",

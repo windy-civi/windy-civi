@@ -5,7 +5,7 @@ import {
   CiviLegislationData,
   Locales,
   civiLegislationApi,
-} from "../api";
+} from "../../api";
 import { getFsGpt, getFsLegislation } from "../fs/read-file";
 
 const getLegislation = async (

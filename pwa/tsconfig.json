@@ -17,7 +17,8 @@
     // Paths
     "paths": {
       "~app/*": ["./src/app/*"],
-      "~/*": ["./src/app/modules/*"]
+      "~/*": ["./src/app/modules/*"],
+      "~api/*": ["../api/*"]
     },
 
     /* Linting */

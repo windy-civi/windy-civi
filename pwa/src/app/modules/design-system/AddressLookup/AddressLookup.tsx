@@ -9,15 +9,15 @@ export const AddressLookup: FC<{
   value?: string;
 }> = ({ value, onPlaceSelected, onClear }) => {
   const config = useAppContext();
-
-  return config?.apiKey ? (
+  console.log({ config });
+  return config?.GOOGLE_API_KEY ? (
     <div className="flex items-center p-2 lg:text-right">
       <div>🏠</div>
       <Autocomplete
         // Hack to force remount
         key={value || ""}
         options={{ types: ["address"] }}
-        apiKey={config.apiKey}
+        apiKey={config.GOOGLE_API_KEY}
         placeholder="Enter Address..."
         defaultValue={value}
         className="w-full rounded-md bg-transparent px-2 text-white outline-none lg:text-right lg:text-lg"
