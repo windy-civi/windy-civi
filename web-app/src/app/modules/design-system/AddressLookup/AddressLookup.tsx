@@ -9,7 +9,6 @@ export const AddressLookup: FC<{
   value?: string;
 }> = ({ value, onPlaceSelected, onClear }) => {
   const config = useAppContext();
-  console.log({ config });
   return config?.GOOGLE_API_KEY ? (
     <div className="flex items-center p-2 lg:text-right">
       <div>🏠</div>

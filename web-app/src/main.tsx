@@ -6,22 +6,28 @@ import { ForYouPage } from "~app/modules/feed-ui/feed-ui.react";
 import { loader } from "./app/modules/feed-ui/feed-ui.loader";
 import "./index.css";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      loader,
+      element: <ForYouPage />,
+    },
+    {
+      path: "about",
+      element: <div>About</div>,
+    },
+  ],
   {
-    path: "/",
-    loader,
-    element: <ForYouPage />,
-  },
-  {
-    path: "about",
-    element: <div>About</div>,
-  },
-]);
+    // Need to set basename for GitHub pages. todo: Remove when this is no longer needed. (also remove in vite.config.js)
+    basename: "/windy-civi",
+  }
+);
 
 const env = getEnv(import.meta.env);
 
 createRoot(document.getElementById("root")!).render(
   <AppProvider value={env}>
     <RouterProvider router={router} />
-  </AppProvider>,
+  </AppProvider>
 );

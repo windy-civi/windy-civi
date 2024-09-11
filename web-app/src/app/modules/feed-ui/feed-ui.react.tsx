@@ -20,7 +20,6 @@ import { cookieFactory, formatDate } from "./feed-ui.utils";
 
 export function ForYouPage() {
   const result = useLoaderData() as FeedProps;
-  console.log({ result });
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [globalState, setGlobalState] = useState(result.globalState);

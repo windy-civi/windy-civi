@@ -93,7 +93,6 @@ export const loader: LoaderFunction = async ({ request }) => {
         : DEFAULT_FILTERS;
 
   const env = getEnv(import.meta.env);
-  console.log({ env, filters });
   const filteredLegislation = await getFilteredLegislation({
     env,
     filters,
