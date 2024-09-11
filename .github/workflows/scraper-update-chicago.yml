@@ -1,8 +1,8 @@
-name: Scraper
+name: Scraper Chicago
 
 on:
   schedule:
-    - cron: "0 21 * * *" # Run daily at 22:00 UTC (3pm Central)
+    - cron: "0 22 * * *" # Run daily at 22:00 UTC (5pm Central)
 
   # Allow manual running from Github Actions tab
   workflow_dispatch:
@@ -12,21 +12,19 @@ on:
         description: Skip Cache - Force update all legislation?
 
 jobs:
-  update_illinois_legislation:
-    name: Update Illinois Legislation
+  update_chicago_legislation:
+    name: Update Chicago Legislation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Pre Run
         uses: ./.github/workflows/compose/pre-run
-
-      - name: Update Illinois
+      - name: Update Chicago
         env:
           LEGISCAN_API_KEY: ${{ secrets.LEGISCAN_API_KEY }}
           SKIP_CACHE: ${{inputs.skip_cache}}
-          LOCALE: "illinois"
+          LOCALE: "chicago"
         run: cd scraper && npm run scrape
-
       - name: Publish
         uses: ./.github/workflows/compose/publish
         with:
