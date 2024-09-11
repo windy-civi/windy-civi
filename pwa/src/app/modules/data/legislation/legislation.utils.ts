@@ -24,11 +24,13 @@ export const mapToReadableStatus = (
             type: "in-progress",
           };
       }
+    // @ts-expect-error Ignoring fall through case here
     case RepLevel.State:
       switch (status) {
         case "Pass":
           return { name: "Became Law", type: "pass" };
       }
+    // eslint-disable-next-line no-fallthrough
     case RepLevel.National:
       switch (status) {
         case "Engross":

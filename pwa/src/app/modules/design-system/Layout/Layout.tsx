@@ -7,6 +7,7 @@ import { classNames } from "~app/modules/design-system/styles";
 interface StyleComponent {
   style?: React.CSSProperties;
   className?: React.HTMLAttributes<HTMLElement>["className"];
+  children?: React.ReactNode;
 }
 
 export const Container: React.FC<StyleComponent> = ({

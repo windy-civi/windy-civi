@@ -8,7 +8,7 @@ import { classNames } from "../styles";
 export const Tag: React.FC<{
   type?: "tiny";
   text: string;
-  onClick?: Function;
+  onClick?: () => void;
   className?: string;
   style?: React.CSSProperties;
 }> = ({ type, text, className, style, onClick }) => {

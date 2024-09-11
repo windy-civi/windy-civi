@@ -2,7 +2,7 @@ import { useState } from "react";
 import { classNames } from "../styles";
 
 type OptionLocation = "first" | "last" | "middle";
-interface Option<T extends unknown> {
+interface Option<T> {
   label: string;
   value: T;
   className?: (isSelected: boolean, location: OptionLocation) => string;
@@ -11,6 +11,7 @@ interface Option<T extends unknown> {
 // i === options.length - 1
 //         selectedOption === option.value
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const getRadioStyle = (
   type: "transparent" | "solid",
   isSelected: boolean,
@@ -31,13 +32,14 @@ export const getRadioStyle = (
       location === "first"
         ? "rounded-l-lg"
         : location === "last"
-        ? "rounded-r-lg"
-        : "",
+          ? "rounded-r-lg"
+          : "",
       `${isSelected ? "bg-black bg-opacity-50" : "bg-black bg-opacity-20"}`
     );
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
 export const RadioPicker = <T extends unknown>({
   options,
   handleChange,

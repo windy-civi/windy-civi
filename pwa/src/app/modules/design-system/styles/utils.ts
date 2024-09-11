@@ -6,9 +6,9 @@ export const css = <T extends Style.Properties>(s: T): { style: T } => {
 };
 
 export const createStyleSheet = <
-  T extends { [P in keyof T]: Style.Properties }
+  T extends { [P in keyof T]: Style.Properties },
 >(
-  s: T
+  s: T,
 ): T => {
   return s;
 };

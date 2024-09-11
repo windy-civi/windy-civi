@@ -1,5 +1,5 @@
 import type { Spacing, ZIndex, Skin } from "../design-system/styles";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 import type * as CSS from "csstype";
 
 declare module "csstype" {

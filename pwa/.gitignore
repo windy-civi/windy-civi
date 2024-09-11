@@ -25,3 +25,6 @@ dev-dist
 *.sw?
 
 .env
+
+# Generated from prep.cjs
+data_cache

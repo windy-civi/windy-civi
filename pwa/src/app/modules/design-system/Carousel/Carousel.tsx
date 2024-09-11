@@ -55,7 +55,7 @@ export const Carousel = ({
         <div
           className={classNames(
             "mb-4 flex items-center",
-            data.length > 1 ? "justify-between" : "justify-center"
+            data.length > 1 ? "justify-between" : "justify-center",
           )}
         >
           {data.length > 1 && (

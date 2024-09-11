@@ -56,7 +56,9 @@ export const isSupportedLocale = (
   if (isNullish(locationParam)) {
     return false;
   }
-  return Object.values(SupportedLocale).includes(locationParam as any);
+  return Object.values(SupportedLocale).includes(
+    locationParam as SupportedLocale
+  );
 };
 
 export const getLocation = (
@@ -71,8 +73,8 @@ export const createLocationFilterFromString = (
   isSupportedLocale(locationParam)
     ? locationParam
     : typeof locationParam === "string" && locationParam.length > 0
-    ? ({ address: locationParam } as AddressFilter)
-    : null;
+      ? ({ address: locationParam } as AddressFilter)
+      : null;
 
 // City Level
 export const isCityLevel = (location: LocationFilter): boolean =>

@@ -2,6 +2,7 @@ import { classNames } from "../styles";
 
 type DividerProps = {
   className?: string;
+  children?: React.ReactNode;
   type?: "black" | "white";
 };
 

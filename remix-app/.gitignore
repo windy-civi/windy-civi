@@ -12,3 +12,5 @@ tailwind.css
 /csvs
 
 .DS_Store
+
+data_cache

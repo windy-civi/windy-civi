@@ -89,8 +89,8 @@ export const loader: LoaderFunction = async ({ request }) => {
     shouldAcceptSearchParams && searchParams
       ? searchParams
       : savedPreferences
-      ? savedPreferences
-      : DEFAULT_FILTERS;
+        ? savedPreferences
+        : DEFAULT_FILTERS;
 
   const env = getEnv(import.meta.env);
   console.log({ env, filters });

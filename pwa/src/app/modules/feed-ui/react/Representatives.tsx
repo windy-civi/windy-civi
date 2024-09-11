@@ -1,13 +1,12 @@
 import { useState, type FC } from "react";
-import { getLegislators } from "~app/modules/data/representatives";
-import type { OfficialOffice } from "~app/modules/data/representatives/representatives.types";
-import { DataField, Divider, ResultCard } from "~app/modules/design-system";
-import { FeedFilterProps } from "../feed-ui.types";
 import {
   LocationFilter,
-  getAddress,
   getLocationInformationText,
 } from "~app/modules/data/filters";
+import { getLegislators } from "~app/modules/data/representatives";
+import type { OfficialOffice } from "~app/modules/data/representatives/representatives.types";
+import { DataField, ResultCard } from "~app/modules/design-system";
+import { FeedFilterProps } from "../feed-ui.types";
 
 export const RepresentativesList: FC<{
   officialOffice: OfficialOffice[];

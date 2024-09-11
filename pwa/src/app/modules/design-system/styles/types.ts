@@ -35,4 +35,5 @@ export namespace Style {
 /**
  * Allows for adding style hacks while having a convention that documents hacks
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type StyleHack = any;

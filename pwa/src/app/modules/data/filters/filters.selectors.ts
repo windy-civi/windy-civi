@@ -1,7 +1,7 @@
 import type {
   CiviGptLegislationData,
   CiviLegislationData,
-} from "../../../temp-civi-legislation-data/dist_api/types";
+} from "@windycivi/domain/types";
 import type { RepresentativesResult } from "~app/modules/data/representatives";
 import type { FilterParams, WindyCiviBill } from "../legislation";
 import {
@@ -215,8 +215,8 @@ const createFeedBill =
     const chicagoTags = isChicagoImportantOrdinance(bill)
       ? [CustomChicagoTag.Ordinance]
       : isChicagoResolution(bill)
-      ? [CustomChicagoTag.Resolution]
-      : [];
+        ? [CustomChicagoTag.Resolution]
+        : [];
 
     const sponsoredByRepTag = sponsoredByRep ? [SPONSORED_BY_REP_TAG] : [];
 
@@ -238,10 +238,10 @@ export const createFeedBillsFromMultipleSources = (
   dataStores: [
     LegislationResult | null | false,
     RepLevel,
-    FeedBillArrayFilter[] | null
+    FeedBillArrayFilter[] | null,
   ][]
 ) => {
-  let allBills = [] as WindyCiviBill[];
+  const allBills = [] as WindyCiviBill[];
   dataStores.forEach(([legislationResult, repLevel, extraFilters]) => {
     let localeBills = [] as WindyCiviBill[];
     if (!legislationResult) {

@@ -21,7 +21,7 @@ export const FeedBills = (props: FeedProps) => {
 
   // Getting the index of the first item after the last visit date, and splitting there.
   let indexOfSplit = -1;
-  for (var i = 0; i < props.filteredLegislation.length; i++) {
+  for (let i = 0; i < props.filteredLegislation.length; i++) {
     const billUpdatedAt = getBillUpdateAt(props.filteredLegislation[i]);
     if (billUpdatedAt <= lastVisited) {
       indexOfSplit = i;
@@ -213,7 +213,7 @@ const Bill = ({
   );
 };
 
-const LLMWarning = ({ onClick }: { onClick: Function }) => {
+const LLMWarning = ({ onClick }: { onClick: () => void }) => {
   return (
     <div className="mt-4 flex items-center gap-2 rounded-lg bg-gray-100 bg-opacity-30 p-4 text-sm lg:text-base">
       <RobotSvg

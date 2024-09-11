@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   FilterParams,
   LocationFilter,
@@ -31,7 +31,7 @@ const LocationFilterContainer = (props: {
   location: LocationFilter;
   afterLocation: React.ReactNode;
   onChange: (next: LocationFilter) => void;
-  onClear: Function;
+  onClear: () => void;
   introMode: boolean;
 }) => {
   const hasLocation = Boolean(props.location);
@@ -172,12 +172,12 @@ export const LevelFilter = (props: FeedProps) => {
           { label: nationalLabel, value: RepLevel.National },
         ]
       : isStateLevel(props.filters.location)
-      ? [
-          { label: "All", value: null },
-          { label: stateLabel, value: RepLevel.State },
-          { label: nationalLabel, value: RepLevel.National },
-        ]
-      : [{ label: nationalLabel, value: RepLevel.National }];
+        ? [
+            { label: "All", value: null },
+            { label: stateLabel, value: RepLevel.State },
+            { label: nationalLabel, value: RepLevel.National },
+          ]
+        : [{ label: nationalLabel, value: RepLevel.National }];
   return (
     <>
       {levelOptions && (
@@ -333,6 +333,7 @@ const FilterContainer: React.FC<{
   title?: React.ReactNode;
   largeTitle?: boolean;
   className?: string;
+  children: React.ReactNode;
 }> = ({ title, children, className, largeTitle }) => {
   return (
     <div className="mt-4">
@@ -344,7 +345,10 @@ const FilterContainer: React.FC<{
   );
 };
 
-const FilterTitle: React.FC<{ largeTitle?: boolean }> = (props) => {
+const FilterTitle: React.FC<{
+  largeTitle?: boolean;
+  children: React.ReactNode;
+}> = (props) => {
   return (
     <div className="lg:px-1 lg:text-right">
       <span

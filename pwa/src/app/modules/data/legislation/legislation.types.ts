@@ -1,7 +1,7 @@
 import {
   CiviGptLegislationData,
   CiviLegislationData,
-} from "../../../temp-civi-legislation-data/dist_api/types";
+} from "@windycivi/domain/types";
 import { RepLevel } from "../filters/filters.constants";
 
 export type LegislationResult = {

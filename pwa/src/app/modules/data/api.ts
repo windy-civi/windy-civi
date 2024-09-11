@@ -45,11 +45,11 @@ export const getFilteredLegislation = async ({
 
   const { representatives, offices } = await getRepsAndOffices(
     env,
-    filters.location
+    filters.location,
   );
 
   const showSponsoredBills = Boolean(
-    representatives && hasSponsoredByRepTag(filters.tags)
+    representatives && hasSponsoredByRepTag(filters.tags),
   );
 
   // First select all bills that are sponsored, if the user wants sponsored bills
@@ -78,7 +78,7 @@ export const getFilteredLegislation = async ({
 
 const getRepsAndOffices = async (
   env: Env,
-  location: FilterParams["location"]
+  location: FilterParams["location"],
 ) => {
   // Get representatives
   const address = getAddress(location);
