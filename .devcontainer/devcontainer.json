@@ -1,4 +1,8 @@
 {
-  "ghcr.io/devcontainers/features/node:1": {},
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }  
+  },
   "postCreateCommand": "sh ../scripts/setup.sh"
 }
