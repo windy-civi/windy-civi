@@ -16,6 +16,6 @@ By being a monorepo, we prioritize making PR management unified, and also making
 - `.github`: We use GitHub Actions for all CI, including running scrapers & checking code quality.
 - `.vscode`: Recommended settings for vscode.
 - `domain`: Core business logic (should not have external dependencies, and just focuses on data logic/types/transformations). See [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
-- `pwa`: Progress Web App built on React/Tailwind/TypeScript/Vite.
+- `web-app`: Progress Web App built on React/Tailwind/TypeScript/Vite.
 - `scraper`: Make the data, including get GPT summaries.
 - `setup.sh`: Installs all the modules.
