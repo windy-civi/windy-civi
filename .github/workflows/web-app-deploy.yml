@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint:
-    name: ⬣ Web App Quality Checks
+    name: 🔬 Web App Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Download deps
+      - name: 📥 NPM Install
         working-directory: web-app
         run: npm i
 
@@ -50,20 +50,25 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Download deps
+      - name: 📥 NPM Install
+        env:
+          # Required for .env creation
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         working-directory: web-app
         run: npm i
 
-      - name: 📥 build
+      - name: 🏗️ Build
         working-directory: web-app
         run: npm run build
 
-      - name: Upload artifact to GitHub Pages
+      - name: 📤 Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./web-app/dist
 
   deploy:
+    name: 🚀 Deploy To Github Pages
+
     # only deploy main branch on pushes
     if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 

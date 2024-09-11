@@ -16,7 +16,7 @@ on:
 
 jobs:
   update_summaries:
-    name: Generate Summaries
+    name: ✨ Generate Summaries
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
