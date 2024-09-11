@@ -28,9 +28,6 @@ jobs:
 
       - name: 📥 Download deps
         working-directory: web-app
-        env:
-          # Required for .env creation
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: npm i
 
       - name: 🔬 Quality
@@ -58,6 +55,9 @@ jobs:
         run: npm i
 
       - name: 📥 build
+        env:
+          # Required for .env creation
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         working-directory: web-app
         run: npm run build
 
