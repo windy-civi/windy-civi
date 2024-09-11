@@ -21,7 +21,7 @@ const router = createBrowserRouter(
   {
     // Need to set basename for GitHub pages. todo: Remove when this is no longer needed. (also remove in vite.config.js)
     basename: "/windy-civi",
-  }
+  },
 );
 
 const env = getEnv(import.meta.env);
@@ -29,5 +29,5 @@ const env = getEnv(import.meta.env);
 createRoot(document.getElementById("root")!).render(
   <AppProvider value={env}>
     <RouterProvider router={router} />
-  </AppProvider>
+  </AppProvider>,
 );
