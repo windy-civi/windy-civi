@@ -2,10 +2,10 @@ import type {
   CiviGptLegislationData,
   CiviLegislationData,
   Locales,
-} from "../../../../../../../domain/types";
-import { civiLegislationApi } from "../../../../../api/vite-api";
-import { DataStores } from "../../filters";
-import { LegislationResult } from "../legislation.types";
+} from "../../../../domain/types";
+import { civiLegislationApi } from "../vite-api";
+import { DataStores } from "../../../../domain/filters";
+import { LegislationResult } from "../../../../domain/legislation/legislation.types";
 // import { legislationCache } from "./legislation-cache";
 
 const getCachedLegislationData = async (

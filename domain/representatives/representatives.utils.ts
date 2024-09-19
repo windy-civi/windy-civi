@@ -1,16 +1,17 @@
+import { RepLevel } from "../filters/filters.constants";
+import { hasOverlap } from "../filters/filters.utils";
 import type {
   GoogleRepresentativesResponse,
   Office,
   Official,
-} from "~app/modules/data/representatives/api/google.types";
-import { RepLevel, hasOverlap } from "../legislation";
+} from "../../web-app/src/api/representatives/google.types";
 import type {
   OfficialOffice,
   RepresentativesResult,
 } from "./representatives.types";
 
 export const transformGoogleCivicInfo = (
-  data: GoogleRepresentativesResponse,
+  data: GoogleRepresentativesResponse
 ): RepresentativesResult => {
   const offices = data.offices
     .map((office) => {
@@ -27,10 +28,10 @@ export const transformGoogleCivicInfo = (
     offices: {
       city: offices.filter((off) => off.office.levels[0] === "locality"),
       county: offices.filter(
-        (off) => off.office.levels[0] === "administrativeArea2",
+        (off) => off.office.levels[0] === "administrativeArea2"
       ),
       state: offices.filter(
-        (off) => off.office.levels[0] === "administrativeArea1",
+        (off) => off.office.levels[0] === "administrativeArea1"
       ),
       national: offices.filter((off) => off.office.levels[0] === "country"),
     },
@@ -39,7 +40,7 @@ export const transformGoogleCivicInfo = (
 };
 
 export const getLegislators = (
-  offices?: OfficialOffice[] | null,
+  offices?: OfficialOffice[] | null
 ): {
   office: Office;
   official: Official;
@@ -66,7 +67,7 @@ export const getLegislators = (
       // We don't support county level
       .filter(
         (officialOffice) =>
-          !officialOffice.office.divisionId.includes("county:"),
+          !officialOffice.office.divisionId.includes("county:")
       )
       // We only support Chicago city legislation
       .filter((officialOffice) => {
@@ -81,7 +82,7 @@ export const getLegislators = (
         hasOverlap(officialOffice.office.roles, [
           "legislatorLowerBody",
           "legislatorUpperBody",
-        ]),
+        ])
       )
       .map((officialOffice) => {
         // last name attempt
@@ -101,8 +102,8 @@ export const getLegislators = (
           level: officialOffice.office.name.includes("Chicago")
             ? RepLevel.City
             : officialOffice.office.name.includes("IL")
-              ? RepLevel.State
-              : RepLevel.National,
+            ? RepLevel.State
+            : RepLevel.National,
         };
       })
   );

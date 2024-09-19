@@ -1,20 +1,21 @@
 import { Env } from "~app/modules/config";
+
+import { getRepresentatives } from "../web-app/src/api/representatives";
+import { getLegislations } from "../web-app/src/api/legislation";
 import {
-  DataStores,
-  FeedData,
   FilterParams,
-  RepLevel,
-  createFeedBillsFromMultipleSources,
-  filterNoisyCityBills,
-  getAddress,
-  getLegislations,
-  hasSponsoredByRepTag,
   isLocationChicago,
   isLocationIL,
+  DataStores,
+  hasSponsoredByRepTag,
+  createFeedBillsFromMultipleSources,
+  RepLevel,
+  filterNoisyCityBills,
   selectBillsFromFilters,
   sortByUpdatedAt,
-} from "./legislation";
-import { getRepresentatives } from "./representatives/api";
+  getAddress,
+} from "./filters";
+import { FeedData } from "./types";
 
 export const getFilteredLegislation = async ({
   env,
@@ -45,11 +46,11 @@ export const getFilteredLegislation = async ({
 
   const { representatives, offices } = await getRepsAndOffices(
     env,
-    filters.location,
+    filters.location
   );
 
   const showSponsoredBills = Boolean(
-    representatives && hasSponsoredByRepTag(filters.tags),
+    representatives && hasSponsoredByRepTag(filters.tags)
   );
 
   // First select all bills that are sponsored, if the user wants sponsored bills
@@ -78,7 +79,7 @@ export const getFilteredLegislation = async ({
 
 const getRepsAndOffices = async (
   env: Env,
-  location: FilterParams["location"],
+  location: FilterParams["location"]
 ) => {
   // Get representatives
   const address = getAddress(location);

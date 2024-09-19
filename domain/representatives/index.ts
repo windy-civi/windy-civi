@@ -1,3 +1,3 @@
 export * from "./representatives.types";
 export * from "./representatives.utils";
-export * from "./api";
+export * from "../../web-app/src/api/representatives";

@@ -27,6 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "../domain/filters", "../domain/legislation", "../domain/representatives", "../domain/api.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

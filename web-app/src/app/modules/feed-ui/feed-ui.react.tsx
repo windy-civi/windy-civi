@@ -1,14 +1,14 @@
 import { useLoaderData, useSearchParams } from "react-router-dom";
 
-import { useEffect, useState } from "react";
-import type { FilterParams } from "~app/modules/data/filters";
+import type { FilterParams } from "@windycivi/domain/filters";
 import {
   DEFAULT_FILTERS,
   createFilterParams,
   getLocation,
   hasTags,
   stringifyTags,
-} from "~app/modules/data/filters";
+} from "@windycivi/domain/filters";
+import { useEffect, useState } from "react";
 import { Feed } from "~app/modules/feed-ui";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import {

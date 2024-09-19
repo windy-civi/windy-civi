@@ -1,19 +1,5 @@
 import React, { useState } from "react";
-import {
-  FilterParams,
-  LocationFilter,
-  RepLevel,
-  SupportedLocale,
-  getAddress,
-  getLocation,
-  getLocationInformationText,
-  getTagsBeingFiltered,
-  isAddressFilter,
-  isCityLevel,
-  isStateLevel,
-  parseAvailableTags,
-} from "~app/modules/data/legislation";
-import { getLegislators } from "~app/modules/data/representatives";
+
 import {
   AddressLookup,
   Button,
@@ -26,6 +12,8 @@ import {
 import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { LegislatorsInfo } from "./Representatives";
+import { FilterParams, getAddress, getLocation, getLocationInformationText, getTagsBeingFiltered, isAddressFilter, isCityLevel, isStateLevel, LocationFilter, parseAvailableTags, RepLevel, SupportedLocale } from "@windycivi/domain/filters";
+import { getLegislators } from "@windycivi/domain/representatives";
 
 const LocationFilterContainer = (props: {
   location: LocationFilter;

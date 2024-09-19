@@ -1,8 +1,8 @@
-import { useState } from "react";
 import {
   CustomChicagoTag,
   SPONSORED_BY_REP_TAG,
-} from "~app/modules/data/filters";
+} from "@windycivi/domain/filters";
+import { useState } from "react";
 import { classNames } from "../styles";
 
 export const Tag: React.FC<{

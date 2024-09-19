@@ -1,7 +1,7 @@
+import { FeedData } from "@windycivi/domain/types";
 import type { Env } from "../config";
-import type { FilterParams } from "../data/legislation";
-import { FeedData } from "../data/types";
 import { RouteOption } from "./feed-ui.constants";
+import { FilterParams } from "@windycivi/domain/filters";
 
 export interface FeedLoaderData extends FeedData {
   env: Env;
