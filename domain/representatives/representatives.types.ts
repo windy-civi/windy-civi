@@ -3,7 +3,7 @@ import type {
   GoogleRepresentativesResponse,
   Office,
   Official,
-} from "../../web-app/src/api/representatives/google.types";
+} from "./google.types";
 
 export interface OfficialOffice {
   office: Office;

@@ -1,2 +1,2 @@
 export * from "./google";
-export * from "./google.types";
+export * from "../../../../domain/representatives/google.types";
