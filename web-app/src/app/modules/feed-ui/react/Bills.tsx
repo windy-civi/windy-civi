@@ -7,7 +7,10 @@ import { LevelFilter } from "./Filters";
 import { FeedProps } from "../feed-ui.types";
 import { getBillUpdateAt, RepLevel } from "@windycivi/domain/filters";
 import { WindyCiviBill } from "@windycivi/domain/types";
-import { getLastStatus, mapToReadableStatus } from "@windycivi/domain/legislation/legislation.utils";
+import {
+  getLastStatus,
+  mapToReadableStatus,
+} from "@windycivi/domain/legislation/legislation.utils";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
