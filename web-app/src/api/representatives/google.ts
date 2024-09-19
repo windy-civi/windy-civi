@@ -1,6 +1,6 @@
+import { transformGoogleCivicInfo } from "@windycivi/domain/representatives/representatives.utils";
 import axios from "axios";
 import type { Env } from "~app/modules/config";
-import { transformGoogleCivicInfo } from "../../../../domain/representatives/representatives.utils";
 import type { GoogleRepresentativesResponse } from "./google.types";
 
 export const getRepresentatives = async (address: string, env: Env) => {
