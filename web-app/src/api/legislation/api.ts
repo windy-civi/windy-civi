@@ -1,11 +1,11 @@
+import { DataStores } from "@windycivi/domain/filters";
+import { LegislationResult } from "@windycivi/domain/legislation/legislation.types";
 import type {
   CiviGptLegislationData,
   CiviLegislationData,
   Locales,
-} from "../../../../domain/types";
+} from "@windycivi/domain/types";
 import { civiLegislationApi } from "../vite-api";
-import { DataStores } from "../../../../domain/filters";
-import { LegislationResult } from "../../../../domain/legislation/legislation.types";
 // import { legislationCache } from "./legislation-cache";
 
 const getCachedLegislationData = async (
