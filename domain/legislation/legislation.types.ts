@@ -1,8 +1,5 @@
-import {
-  CiviGptLegislationData,
-  CiviLegislationData,
-} from "@windycivi/domain/types";
 import { RepLevel } from "../filters/filters.constants";
+import { CiviGptLegislationData, CiviLegislationData } from "../types";
 
 export type LegislationResult = {
   legislation: CiviLegislationData[];
