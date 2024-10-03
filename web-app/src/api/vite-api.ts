@@ -3,20 +3,16 @@ import {
   Locales,
   CiviLegislationData,
   CiviGptLegislationData,
+  DataStoreGetter,
 } from "@windycivi/domain/types";
 
-export const civiLegislationApi = {
-  getLegislationData: (locale: Locales): Promise<CiviLegislationData[]> => {
-    return legislationApi[locale]();
-  },
-  getGptLegislation: (locale: Locales): Promise<CiviGptLegislationData> => {
-    return gptApi[locale]();
-  },
+export const viteDataGetter: DataStoreGetter = {
+  getLegislationData: (locale) => legislationApi[locale](),
+  getGptLegislation: (locale) => gptApi[locale](),
   locales,
 };
 
 // todo: this depends on the scraper repo to be installed, and the legislation to be there. Make this more decoupled.
-
 const legislationApi: Record<Locales, () => Promise<CiviLegislationData[]>> = {
   chicago: () =>
     import("../../../scraper/dist_legislation/chicago.legislation.json").then(

@@ -1,7 +1,3 @@
-import { Env } from "~app/modules/config";
-
-import { getRepresentatives } from "../web-app/src/api/representatives";
-import { getLegislations } from "../web-app/src/api/legislation";
 import {
   FilterParams,
   isLocationChicago,
@@ -15,14 +11,53 @@ import {
   sortByUpdatedAt,
   getAddress,
 } from "./filters";
-import { FeedData } from "./types";
+import {
+  CiviGptLegislationData,
+  CiviLegislationData,
+  DataStoreGetter,
+  Env,
+  FeedData,
+} from "./types";
+import { LegislationResult } from "./legislation/legislation.types";
+import { getRepresentatives } from "./representatives/google";
+
+// Helper function to create the API for getting legislation
+// This is to decouple the actual data store from the domain logic, making it easier to test
+// and separate the "brain" of the codebase from the rest. See https://en.wikipedia.org/wiki/Domain-driven_design
+export const getLegislation = async (
+  dataStoreGetter: DataStoreGetter,
+  locale: DataStores
+): Promise<LegislationResult> => {
+  console.log("getting bills for", locale);
+  let legislation: CiviLegislationData[] = [];
+  let gpt: CiviGptLegislationData = {};
+  switch (locale) {
+    case DataStores.Chicago:
+      legislation = await dataStoreGetter.getLegislationData("chicago");
+      gpt = await dataStoreGetter.getGptLegislation("chicago");
+      break;
+    case DataStores.Illinois:
+      legislation = await dataStoreGetter.getLegislationData("illinois");
+      gpt = await dataStoreGetter.getGptLegislation("illinois");
+      break;
+    case DataStores.USA:
+      legislation = await dataStoreGetter.getLegislationData("usa");
+      gpt = await dataStoreGetter.getGptLegislation("usa");
+      break;
+    default:
+      break;
+  }
+  return { legislation, gpt };
+};
 
 export const getFilteredLegislation = async ({
-  env,
+  dataStoreGetter,
   filters,
+  env,
 }: {
-  env: Env;
+  dataStoreGetter: DataStoreGetter;
   filters: FilterParams;
+  env: Env;
 }): Promise<FeedData> => {
   // Must set location to get data
   if (!filters.location) {
@@ -39,10 +74,12 @@ export const getFilteredLegislation = async ({
 
   // Get all bills from all the network
   const allChicagoBills =
-    shouldGetChicago && (await getLegislations(DataStores.Chicago));
+    shouldGetChicago &&
+    (await getLegislation(dataStoreGetter, DataStores.Chicago));
   const allILBills =
-    shouldGetIllinois && (await getLegislations(DataStores.Illinois));
-  const allUSBills = await getLegislations(DataStores.USA);
+    shouldGetIllinois &&
+    (await getLegislation(dataStoreGetter, DataStores.Illinois));
+  const allUSBills = await getLegislation(dataStoreGetter, DataStores.USA);
 
   const { representatives, offices } = await getRepsAndOffices(
     env,

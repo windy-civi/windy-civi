@@ -54,3 +54,13 @@ export interface WindyCiviBill extends FilteredLegislationData {
   // note: this should become a OfficialOffice object
   sponsoredByRep?: string | false;
 }
+
+export interface DataStoreGetter {
+  getLegislationData: (locale: Locales) => Promise<CiviLegislationData[]>;
+  getGptLegislation: (locale: Locales) => Promise<CiviGptLegislationData>;
+  locales: typeof locales;
+}
+
+export type Env = {
+  GOOGLE_API_KEY: string;
+};

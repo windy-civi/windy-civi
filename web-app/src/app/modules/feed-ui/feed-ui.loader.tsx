@@ -11,6 +11,7 @@ import {
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import { type FeedLoaderData } from "./feed-ui.types";
 import { getCookieFromString } from "./feed-ui.utils";
+import { viteDataGetter } from "../../../api/vite-api";
 
 export const loader: LoaderFunction = async ({ request }) => {
   const globalState = DEFAULT_GLOBAL_STATE;
@@ -96,6 +97,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const filteredLegislation = await getFilteredLegislation({
     env,
     filters,
+    dataStoreGetter: viteDataGetter,
   });
 
   return json<FeedLoaderData>({

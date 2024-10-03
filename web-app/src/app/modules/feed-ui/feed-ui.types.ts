@@ -1,5 +1,4 @@
-import { FeedData } from "@windycivi/domain/types";
-import type { Env } from "../config";
+import { Env, FeedData } from "@windycivi/domain/types";
 import { RouteOption } from "./feed-ui.constants";
 import { FilterParams } from "@windycivi/domain/filters";
 
