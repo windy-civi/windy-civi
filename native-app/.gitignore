@@ -8,6 +8,10 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
+*.env*
+expo-env.*
+ios/
+android/
 web-build/
 
 # macOS
