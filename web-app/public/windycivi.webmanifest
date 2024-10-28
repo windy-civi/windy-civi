@@ -5,7 +5,7 @@
   "description": "Get Updates On Legislation You Care About",
   "display": "standalone",
   "prefer-related-application": false,
-  "start_url": "/",
+  "start_url": "./",
   "background_color": "#ff1d87",
   "theme_color": "#ff1d87",
   "orientation": "portrait-primary",
