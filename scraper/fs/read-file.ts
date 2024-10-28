@@ -1,4 +1,8 @@
-import { CiviGptLegislationData, CiviLegislationData, Locales } from "../api";
+import {
+  CiviGptLegislationData,
+  CiviLegislationData,
+  Locales,
+} from "../../domain";
 import fs from "fs";
 import path from "path";
 

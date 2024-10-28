@@ -1,5 +1,5 @@
 import { isBefore, subDays } from "date-fns";
-import { CiviLegislationData } from "../../api";
+import { CiviLegislationData } from "../../../domain";
 import { Bill, Sponsor, Vote } from "./councilmatic.types";
 import {
   getSQLForBillSponsors,
@@ -70,7 +70,8 @@ const fetchBillsInChunks = async () => {
   return totalResults;
 };
 
-async function getChicagoBills({ skipCache }: { skipCache: boolean }) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function getChicagoBills(p: { skipCache: boolean }) {
   console.log("Getting Chicago Bills");
   const billsRes = (await fetchBillsInChunks()) || [];
   const results = billsRes.map((bill) => {
