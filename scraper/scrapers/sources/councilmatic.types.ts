@@ -12,7 +12,7 @@ export type Vote = {
   bill_id: string;
 };
 
-export type Bill = {
+export type BillQueryResponse = {
   id: string;
   title: string;
   extras: string; // is stringified json
@@ -26,6 +26,7 @@ export type Bill = {
   source_id: string;
   sponsors: Sponsor[];
   voteHistory: Vote[];
+  bill_summary: string; // left joined from billaction extras.summary
 };
 
 export type CouncilmaticResponse<T extends object> = {

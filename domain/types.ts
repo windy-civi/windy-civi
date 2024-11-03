@@ -31,6 +31,7 @@ export interface CiviLegislationData {
   updated_at?: string;
   voteHistory?: { motion_classification: string[]; created_at: string }[];
   identifier?: string;
+  bill_summary?: string;
   summaries?: {
     gpt: string;
   };
