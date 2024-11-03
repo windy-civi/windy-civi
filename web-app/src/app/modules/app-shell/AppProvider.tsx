@@ -1,6 +1,6 @@
+import { Env } from "@windycivi/domain/types";
 import type { FC } from "react";
 import AppContext from "./AppContext";
-import { Env } from "../config";
 
 const AppProvider: FC<{ value: Env; children: React.ReactNode }> = ({
   children,

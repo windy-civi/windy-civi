@@ -12,21 +12,19 @@ import {
 import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { LegislatorsInfo } from "./Representatives";
+import { SupportedLocale, RepLevel } from "@windycivi/domain/constants";
 import {
-  FilterParams,
-  getAddress,
   getLocation,
-  getLocationInformationText,
-  getTagsBeingFiltered,
   isAddressFilter,
   isCityLevel,
   isStateLevel,
-  LocationFilter,
+  getLocationInformationText,
+  getAddress,
+  getTagsBeingFiltered,
   parseAvailableTags,
-  RepLevel,
-  SupportedLocale,
-} from "@windycivi/domain/filters";
-import { getLegislators } from "@windycivi/domain/representatives";
+} from "@windycivi/domain/filters/filters.utils";
+import { getLegislators } from "@windycivi/domain/representatives/representatives.utils";
+import { LocationFilter, FilterParams } from "@windycivi/domain/types";
 
 const LocationFilterContainer = (props: {
   location: LocationFilter;

@@ -1,4 +1,4 @@
-import { RepLevel } from "../filters/filters.constants";
+import { RepLevel } from "../constants";
 import { hasOverlap } from "../filters/filters.utils";
 import type {
   GoogleRepresentativesResponse,

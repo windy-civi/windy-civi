@@ -1,16 +1,17 @@
-import type {
-  CiviGptLegislationData,
-  CiviLegislationData,
-  WindyCiviBill,
-} from "../types";
-import type { RepresentativesResult } from "../representatives";
-import { LegislationResult } from "../legislation/legislation.types";
 import {
   ALLOWED_GPT_TAGS,
   CustomChicagoTag,
   RepLevel,
   SPONSORED_BY_REP_TAG,
-} from "./filters.constants";
+} from "../constants";
+import type { RepresentativesResult } from "../representatives/representatives.types";
+import type {
+  CiviGptLegislationData,
+  CiviLegislationData,
+  LegislationResult,
+  WindyCiviBill,
+} from "../types";
+import { FilterParams } from "../types";
 import {
   findOverlap,
   findStringOverlap,
@@ -18,7 +19,6 @@ import {
   hasTags,
   tagsOverLap,
 } from "./filters.utils";
-import { FilterParams } from "./filters.types";
 
 // Start Rep Filters
 const getUserRepNameIfBillIsSponsored = (

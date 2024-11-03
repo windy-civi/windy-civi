@@ -1,4 +1,4 @@
-import { getLocation } from "@windycivi/domain/filters";
+import { getLocation } from "@windycivi/domain/filters/filters.utils";
 import React, { useState } from "react";
 import { PWAInstall } from "~app/modules/app-shell/PwaInstaller";
 import type { StyleHack } from "~app/modules/design-system";

@@ -1,30 +1,22 @@
-import {
-  FilterParams,
-  isLocationChicago,
-  isLocationIL,
-  DataStores,
-  hasSponsoredByRepTag,
-  createFeedBillsFromMultipleSources,
-  RepLevel,
-  filterNoisyCityBills,
-  selectBillsFromFilters,
-  sortByUpdatedAt,
-  getAddress,
-} from "./filters";
+
+import { DataStores, RepLevel, SupportedLocale } from "./constants";
+import { createFeedBillsFromMultipleSources, filterNoisyCityBills, selectBillsFromFilters, sortByUpdatedAt } from "./filters/filters.selectors";
+import { getAddress, hasSponsoredByRepTag, isLocationChicago, isLocationIL } from "./filters/filters.utils";
+import { getRepresentatives } from "./representatives/google";
 import {
   CiviGptLegislationData,
   CiviLegislationData,
   DataStoreGetter,
   Env,
   FeedData,
+  FilterParams,
+  LegislationResult,
 } from "./types";
-import { LegislationResult } from "./legislation/legislation.types";
-import { getRepresentatives } from "./representatives/google";
 
 // Helper function to create the API for getting legislation
 // This is to decouple the actual data store from the domain logic, making it easier to test
 // and separate the "brain" of the codebase from the rest. See https://en.wikipedia.org/wiki/Domain-driven_design
-export const getLegislation = async (
+const getLegislation = async (
   dataStoreGetter: DataStoreGetter,
   locale: DataStores
 ): Promise<LegislationResult> => {
@@ -33,16 +25,16 @@ export const getLegislation = async (
   let gpt: CiviGptLegislationData = {};
   switch (locale) {
     case DataStores.Chicago:
-      legislation = await dataStoreGetter.getLegislationData("chicago");
-      gpt = await dataStoreGetter.getGptLegislation("chicago");
+      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.Chicago);
+      gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.Chicago);
       break;
     case DataStores.Illinois:
-      legislation = await dataStoreGetter.getLegislationData("illinois");
-      gpt = await dataStoreGetter.getGptLegislation("illinois");
+      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.Illinois);
+      gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.Illinois);
       break;
     case DataStores.USA:
-      legislation = await dataStoreGetter.getLegislationData("usa");
-      gpt = await dataStoreGetter.getGptLegislation("usa");
+      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.USA);
+      gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.USA);
       break;
     default:
       break;

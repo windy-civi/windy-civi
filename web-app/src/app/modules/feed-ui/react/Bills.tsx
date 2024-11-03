@@ -1,16 +1,17 @@
 import { FaGlobe } from "react-icons/fa";
 
+import { RepLevel } from "@windycivi/domain/constants";
+import {
+  getBillUpdateAt,
+  getLastStatus,
+  mapToReadableStatus,
+} from "@windycivi/domain/filters/filters.utils";
+import { WindyCiviBill } from "@windycivi/domain/types";
 import { StyleHack, Tag, classNames } from "~app/modules/design-system";
 import { Carousel } from "~app/modules/design-system/Carousel/Carousel";
 import { RobotSvg } from "~app/modules/design-system/Icons";
-import { LevelFilter } from "./Filters";
 import { FeedProps } from "../feed-ui.types";
-import { getBillUpdateAt, RepLevel } from "@windycivi/domain/filters";
-import { WindyCiviBill } from "@windycivi/domain/types";
-import {
-  getLastStatus,
-  mapToReadableStatus,
-} from "@windycivi/domain/legislation/legislation.utils";
+import { LevelFilter } from "./Filters";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
