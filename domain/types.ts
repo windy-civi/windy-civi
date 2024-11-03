@@ -1,3 +1,20 @@
+import { RepLevel, SupportedLocale } from "./constants";
+import { OfficialOffice } from "./representatives/representatives.types";
+
+export type LegislationResult = {
+  legislation: CiviLegislationData[];
+  gpt: CiviGptLegislationData;
+};
+
+type CiviGptData = CiviGptLegislationData[keyof CiviGptLegislationData];
+
+interface FilteredLegislationData {
+  bill: CiviLegislationData;
+  gpt?: CiviGptData;
+  allTags: string[];
+  level: RepLevel;
+}
+
 // Typing the .legislation.json files
 export interface CiviLegislationData {
   status: string[];
@@ -37,6 +54,43 @@ export interface CiviWikiLegislationData {
   tags: string[];
 }
 
-export const locales = ["chicago", "illinois", "usa"] as const;
+export type FeedData = {
+  fullLegislation: WindyCiviBill[];
+  filteredLegislation: WindyCiviBill[];
+  offices: OfficialOffice[] | null;
+};
 
-export type Locales = (typeof locales)[number];
+export interface WindyCiviBill extends FilteredLegislationData {
+  // String that is the name of the rep that sponsored the bill
+  // note: this should become a OfficialOffice object
+  sponsoredByRep?: string | false;
+}
+
+export interface DataStoreGetter {
+  getLegislationData: (
+    locale: SupportedLocale
+  ) => Promise<CiviLegislationData[]>;
+  getGptLegislation: (
+    locale: SupportedLocale
+  ) => Promise<CiviGptLegislationData>;
+  locales: typeof SupportedLocale;
+}
+
+export type Env = {
+  GOOGLE_API_KEY: string;
+};
+
+export type Locales = `${SupportedLocale}`;
+
+export type LocationFilter = SupportedLocale | AddressFilter | Nullish;
+
+export type AddressFilter = { address: string };
+
+export type Nullish = undefined | "" | null;
+
+export interface FilterParams {
+  location: LocationFilter;
+  tags: string[] | null;
+  availableTags: string[];
+  level: RepLevel | null;
+}

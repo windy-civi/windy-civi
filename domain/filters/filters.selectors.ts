@@ -1,27 +1,30 @@
-import type {
-  CiviGptLegislationData,
-  CiviLegislationData,
-} from "@windycivi/domain/types";
-import type { RepresentativesResult } from "~app/modules/data/representatives";
-import type { FilterParams, WindyCiviBill } from "../legislation";
 import {
   ALLOWED_GPT_TAGS,
   CustomChicagoTag,
   RepLevel,
   SPONSORED_BY_REP_TAG,
+} from "../constants";
+import type { RepresentativesResult } from "../representatives/representatives.types";
+import type {
+  CiviGptLegislationData,
+  CiviLegislationData,
+  LegislationResult,
+  WindyCiviBill,
+} from "../types";
+import { FilterParams } from "../types";
+import {
   findOverlap,
   findStringOverlap,
   getBillUpdateAt,
   hasTags,
   tagsOverLap,
-} from "../legislation";
-import { LegislationResult } from "../legislation/legislation.types";
+} from "./filters.utils";
 
 // Start Rep Filters
 const getUserRepNameIfBillIsSponsored = (
   representatives: RepresentativesResult | null,
   sponsors: CiviLegislationData["sponsors"],
-  level: RepLevel,
+  level: RepLevel
 ): string | false => {
   if (!representatives) {
     return false;
@@ -57,11 +60,11 @@ const getUserRepNameIfBillIsSponsored = (
 
   // For state and national, we can use the office id data as legiscan provides that data
   const divisions = representatives?.offices[level]?.map(
-    (o) => o.office.divisionId,
+    (o) => o.office.divisionId
   );
   const sponsoredOffice = findOverlap(
     divisions || [],
-    sponsors.map((s) => s.district),
+    sponsors.map((s) => s.district)
   );
   let sponsoredByRep: string | false = false;
   representatives?.offices[level].forEach((o) => {
@@ -77,7 +80,7 @@ export const filterBySponsoredBills =
   (bill: CiviLegislationData) => {
     if (reps) {
       return Boolean(
-        getUserRepNameIfBillIsSponsored(reps, bill.sponsors, level),
+        getUserRepNameIfBillIsSponsored(reps, bill.sponsors, level)
       );
     }
     return true;
@@ -157,7 +160,7 @@ const isDateOlderThanSixMonths = (dateString: string) => {
   const sixMonthsAgo = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth() - 6,
-    currentDate.getDate(),
+    currentDate.getDate()
   );
 
   // Compare input date with 6 months ago date
@@ -183,7 +186,7 @@ const createFeedBill =
   (
     gpt: CiviGptLegislationData,
     representatives: RepresentativesResult | null,
-    level: RepLevel,
+    level: RepLevel
   ) =>
   (bill: CiviLegislationData): WindyCiviBill => {
     const gptSummaries = gpt[bill.id] || {};
@@ -208,15 +211,15 @@ const createFeedBill =
     const sponsoredByRep = getUserRepNameIfBillIsSponsored(
       representatives,
       bill.sponsors,
-      level,
+      level
     );
 
     // move this to the generated data
     const chicagoTags = isChicagoImportantOrdinance(bill)
       ? [CustomChicagoTag.Ordinance]
       : isChicagoResolution(bill)
-        ? [CustomChicagoTag.Resolution]
-        : [];
+      ? [CustomChicagoTag.Resolution]
+      : [];
 
     const sponsoredByRepTag = sponsoredByRep ? [SPONSORED_BY_REP_TAG] : [];
 
@@ -238,8 +241,8 @@ export const createFeedBillsFromMultipleSources = (
   dataStores: [
     LegislationResult | null | false,
     RepLevel,
-    FeedBillArrayFilter[] | null,
-  ][],
+    FeedBillArrayFilter[] | null
+  ][]
 ) => {
   const allBills = [] as WindyCiviBill[];
   dataStores.forEach(([legislationResult, repLevel, extraFilters]) => {
@@ -249,7 +252,7 @@ export const createFeedBillsFromMultipleSources = (
     }
     // Create the for you bill structure
     localeBills = legislationResult.legislation.map(
-      createFeedBill(legislationResult.gpt, representatives, repLevel),
+      createFeedBill(legislationResult.gpt, representatives, repLevel)
     );
 
     // Filter by default filters
@@ -272,7 +275,7 @@ export const createFeedBillsFromMultipleSources = (
 
 export const selectBillsFromFilters = (
   bills: WindyCiviBill[],
-  filters: FilterParams,
+  filters: FilterParams
 ) => {
   const hasTagsSelected = hasTags(filters.tags);
 
@@ -291,7 +294,7 @@ export const selectBillsFromFilters = (
   // Stuff to take out
   if (filters.level) {
     filteredLegislation = filteredLegislation.filter(
-      (bill) => bill.level === filters.level,
+      (bill) => bill.level === filters.level
     );
   }
 

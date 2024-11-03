@@ -1,6 +1,4 @@
-export type Env = {
-  GOOGLE_API_KEY: string;
-};
+import { Env } from "@windycivi/domain/types";
 
 export const getEnv = (env: ImportMetaEnv): Env => {
   return {

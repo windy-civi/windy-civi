@@ -1,5 +1,5 @@
+import { forEachLocale } from "../../domain/filters/filters.utils";
 import { CiviGptLegislationData, Locales } from "../../domain/types";
-import { forEachLocale } from "../../domain/utils";
 import { getCachedGpt, getCachedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
 import { writeGptJSON } from "../fs/write-file";
@@ -135,11 +135,11 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
 
 const runGpt = async () => {
   try {
-    const locale = getLocale();
+    const localeFromEnv = getLocale();
     forEachLocale(async (locale) => {
       console.info("running gpt for locale:", locale);
       await generateGptSummaries(locale);
-    }, locale);
+    }, localeFromEnv);
   } catch (e) {
     console.log("error happened, but exiting gracefully");
     console.log(e);
