@@ -1,6 +1,6 @@
 import { isBefore, subDays } from "date-fns";
 import { CiviLegislationData } from "../../../domain";
-import { Bill, Sponsor, Vote } from "./councilmatic.types";
+import { BillQueryResponse, Sponsor, Vote } from "./councilmatic.types";
 import {
   getSQLForBillSponsors,
   getSQLForBills,
@@ -20,13 +20,15 @@ const fetchBillsInChunks = async () => {
   const chunkSize = 130;
   let offset = 0;
   let done = false;
-  let totalResults: Bill[] = [];
+  let totalResults: BillQueryResponse[] = [];
 
   console.log("Fetching Chicago data in chunks");
 
   // starting from the first row of the bill table we get 100 results at a time
   while (!done) {
-    const data = await fetchData<Bill>(getSQLForBills(chunkSize, offset));
+    const data = await fetchData<BillQueryResponse>(
+      getSQLForBills(chunkSize, offset)
+    );
     const chunk = data.rows;
 
     totalResults = totalResults.concat(chunk);
@@ -122,6 +124,7 @@ async function getChicagoBills(p: { skipCache: boolean }) {
       identifier: bill.identifier,
       link: `https://chicago.councilmatic.org/legislation/${bill.identifier}`,
       url: `https://chicago.councilmatic.org/legislation/${bill.identifier}`,
+      bill_summary: bill.bill_summary,
     };
 
     return bills;
