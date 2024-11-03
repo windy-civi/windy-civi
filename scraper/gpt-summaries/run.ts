@@ -57,6 +57,7 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
       let gpt_summary: string | null;
       // check if a summary already exists from the source data.
       if (legislation.bill_summary) {
+        console.log("summary already exists on retrieved bill. using that.");
         gpt_summary = legislation.bill_summary;
       }
       // Otherwise, use OpenAI here to summarize the bill.
