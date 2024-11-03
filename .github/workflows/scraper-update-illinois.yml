@@ -15,6 +15,7 @@ jobs:
   update_illinois_legislation:
     name: 📝 Update Illinois Legislation
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v4
       - name: Pre Run
