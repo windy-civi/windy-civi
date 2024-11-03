@@ -1,10 +1,13 @@
 {
-  "ignorePaths": ["dist_legislation"],
+  "ignorePaths": [
+    "dist_legislation"
+  ],
   "words": [
     "AIAPI",
     "ballotpedia",
     "billaction",
     "billsponsorship",
+    "billversion",
     "bioguide",
     "civi",
     "codepaths",
