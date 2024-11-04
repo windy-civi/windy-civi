@@ -100,6 +100,7 @@ jobs:
           cp -r ../source-repo/build/* .
 
           # Commit and push changes
+          git config --unset-all http.https://github.com/.extraheader
           git add .
           git commit -m "Deploy from source repo"
           git push origin $GH_PAGES_BRANCH
