@@ -84,6 +84,26 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
+      # Publish built files to GitHub Pages repo
+      - name: Deploy to GitHub Pages Repo
         id: deployment
-        uses: actions/deploy-pages@v2
+        env:
+          # Define variables for clarity and flexibility
+          GH_USERNAME: windy-civi # Typically 'main' for GitHub Pages root repo
+          GH_PAGES_REPO: windy-civi.github.io # Replace with your GitHub Pages repo name
+          GH_PAGES_BRANCH: main # Typically 'main' for GitHub Pages root repo
+        run: |
+          # Clone the GitHub Pages repository
+          git clone https://<token>@github.com/$GH_USERNAME/$GH_PAGES_REPO.git ../$GH_PAGES_REPO
+          cd ../$GH_PAGES_REPO
+
+          # Clear out old files (optional; recommended for static sites)
+          rm -rf *
+
+          # Copy the new build files from the source repository
+          cp -r ../source-repo/build/* .
+
+          # Commit and push changes
+          git add .
+          git commit -m "Deploy from source repo"
+          git push origin $GH_PAGES_BRANCH
