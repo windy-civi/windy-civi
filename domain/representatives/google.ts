@@ -4,12 +4,14 @@ import { transformGoogleCivicInfo } from "./representatives.utils";
 
 export const getRepresentatives = async (address: string, env: Env) => {
   try {
-    const searchParams = new URLSearchParams()
-    searchParams.set("key", env.GOOGLE_API_KEY)
-    searchParams.set("address", address)
-    const url = `https://www.googleapis.com/civicinfo/v2/representatives?${searchParams.toString()}`
+    const searchParams = new URLSearchParams();
+    searchParams.set("key", env.GOOGLE_API_KEY);
+    searchParams.set("address", address);
+    const url = `https://www.googleapis.com/civicinfo/v2/representatives?${searchParams.toString()}`;
     console.log("searching for representatives for", address);
-    const results = await fetch(url).then(r => r.json() as Promise<GoogleRepresentativesResponse>)
+    const results = await fetch(url).then(
+      (r) => r.json() as Promise<GoogleRepresentativesResponse>
+    );
     return transformGoogleCivicInfo(results);
   } catch (e) {
     return Promise.reject(e);
