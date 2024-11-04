@@ -67,5 +67,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
-          repository-name: windy-civi/windy-civi
+          repository-name: windy-civi/windy-civi.github.io
           folder: web-app/dist # The folder the action should deploy.
