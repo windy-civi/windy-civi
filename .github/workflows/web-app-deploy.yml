@@ -68,4 +68,4 @@ jobs:
         with:
           branch: main
           repository-name: windy-civi/windy-civi
-          folder: dist # The folder the action should deploy.
+          folder: web-app/dist # The folder the action should deploy.
