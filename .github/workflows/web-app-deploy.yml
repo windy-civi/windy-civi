@@ -39,7 +39,7 @@ jobs:
     # only deploy main branch on pushes
     # if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 
-    name: 🏗️ Build Web App
+    name: 🏗️ Build Web App & Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -62,30 +62,13 @@ jobs:
         working-directory: web-app
         run: npm run build
 
-      - name: 📤 Upload artifact to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./web-app/dist
-
-  deploy:
-    name: 🚀 Deploy To Github Pages
-
-    # only deploy main branch on pushes
-    # if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-
-    needs: [build-web-app]
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write # Required to deploy to GitHub Pages
-      id-token: write # Required for OpenID Connect (OIDC) authentication
-
-    steps:
       # Publish built files to GitHub Pages repo
       - name: Deploy to GitHub Pages Repo
         id: deployment
         env:
           # Define variables for clarity and flexibility
           GH_USERNAME: windy-civi # Typically 'main' for GitHub Pages root repo
+          SOURCE_REPO: windy-civi # Typically 'main' for GitHub Pages root repo
           GH_PAGES_REPO: windy-civi.github.io # Replace with your GitHub Pages repo name
           GH_PAGES_BRANCH: main # Typically 'main' for GitHub Pages root repo
         run: |
@@ -97,7 +80,7 @@ jobs:
           rm -rf *
 
           # Copy the new build files from the source repository
-          cp -r ../source-repo/build/* .
+          cp -r ../$SOURCE_REPO/build/* .
 
           # Commit and push changes
           git config --unset-all http.https://github.com/.extraheader
