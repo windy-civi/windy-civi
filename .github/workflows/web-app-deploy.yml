@@ -65,11 +65,8 @@ jobs:
       # Publish built files to GitHub Pages repo
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
-        env:
-          # Required for .env creation
-          GH_PAGES_REPO_PAT: ${{ secrets.GH_PAGES_REPO_PAT }}
         with:
-          token:
+          token: ${{ secrets.GH_PAGES_REPO_PAT }}
           branch: main
           repository-name: windy-civi/windy-civi.github.io
           folder: web-app/dist # The folder the action should deploy.
