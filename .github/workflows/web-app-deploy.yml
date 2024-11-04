@@ -80,7 +80,7 @@ jobs:
           rm -rf *
 
           # Copy the new build files from the source repository
-          cp -r ../$SOURCE_REPO/build/* .
+          cp -r ../$SOURCE_REPO/dist/* .
 
           # Commit and push changes
           git config --unset-all http.https://github.com/.extraheader
