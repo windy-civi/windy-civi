@@ -14,8 +14,11 @@ const scrapeLegislation = async () => {
   forEachLocale(async (locale) => {
     console.info("scraping for locale:", locale);
     const legislation = await api[locale]({ skipCache });
+    console.info("getting changes in legislation");
     const changes = await getLegislationChanges(locale, legislation);
+    console.info("writing changes file");
     writeChangesJSON(locale, changes);
+    console.info("writing locale file");
     writeLegislationJSON(locale, legislation);
   }, localeFromEnv);
 };
