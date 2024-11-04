@@ -79,11 +79,6 @@ jobs:
       pages: write # Required to deploy to GitHub Pages
       id-token: write # Required for OpenID Connect (OIDC) authentication
 
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       # Publish built files to GitHub Pages repo
       - name: Deploy to GitHub Pages Repo
