@@ -72,17 +72,17 @@ jobs:
           GH_PAGES_REPO: windy-civi.github.io # Replace with your GitHub Pages repo name
           GH_PAGES_BRANCH: main # Typically 'main' for GitHub Pages root repo
         run: |
-          # Clone the GitHub Pages repository
+          echo "Clone the GitHub Pages repository"
           git clone https://<token>@github.com/$GH_USERNAME/$GH_PAGES_REPO.git ../$GH_PAGES_REPO
           cd ../$GH_PAGES_REPO
 
-          # Clear out old files (optional; recommended for static sites)
+          echo "Clear out old files"
           rm -rf *
 
-          # Copy the new build files from the source repository
+          echo "Copy the new build files from the source repository"
           cp -r ../$DIST_REPO/* .
 
-          # Commit and push changes
+          echo "Commit and push changes"
           git config --unset-all http.https://github.com/.extraheader
           git add .
           git commit -m "Deploy from source repo"
