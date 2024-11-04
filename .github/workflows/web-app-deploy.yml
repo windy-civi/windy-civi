@@ -36,10 +36,7 @@ jobs:
         run: npm run quality
 
   build-web-app:
-    # only deploy main branch on pushes
-    # if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-
-    name: 🏗️ Build Web App & Deploy
+    name: 🏗️ Build Web App
     runs-on: ubuntu-latest
 
     steps:
@@ -61,6 +58,26 @@ jobs:
       - name: 🏗️ Build
         working-directory: web-app
         run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-app-prod-build
+          path: ./web-app/dist
+
+  deploy-web-app:
+    # only deploy main branch on pushes
+    # if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+
+    name: 🚀 Deploy
+    needs: [build-web-app]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: web-app-prod-build # same as upload artifact above
 
       # Publish built files to GitHub Pages repo
       - name: Deploy 🚀
