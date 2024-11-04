@@ -75,15 +75,19 @@ jobs:
 
     steps:
       - name: Download artifact
+        id: download-artifact
         uses: actions/download-artifact@v3
         with:
           name: web-app-prod-build # same as upload artifact above
 
       # Publish built files to GitHub Pages repo
       - name: Deploy 🚀
+        id: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          # Needed to create a PAT for it to be able to push.
+          # NOTE: Will expire in a year Nov 2025
           token: ${{ secrets.GH_PAGES_REPO_PAT }}
           branch: main
           repository-name: windy-civi/windy-civi.github.io
-          folder: web-app/dist # The folder the action should deploy.
+          folder: ${{steps.download-artifact.outputs.download-path}} # The folder the action should deploy.
