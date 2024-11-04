@@ -15,6 +15,12 @@ interface FilteredLegislationData {
   level: RepLevel;
 }
 
+export type Sponsor = {
+  name: string;
+  role: string;
+  district: string;
+};
+
 // Typing the .legislation.json files
 export interface CiviLegislationData {
   status: string[];
@@ -24,7 +30,7 @@ export interface CiviLegislationData {
   link: string;
   url?: string;
   source_id: string;
-  sponsors: { name: string; role: string; district: string }[];
+  sponsors: Sponsor[];
   classification?: string;
   description?: string;
   tags?: string[];
@@ -36,6 +42,25 @@ export interface CiviLegislationData {
     gpt: string;
   };
 }
+
+export type CiviLegislationDataForDiff = Pick<
+  CiviLegislationData,
+  "id" | "status" | "statusDate" | "sponsors"
+>;
+
+export type LegislationChange = {
+  id: string;
+  differences: {
+    added?: boolean;
+    removed?: boolean;
+    status?: { previous: string[]; new: string[] };
+    statusDate?: { previous: string; new: string };
+    sponsors?: {
+      added: Sponsor[];
+      removed: Sponsor[];
+    };
+  };
+};
 
 // Type for the .gpt.json files
 export interface CiviGptLegislationData {

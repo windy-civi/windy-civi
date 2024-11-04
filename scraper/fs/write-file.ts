@@ -1,6 +1,7 @@
 import {
   CiviGptLegislationData,
   CiviLegislationData,
+  LegislationChange,
   Locales,
 } from "../../domain/types";
 import fs from "fs";
@@ -28,6 +29,13 @@ export const writeLegislationJSON = (
   legislation: CiviLegislationData[]
 ) => {
   writeJSON(`${locale}.legislation`, legislation);
+};
+
+export const writeChangesJSON = (
+  locale: Locales,
+  differences: LegislationChange[]
+) => {
+  writeJSON(`${locale}.legislation.changes`, differences);
 };
 
 export const writeGptJSON = (locale: Locales, gpt: CiviGptLegislationData) => {

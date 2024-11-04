@@ -1,0 +1,30 @@
+{
+  "ignorePaths": ["dist_legislation"],
+  "words": [
+    "AIAPI",
+    "ballotpedia",
+    "billaction",
+    "billsponsorship",
+    "billversion",
+    "bioguide",
+    "civi",
+    "codepaths",
+    "councilmatic",
+    "Datamade",
+    "knowwho",
+    "legiscan",
+    "legislations",
+    "masterlist",
+    "OPENAI",
+    "opensecrets",
+    "prefile",
+    "sast",
+    "sasts",
+    "sldl",
+    "sldu",
+    "typecheck",
+    "voteevent",
+    "votesmart",
+    "windycivi"
+  ]
+}

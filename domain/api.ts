@@ -1,7 +1,16 @@
-
 import { DataStores, RepLevel, SupportedLocale } from "./constants";
-import { createFeedBillsFromMultipleSources, filterNoisyCityBills, selectBillsFromFilters, sortByUpdatedAt } from "./filters/filters.selectors";
-import { getAddress, hasSponsoredByRepTag, isLocationChicago, isLocationIL } from "./filters/filters.utils";
+import {
+  createFeedBillsFromMultipleSources,
+  filterNoisyCityBills,
+  selectBillsFromFilters,
+  sortByUpdatedAt,
+} from "./filters/filters.selectors";
+import {
+  getAddress,
+  hasSponsoredByRepTag,
+  isLocationChicago,
+  isLocationIL,
+} from "./filters/filters.utils";
 import { getRepresentatives } from "./representatives/google";
 import {
   CiviGptLegislationData,
@@ -25,15 +34,21 @@ const getLegislation = async (
   let gpt: CiviGptLegislationData = {};
   switch (locale) {
     case DataStores.Chicago:
-      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.Chicago);
+      legislation = await dataStoreGetter.getLegislationData(
+        SupportedLocale.Chicago
+      );
       gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.Chicago);
       break;
     case DataStores.Illinois:
-      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.Illinois);
+      legislation = await dataStoreGetter.getLegislationData(
+        SupportedLocale.Illinois
+      );
       gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.Illinois);
       break;
     case DataStores.USA:
-      legislation = await dataStoreGetter.getLegislationData(SupportedLocale.USA);
+      legislation = await dataStoreGetter.getLegislationData(
+        SupportedLocale.USA
+      );
       gpt = await dataStoreGetter.getGptLegislation(SupportedLocale.USA);
       break;
     default:
