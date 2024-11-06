@@ -12,10 +12,6 @@ const router = createBrowserRouter([
     loader,
     element: <ForYouPage />,
   },
-  {
-    path: "about",
-    element: <div>About</div>,
-  },
 ]);
 
 const env = getEnv(import.meta.env);

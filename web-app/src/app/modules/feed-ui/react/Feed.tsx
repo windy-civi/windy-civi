@@ -8,7 +8,6 @@ import {
   Modal,
   RadioPicker,
   classNames,
-  getRadioStyle,
 } from "~app/modules/design-system";
 import { Logo } from "~app/modules/design-system/Logo/Logo";
 import { RouteOption } from "../feed-ui.constants";
@@ -76,15 +75,6 @@ const Navigation = (props: FeedFilterProps) => {
               { label: "Explore", value: RouteOption.EXPLORE },
             ]}
           />
-        </div>
-
-        <div className="flex-1 text-right">
-          <a
-            className={getRadioStyle("transparent", false, "last")}
-            href="https://windycivi.com"
-          >
-            About
-          </a>
         </div>
       </div>
       {mode}
