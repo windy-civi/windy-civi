@@ -77,15 +77,6 @@ const Navigation = (props: FeedFilterProps) => {
             ]}
           />
         </div>
-
-        <div className="flex-1 text-right">
-          <a
-            className={getRadioStyle("transparent", false, "last")}
-            href="https://windycivi.com"
-          >
-            About
-          </a>
-        </div>
       </div>
       {mode}
     </div>
