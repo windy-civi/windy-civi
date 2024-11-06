@@ -8,7 +8,6 @@ import {
   Modal,
   RadioPicker,
   classNames,
-  getRadioStyle,
 } from "~app/modules/design-system";
 import { Logo } from "~app/modules/design-system/Logo/Logo";
 import { RouteOption } from "../feed-ui.constants";
