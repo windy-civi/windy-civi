@@ -1,49 +1,73 @@
 import { ExpoConfig, ConfigContext } from "@expo/config";
-import * as dotenv from "dotenv";
 
-// initialize dotenv
-dotenv.config();
+export default ({ config }: ConfigContext): ExpoConfig => {
+  // Default values for development
+  const bundleId = process.env.EXPO_PUBLIC_BUNDLE_ID || "com.windycivi.dev";
+  const androidPackage = process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "com.windycivi.dev";
+  const projectId = process.env.EXPO_PUBLIC_PROJECT_ID || "development-project-id";
 
-export default ({ config }: ConfigContext): ExpoConfig => ({
-  ...config,
-  name: "WindyCivi",
-  slug: "WindyCivi",
-  version: "1.0.0",
-  orientation: "portrait",
-  icon: "./assets/images/icon.png",
-  scheme: "myapp",
-  userInterfaceStyle: "automatic",
-  splash: {
-    image: "./assets/images/splash.png",
-    resizeMode: "contain",
-    backgroundColor: "#ffffff",
-  },
-  ios: {
-    supportsTablet: true,
-    bundleIdentifier: process.env.EXPO_PUBLIC_BUNDLE_ID,
-  },
-  android: {
-    adaptiveIcon: {
-      foregroundImage: "./assets/images/adaptive-icon.png",
-      backgroundColor: "#ffffff",
+  // Only throw error if we're in production and missing env vars
+  if (process.env.NODE_ENV === "production") {
+    if (!process.env.EXPO_PUBLIC_BUNDLE_ID || 
+        !process.env.EXPO_PUBLIC_ANDROID_PACKAGE || 
+        !process.env.EXPO_PUBLIC_PROJECT_ID) {
+      console.error("Environment Setup Error:");
+      console.error("For production builds, please set the following environment variables:");
+      console.error("- EXPO_PUBLIC_BUNDLE_ID");
+      console.error("- EXPO_PUBLIC_ANDROID_PACKAGE");
+      console.error("- EXPO_PUBLIC_PROJECT_ID");
+      console.error("\nCurrent values:");
+      console.error(`BUNDLE_ID: ${process.env.EXPO_PUBLIC_BUNDLE_ID || "not set"}`);
+      console.error(`ANDROID_PACKAGE: ${process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "not set"}`);
+      console.error(`PROJECT_ID: ${process.env.EXPO_PUBLIC_PROJECT_ID || "not set"}`);
+      
+      throw new Error("Production environment variables are not set");
+    }
+  }
+
+  return {
+    ...config,
+    name: "WindyCivi",
+    slug: "WindyCivi",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/images/icon-img.png",
+    scheme: "myapp",
+    userInterfaceStyle: "automatic",
+    splash: {
+      image: "./assets/images/splash-img.png",
+      resizeMode: "contain",
+      backgroundColor: "#ff1c7a",
     },
-    package: process.env.EXPO_PUBLIC_ANDROID_PACKAGE,
-  },
-  web: {
-    bundler: "metro",
-    output: "static",
-    favicon: "./assets/images/favicon.png",
-  },
-  plugins: ["expo-router"],
-  experiments: {
-    typedRoutes: true,
-  },
-  extra: {
-    router: {
-      origin: false,
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: bundleId,
     },
-    eas: {
-      projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/images/icon-img.png",
+        backgroundColor: "#ffffff",
+      },
+      package: androidPackage,
     },
-  },
-});
+    web: {
+      bundler: "metro",
+      output: "static",
+      favicon: "./assets/images/favicon-img.png",
+    },
+    plugins: ["expo-router"],
+    experiments: {
+      typedRoutes: true,
+    },
+    extra: {
+      router: {
+        origin: false,
+      },
+      eas: {
+        projectId: projectId,
+      },
+    }
+  };
+};
+
+

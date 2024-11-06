@@ -10,9 +10,14 @@ npm-debug.*
 *.orig.*
 *.env*
 expo-env.*
+eas.env.local
+.env.local
 ios/
 android/
 web-build/
+build-*.ipa
+build-*.apk
+build-*.aab
 
 # macOS
 .DS_Store
