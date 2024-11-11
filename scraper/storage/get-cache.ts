@@ -6,7 +6,7 @@ import {
   Locales,
 } from "../../domain";
 import { githubReleases } from "./get-gh-releases";
-import { fsBuilds } from "./get-filesytem";
+import { fsBuilds } from "./get-filesystem";
 
 export const getLegislation = async (
   locale: Locales
