@@ -1,13 +1,13 @@
 import { forEachLocale } from "../../domain/filters/filters.utils";
 import { CiviGptLegislationData, Locales } from "../../domain/types";
-import { getCachedGpt, getCachedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
-import { writeGptJSON } from "../fs/write-file";
+import { cache } from "../storage/get-cache";
+import { writeGptJSON } from "../storage/write-file";
 import { categorizeText, summarizeText } from "./prompts";
 
 const generateGptSummaries = async (locale: Locales, billId?: string) => {
-  const cachedGpt = await getCachedGpt(locale);
-  let legislations = await getCachedLegislation(locale);
+  const cachedGpt = await cache.getGpt(locale);
+  let legislations = await cache.getLegislation(locale);
 
   // To run on a single bill
   if (billId) {
