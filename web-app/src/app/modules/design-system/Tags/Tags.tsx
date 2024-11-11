@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { classNames } from "../styles";
 import {
   CustomChicagoTag,
   SPONSORED_BY_REP_TAG,
-} from "~app/modules/data/filters";
-import { classNames } from "../styles";
+} from "@windycivi/domain/constants";
 
 export const Tag: React.FC<{
   type?: "tiny";

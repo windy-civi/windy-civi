@@ -1,14 +1,6 @@
 import { useLoaderData, useSearchParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import type { FilterParams } from "~app/modules/data/filters";
-import {
-  DEFAULT_FILTERS,
-  createFilterParams,
-  getLocation,
-  hasTags,
-  stringifyTags,
-} from "~app/modules/data/filters";
 import { Feed } from "~app/modules/feed-ui";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import {
@@ -17,6 +9,14 @@ import {
   type UpdateGlobalStateFn,
 } from "./feed-ui.types";
 import { cookieFactory, formatDate } from "./feed-ui.utils";
+import { DEFAULT_FILTERS } from "@windycivi/domain/constants";
+import {
+  getLocation,
+  hasTags,
+  stringifyTags,
+  createFilterParams,
+} from "@windycivi/domain/filters/filters.utils";
+import { FilterParams } from "@windycivi/domain/types";
 
 export function ForYouPage() {
   const result = useLoaderData() as FeedProps;

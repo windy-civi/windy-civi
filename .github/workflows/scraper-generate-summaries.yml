@@ -18,6 +18,7 @@ jobs:
   update_summaries:
     name: ✨ Generate Summaries
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v4
       - name: Pre Run

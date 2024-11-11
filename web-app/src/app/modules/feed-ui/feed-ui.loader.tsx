@@ -1,13 +1,15 @@
 import { json, type LoaderFunction } from "react-router-dom";
 import { getEnv } from "~app/modules/config";
 
-import { getFilteredLegislation } from "~app/modules/data/api";
-import type { FilterParams } from "~app/modules/data/filters";
+import { getFilteredLegislation } from "@windycivi/domain/api";
+
+import { DEFAULT_FILTERS } from "@windycivi/domain/constants";
 import {
-  DEFAULT_FILTERS,
   createFilterParams,
   parseRepLevel,
-} from "~app/modules/data/filters";
+} from "@windycivi/domain/filters/filters.utils";
+import { FilterParams } from "@windycivi/domain/types";
+import { viteDataGetter } from "../../../api/vite-api";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import { type FeedLoaderData } from "./feed-ui.types";
 import { getCookieFromString } from "./feed-ui.utils";
@@ -96,6 +98,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const filteredLegislation = await getFilteredLegislation({
     env,
     filters,
+    dataStoreGetter: viteDataGetter,
   });
 
   return json<FeedLoaderData>({
