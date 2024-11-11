@@ -1,11 +1,9 @@
 import {
   getPermissionsAsync,
   requestPermissionsAsync,
-  // getDevicePushTokenAsync,
   getExpoPushTokenAsync,
 } from "expo-notifications";
 
-// Will need to replace this when we build for production
 const projectId = process.env.EXPO_PUBLIC_API_URL;
 
 export const useGetPushToken = () => {
