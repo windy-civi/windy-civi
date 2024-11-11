@@ -1,4 +1,4 @@
-import type { FilterParams } from "./filters.types";
+import type { FilterParams } from "./types";
 
 export const ALLOWED_GPT_TAGS = [
   "Education",
@@ -35,9 +35,9 @@ export enum RepLevel {
 }
 
 export enum SupportedLocale {
-  Chicago = "Chicago",
-  Illinois = "Illinois",
-  USA = "USA",
+  Chicago = "chicago",
+  Illinois = "illinois",
+  USA = "usa",
 }
 
 export enum DataStores {

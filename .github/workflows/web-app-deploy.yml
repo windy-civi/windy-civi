@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=http://json-schema.org/draft-07/schema
 name: Web App
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -35,9 +36,6 @@ jobs:
         run: npm run quality
 
   build-web-app:
-    # only deploy main branch on pushes
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-
     name: 🏗️ Build Web App
     runs-on: ubuntu-latest
 
@@ -61,29 +59,38 @@ jobs:
         working-directory: web-app
         run: npm run build
 
-      - name: 📤 Upload artifact to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
+          name: web-app-prod-build
           path: ./web-app/dist
 
-  deploy:
-    name: 🚀 Deploy To Github Pages
-
+  deploy-web-app:
     # only deploy main branch on pushes
     if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 
+    name: 🚀 Deploy Web App
     needs: [build-web-app]
     runs-on: ubuntu-latest
-    permissions:
-      pages: write # Required to deploy to GitHub Pages
-      id-token: write # Required for OpenID Connect (OIDC) authentication
-
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download artifact
+        id: download-artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: web-app-prod-build # same as upload artifact above
+
+      # Publish built files to GitHub Pages repo
+      - name: Deploy 🚀
+        id: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # Needed to create a PAT for it to be able to push.
+          # NOTE: Will expire in a year Nov 2025
+          token: ${{ secrets.GH_PAGES_REPO_PAT }}
+          branch: main
+          repository-name: windy-civi/windy-civi.github.io
+          folder: ${{steps.download-artifact.outputs.download-path}} # The folder the action should deploy.

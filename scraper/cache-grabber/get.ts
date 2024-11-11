@@ -8,7 +8,7 @@ import {
 import { getFsGpt, getFsLegislation } from "../fs/read-file";
 import { civiLegislationApi } from "../api/api";
 
-const getLegislation = async (
+export const getGHDeployedLegislation = async (
   locale: Locales
 ): Promise<CiviLegislationData[]> => {
   try {
@@ -33,10 +33,12 @@ const getGpt = async (locale: Locales): Promise<CiviGptLegislationData> => {
 };
 
 export const getCachedLegislation = async (locale: Locales) => {
+  // First try getting the legislation from the filesystem
   try {
     return await getFsLegislation(locale);
   } catch {
-    return getLegislation(locale);
+    // On fail, get from URL
+    return getGHDeployedLegislation(locale);
   }
 };
 

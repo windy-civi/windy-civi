@@ -1,10 +1,8 @@
+import { getLocationInformationText } from "@windycivi/domain/filters/filters.utils";
+import type { OfficialOffice } from "@windycivi/domain/representatives/representatives.types";
+import { getLegislators } from "@windycivi/domain/representatives/representatives.utils";
+import { LocationFilter } from "@windycivi/domain/types";
 import { useState, type FC } from "react";
-import {
-  LocationFilter,
-  getLocationInformationText,
-} from "~app/modules/data/filters";
-import { getLegislators } from "~app/modules/data/representatives";
-import type { OfficialOffice } from "~app/modules/data/representatives/representatives.types";
 import { DataField, ResultCard } from "~app/modules/design-system";
 import { FeedFilterProps } from "../feed-ui.types";
 

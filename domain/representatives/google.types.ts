@@ -18,7 +18,7 @@ export interface Office {
     {
       name: string;
       official: boolean;
-    },
+    }
   ];
   officialIndices: [number];
 }
@@ -34,7 +34,7 @@ export interface Official {
       city: string;
       state: string;
       zip: string;
-    },
+    }
   ];
   party: string;
   phones: [string];
@@ -45,7 +45,7 @@ export interface Official {
     {
       type: string;
       id: string;
-    },
+    }
   ];
 }
 

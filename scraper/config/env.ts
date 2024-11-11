@@ -1,4 +1,8 @@
-import { isLocale } from "../../domain/utils";
+import { SupportedLocale } from "../../domain/constants";
+import {
+  isLocale,
+  localeValueToEnum,
+} from "../../domain/filters/filters.utils";
 
 export const getShouldSkipCache = () => {
   const skipCache =
@@ -10,16 +14,16 @@ export const getShouldSkipCache = () => {
   return skipCache;
 };
 
-export const getLocale = () => {
+export const getLocale = (): SupportedLocale | null => {
   const locale = process.env.LOCALE;
   if (!locale) {
-    return undefined;
+    return null;
   }
   if (!isLocale(locale)) {
     console.error("Invalid locale provided");
     process.exit(1);
   } else {
-    return locale;
+    return localeValueToEnum(locale);
   }
 };
 

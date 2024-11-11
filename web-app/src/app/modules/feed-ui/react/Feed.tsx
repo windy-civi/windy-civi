@@ -1,5 +1,6 @@
+import { getLocation } from "@windycivi/domain/filters/filters.utils";
 import React, { useState } from "react";
-import { getLocation } from "~app/modules/data/filters";
+import { PWAInstall } from "~app/modules/app-shell/PwaInstaller";
 import type { StyleHack } from "~app/modules/design-system";
 import {
   Container,
@@ -7,15 +8,13 @@ import {
   Modal,
   RadioPicker,
   classNames,
-  getRadioStyle,
 } from "~app/modules/design-system";
+import { Logo } from "~app/modules/design-system/Logo/Logo";
+import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { FeedBills } from "./Bills";
 import { BillFilters, YourFilterSummary } from "./Filters";
 import { RepresentativesList } from "./Representatives";
-import { RouteOption } from "../feed-ui.constants";
-import { Logo } from "~app/modules/design-system/Logo/Logo";
-import { PWAInstall } from "~app/modules/app-shell/PwaInstaller";
 
 const Navigation = (props: FeedFilterProps) => {
   const [route, setRouteState] = useState(props.globalState.route);
@@ -76,15 +75,6 @@ const Navigation = (props: FeedFilterProps) => {
               { label: "Explore", value: RouteOption.EXPLORE },
             ]}
           />
-        </div>
-
-        <div className="flex-1 text-right">
-          <a
-            className={getRadioStyle("transparent", false, "last")}
-            href="https://windycivi.com"
-          >
-            About
-          </a>
         </div>
       </div>
       {mode}

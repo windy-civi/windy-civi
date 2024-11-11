@@ -1,5 +1,5 @@
+import { forEachLocale } from "../../domain/filters/filters.utils";
 import { CiviGptLegislationData, Locales } from "../../domain/types";
-import { forEachLocale } from "../../domain/utils";
 import { getCachedGpt, getCachedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
 import { writeGptJSON } from "../fs/write-file";
@@ -54,15 +54,27 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
         gpt_summary: cachedSummary,
       };
     } else {
-      // pass a combo of the title and the description to open ai.
-      const text = legislation.title + "\n" + legislation.description;
-
-      let gpt_summary = await summarizeText(text);
+      let gpt_summary: string | null;
+      // check if a summary already exists from the source data.
+      if (legislation.bill_summary) {
+        console.log("summary already exists on retrieved bill. using that.");
+        gpt_summary = legislation.bill_summary;
+      }
+      // Otherwise, use OpenAI here to summarize the bill.
+      else {
+        // pass a combo of the title and the description to open ai.
+        const text = legislation.title + "\n" + legislation.description;
+        gpt_summary = await summarizeText(text);
+      }
+      // If there isn't a summary even after all this, run edge cases.
       if (!gpt_summary) {
+        // See if we have a previously cached summary
         if (cachedSummary) {
           gpt_summary = cachedSummary;
           console.log("could not get get summary. using cache");
-        } else {
+        }
+        // Otherwise, no summary, and have a log
+        else {
           gpt_summary = "";
           console.log("could not get get summary or cache.");
         }
@@ -123,11 +135,11 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
 
 const runGpt = async () => {
   try {
-    const locale = getLocale();
+    const localeFromEnv = getLocale();
     forEachLocale(async (locale) => {
       console.info("running gpt for locale:", locale);
       await generateGptSummaries(locale);
-    }, locale);
+    }, localeFromEnv);
   } catch (e) {
     console.log("error happened, but exiting gracefully");
     console.log(e);
