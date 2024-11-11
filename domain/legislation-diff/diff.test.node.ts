@@ -327,6 +327,23 @@ const tests: {
       },
     ],
   },
+  {
+    given: "bad status data (sometimes we dont have the data proper)",
+    should: "return return bill still",
+    expected: [],
+    prevMock: [
+      {
+        id: "HB2",
+        sponsors: [],
+      },
+    ],
+    nextMock: [
+      {
+        id: "HB2",
+        sponsors: [],
+      },
+    ],
+  },
 ];
 
 // Test runner
