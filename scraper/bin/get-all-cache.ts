@@ -5,8 +5,8 @@ import {
   writeChangesJSON,
   writeGptJSON,
   writeLegislationJSON,
-} from "../storage-fs/write-file";
-import { cache } from "./get";
+} from "../storage/write-file";
+import { cache } from "../storage/get-cache";
 
 export const retrieveCurrentRelease = async () => {
   try {

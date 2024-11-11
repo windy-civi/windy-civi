@@ -5,8 +5,8 @@ import {
   LegislationChange,
   Locales,
 } from "../../domain";
-import { githubReleases } from "../storage-github-releases/get-gh-releases";
-import { fsBuilds } from "../storage-fs/read-file";
+import { githubReleases } from "./get-gh-releases";
+import { fsBuilds } from "./get-filesytem";
 
 export const getLegislation = async (
   locale: Locales

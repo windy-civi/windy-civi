@@ -3,11 +3,8 @@ import { SupportedLocale } from "../../domain/constants";
 import { forEachLocale } from "../../domain/filters/filters.utils";
 import { findDifferences } from "../../domain/legislation-diff/diff";
 import { getLocale, getShouldSkipCache } from "../config/env";
-import {
-  writeChangesJSON,
-  writeLegislationJSON,
-} from "../storage-fs/write-file";
-import { githubReleases } from "../storage-github-releases/get-gh-releases";
+import { writeChangesJSON, writeLegislationJSON } from "../storage/write-file";
+import { githubReleases } from "../storage/get-gh-releases";
 import { api } from "./api";
 
 const scrapeLegislation = async () => {
