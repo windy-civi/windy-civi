@@ -2,7 +2,7 @@ import { forEachLocale } from "../../domain/filters/filters.utils";
 import { CiviGptLegislationData, Locales } from "../../domain/types";
 import { getCachedGpt, getCachedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
-import { writeGptJSON } from "../fs/write-file";
+import { writeGptJSON } from "../storage-fs/write-file";
 import { categorizeText, summarizeText } from "./prompts";
 
 const generateGptSummaries = async (locale: Locales, billId?: string) => {

@@ -1,51 +1,47 @@
 // Attempt to get files from filesystem, otherwise get from api
-import axios from "axios";
 import {
   CiviGptLegislationData,
   CiviLegislationData,
+  LegislationChange,
   Locales,
 } from "../../domain";
-import { getFsGpt, getFsLegislation } from "../fs/read-file";
-import { civiLegislationApi } from "../api/api";
+import { githubReleases } from "../storage-github-releases/get-gh-releases";
+import { fsBuilds } from "../storage-fs/read-file";
 
-export const getGHDeployedLegislation = async (
+export const getLegislation = async (
   locale: Locales
 ): Promise<CiviLegislationData[]> => {
-  try {
-    // Get previous data from current release in GH
-    const url = civiLegislationApi.getLegislationDataUrl(locale);
-    const cachedResult = await axios.get<CiviLegislationData[]>(url);
-    return cachedResult.data;
-  } catch {
-    return [];
-  }
-};
-
-const getGpt = async (locale: Locales): Promise<CiviGptLegislationData> => {
-  try {
-    // Get data from current release in GH
-    const url = civiLegislationApi.getGptLegislationUrl(locale);
-    const cachedResult = await axios.get<CiviGptLegislationData>(url);
-    return cachedResult.data;
-  } catch {
-    return {};
-  }
-};
-
-export const getCachedLegislation = async (locale: Locales) => {
   // First try getting the legislation from the filesystem
   try {
-    return await getFsLegislation(locale);
+    return await fsBuilds.getLegislation(locale);
   } catch {
     // On fail, get from URL
-    return getGHDeployedLegislation(locale);
+    return githubReleases.getLegislation(locale);
   }
 };
 
-export const getCachedGpt = async (locale: Locales) => {
+export const getGpt = async (
+  locale: Locales
+): Promise<CiviGptLegislationData> => {
   try {
-    return await getFsGpt(locale);
+    return await fsBuilds.getGpt(locale);
   } catch {
-    return getGpt(locale);
+    return githubReleases.getGpt(locale);
   }
+};
+
+export const getChanges = async (
+  locale: Locales
+): Promise<LegislationChange[]> => {
+  try {
+    return await fsBuilds.getChanges(locale);
+  } catch {
+    return githubReleases.getChanges(locale);
+  }
+};
+
+export const cache = {
+  getLegislation,
+  getGpt,
+  getChanges,
 };
