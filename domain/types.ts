@@ -43,9 +43,10 @@ export interface CiviLegislationData {
   };
 }
 
-export type CiviLegislationDataForDiff = Pick<
-  CiviLegislationData,
-  "id" | "status" | "statusDate" | "sponsors"
+export type CiviLegislationDataForDiff = Partial<
+  Pick<CiviLegislationData, "id" | "status" | "statusDate"> & {
+    sponsors?: Partial<Sponsor>[];
+  }
 >;
 
 export type LegislationChange = {
@@ -53,11 +54,11 @@ export type LegislationChange = {
   differences: {
     added?: boolean;
     removed?: boolean;
-    status?: { previous: string[]; new: string[] };
-    statusDate?: { previous: string; new: string };
+    status?: { previous: string[] | null; new: string[] | null };
+    statusDate?: { previous: string | null; new: string | null };
     sponsors?: {
-      added: Sponsor[];
-      removed: Sponsor[];
+      added: Partial<Sponsor>[] | null;
+      removed: Partial<Sponsor>[] | null;
     };
   };
 };

@@ -2,9 +2,9 @@ import { CiviLegislationData } from "../../domain";
 import { SupportedLocale } from "../../domain/constants";
 import { forEachLocale } from "../../domain/filters/filters.utils";
 import { findDifferences } from "../../domain/legislation-diff/diff";
-import { getGHDeployedLegislation } from "../cache-grabber/get";
 import { getLocale, getShouldSkipCache } from "../config/env";
-import { writeChangesJSON, writeLegislationJSON } from "../fs/write-file";
+import { writeChangesJSON, writeLegislationJSON } from "../storage/write-file";
+import { githubReleases } from "../storage/get-gh-releases";
 import { api } from "./api";
 
 const scrapeLegislation = async () => {
@@ -28,7 +28,7 @@ const getLegislationChanges = async (
   updatedLegislation: CiviLegislationData[]
 ) => {
   // Get the data from Github Pages that hasn't been changed yet.
-  const oldLegislation = await getGHDeployedLegislation(locale);
+  const oldLegislation = await githubReleases.getLegislation(locale);
 
   return findDifferences(oldLegislation, updatedLegislation);
 };

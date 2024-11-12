@@ -2,7 +2,7 @@
   "name": "@civi/legislation-data",
   "version": "0.1.0",
   "scripts": {
-    "get-cache": "ts-node cache-grabber/run",
+    "get-all-cache": "ts-node bin/get-all-cache",
     "scrape": "ts-node scrapers/run",
     "gpt": "ts-node gpt-summaries/run",
     "wiki": "ts-node wiki-summaries/run",

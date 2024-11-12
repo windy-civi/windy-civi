@@ -1,6 +1,7 @@
 import axios from "axios";
 import { CiviLegislationData, Locales } from "../../../domain";
 import { getLegiscanAPIKey } from "../../config/env";
+import { cache } from "../../storage/get-cache";
 import {
   GetBillByIdResponse,
   GetSessionResult,
@@ -8,7 +9,6 @@ import {
   LegiscanMasterListBill,
   LegiscanMasterListResult,
 } from "./legiscan.types";
-import { getCachedLegislation } from "../../cache-grabber/get";
 
 type LegiscanLocales = Exclude<Locales, "chicago">;
 
@@ -116,7 +116,7 @@ export const getCiviLegislationBills = async ({
     if (skipCache) {
       cachedLegislation = [];
     } else {
-      cachedLegislation = await getCachedLegislation(locale);
+      cachedLegislation = await cache.getLegislation(locale);
     }
 
     const civiLegislationData: CiviLegislationData[] = [];

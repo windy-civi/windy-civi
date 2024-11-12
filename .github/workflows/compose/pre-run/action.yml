@@ -18,4 +18,4 @@ runs:
     - name: Retrieve Current Release
       shell: bash
       working-directory: scraper
-      run: npm run get-cache
+      run: npm run get-all-cache
