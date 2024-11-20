@@ -178,11 +178,10 @@ export const LevelFilter = (props: FeedProps) => {
           ]
         : [{ label: nationalLabel, value: RepLevel.National }];
   // disable for now because its buggy
-  return <></>
   return (
     <>
       {levelOptions && (
-        <div className="mt-4">
+        <div className="mt-4 hidden">
           <div className="bg-black bg-opacity-20 text-center lg:px-1">
             <span className="text-xs font-bold uppercase text-white opacity-80">
               Showing Bills From The Following Legislators
