@@ -177,6 +177,8 @@ export const LevelFilter = (props: FeedProps) => {
             { label: nationalLabel, value: RepLevel.National },
           ]
         : [{ label: nationalLabel, value: RepLevel.National }];
+  // disable for now because its buggy
+  return <></>
   return (
     <>
       {levelOptions && (
