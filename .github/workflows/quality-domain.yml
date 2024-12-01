@@ -5,25 +5,26 @@ on:
   merge_group:
 
 jobs:
-  lint:
-    name: 🔬 Domain Quality Checks
+  install:
+    name: Install All
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
-      - name: ⬇️ Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: 📥 NPM Install
-        working-directory: domain
-        run: npm i
-
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        env:
+          # Required for .env creation on web_app
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+  domain-quality:
+    name: 🔬 Domain Quality Checks
+    needs: [install]
+    runs-on: ubuntu-latest
+    steps:
       - name: 🔬 Quality
         working-directory: domain
         run: npm run quality
