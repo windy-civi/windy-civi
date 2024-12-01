@@ -6,7 +6,7 @@ on:
 
 jobs:
   lint:
-    name: 🔬 Scraper Quailty Checks
+    name: 🔬 Scraper Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -21,9 +21,9 @@ jobs:
           node-version: 18
 
       - name: 📥 NPM Install
-        working-directory: scraper
-        run: npm i
+        working-directory: ./
+        run: cd scraper && npm i
 
       - name: 🔬 Quality
-        working-directory: scraper
-        run: npm run quality
+        working-directory: ./
+        run: cd scraper && npm run quality
