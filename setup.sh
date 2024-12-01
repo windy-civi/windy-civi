@@ -12,29 +12,29 @@ log() {
 
     echo
     echo "$border"
-    printf "${padding}s$message%${padding}s"
+    printf "%s\n" "$(printf "%-${padding}s$message%${padding}s" | cut -c1-${inner_width})"
     echo "$border"
     echo
 }
 
 # Commands To Install
 
-log "🏗️ Installing Domain"
+log "🏗️ setup.sh - Installing Domain"
 cd ./domain
 
-log "🏗️ Installing windy-civi-storage Storage CLI"
+log "🏗️ setup.sh - Installing windy-civi-storage Storage CLI"
 cd ../storage
 npm i
 
-log "🏗️ Installing Scraper"
+log "🏗️ setup.sh -  Installing Scraper"
 cd ../scraper
 npm i
 
-log "🏗️ Installing Web App"
+log "🏗️ setup.sh -  Installing Web App"
 cd ../web-app
 npm i
 
-log "🏗️ Installing Expo React Native \n 🏗️ Warning: For Codespaces, The App Will Only Work With Expo"
+log "🏗️ setup.sh -  Installing Expo React Native \n    Warning: For Codespaces, The App Will Only Work With Expo"
 cd ../native-app
 npm i
 

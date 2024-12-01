@@ -3,7 +3,6 @@
   "bin": {
     "windy-civi-storage": "./.bin/windy-civi-storage.js"
   },
-  "main": "./src/api.ts",
   "scripts": {
     "postinstall": "ts-node ./get-current-release github ./data"
   },
