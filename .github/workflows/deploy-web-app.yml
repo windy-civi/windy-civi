@@ -19,15 +19,13 @@ jobs:
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
-
-      - name: Checkout repository
+      - name: 🎟️ Checkout repository
         uses: actions/checkout@v3
-
       - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
         env:
           # Required for .env creation on web_app
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ env.GOOGLE_API_KEY }}
 
       - name: 🏗️ Build
         working-directory: web-app
