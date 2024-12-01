@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=http://json-schema.org/draft-07/schema
-name: Scraper Quality
+name: Storage Quality
 on:
   pull_request:
   merge_group:
 
 jobs:
   lint:
-    name: 🔬 Scraper Quailty Checks
+    name: 🔬 Storage Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -21,9 +21,9 @@ jobs:
           node-version: 18
 
       - name: 📥 NPM Install
-        working-directory: scraper
+        working-directory: storage
         run: npm i
 
       - name: 🔬 Quality
-        working-directory: scraper
+        working-directory: storage
         run: npm run quality

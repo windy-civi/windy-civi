@@ -24,3 +24,5 @@ By being a monorepo, we prioritize making PR management unified, and also making
 - `domain`: Core business logic (should not have external dependencies, and just focuses on data logic/types/transformations). See [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
 - `web-app`: Progress Web App built on React/Tailwind/TypeScript/Vite.
 - `scraper`: Make the data, including get GPT summaries.
+- `native-app`: Expo React Native App. Local development won't work on codespaces.
+- `storage`: For getting/writing data from github releases / the filesystem.

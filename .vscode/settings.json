@@ -7,8 +7,4 @@
   "[typescript][json][javascript][javascriptreact][typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": [
-    "Codespaces",
-    "devcontainer"
-  ],
 }

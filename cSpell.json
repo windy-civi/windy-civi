@@ -1,5 +1,7 @@
 {
-  "ignorePaths": ["dist_legislation"],
+  "ignorePaths": [
+    "dist_legislation"
+  ],
   "words": [
     "AIAPI",
     "ballotpedia",
@@ -23,6 +25,7 @@
     "sasts",
     "sldl",
     "sldu",
+    "styfle",
     "typecheck",
     "voteevent",
     "votesmart",

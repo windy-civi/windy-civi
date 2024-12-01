@@ -4,7 +4,7 @@ import {
   CiviLegislationData,
   LegislationChange,
   Locales,
-} from "../../domain/types";
+} from "@windy-civi/domain/types";
 
 const getLegislation = async (
   locale: Locales
@@ -41,7 +41,7 @@ const getChanges = async (locale: Locales): Promise<LegislationChange[]> => {
   }
 };
 
-export const githubReleases = {
+export const github = {
   getLegislation,
   getGpt,
   getChanges,

@@ -23,16 +23,21 @@ jobs:
       - uses: actions/checkout@v4
       - name: Pre Run
         uses: ./.github/workflows/compose/pre-run
+      - name: Retrieve Current Release
+        working-directory: scraper
+        run: npm run copy-release
       - name: Run GPT
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SKIP_CACHE: ${{inputs.skip_cache}}
           LOCALE: ${{inputs.locale}}
-        run: cd scraper && npm run gpt
+        working-directory: scraper
+        run: npm run gpt
       - name: Run Wiki
         env:
           GOOGLE_SPREADSHEET_API_KEY: ${{ secrets.GOOGLE_SPREADSHEET_API_KEY }}
-        run: cd scraper && npm run wiki
+        working-directory: scraper
+        run: npm run wiki
       - name: Publish
         uses: ./.github/workflows/compose/publish
         with:
