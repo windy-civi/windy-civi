@@ -25,6 +25,9 @@ jobs:
 
       - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
+        env:
+          # Required for .env creation on web_app
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: 🏗️ Build
         working-directory: web-app
