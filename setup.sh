@@ -20,6 +20,8 @@ log() {
 
 # Commands To Install
 
+set -e # exit on any error
+
 log "🏗️ setup.sh - Installing Domain"
 cd ./domain
 
