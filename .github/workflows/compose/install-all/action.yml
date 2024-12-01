@@ -1,5 +1,5 @@
 name: ⬇️ Install All
-description: "NPM Install and retrieve current release"
+description: "NPM Install All Packages"
 runs:
   using: "composite"
   steps:
