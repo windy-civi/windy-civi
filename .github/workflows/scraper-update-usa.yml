@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/workflows/compose/pre-run
       - name: Retrieve Current Release
         working-directory: scraper
-        run: npm run get-all-cache
+        run: npm run copy-release
 
       - name: Update USA
         env:

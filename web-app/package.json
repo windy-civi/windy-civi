@@ -10,9 +10,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "spellcheck": "cspell '**/*.{js,ts,jsx,tsx,json,css,md}'",
-    "prepare": "npm run create-env && npm run get-all-cache",
+    "prepare": "npm run create-env",
     "create-env": "node ./create-env.cjs",
-    "get-all-cache": "./node_modules/@windy-civi/storage/bin/windy-civi-storage github ./legislation_dist",
     "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "quality": "run-p lint typecheck format:check spellcheck",
@@ -25,6 +24,7 @@
     "react-google-autocomplete": "^2.7.3",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.2",
+    "@windy-civi/domain": "file:../web-app",
     "tiny-invariant": "^1.3.3"
   },
   "devDependencies": {
@@ -34,6 +34,7 @@
     "@typescript-eslint/parser": "^7.8.0",
     "@vite-pwa/assets-generator": "^0.2.4",
     "@vitejs/plugin-react": "^4.2.1",
+    "@windy-civi/storage": "file:../storage",
     "autoprefixer": "^10.4.20",
     "cspell": "^8.14.2",
     "eslint": "^8.57.0",
@@ -44,12 +45,12 @@
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.10",
     "vite-plugin-pwa": "^0.20.0",
     "vite-tsconfig-paths": "^5.0.1",
-    "workbox-core": "^7.1.0",
-    "@windy-civi/storage": "file: ../storage"
+    "workbox-core": "^7.1.0"
   },
   "overrides": {
     "sharp": "0.32.6",

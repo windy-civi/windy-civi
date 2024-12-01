@@ -1,13 +1,17 @@
 {
   "name": "@windy-civi/storage",
   "bin": {
-    "windy-civi-storage": "./bin/windy-civi-storage"
+    "windy-civi-storage": "./.bin/windy-civi-storage.js"
+  },
+  "main": "./src/api.ts",
+  "scripts": {
+    "postinstall": "ts-node ./get-current-release github ./data"
   },
   "dependencies": {
-    "typescript": "5.7.2",
     "@types/node": "22.10.1",
     "@windy-civi/domain": "file:../domain",
     "axios": "^1.3.4",
-    "ts-node": "10.9.2"
+    "ts-node": "10.9.2",
+    "typescript": "5.7.2"
   }
 }

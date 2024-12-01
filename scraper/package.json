@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "scrape": "ts-node scrapers/run",
-    "get-all-cache": "./node_modules/@windy-civi/storage/bin/windy-civi-storage github ./legislation_dist",
+    "copy-release": "cp -r ./node_modules/@windy-civi/storage/data ./dist_legislation",
     "gpt": "ts-node gpt-summaries/run",
     "wiki": "ts-node wiki-summaries/run",
     "typecheck": "tsc",

@@ -17,30 +17,30 @@ const legislationApi: Record<
   () => Promise<CiviLegislationData[]>
 > = {
   [SupportedLocale.Chicago]: () =>
-    import("../../../scraper/dist_legislation/chicago.legislation.json").then(
+    import("@windy-civi/storage/data/chicago.legislation.json").then(
       (m) => m.default,
     ) as Promise<CiviLegislationData[]>,
   [SupportedLocale.Illinois]: () =>
-    import("../../../scraper/dist_legislation/illinois.legislation.json").then(
+    import("@windy-civi/storage/data/illinois.legislation.json").then(
       (m) => m.default,
     ),
   [SupportedLocale.USA]: () =>
-    import("../../../scraper/dist_legislation/usa.legislation.json").then(
+    import("@windy-civi/storage/data/usa.legislation.json").then(
       (m) => m.default,
     ) as unknown as Promise<CiviLegislationData[]>,
 };
 
 const gptApi: Record<SupportedLocale, () => Promise<CiviGptLegislationData>> = {
   [SupportedLocale.Chicago]: () =>
-    import(
-      "../../../scraper/dist_legislation/chicago.legislation.gpt.json"
-    ).then((m) => m.default) as unknown as Promise<CiviGptLegislationData>,
+    import("@windy-civi/storage/data/chicago.legislation.gpt.json").then(
+      (m) => m.default,
+    ) as unknown as Promise<CiviGptLegislationData>,
   [SupportedLocale.Illinois]: () =>
-    import(
-      "../../../scraper/dist_legislation/illinois.legislation.gpt.json"
-    ).then((m) => m.default) as unknown as Promise<CiviGptLegislationData>,
+    import("@windy-civi/storage/data/illinois.legislation.gpt.json").then(
+      (m) => m.default,
+    ) as unknown as Promise<CiviGptLegislationData>,
   [SupportedLocale.USA]: () =>
-    import("../../../scraper/dist_legislation/usa.legislation.gpt.json").then(
+    import("@windy-civi/storage/data/usa.legislation.gpt.json").then(
       (m) => m.default,
     ) as unknown as Promise<CiviGptLegislationData>,
 };
