@@ -20,9 +20,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 NPM Install
-        working-directory: ./
-        run: cd scraper && npm i
+      - name: Pre Run
+        uses: ./.github/workflows/compose/pre-run
 
       - name: 🔬 Quality
         working-directory: ./
