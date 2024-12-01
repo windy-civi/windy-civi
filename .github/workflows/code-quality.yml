@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema
+name: Code Quality Checks
+on:
+  pull_request:
+  merge_group:
+
+jobs:
+  domain-quality:
+    name: 🔬 Domain Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: 🔬 Typecheck | Lint | Format | Spellcheck
+        working-directory: domain
+        run: npm run quality
+
+      - name: 🧪 Tests
+        working-directory: domain
+        run: npm run test
+
+  storage-quality:
+    name: 🔬 Storage Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: 🔬 Typecheck | Lint | Format | Spellcheck
+        working-directory: storage
+        run: npm run quality
+
+  scraper-quality:
+    name: 🔬 Scraper Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: 🔬 Typecheck | Lint | Format | Spellcheck
+        working-directory: scraper
+        run: npm run quality
+
+  web-app-code-quality:
+    name: 🔬 Web App Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: 🔬 Typecheck | Lint | Format | Spellcheck
+        working-directory: web-app
+        run: npm run quality
