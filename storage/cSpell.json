@@ -1,4 +1,4 @@
 {
   "ignorePaths": ["data"],
-  "words": []
+  "import": ["../cSpell.json"]
 }
