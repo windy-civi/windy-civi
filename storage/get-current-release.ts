@@ -3,7 +3,7 @@
 import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
 import path from "path";
 import { fs } from "./utils/fs-save";
-import { storage } from "./api";
+import { storage } from ".";
 
 export const downloadAll = async (
   command: keyof typeof storage,
