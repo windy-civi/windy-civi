@@ -14,7 +14,7 @@ runs:
       working-directory: ./
       env:
         # Required for .env creation on web_app
-        GOOGLE_API_KEY: ${{ env.GOOGLE_API_KEY }}
+        GOOGLE_API_KEY: ${{ vars.GOOGLE_API_KEY }}
       shell: bash
       run: |
         chmod +x ./setup.sh
