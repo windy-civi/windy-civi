@@ -5,11 +5,9 @@ on:
   merge_group:
 
 jobs:
-  install:
-    name: Install All
+  domain-quality:
+    name: 🔬 Domain Quality Checks
     runs-on: ubuntu-latest
-    outputs:
-      artifact-id: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -20,22 +18,6 @@ jobs:
         with:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - uses: actions/upload-artifact@v4
-        id: artifact-upload-step
-        with:
-          name: windy-civi-quality-build
-          path: ./
-          retention-days: 1
-
-  domain-quality:
-    name: 🔬 Domain Quality Checks
-    needs: [install]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: ${{needs.install.outputs.artifact-id}}
       - name: 🔬 Quality
         working-directory: domain
         run: npm run quality
@@ -43,3 +25,20 @@ jobs:
       - name: 🧪 Tests
         working-directory: domain
         run: npm run test
+
+  storage-quality:
+    name: 🔬 Storage Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: 🔬 Quality
+        working-directory: storage
+        run: npm run quality
