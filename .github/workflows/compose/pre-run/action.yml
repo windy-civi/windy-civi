@@ -11,10 +11,11 @@ runs:
         cache-dependency-path: storage/package-lock.json
     - uses: actions/checkout@v2
     - name: Install All
+      working-directory: ./
       shell: bash
       run: |
-        chmod +x ../../../../setup.sh
-        ../../../../setup.sh
+        chmod +x ./setup.sh
+        ./setup.sh
     # Since each job may only update a subset of files, we pull the
     # current release so that we update the release, we have all the files.
     - name: Retrieve Current Release
