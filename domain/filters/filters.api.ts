@@ -1,5 +1,3 @@
-import { uniqBy } from "lodash";
-
 import { DataStores, RepLevel, SupportedLocale } from "../constants";
 import {
   createFeedBillsFromMultipleSources,
@@ -11,6 +9,7 @@ import {
   hasSponsoredByRepTag,
   isLocationChicago,
   isLocationIL,
+  uniqBy,
 } from "./filters.utils";
 import { RepresentativesResult } from "../representatives/representatives.types";
 import {
