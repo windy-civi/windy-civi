@@ -1,5 +1,7 @@
 echo "🏗️ Installing Domain"
 cd ../domain
+echo "🏗️ Installing windy-civi-storage Storage CLI"
+cd ../storage
 npm i
 echo "🏗️ Installing Scraper"
 cd ../scraper

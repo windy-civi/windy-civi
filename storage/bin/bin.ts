@@ -4,10 +4,12 @@ import { downloadAll } from "../utils/download-all";
 
 type SaveAllParams = Parameters<typeof downloadAll>;
 
+const commands = Object.keys(downloadAll);
+
 const getCommandArg = () => {
   const firstArg = process.argv[2];
-  if (["cache", "ghrelease"].includes(firstArg)) {
-    console.error("first argument must be cache or ghrelease");
+  if (commands.includes(firstArg)) {
+    console.error(`first argument must be of type ${commands.join(" ")}`);
     process.exit(1);
   }
 

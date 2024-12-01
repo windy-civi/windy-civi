@@ -10,9 +10,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "spellcheck": "cspell '**/*.{js,ts,jsx,tsx,json,css,md}'",
-    "prepare": "npm run create-env && npm run get-all-cache",
+    "prepare": "npm run create-env && get-all-cache",
     "create-env": "node ./create-env.cjs",
-    "get-all-cache": "cd ../scraper && npm i && npm run get-all-cache",
+    "get-all-cache": "npm run windy-civi-storage github ./legislation_dist",
     "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "quality": "run-p lint typecheck format:check spellcheck",
@@ -48,7 +48,8 @@
     "vite": "^5.2.10",
     "vite-plugin-pwa": "^0.20.0",
     "vite-tsconfig-paths": "^5.0.1",
-    "workbox-core": "^7.1.0"
+    "workbox-core": "^7.1.0",
+    "@windy-civi/storage": "file: ../storage"
   },
   "overrides": {
     "sharp": "0.32.6",

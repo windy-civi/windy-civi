@@ -73,9 +73,20 @@ jobs:
     needs: [build-web-app]
     runs-on: ubuntu-latest
 
+    permissions:
+      deployments: write # needed for Create Github Deployment
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Create Github Deployment
+        uses: chrnorm/deployment-action@v2
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          environment-url: http://windy-civi.com
+          environment: production
 
       - name: Download artifact
         id: download-artifact
@@ -94,3 +105,4 @@ jobs:
           branch: main
           repository-name: windy-civi/windy-civi.github.io
           folder: ${{steps.download-artifact.outputs.download-path}} # The folder the action should deploy.
+
