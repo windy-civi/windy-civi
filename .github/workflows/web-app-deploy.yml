@@ -43,17 +43,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: 📥 NPM Install
-        env:
-          # Required for .env creation
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        working-directory: web-app
-        run: npm i
+      - name: Pre Run
+        uses: ./.github/workflows/compose/pre-run
 
       - name: 🏗️ Build
         working-directory: web-app

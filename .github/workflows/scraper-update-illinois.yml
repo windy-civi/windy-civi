@@ -20,6 +20,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Pre Run
         uses: ./.github/workflows/compose/pre-run
+      - name: Retrieve Current Release
+        working-directory: scraper
+        run: npm run get-all-cache
 
       - name: Update Illinois
         env:
