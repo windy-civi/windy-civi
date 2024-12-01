@@ -121,7 +121,7 @@ export const getFilteredLegislation = async ({
   };
 };
 
-const getRepsAndOffices = async (
+export const getRepsAndOffices = async (
   env: Env,
   location: FilterParams["location"]
 ) => {

@@ -108,9 +108,9 @@ export type Env = {
 
 export type Locales = `${SupportedLocale}`;
 
-export type LocationFilter = SupportedLocale | AddressFilter | Nullish;
+export type LocationFilter = Locales | AddressFilter | Nullish;
 
-export type AddressFilter = { address: string };
+export type AddressFilter = { address: string, districts: string[] };
 
 export type Nullish = undefined | "" | null;
 
