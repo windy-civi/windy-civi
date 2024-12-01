@@ -12,7 +12,7 @@ jobs:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
-      - name: Install All
+      - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
 
       - name: 🔬 Quality

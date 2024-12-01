@@ -1,4 +1,4 @@
-name: Install All
+name: ⬇️ Install All
 description: "NPM Install and retrieve current release"
 runs:
   using: "composite"
@@ -10,7 +10,7 @@ runs:
         cache: "npm"
         cache-dependency-path: storage/package-lock.json
     - uses: actions/checkout@v2
-    - name: Install All
+    - name: ⬇️ Install All
       working-directory: ./
       shell: bash
       run: |

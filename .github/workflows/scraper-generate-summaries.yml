@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - name: Install All
+      - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
       - name: Retrieve Current Release
         working-directory: scraper
