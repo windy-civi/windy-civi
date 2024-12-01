@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "spellcheck": "cspell '**/*.{js,ts,jsx,tsx,json,css,md}'",
-    "prepare": "npm run create-env",
+    "postinstall": "npm run create-env",
     "create-env": "node ./create-env.cjs",
     "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

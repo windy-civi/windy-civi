@@ -13,18 +13,18 @@ on:
 
 jobs:
   build-web-app:
-    name: 🏗️ Build Web App
+    name: 🏗️ Build
     runs-on: ubuntu-latest
 
     steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
-
-      - name: Checkout repository
+      - name: 🎟️ Checkout repository
         uses: actions/checkout@v3
-
       - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: 🏗️ Build
         working-directory: web-app
@@ -40,7 +40,7 @@ jobs:
     # only deploy main branch on pushes
     if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 
-    name: 🚀 Deploy Web App To Github Pages
+    name: 🚀 Deploy To Github Pages
     needs: [build-web-app]
     runs-on: ubuntu-latest
 
@@ -56,7 +56,7 @@ jobs:
         id: deployment
         with:
           token: "${{ github.token }}"
-          environment-url: http://windy-civi.com
+          environment-url: https://windycivi.com
           environment: production
 
       - name: Download artifact
@@ -77,3 +77,20 @@ jobs:
           repository-name: windy-civi/windy-civi.github.io
           folder: ${{steps.download-artifact.outputs.download-path}} # The folder the action should deploy.
 
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          environment-url: ${{ steps.deployment.outputs.environment_url }}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          state: "success"
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ github.token }}"
+          environment-url: ${{ steps.deployment.outputs.environment_url }}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          state: "failure"
