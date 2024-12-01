@@ -1,13 +1,13 @@
-import { forEachLocale } from "../../domain/filters/filters.utils";
-import { CiviGptLegislationData, Locales } from "../../domain/types";
-import { getLocale, getShouldSkipCache } from "../config/env";
-import { cache } from "../storage/get-cache";
-import { writeGptJSON } from "../storage/write-file";
+import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
+import { CiviGptLegislationData, Locales } from "@windy-civi/domain/types";
+import { storage } from "@windy-civi/storage";
+import { getCacheDir, getLocale, getShouldSkipCache } from "../config/env";
 import { categorizeText, summarizeText } from "./prompts";
 
 const generateGptSummaries = async (locale: Locales, billId?: string) => {
-  const cachedGpt = await cache.getGpt(locale);
-  let legislations = await cache.getLegislation(locale);
+  const cacheDir = getCacheDir();
+  const cachedGpt = await storage.preferLocal.getGpt(locale, cacheDir);
+  let legislations = await storage.preferLocal.getLegislation(locale, cacheDir);
 
   // To run on a single bill
   if (billId) {
@@ -130,7 +130,7 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
     );
   }
 
-  writeGptJSON(locale, legislationWithAi);
+  storage.fs.saveGpt(locale, cacheDir, legislationWithAi);
 };
 
 const runGpt = async () => {

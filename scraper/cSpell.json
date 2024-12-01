@@ -1,5 +1,7 @@
 {
-  "ignorePaths": ["dist_legislation"],
+  "ignorePaths": [
+    "dist_legislation"
+  ],
   "words": [
     "AIAPI",
     "ballotpedia",
@@ -11,6 +13,7 @@
     "codepaths",
     "councilmatic",
     "Datamade",
+    "ghpages",
     "knowwho",
     "legiscan",
     "legislations",

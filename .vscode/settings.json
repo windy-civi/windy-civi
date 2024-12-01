@@ -8,6 +8,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": [
+    "civi",
     "Codespaces",
     "devcontainer"
   ],

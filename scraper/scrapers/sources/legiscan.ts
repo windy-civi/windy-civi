@@ -1,7 +1,7 @@
+import { CiviLegislationData, Locales } from "@windy-civi/domain";
+import { storage } from "@windy-civi/storage";
 import axios from "axios";
-import { CiviLegislationData, Locales } from "../../../domain";
 import { getLegiscanAPIKey } from "../../config/env";
-import { cache } from "../../storage/get-cache";
 import {
   GetBillByIdResponse,
   GetSessionResult,
@@ -93,11 +93,13 @@ export type LegiscanToCiviMapFn = (
 
 export const getCiviLegislationBills = async ({
   skipCache,
+  cacheDir,
   filterMasterList,
   legiscanToCivi,
   locale,
 }: {
   skipCache: boolean;
+  cacheDir: string;
   filterMasterList: FilterMasterListFn;
   legiscanToCivi: LegiscanToCiviMapFn;
   locale: LegiscanLocales;
@@ -116,7 +118,7 @@ export const getCiviLegislationBills = async ({
     if (skipCache) {
       cachedLegislation = [];
     } else {
-      cachedLegislation = await cache.getLegislation(locale);
+      cachedLegislation = await storage.fs.getLegislation(locale, cacheDir);
     }
 
     const civiLegislationData: CiviLegislationData[] = [];

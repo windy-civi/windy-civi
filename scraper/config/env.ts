@@ -1,8 +1,9 @@
-import { SupportedLocale } from "../../domain/constants";
+import { SupportedLocale } from "@windy-civi/domain/constants";
 import {
   isLocale,
   localeValueToEnum,
-} from "../../domain/filters/filters.utils";
+} from "@windy-civi/domain/filters/filters.utils";
+import path from "path";
 
 export const getShouldSkipCache = () => {
   const skipCache =
@@ -53,4 +54,8 @@ export const getGoogleSheetAPIKey = () => {
     process.exit(1);
   }
   return apiKey;
+};
+
+export const getCacheDir = () => {
+  return path.join(__dirname, "../", "dist_legislation");
 };

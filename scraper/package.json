@@ -2,7 +2,6 @@
   "name": "@civi/legislation-data",
   "version": "0.1.0",
   "scripts": {
-    "get-all-cache": "ts-node bin/get-all-cache",
     "scrape": "ts-node scrapers/run",
     "gpt": "ts-node gpt-summaries/run",
     "wiki": "ts-node wiki-summaries/run",
@@ -29,6 +28,8 @@
     "typescript": "4.9.5"
   },
   "dependencies": {
+    "@windy-civi/storage": "file://../storage",
+    "@windy-civi/domain": "file://../domain",
     "date-fns": "^3.3.1"
   }
 }
