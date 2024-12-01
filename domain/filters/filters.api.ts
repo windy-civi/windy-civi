@@ -1,3 +1,5 @@
+import { uniqBy } from "lodash";
+
 import { DataStores, RepLevel, SupportedLocale } from "../constants";
 import {
   createFeedBillsFromMultipleSources,
@@ -90,7 +92,7 @@ export const getFilteredLegislation = async ({
   );
 
   // First select all bills that are sponsored, if the user wants sponsored bills
-  const fullLegislation = createFeedBillsFromMultipleSources(representatives, [
+  let fullLegislation = createFeedBillsFromMultipleSources(representatives, [
     [
       allChicagoBills,
       RepLevel.City,
@@ -99,6 +101,10 @@ export const getFilteredLegislation = async ({
     [allILBills, RepLevel.State, null],
     [allUSBills, RepLevel.National, null],
   ]);
+
+  // Remove duplicates
+  // TODO: should move to scraper
+  fullLegislation = uniqBy(fullLegislation, (b) => b.bill.id);
 
   // Then select and filter bills based on user filters
   let filteredLegislation = selectBillsFromFilters(fullLegislation, filters);

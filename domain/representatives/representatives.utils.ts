@@ -5,7 +5,7 @@ import type {
   GoogleRepresentativesResponse,
   Office,
   Official,
-} from "./representatives.google.types";
+} from "./google.types";
 import type {
   OfficialOffice,
   RepresentativesResult,
