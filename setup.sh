@@ -1,21 +1,5 @@
 #!/bin/bash
 
-log "🏗️ Installing Domain"
-cd ./domain
-log "🏗️ Installing windy-civi-storage Storage CLI"
-cd ../storage
-npm i
-log "🏗️ Installing Scraper"
-cd ../scraper
-npm i
-log "🏗️ Installing Web App"
-cd ../web-app
-npm i
-log "🏗️ Installing Expo React Native \n 🏗️ Warning: For Codespaces, The App Will Only Work With Expo"
-cd ../native-app
-npm i
-
-
 # Function to output banner-style logs
 log() {
     local message="$1"
@@ -34,5 +18,24 @@ log() {
     echo "$border"
     echo
 }
+
+# Commands To Install
+
+log "🏗️ Installing Domain"
+cd ./domain
+log "🏗️ Installing windy-civi-storage Storage CLI"
+cd ../storage
+npm i
+log "🏗️ Installing Scraper"
+cd ../scraper
+npm i
+log "🏗️ Installing Web App"
+cd ../web-app
+npm i
+log "🏗️ Installing Expo React Native \n 🏗️ Warning: For Codespaces, The App Will Only Work With Expo"
+cd ../native-app
+npm i
+
+
 
 
