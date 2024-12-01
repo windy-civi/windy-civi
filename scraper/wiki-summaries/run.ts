@@ -1,15 +1,13 @@
-import { CiviWikiLegislationData } from "@windy-civi/domain/types";
+import { CiviWikiLegislationData, Locales } from "@windy-civi/domain/types";
 import axios, { AxiosError } from "axios";
-import { getGoogleSheetAPIKey } from "../config/env";
-import { writeJSON } from "../storage/write-file";
+import { getCacheDir, getGoogleSheetAPIKey } from "../config/env";
+import { storage } from "@windy-civi/storage";
 import { SHEET, SPREADSHEET_ID } from "./constants";
 
 type StringKeysOfCiviGoogleSheet = keyof Omit<CiviWikiLegislationData, "tags">;
 
 // The object will have `chicago`, `illinois`, or `usa`, and the value will be CiviWikiLegislationData
-type ParsedWikiGoogleSheet = {
-  [locale: string]: CiviWikiLegislationData[];
-};
+type ParsedWikiGoogleSheet = Record<Locales, CiviWikiLegislationData[]>;
 
 /**
  * # csvToJson
@@ -55,7 +53,11 @@ const parseCiviGoogleSheetJson = (
   // The CSV converted to JSON
   json: { [k: string]: string }[]
 ): ParsedWikiGoogleSheet => {
-  const localeDataMap: ParsedWikiGoogleSheet = {};
+  const localeDataMap: ParsedWikiGoogleSheet = {
+    chicago: [],
+    illinois: [],
+    usa: [],
+  };
   json.forEach((item) => {
     const wikiObj: CiviWikiLegislationData = {
       bill_id: "",
@@ -80,10 +82,12 @@ const parseCiviGoogleSheetJson = (
       }
     });
 
-    if (!localeDataMap[wikiObj.locale]) {
-      localeDataMap[wikiObj.locale] = [];
+    const localeFromObj = wikiObj.locale as Locales;
+
+    if (!localeDataMap[localeFromObj]) {
+      localeDataMap[localeFromObj] = [];
     }
-    localeDataMap[wikiObj.locale].push(wikiObj);
+    localeDataMap[localeFromObj].push(wikiObj);
   });
 
   return localeDataMap;
@@ -105,8 +109,7 @@ const runGoogleSheet = async () => {
     const civiGoogleSheet = parseCiviGoogleSheetJson(json);
     // Append data from the previous file
     Object.entries(civiGoogleSheet).forEach(([locale, data]) => {
-      const fileName = `${locale}.legislation.wiki`;
-      writeJSON(fileName, data);
+      storage.fs.saveWiki(locale as Locales, getCacheDir(), data);
     });
   } catch (e: unknown) {
     handleAxiosError(e);

@@ -1,6 +1,7 @@
 import {
   CiviGptLegislationData,
   CiviLegislationData,
+  CiviWikiLegislationData,
   LegislationChange,
   Locales,
 } from "@windy-civi/domain/types";
@@ -22,15 +23,7 @@ export const writeJSON = (
   );
 };
 
-export const saveLegislation = (
-  locale: Locales,
-  cacheDir: string,
-  legislation: CiviLegislationData[]
-) => {
-  writeJSON(cacheDir, `${locale}.legislation`, legislation);
-};
-
-export const saveChanges = (
+const saveChanges = (
   locale: Locales,
   cacheDir: string,
   differences: LegislationChange[]
@@ -46,8 +39,25 @@ const saveGpt = (
   writeJSON(cacheDir, `${locale}.legislation.gpt`, gpt);
 };
 
+const saveLegislation = (
+  locale: Locales,
+  cacheDir: string,
+  legislation: CiviLegislationData[]
+) => {
+  writeJSON(cacheDir, `${locale}.legislation`, legislation);
+};
+
+const saveWiki = (
+  locale: Locales,
+  cacheDir: string,
+  gpt: CiviWikiLegislationData[]
+) => {
+  writeJSON(cacheDir, `${locale}.legislation.wiki`, gpt);
+};
+
 export const fs = {
-  saveGpt,
   saveChanges,
+  saveGpt,
   saveLegislation,
+  saveWiki,
 };
