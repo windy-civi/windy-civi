@@ -13,7 +13,7 @@ on:
 
 jobs:
   build-web-app:
-    name: 🏗️ Build Web App
+    name: 🏗️ Build
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
     # only deploy main branch on pushes
     if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
 
-    name: 🚀 Deploy Web App To Github Pages
+    name: 🚀 Deploy To Github Pages
     needs: [build-web-app]
     runs-on: ubuntu-latest
 
