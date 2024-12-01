@@ -20,9 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - uses: actions/checkout@v4
-      - name: Pre Run
-        uses: ./.github/workflows/compose/pre-run
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
       - name: Retrieve Current Release
         working-directory: scraper
         run: npm run copy-release
@@ -39,6 +41,6 @@ jobs:
         working-directory: scraper
         run: npm run wiki
       - name: Publish
-        uses: ./.github/workflows/compose/publish
+        uses: ./.github/workflows/compose/publish-data
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

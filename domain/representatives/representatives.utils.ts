@@ -1,5 +1,6 @@
 import { RepLevel } from "../constants";
 import { hasOverlap } from "../filters/filters.utils";
+import { Nullish } from "../types";
 import type {
   GoogleRepresentativesResponse,
   Office,
@@ -107,4 +108,23 @@ export const getLegislators = (
         };
       })
   );
+};
+
+export const getAllOffices = (
+  googleRepResultOffices: RepresentativesResult["offices"] | Nullish
+) => {
+  if (!googleRepResultOffices) {
+    return null;
+  }
+
+  const offices = googleRepResultOffices
+    ? [
+        ...googleRepResultOffices.city,
+        ...googleRepResultOffices.county,
+        ...googleRepResultOffices.state,
+        ...googleRepResultOffices.national,
+      ]
+    : null;
+
+  return offices;
 };

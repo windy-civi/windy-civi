@@ -23,8 +23,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Pre Run
-        uses: ./.github/workflows/compose/pre-run
+      - name: ⬇️ Install All
+        uses: ./.github/workflows/compose/install-all
 
       - name: 🏗️ Build
         working-directory: web-app

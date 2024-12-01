@@ -324,3 +324,19 @@ export const forEachLocale = (
   }
   return null;
 };
+
+// Generated. Equal to Lodash uniqBy
+export const uniqBy = <T extends object>(
+  array: T[],
+  keyExtractor: (item: T) => unknown
+): T[] => {
+  const seen = new Set();
+  return array.filter((item) => {
+    const key = keyExtractor(item);
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+};

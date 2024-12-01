@@ -1,5 +1,5 @@
-name: Pre run
-description: "NPM Install and retrieve current release"
+name: ⬇️ Install All
+description: "NPM Install All Packages"
 runs:
   using: "composite"
   steps:
@@ -10,7 +10,7 @@ runs:
         cache: "npm"
         cache-dependency-path: storage/package-lock.json
     - uses: actions/checkout@v2
-    - name: Install All
+    - name: ⬇️ Install All
       working-directory: ./
       shell: bash
       run: |

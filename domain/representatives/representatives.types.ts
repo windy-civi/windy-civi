@@ -25,3 +25,8 @@ export interface RepresentativesResult {
     city: OfficialOffice[];
   };
 }
+
+export type RepsAndOffices = {
+  representatives: RepresentativesResult | null;
+  offices: OfficialOffice[] | null;
+};
