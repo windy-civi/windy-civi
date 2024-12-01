@@ -24,6 +24,7 @@ set -e # exit on any error
 
 log "🏗️ setup.sh - Installing Domain"
 cd ./domain
+npm i
 
 log "🏗️ setup.sh - Installing windy-civi-storage Storage CLI"
 cd ../storage
