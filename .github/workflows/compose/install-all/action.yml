@@ -12,6 +12,9 @@ runs:
     - uses: actions/checkout@v2
     - name: ⬇️ Install All
       working-directory: ./
+      env:
+        # Required for .env creation on web_app
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       shell: bash
       run: |
         chmod +x ./setup.sh
