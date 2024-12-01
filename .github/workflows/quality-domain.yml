@@ -24,7 +24,7 @@ jobs:
         id: artifact-upload-step
         with:
           name: windy-civi-quality-build
-          path: /
+          path: ./
           retention-days: 1
 
   domain-quality:
