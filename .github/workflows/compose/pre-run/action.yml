@@ -8,14 +8,14 @@ runs:
       with:
         node-version: 20
         cache: "npm"
-        cache-dependency-path: scraper/package-lock.json
-    - name: NPM Install
+        cache-dependency-path: storage/package-lock.json
+    - name: NPM Install Storage
       shell: bash
-      working-directory: scraper
+      working-directory: storage
       run: npm i
     # Since each job may only update a subset of files, we pull the
     # current release so that we update the release, we have all the files.
     - name: Retrieve Current Release
       shell: bash
-      working-directory: scraper
-      run: npm run get-all-cache
+      working-directory: storage
+      run: windy-civi-storage github ./dist/dist_legislation
