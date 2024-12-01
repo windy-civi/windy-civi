@@ -11,10 +11,14 @@ export const getRepresentativesWithCache = async (
   env: Env,
   location: LocationFilter
 ): Promise<RepresentativesResult["offices"] | null> => {
-  const local = getRepsAndOfficesLocalStorage();
-  if (local) {
-    console.log(local);
-    return local;
+  try {
+    const local = getRepsAndOfficesLocalStorage();
+    if (local) {
+      console.log("using local storage for rep offices");
+      return local;
+    }
+  } catch {
+    console.log("local rep data unavailable. using google.");
   }
 
   // Get representatives from Google

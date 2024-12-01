@@ -3,13 +3,8 @@ import { RepresentativesResult } from "./representatives.types";
 export const getRepsAndOfficesLocalStorage = ():
   | RepresentativesResult["offices"]
   | null => {
-  try {
-    const storageRepresentatives = localStorage.getItem("offices");
-    return JSON.parse(storageRepresentatives || "");
-  } catch {
-    console.log("no locally stored items found");
-    return null;
-  }
+  const storageRepresentatives = localStorage.getItem("offices");
+  return JSON.parse(storageRepresentatives || "");
 };
 
 export const saveRepsAndOfficesLocalStorage = (
