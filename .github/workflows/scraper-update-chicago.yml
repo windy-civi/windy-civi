@@ -29,6 +29,6 @@ jobs:
           LOCALE: "chicago"
         run: cd scraper && npm run scrape
       - name: Publish
-        uses: ./.github/workflows/compose/publish
+        uses: ./.github/workflows/compose/publish-data
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

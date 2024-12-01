@@ -38,6 +38,6 @@ jobs:
         working-directory: scraper
         run: npm run wiki
       - name: Publish
-        uses: ./.github/workflows/compose/publish
+        uses: ./.github/workflows/compose/publish-data
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
