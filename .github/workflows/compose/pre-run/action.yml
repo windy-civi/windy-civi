@@ -9,18 +9,11 @@ runs:
         node-version: 20
         cache: "npm"
         cache-dependency-path: storage/package-lock.json
-    # - name: NPM Install Storage
-    #   shell: bash
-    #   working-directory: storage
-    #   run: npm i
-    install_all:
-      runs-on: ubuntu-20.04
-      steps:
-      - uses: actions/checkout@v2
-      - name: Install All
-        run: |
-           chmod +x ../../../../setup.sh
-           ../../../../setup.sh
+    - uses: actions/checkout@v2
+    - name: Install All
+      run: |
+        chmod +x ../../../../setup.sh
+        ../../../../setup.sh
     # Since each job may only update a subset of files, we pull the
     # current release so that we update the release, we have all the files.
     - name: Retrieve Current Release

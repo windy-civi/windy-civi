@@ -15,11 +15,6 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
       - name: Pre Run
         uses: ./.github/workflows/compose/pre-run
 
