@@ -11,6 +11,7 @@ runs:
         cache-dependency-path: storage/package-lock.json
     - uses: actions/checkout@v2
     - name: Install All
+      shell: bash
       run: |
         chmod +x ../../../../setup.sh
         ../../../../setup.sh
