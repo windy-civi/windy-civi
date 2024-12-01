@@ -1,5 +1,5 @@
 {
-  "name": "@civi/legislation-data",
+  "name": "@windy-civi/scraper",
   "version": "0.1.0",
   "scripts": {
     "scrape": "ts-node scrapers/run",
@@ -11,9 +11,8 @@
     "format:check": "npm run prettier -- --check",
     "lint": "eslint '**/*.ts' --ignore-pattern node_modules/",
     "spellcheck": "cspell '**/*.{js,ts,jsx,tsx,json,css,md}'",
-    "quality": "run-p lint typecheck format:check spellcheck"
+    "quality": "run-p lint format:check spellcheck typecheck"
   },
-  "main": "dist_api/index.js",
   "devDependencies": {
     "@types/node": "^18.14.1",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
@@ -28,8 +27,8 @@
     "typescript": "4.9.5"
   },
   "dependencies": {
-    "@windy-civi/storage": "file://../storage",
-    "@windy-civi/domain": "file://../domain",
+    "@windy-civi/storage": "file:../storage",
+    "@windy-civi/domain": "file:../domain",
     "date-fns": "^3.3.1"
   }
 }
