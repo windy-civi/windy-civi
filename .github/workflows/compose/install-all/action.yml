@@ -1,5 +1,9 @@
 name: ⬇️ Install All
 description: "NPM Install All Packages"
+inputs:
+  GOOGLE_API_KEY:
+    description: "GOOGLE_API_KEY for web-app install"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -14,7 +18,7 @@ runs:
       working-directory: ./
       env:
         # Required for .env creation on web_app
-        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        GOOGLE_API_KEY: ${{ inputs.GOOGLE_API_KEY }}
       shell: bash
       run: |
         chmod +x ./setup.sh

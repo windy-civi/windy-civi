@@ -26,9 +26,8 @@ jobs:
         uses: actions/checkout@v3
       - name: ⬇️ Install All
         uses: ./.github/workflows/compose/install-all
-        env:
-          # Required for .env creation on web_app
-          GOOGLE_API_KEY: ${{ env.GOOGLE_API_KEY }}
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Retrieve Current Release
         working-directory: scraper
