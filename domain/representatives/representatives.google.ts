@@ -12,6 +12,13 @@ export const getRepresentatives = async (address: string, env: Env) => {
     const results = await fetch(url).then(
       (r) => r.json() as Promise<GoogleRepresentativesResponse>
     );
+
+    // Weak check to validate struct
+    if (!results || !results?.offices) {
+      console.warn("get-representatives:failed");
+      return null;
+    }
+
     return transformGoogleCivicInfo(results);
   } catch (e) {
     return Promise.reject(e);
