@@ -22,7 +22,7 @@ import {
 
 // Start Rep Filters
 const getUserRepNameIfBillIsSponsored = (
-  representatives: RepresentativesResult | null,
+  representatives: RepresentativesResult["offices"] | null,
   sponsors: CiviLegislationData["sponsors"],
   level: RepLevel
 ): string | false => {
@@ -32,7 +32,7 @@ const getUserRepNameIfBillIsSponsored = (
   // We need to a hack for city level because we don't have the office id data
   // todo: work with DataMade to get the office id data within the person data
   if (level === RepLevel.City) {
-    const cityReps = representatives?.offices.city
+    const cityReps = representatives?.city
       .filter((o) => o.office.divisionId.includes("place:chicago"))
       // Chicago Mayor can sponsor bills. Ignore those.
       .filter((o) => o.office.roles.includes("legislatorLowerBody"));
@@ -59,15 +59,13 @@ const getUserRepNameIfBillIsSponsored = (
   }
 
   // For state and national, we can use the office id data as legiscan provides that data
-  const divisions = representatives?.offices[level]?.map(
-    (o) => o.office.divisionId
-  );
+  const divisions = representatives[level]?.map((o) => o.office.divisionId);
   const sponsoredOffice = findOverlap(
     divisions || [],
     sponsors.map((s) => s.district)
   );
   let sponsoredByRep: string | false = false;
-  representatives?.offices[level].forEach((o) => {
+  representatives[level]?.forEach((o) => {
     if (o.office.divisionId === sponsoredOffice) {
       sponsoredByRep = o.official.name;
     }
@@ -76,7 +74,7 @@ const getUserRepNameIfBillIsSponsored = (
 };
 
 export const filterBySponsoredBills =
-  (reps: RepresentativesResult | null, level: RepLevel) =>
+  (reps: RepresentativesResult["offices"] | null, level: RepLevel) =>
   (bill: CiviLegislationData) => {
     if (reps) {
       return Boolean(
@@ -185,7 +183,7 @@ export const sortByUpdatedAt = (bills: WindyCiviBill[]) => {
 const createFeedBill =
   (
     gpt: CiviGptLegislationData,
-    representatives: RepresentativesResult | null,
+    representatives: RepresentativesResult["offices"] | null,
     level: RepLevel
   ) =>
   (bill: CiviLegislationData): WindyCiviBill => {
@@ -237,7 +235,7 @@ const createFeedBill =
 type FeedBillArrayFilter = (bill: WindyCiviBill) => boolean;
 
 export const createFeedBillsFromMultipleSources = (
-  representatives: RepresentativesResult | null,
+  representatives: RepresentativesResult["offices"] | null,
   dataStores: [
     LegislationResult | null | false,
     RepLevel,

@@ -1,5 +1,4 @@
 import { RepLevel, SupportedLocale } from "./constants";
-import { OfficialOffice } from "./representatives/representatives.types";
 
 export type LegislationResult = {
   legislation: CiviLegislationData[];
@@ -80,10 +79,9 @@ export interface CiviWikiLegislationData {
   tags: string[];
 }
 
-export type FeedData = {
+export type LegislationFeed = {
   fullLegislation: WindyCiviBill[];
   filteredLegislation: WindyCiviBill[];
-  offices: OfficialOffice[] | null;
 };
 
 export interface WindyCiviBill extends FilteredLegislationData {
@@ -110,7 +108,7 @@ export type Locales = `${SupportedLocale}`;
 
 export type LocationFilter = Locales | AddressFilter | Nullish;
 
-export type AddressFilter = { address: string, districts: string[] };
+export type AddressFilter = { address: string };
 
 export type Nullish = undefined | "" | null;
 

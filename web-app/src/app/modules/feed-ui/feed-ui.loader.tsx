@@ -1,7 +1,7 @@
 import { json, type LoaderFunction } from "react-router-dom";
 import { getEnv } from "~app/modules/config";
 
-import { getFilteredLegislation } from "@windycivi/domain/api";
+import { getFilteredLegislation } from "@windycivi/domain/filters/filters.api";
 
 import { DEFAULT_FILTERS } from "@windycivi/domain/constants";
 import {
@@ -13,6 +13,8 @@ import { viteDataGetter } from "../../../api/vite-api";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import { type FeedLoaderData } from "./feed-ui.types";
 import { getCookieFromString } from "./feed-ui.utils";
+import { getRepresentativesWithCache } from "@windycivi/domain/representatives/representatives.api";
+import { getAllOffices } from "@windycivi/domain/representatives/representatives.utils";
 
 export const loader: LoaderFunction = async ({ request }) => {
   const globalState = DEFAULT_GLOBAL_STATE;
@@ -95,16 +97,23 @@ export const loader: LoaderFunction = async ({ request }) => {
         : DEFAULT_FILTERS;
 
   const env = getEnv(import.meta.env);
-  const filteredLegislation = await getFilteredLegislation({
+  const representatives = await getRepresentativesWithCache(
     env,
+    filters.location,
+  );
+  const filteredLegislation = await getFilteredLegislation({
+    representatives,
     filters,
     dataStoreGetter: viteDataGetter,
   });
+
+  const offices = getAllOffices(representatives);
 
   return json<FeedLoaderData>({
     env,
     filters,
     globalState,
+    offices,
     ...filteredLegislation,
   });
 };

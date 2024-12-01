@@ -32,7 +32,7 @@
     "../domain/filters",
     "../domain/legislation",
     "../domain/representatives",
-    "../domain/api.ts",
+    "../domain/filters/filters.api.ts",
     "../domain/constants.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

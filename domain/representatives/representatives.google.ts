@@ -1,5 +1,5 @@
 import { Env } from "../types";
-import type { GoogleRepresentativesResponse } from "./google.types";
+import type { GoogleRepresentativesResponse } from "./representatives.google.types";
 import { transformGoogleCivicInfo } from "./representatives.utils";
 
 export const getRepresentatives = async (address: string, env: Env) => {

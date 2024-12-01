@@ -1,8 +1,10 @@
-import { Env, FeedData, FilterParams } from "@windycivi/domain/types";
+import { Env, LegislationFeed, FilterParams } from "@windycivi/domain/types";
 import { RouteOption } from "./feed-ui.constants";
+import { OfficialOffice } from "@windycivi/domain/representatives/representatives.types";
 
-export interface FeedLoaderData extends FeedData {
+export interface FeedLoaderData extends LegislationFeed {
   env: Env;
+  offices: OfficialOffice[] | null;
   filters: FilterParams;
   globalState: GlobalState;
 }

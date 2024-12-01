@@ -3,7 +3,7 @@ import type {
   GoogleRepresentativesResponse,
   Office,
   Official,
-} from "./google.types";
+} from "./representatives.google.types";
 
 export interface OfficialOffice {
   office: Office;
@@ -25,3 +25,8 @@ export interface RepresentativesResult {
     city: OfficialOffice[];
   };
 }
+
+export type RepsAndOffices = {
+  representatives: RepresentativesResult | null;
+  offices: OfficialOffice[] | null;
+};
