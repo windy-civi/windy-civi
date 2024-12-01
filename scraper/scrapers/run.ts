@@ -2,8 +2,7 @@ import { CiviLegislationData } from "@windy-civi/domain";
 import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
 import { findDifferences } from "@windy-civi/domain/legislation-diff/diff";
 import { storage } from "@windy-civi/storage";
-import path from "path";
-import { getLocale, getShouldSkipCache } from "../config/env";
+import { getCacheDir, getLocale, getShouldSkipCache } from "../config/env";
 
 import { Locales } from "@windy-civi/domain/types";
 import * as il from "./localities/illinois.legiscan";
@@ -22,11 +21,10 @@ export const api: Record<
   usa: usa.getBills,
 };
 
-const cacheDir = path.join(__dirname, "dist_legislation");
-
 const scrapeLegislation = async () => {
   const skipCache = getShouldSkipCache();
   const localeFromEnv = getLocale();
+  const cacheDir = getCacheDir();
 
   forEachLocale(async (locale) => {
     console.info("scraping for locale:", locale);

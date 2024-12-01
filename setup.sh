@@ -12,10 +12,11 @@ log() {
 
     echo
     echo "$border"
-    printf "%s\n" "$(printf "%-${padding}s$message%${padding}s" | cut -c1-${inner_width})"
+    printf "%s\n" "$(printf "%-${padding}s$message%${padding}s")"
     echo "$border"
     echo
 }
+
 
 # Commands To Install
 
