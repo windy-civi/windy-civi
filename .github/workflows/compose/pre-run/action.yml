@@ -16,9 +16,3 @@ runs:
       run: |
         chmod +x ./setup.sh
         ./setup.sh
-    # Since each job may only update a subset of files, we pull the
-    # current release so that we update the release, we have all the files.
-    - name: Retrieve Current Release
-      shell: bash
-      working-directory: storage
-      run: npx windy-civi-storage github ./dist_legislation
