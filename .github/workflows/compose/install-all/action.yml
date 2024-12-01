@@ -1,4 +1,4 @@
-name: Pre run
+name: Install All
 description: "NPM Install and retrieve current release"
 runs:
   using: "composite"

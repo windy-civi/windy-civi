@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - name: Pre Run
-        uses: ./.github/workflows/compose/pre-run
+      - name: Install All
+        uses: ./.github/workflows/compose/install-all
       - name: Retrieve Current Release
         working-directory: scraper
         run: npm run copy-release
