@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema
+name: Storage Quality
+on:
+  pull_request:
+  merge_group:
+
+jobs:
+  lint:
+    name: 🔬 Storage Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📥 NPM Install
+        working-directory: storage
+        run: npm i
+
+      - name: 🔬 Quality
+        working-directory: storage
+        run: npm run quality

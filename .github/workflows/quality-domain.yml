@@ -6,7 +6,7 @@ on:
 
 jobs:
   lint:
-    name: 🔬 Domain Quailty Checks
+    name: 🔬 Domain Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
