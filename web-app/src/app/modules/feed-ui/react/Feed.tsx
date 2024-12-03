@@ -59,10 +59,16 @@ const Navigation = (props: FeedFilterProps) => {
   return (
     <div>
       <div className="mb-2 flex items-center px-3 pt-3">
-        <div className="flex-1">
-          <Logo />
+        <div className="flex-1 flex items-center gap-4">
+          <Logo />{" "}
+          <a
+            href="/help"
+            className="uppercase font-bold text-white bg-black bg-opacity-40 py-1 px-2 rounded cursor-pointer hover:shadow-lg text-xs"
+          >
+            Give Feedback
+          </a>
         </div>
-        <div className={classNames(hideNav && "hidden")}>
+        {/* <div className={classNames(hideNav && "hidden")}>
           <RadioPicker
             key={String(route)}
             type="transparent"
@@ -75,7 +81,7 @@ const Navigation = (props: FeedFilterProps) => {
               { label: "Explore", value: RouteOption.EXPLORE },
             ]}
           />
-        </div>
+        </div> */}
       </div>
       {mode}
     </div>

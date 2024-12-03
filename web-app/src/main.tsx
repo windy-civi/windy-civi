@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppProvider from "~app/modules/app-shell/AppProvider";
 import { getEnv } from "~app/modules/config";
 import { ForYouPage } from "~app/modules/feed-ui/feed-ui.react";
+import { Support } from "~app/modules/support/Support";
 import { loader } from "./app/modules/feed-ui/feed-ui.loader";
 import "./index.css";
 
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
     path: "/",
     loader,
     element: <ForYouPage />,
+  },
+  {
+    path: "/help",
+    element: <Support />,
   },
 ]);
 
