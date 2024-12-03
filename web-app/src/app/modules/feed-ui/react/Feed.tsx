@@ -2,13 +2,7 @@ import { getLocation } from "@windycivi/domain/filters/filters.utils";
 import React, { useState } from "react";
 import { PWAInstall } from "~app/modules/app-shell/PwaInstaller";
 import type { StyleHack } from "~app/modules/design-system";
-import {
-  Container,
-  Grid,
-  Modal,
-  RadioPicker,
-  classNames,
-} from "~app/modules/design-system";
+import { Container, Grid, Modal, classNames } from "~app/modules/design-system";
 import { Logo } from "~app/modules/design-system/Logo/Logo";
 import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
@@ -25,7 +19,7 @@ const Navigation = (props: FeedFilterProps) => {
     setRouteState(next);
   };
 
-  const hideNav = route === RouteOption.INTRO;
+  // const hideNav = route === RouteOption.INTRO;
 
   let mode: React.ReactNode;
 
