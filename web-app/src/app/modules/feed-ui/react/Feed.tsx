@@ -56,7 +56,7 @@ const Navigation = (props: FeedFilterProps) => {
         <div className="flex-1 flex items-center gap-4">
           <Logo />{" "}
           <a
-            href="/help"
+            href="#/help"
             className="uppercase font-bold text-white bg-black bg-opacity-40 py-1 px-2 rounded cursor-pointer hover:shadow-lg text-xs"
           >
             Give Feedback
