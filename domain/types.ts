@@ -118,3 +118,8 @@ export interface FilterParams {
   availableTags: string[];
   level: RepLevel | null;
 }
+
+export interface UserPreferences {
+  issues: string[]
+  legislators: string[]
+}

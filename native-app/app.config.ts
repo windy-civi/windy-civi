@@ -3,24 +3,38 @@ import { ExpoConfig, ConfigContext } from "@expo/config";
 export default ({ config }: ConfigContext): ExpoConfig => {
   // Default values for development
   const bundleId = process.env.EXPO_PUBLIC_BUNDLE_ID || "com.windycivi.dev";
-  const androidPackage = process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "com.windycivi.dev";
-  const projectId = process.env.EXPO_PUBLIC_PROJECT_ID || "development-project-id";
+  const androidPackage =
+    process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "com.windycivi.dev";
+  const projectId =
+    process.env.EXPO_PUBLIC_PROJECT_ID || "development-project-id";
 
   // Only throw error if we're in production and missing env vars
   if (process.env.NODE_ENV === "production") {
-    if (!process.env.EXPO_PUBLIC_BUNDLE_ID || 
-        !process.env.EXPO_PUBLIC_ANDROID_PACKAGE || 
-        !process.env.EXPO_PUBLIC_PROJECT_ID) {
+    if (
+      !process.env.EXPO_PUBLIC_BUNDLE_ID ||
+      !process.env.EXPO_PUBLIC_ANDROID_PACKAGE ||
+      !process.env.EXPO_PUBLIC_PROJECT_ID
+    ) {
       console.error("Environment Setup Error:");
-      console.error("For production builds, please set the following environment variables:");
+      console.error(
+        "For production builds, please set the following environment variables:"
+      );
       console.error("- EXPO_PUBLIC_BUNDLE_ID");
       console.error("- EXPO_PUBLIC_ANDROID_PACKAGE");
       console.error("- EXPO_PUBLIC_PROJECT_ID");
       console.error("\nCurrent values:");
-      console.error(`BUNDLE_ID: ${process.env.EXPO_PUBLIC_BUNDLE_ID || "not set"}`);
-      console.error(`ANDROID_PACKAGE: ${process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "not set"}`);
-      console.error(`PROJECT_ID: ${process.env.EXPO_PUBLIC_PROJECT_ID || "not set"}`);
-      
+      console.error(
+        `BUNDLE_ID: ${process.env.EXPO_PUBLIC_BUNDLE_ID || "not set"}`
+      );
+      console.error(
+        `ANDROID_PACKAGE: ${
+          process.env.EXPO_PUBLIC_ANDROID_PACKAGE || "not set"
+        }`
+      );
+      console.error(
+        `PROJECT_ID: ${process.env.EXPO_PUBLIC_PROJECT_ID || "not set"}`
+      );
+
       throw new Error("Production environment variables are not set");
     }
   }
@@ -55,7 +69,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       output: "static",
       favicon: "./assets/images/favicon-img.png",
     },
-    plugins: ["expo-router"],
+    plugins: ["expo-router", "expo-font"],
     experiments: {
       typedRoutes: true,
     },
@@ -66,8 +80,6 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       eas: {
         projectId: projectId,
       },
-    }
+    },
   };
 };
-
-
