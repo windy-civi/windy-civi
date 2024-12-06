@@ -45,6 +45,12 @@ export function ForYouPage() {
     if (holdDate) {
       setGlobalState({ ...globalState, lastVisited: holdDate });
     }
+
+    // maybe send userPreferences to native app
+    publishUserPreferences({
+      legislators: [],
+      issues: [],
+    });
     // Only want this to run once
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);

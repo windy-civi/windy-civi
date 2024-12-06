@@ -7,9 +7,11 @@ export const USER_PREFERENCES_CHANGED = "ON_USER_PREFERENCES_CHANGED";
 export const publishUserPreferences = (userPreferences: UserPreferences) => {
   if ("ReactNativeWebView" in window) {
     // @ts-expect-error no types for react native webview
-    window.ReactNativeWebView.postMessage({
-      type: USER_PREFERENCES_CHANGED,
-      payload: userPreferences,
-    });
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: USER_PREFERENCES_CHANGED,
+        payload: userPreferences,
+      }),
+    );
   }
 };

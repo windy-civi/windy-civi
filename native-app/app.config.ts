@@ -48,6 +48,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     icon: "./assets/images/icon-img.png",
     scheme: "myapp",
     userInterfaceStyle: "automatic",
+    owner: "windy-civi",
     splash: {
       image: "./assets/images/splash-img.png",
       resizeMode: "contain",
@@ -69,7 +70,18 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       output: "static",
       favicon: "./assets/images/favicon-img.png",
     },
-    plugins: ["expo-router", "expo-font"],
+    plugins: [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          android: {
+            AsyncStorage_db_size_in_MB: 10,
+          },
+        },
+      ],
+    ],
     experiments: {
       typedRoutes: true,
     },
