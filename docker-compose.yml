@@ -3,7 +3,7 @@ services:
   web-app:
     build: 
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.web.dev
       args:
         - GOOGLE_API_KEY=${GOOGLE_API_KEY}
         - GOOGLE_SPREADSHEET_API_KEY=${GOOGLE_SPREADSHEET_API_KEY}
