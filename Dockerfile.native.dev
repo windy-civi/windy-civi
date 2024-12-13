@@ -1,0 +1,52 @@
+# Use Node.js LTS
+FROM node:20-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /core
+
+# Copy package files first for better caching
+COPY domain/package*.json ./core/domain/
+COPY storage/package*.json ./core/storage/
+COPY scraper/package*.json ./core/scraper/
+COPY web-app/package*.json ./core/web-app/
+COPY push-server/package*.json ./core/push-server/
+COPY native-app/package*.json ./core/native-app/
+COPY setup.sh ./core/    
+
+# Make setup script executable
+RUN chmod +x ./core/setup.sh
+
+# Copy source code
+COPY . .
+
+# Set environment variables for build time
+ARG GOOGLE_API_KEY
+ARG GOOGLE_SPREADSHEET_API_KEY
+ARG OPENAI_API_KEY
+
+ENV GOOGLE_API_KEY=$GOOGLE_API_KEY
+ENV GOOGLE_SPREADSHEET_API_KEY=$GOOGLE_SPREADSHEET_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
+# Install all dependencies using the setup script
+RUN ./core/setup.sh
+
+# Expose ports
+EXPOSE 19000 19001 19002
+
+# Set environment variables for development
+ENV NODE_ENV=development
+
+# Create a script to start all services
+RUN echo '#!/bin/bash\n\
+    trap "exit" INT\n\
+    cd /core/native-app && npm run start & \
+    wait' > /core/start-dev.sh && chmod +x /core/start-dev.sh
+
+# Start development servers
+CMD ["/core/start-dev.sh"]
