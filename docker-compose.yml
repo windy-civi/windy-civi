@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  windy-civi-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+        - GOOGLE_SPREADSHEET_API_KEY=${GOOGLE_SPREADSHEET_API_KEY}
+        - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "5173:5173"  # web-app
+      - "3000:3000"  # push-server
+      - "19000:19000" # expo
+      - "19001:19001" # expo
+      - "19002:19002" # expo dev tools
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/*/node_modules
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_SPREADSHEET_API_KEY=${GOOGLE_SPREADSHEET_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    stdin_open: true
+    tty: true
