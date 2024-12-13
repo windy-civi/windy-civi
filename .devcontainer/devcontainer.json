@@ -2,11 +2,12 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
-    }
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "dockerComposeFile": "../docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "service": "web-app",
+  "workspaceFolder": "/core",
   "customizations": {
     "vscode": {
       "extensions": [
