@@ -4,7 +4,9 @@
       "version": "18"
     }
   },
-  "postAttachCommand": "sh ../setup.sh",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
