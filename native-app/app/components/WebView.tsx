@@ -34,7 +34,7 @@ export default function WebView() {
 
   return (
     <NativeWebView
-      source={{ uri: "http://10.0.0.99:5173/" }}
+      source={{ uri: "https://windycivi.com/" }}
       bounces={false}
       overScrollMode="never"
       pullToRefreshEnabled={false}
