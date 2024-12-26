@@ -24,11 +24,8 @@ export default function WebView() {
   );
 
   useEffect(() => {
-    github.getLegislation("chicago").then((legislation) => {
-      console.log("LEGALISATION", legislation);
-    });
     getData({ key: "userPreferences" }).then((userPreferences) => {
-      console.log("USER PREFERENCES Yeah", userPreferences);
+      console.log("USER PREFERENCES", userPreferences);
     });
   }, []);
 

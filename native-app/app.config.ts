@@ -57,6 +57,10 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ios: {
       supportsTablet: true,
       bundleIdentifier: bundleId,
+      infoPlist: {
+        ...config.ios?.infoPlist,
+        UIBackgroundModes: ["fetch"],
+      },
     },
     android: {
       adaptiveIcon: {
@@ -64,6 +68,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
         backgroundColor: "#ffffff",
       },
       package: androidPackage,
+      permissions: ["RECEIVE_BOOT_COMPLETED", "WAKE_LOCK"],
     },
     web: {
       bundler: "metro",
@@ -81,6 +86,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           },
         },
       ],
+      "expo-background-fetch",
+      "expo-task-manager",
     ],
     experiments: {
       typedRoutes: true,
