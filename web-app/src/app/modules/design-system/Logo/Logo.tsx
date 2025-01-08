@@ -1,9 +1,9 @@
-import civiLogo from "../../app-shell/assets/civi-temp-logo.png";
+import windyCiviLogo from "./windy-civi-logo-1-line.png";
 
 export const Logo = () => {
   return (
     <img
-      src={civiLogo}
+      src={windyCiviLogo}
       alt="Windy Civi Logo"
       className="h-8"
       style={{
