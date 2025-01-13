@@ -2,40 +2,60 @@ import { useState, useEffect } from "react";
 import * as BackgroundFetch from "expo-background-fetch";
 import * as TaskManager from "expo-task-manager";
 import { github } from "../../utils/gh-get";
+import { findDifferences } from "../../domain/legislation-diff/diff";
+import { useStorage } from "./useStorage";
+import { useLocalPushNotifications } from "./useLocalPushNotifications";
 
 const BACKGROUND_FETCH_TASK = "background-fetch";
 
-TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
-  const now = Date.now();
-
-  console.log(
-    `Got background fetch call at date: ${new Date(now).toISOString()}`
-  );
-
-  // Add the legislation fetch here
-  const legislation = await github.getLegislation("chicago");
-  console.log("Background Fetch - Legislation:", legislation);
-
-  // Be sure to return the successful result type!
-  return BackgroundFetch.BackgroundFetchResult.NewData;
-});
-
-async function registerBackgroundFetchAsync() {
-  return BackgroundFetch.registerTaskAsync(BACKGROUND_FETCH_TASK, {
-    minimumInterval: 60 * 10, // 1 day
-    stopOnTerminate: false, // android only,
-    startOnBoot: true, // android only
+const registerBackgroundFetchAsync = async () => {
+  await BackgroundFetch.registerTaskAsync(BACKGROUND_FETCH_TASK, {
+    minimumInterval: 60 * 60 * 24, // 24 hours
+    stopOnTerminate: false,
+    startOnBoot: true,
   });
-}
+};
 
-export default function BackgroundFetchScreen() {
+export const useBackgroundFetch = () => {
   const [isRegistered, setIsRegistered] = useState(false);
+  const { getData, storeData } = useStorage();
+  const { scheduleLocalPushNotification } = useLocalPushNotifications();
   const [status, setStatus] =
     useState<BackgroundFetch.BackgroundFetchStatus | null>(null);
 
   useEffect(() => {
+    TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
+      // Fetch and store the legislation data
+      const newLegislation = await github.getLegislation("chicago");
+
+      // Check if old data is in storage
+      const oldLegislation = await getData({ key: "legislation" });
+      if (oldLegislation) {
+        // Find differences between old and new legislation
+        const differences = findDifferences(oldLegislation, newLegislation);
+
+        // Schedule a local push notification if there are differences
+        if (differences.length > 0) {
+          await scheduleLocalPushNotification({
+            title: "New Legislation",
+            body: `There are ${differences.length} legislation updates`,
+            data: {},
+          });
+        }
+
+        console.log("Background Fetch - Differences:", differences);
+      }
+
+      await storeData({
+        key: "legislation",
+        value: JSON.stringify(newLegislation),
+      });
+      console.log("newLegislation", newLegislation);
+      return BackgroundFetch.BackgroundFetchResult.NewData;
+    });
+
     checkStatusAsync();
-  }, []);
+  }, [getData, storeData, scheduleLocalPushNotification]);
 
   const checkStatusAsync = async () => {
     const status = await BackgroundFetch.getStatusAsync();
@@ -54,4 +74,4 @@ export default function BackgroundFetchScreen() {
   };
 
   return { toggleFetchTask, isRegistered, status };
-}
+};

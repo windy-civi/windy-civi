@@ -6,7 +6,6 @@ import {
 import { Linking } from "react-native";
 import { onUserPreferences } from "../helpers/native-web-bridge";
 import { useStorage } from "../helpers/hooks/useStorage";
-import { github } from "../utils/gh-get";
 
 export default function WebView() {
   const { storeData, getData } = useStorage();
@@ -27,7 +26,7 @@ export default function WebView() {
     getData({ key: "userPreferences" }).then((userPreferences) => {
       console.log("USER PREFERENCES", userPreferences);
     });
-  }, []);
+  }, [getData]);
 
   return (
     <NativeWebView

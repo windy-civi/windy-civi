@@ -16,7 +16,7 @@ export const useStorage = () => {
         typeof value === "string" ? value : JSON.stringify(value);
       await AsyncStorage.setItem(key, jsonValue);
     } catch (e) {
-      throw new Error("Error storing data");
+      throw new Error("Error storing data", { cause: e });
     }
   };
 
@@ -25,7 +25,7 @@ export const useStorage = () => {
       const jsonValue = await AsyncStorage.getItem(key);
       return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
-      throw new Error("Error reading data");
+      throw new Error("Error reading data", { cause: e });
     }
   };
 

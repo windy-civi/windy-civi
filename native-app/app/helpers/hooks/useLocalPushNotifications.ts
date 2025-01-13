@@ -3,6 +3,12 @@ import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { Platform } from "react-native";
 
+interface ScheduleLocalPushNotificationProps {
+  title: string;
+  body: string;
+  data: Record<string, any>;
+}
+
 export const useLocalPushNotifications = () => {
   const backgroundSubscription = useRef<Notifications.Subscription>();
 
@@ -71,29 +77,27 @@ export const useLocalPushNotifications = () => {
     return token;
   }, []);
 
-  const scheduleLocalPushNotification = useCallback(async () => {
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: "Hello there!",
-        body: "There is new legislation you might be interested in!",
-        data: { data: "goes here" },
-      },
-      trigger: {
-        seconds: 120,
-        repeats: true,
-        type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-      },
-    });
-  }, []);
+  const scheduleLocalPushNotification = useCallback(
+    async ({ title, body, data }: ScheduleLocalPushNotificationProps) => {
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: title,
+          body: body,
+          data: data,
+        },
+        trigger: null,
+      });
+    },
+    []
+  );
 
   const initializeNotifications = useCallback(async () => {
     const token = await registerForLocalPushNotifications();
     if (token) {
-      await scheduleLocalPushNotification();
       return true;
     }
     return false;
-  }, [registerForLocalPushNotifications, scheduleLocalPushNotification]);
+  }, [registerForLocalPushNotifications]);
 
   return {
     initializeNotifications,

@@ -26,6 +26,7 @@ const parseAction = (action: unknown): Actions | null => {
       }
     }
   } catch (e) {
+    console.error("Error parsing action", { cause: e });
     return null;
   }
   return null;

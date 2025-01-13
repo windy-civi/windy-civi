@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import WebView from "./components/WebView";
 import { useLocalPushNotifications } from "./helpers/hooks/useLocalPushNotifications";
-import BackgroundFetchScreen from "./helpers/hooks/useBackgroundFetch";
+import { useBackgroundFetch } from "./helpers/hooks/useBackgroundFetch";
 
 export default function Index() {
   const { initializeNotifications } = useLocalPushNotifications();
-  const { toggleFetchTask, isRegistered } = BackgroundFetchScreen();
+  const { toggleFetchTask, isRegistered } = useBackgroundFetch();
 
   useEffect(() => {
     const setupApp = async () => {
@@ -23,7 +23,7 @@ export default function Index() {
     };
 
     setupApp();
-  }, []);
+  }, [initializeNotifications, isRegistered, toggleFetchTask]);
 
   return <WebView />;
 }
