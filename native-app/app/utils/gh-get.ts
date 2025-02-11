@@ -4,7 +4,7 @@ import {
   CiviLegislationData,
   LegislationChange,
   Locales,
-} from "@windy-civi/domain/types";
+} from "../domain/types";
 
 const getLegislation = async (
   locale: Locales
