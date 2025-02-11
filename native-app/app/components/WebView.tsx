@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import {
   WebView as NativeWebView,
   WebViewMessageEvent,
@@ -8,7 +8,7 @@ import { onUserPreferences } from "../helpers/native-web-bridge";
 import { useStorage } from "../helpers/hooks/useStorage";
 
 export default function WebView() {
-  const { storeData, getData } = useStorage();
+  const { storeData } = useStorage();
 
   const handleMessage = useCallback(
     (event: WebViewMessageEvent) => {
@@ -21,12 +21,6 @@ export default function WebView() {
     },
     [storeData]
   );
-
-  useEffect(() => {
-    getData({ key: "userPreferences" }).then((userPreferences) => {
-      console.log("USER PREFERENCES", userPreferences);
-    });
-  }, [getData]);
 
   return (
     <NativeWebView

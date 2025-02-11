@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface StoreDataProps {
   key: string;
-  value: string;
+  value: string | object;
 }
 
 interface GetDataProps {

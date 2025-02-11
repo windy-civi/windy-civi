@@ -120,6 +120,5 @@ export interface FilterParams {
 }
 
 export interface UserPreferences {
-  issues: string[]
-  legislators: string[]
+  filters: FilterParams;
 }

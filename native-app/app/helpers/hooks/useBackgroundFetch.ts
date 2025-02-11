@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import * as BackgroundFetch from "expo-background-fetch";
 import * as TaskManager from "expo-task-manager";
-import { github } from "../../utils/gh-get";
 import { findDifferences } from "../../domain/legislation-diff/diff";
 import { useStorage } from "./useStorage";
 import { useLocalPushNotifications } from "./useLocalPushNotifications";
+import { getFilteredLegislation } from "../../domain/filters/filters.api";
+import { rnDataGetter } from "../rn-api";
+import { WindyCiviBill } from "../../domain/types";
 
 const BACKGROUND_FETCH_TASK = "background-fetch";
 
@@ -25,16 +27,39 @@ export const useBackgroundFetch = () => {
 
   useEffect(() => {
     TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
+      const userPreferences = await getData({ key: "userPreferences" });
+
       // Fetch and store the legislation data
-      const newLegislation = await github.getLegislation("chicago");
+      const newLegislation = await getFilteredLegislation({
+        dataStoreGetter: rnDataGetter,
+        filters: userPreferences.filters,
+        representatives: null,
+      });
 
       // Check if old data is in storage
       const oldLegislation = await getData({ key: "legislation" });
-      if (oldLegislation) {
-        // Find differences between old and new legislation
-        const differences = findDifferences(oldLegislation, newLegislation);
 
-        // Schedule a local push notification if there are differences
+      if (oldLegislation?.filteredLegislation) {
+        const prevBills = oldLegislation.filteredLegislation.map(
+          (legislation: WindyCiviBill) => ({
+            id: legislation.bill.id,
+            status: legislation.bill.status,
+            statusDate: legislation.bill.statusDate,
+            sponsors: legislation.bill.sponsors,
+          })
+        );
+
+        const currentBills = newLegislation.filteredLegislation.map(
+          (legislation: WindyCiviBill) => ({
+            id: legislation.bill.id,
+            status: legislation.bill.status,
+            statusDate: legislation.bill.statusDate,
+            sponsors: legislation.bill.sponsors,
+          })
+        );
+
+        // Find differences between old and new legislation
+        const differences = findDifferences(prevBills, currentBills);
         if (differences.length > 0) {
           await scheduleLocalPushNotification({
             title: "New Legislation",
@@ -42,15 +67,13 @@ export const useBackgroundFetch = () => {
             data: {},
           });
         }
-
-        console.log("Background Fetch - Differences:", differences);
       }
 
       await storeData({
         key: "legislation",
-        value: JSON.stringify(newLegislation),
+        value: newLegislation,
       });
-      console.log("newLegislation", newLegislation);
+
       return BackgroundFetch.BackgroundFetchResult.NewData;
     });
 
