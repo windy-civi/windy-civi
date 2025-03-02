@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to WindyCivi Native 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -10,7 +10,21 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Install Expo CLI
+
+   ```bash
+   npm install -g expo-cli
+   ```
+
+3. Login to Expo (make sure account is linked to WindyCivi Project)
+
+   ```bash
+   npx expo login
+   ```
+
+4. Create .env.local file
+
+5. Start the app
 
    ```bash
    npm start
