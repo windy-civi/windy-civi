@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to WindyCivi Native 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -10,7 +10,21 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Install Expo CLI
+
+   ```bash
+   npm install -g expo-cli
+   ```
+
+3. Login to Expo (make sure account is linked to WindyCivi Project)
+
+   ```bash
+   npx expo login
+   ```
+
+4. Create .env.local file
+
+5. Start the app
 
    ```bash
     npx expo start
@@ -23,38 +37,30 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Local Dependency Management
 
-## Get a fresh project
+This project uses local dependencies from the monorepo structure. To ensure these dependencies are properly linked:
 
-When you're ready, run:
+- When you run `npm start`, the domain package is automatically copied and watched for changes.
 
-```bash
-npm run reset-project
-```
+- If you need to copy the domain package manually (one-time):
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+  ```bash
+  npm run copy-local-dependencies
+  ```
 
-## Learn more
+- If you need to watch for changes in the domain package separately:
 
-To learn more about developing your project with Expo, look at the following resources:
+  ```bash
+  npm run watch-domain
+  ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+> **Note**: All commands must be run from the `native-app` directory. If you see "Cannot find module" errors, make sure you're in the correct directory.
 
-## Join the community
+This setup automatically copies any changes made to the domain package to the native-app's node_modules directory, ensuring your changes are immediately reflected in the app.
 
-Join our community of developers creating universal apps.
+### Why Not Use Symlinks?
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project uses a custom script to copy files instead of symlinks due to [Expo issue #22413](https://github.com/expo/expo/issues/22413). Expo's Metro bundler has historically had problems with symlinked dependencies in monorepo setups, leading to build and runtime errors.
 
-## Environment Setup
-
-For production builds, you need to set up environment variables:
-
-1. Copy the template file:
-
-```bash
-cp .env.template .env
-```
+Our solution creates hard copies of the domain package and watches for changes, providing a reliable workaround while maintaining a good developer experience. Future versions of Expo may improve symlink support, but for now, this approach ensures compatibility with all build environments.
