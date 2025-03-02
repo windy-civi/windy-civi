@@ -1,9 +1,9 @@
-import { SupportedLocale } from "@windycivi/domain/constants";
+import { SupportedLocale } from "@windy-civi/domain/constants";
 import {
   CiviLegislationData,
   CiviGptLegislationData,
   DataStoreGetter,
-} from "@windycivi/domain/types";
+} from "@windy-civi/domain/types";
 
 export const viteDataGetter: DataStoreGetter = {
   getLegislationData: (locale) => legislationApi[locale](),

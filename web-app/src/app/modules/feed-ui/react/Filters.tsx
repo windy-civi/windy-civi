@@ -12,7 +12,7 @@ import {
 import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { LegislatorsInfo } from "./Representatives";
-import { SupportedLocale, RepLevel } from "@windycivi/domain/constants";
+import { SupportedLocale, RepLevel } from "@windy-civi/domain/constants";
 import {
   getLocation,
   isAddressFilter,
@@ -22,9 +22,9 @@ import {
   getAddress,
   getTagsBeingFiltered,
   parseAvailableTags,
-} from "@windycivi/domain/filters/filters.utils";
-import { getLegislators } from "@windycivi/domain/representatives/representatives.utils";
-import { LocationFilter, FilterParams } from "@windycivi/domain/types";
+} from "@windy-civi/domain/filters/filters.utils";
+import { getLegislators } from "@windy-civi/domain/representatives/representatives.utils";
+import { LocationFilter, FilterParams } from "@windy-civi/domain/types";
 
 const LocationFilterContainer = (props: {
   location: LocationFilter;

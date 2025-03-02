@@ -3,7 +3,7 @@ import { classNames } from "../styles";
 import {
   CustomChicagoTag,
   SPONSORED_BY_REP_TAG,
-} from "@windycivi/domain/constants";
+} from "@windy-civi/domain/constants";
 
 export const Tag: React.FC<{
   type?: "tiny";
