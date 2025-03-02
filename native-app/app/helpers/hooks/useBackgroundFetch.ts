@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import * as BackgroundFetch from "expo-background-fetch";
 import * as TaskManager from "expo-task-manager";
-import { findDifferences } from "../../domain/legislation-diff/diff";
+import { findDifferences } from "@windy-civi/domain/legislation-diff/diff";
 import { useStorage } from "./useStorage";
 import { useLocalPushNotifications } from "./useLocalPushNotifications";
-import { getFilteredLegislation } from "../../domain/filters/filters.api";
+import { getFilteredLegislation } from "@windy-civi/domain/filters/filters.api";
 import { rnDataGetter } from "../rn-api";
-import { WindyCiviBill } from "../../domain/types";
+import { WindyCiviBill } from "@windy-civi/domain/types";
 
 const BACKGROUND_FETCH_TASK = "background-fetch";
 

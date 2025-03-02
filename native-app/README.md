@@ -13,8 +13,16 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Start the app
 
    ```bash
-    npx expo start
+   npm start
    ```
+
+   This will:
+
+   - Copy local dependencies from the domain package
+   - Start watching for changes in the domain package
+   - Start the Expo development server
+
+> **Important**: Always run these commands from the `native-app` directory, not from the root of the monorepo.
 
 In the output, you'll find options to open the app in a
 
@@ -58,3 +66,31 @@ For production builds, you need to set up environment variables:
 ```bash
 cp .env.template .env
 ```
+
+## Local Dependency Management
+
+This project uses local dependencies from the monorepo structure. To ensure these dependencies are properly linked:
+
+- When you run `npm start`, the domain package is automatically copied and watched for changes.
+
+- If you need to copy the domain package manually (one-time):
+
+  ```bash
+  npm run copy-local-dependencies
+  ```
+
+- If you need to watch for changes in the domain package separately:
+
+  ```bash
+  npm run watch-domain
+  ```
+
+> **Note**: All commands must be run from the `native-app` directory. If you see "Cannot find module" errors, make sure you're in the correct directory.
+
+This setup automatically copies any changes made to the domain package to the native-app's node_modules directory, ensuring your changes are immediately reflected in the app.
+
+### Why Not Use Symlinks?
+
+This project uses a custom script to copy files instead of symlinks due to [Expo issue #22413](https://github.com/expo/expo/issues/22413). Expo's Metro bundler has historically had problems with symlinked dependencies in monorepo setups, leading to build and runtime errors.
+
+Our solution creates hard copies of the domain package and watches for changes, providing a reliable workaround while maintaining a good developer experience. Future versions of Expo may improve symlink support, but for now, this approach ensures compatibility with all build environments.

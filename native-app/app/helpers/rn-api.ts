@@ -1,10 +1,10 @@
-import { SupportedLocale } from "../domain/constants";
+import { SupportedLocale } from "@windy-civi/domain/constants";
 import { github } from "../utils/gh-get";
 import {
   CiviLegislationData,
   CiviGptLegislationData,
   DataStoreGetter,
-} from "../domain/types";
+} from "@windy-civi/domain/types";
 
 export const rnDataGetter: DataStoreGetter = {
   getLegislationData: (locale) => legislationApi[locale](),
