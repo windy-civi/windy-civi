@@ -1,4 +1,4 @@
-import { Env } from "@windycivi/domain/types";
+import { Env } from "@windy-civi/domain/types";
 
 export const getEnv = (env: ImportMetaEnv): Env => {
   return {

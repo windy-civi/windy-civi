@@ -1,12 +1,12 @@
 import { FaGlobe } from "react-icons/fa";
 
-import { RepLevel } from "@windycivi/domain/constants";
+import { RepLevel } from "@windy-civi/domain/constants";
 import {
   getBillUpdateAt,
   getLastStatus,
   mapToReadableStatus,
-} from "@windycivi/domain/filters/filters.utils";
-import { WindyCiviBill } from "@windycivi/domain/types";
+} from "@windy-civi/domain/filters/filters.utils";
+import { WindyCiviBill } from "@windy-civi/domain/types";
 import { StyleHack, Tag, classNames } from "~app/modules/design-system";
 import { Carousel } from "~app/modules/design-system/Carousel/Carousel";
 import { RobotSvg } from "~app/modules/design-system/Icons";

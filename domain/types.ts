@@ -118,3 +118,7 @@ export interface FilterParams {
   availableTags: string[];
   level: RepLevel | null;
 }
+
+export interface UserPreferences {
+  filters: FilterParams;
+}

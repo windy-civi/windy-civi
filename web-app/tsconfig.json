@@ -18,7 +18,7 @@
     "paths": {
       "~app/*": ["./src/app/*"],
       "~/*": ["./src/app/modules/*"],
-      "@windycivi/domain/*": ["../domain/*"]
+      "@windy-civi/domain/*": ["../domain/*"]
     },
 
     /* Linting */
@@ -27,13 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src",
-    "../domain/filters",
-    "../domain/legislation",
-    "../domain/representatives",
-    "../domain/filters/filters.api.ts",
-    "../domain/constants.ts"
-  ],
+  "include": ["src", "../domain"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

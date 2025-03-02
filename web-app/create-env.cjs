@@ -9,13 +9,17 @@ const path = require("path");
 const env = path.join(__dirname, ".env");
 
 // eslint-disable-next-line no-undef
-if (!process.env.GOOGLE_API_KEY) {
-  console.error("GOOGLE_API_KEY is missing from the environment.");
-  // eslint-disable-next-line no-undef
-  process.exit(1);
+let apiKey = process.env.GOOGLE_API_KEY;
+
+// eslint-disable-next-line no-undef
+if (!apiKey) {
+  console.warn(
+    "⚠️ WARNING: GOOGLE_API_KEY is missing from the environment. Using default placeholder value 'abcd'.",
+  );
+  apiKey = "abcd";
 }
 
 // eslint-disable-next-line no-undef
-fs.writeFileSync(env, `VITE_GOOGLE_API_KEY='${process.env.GOOGLE_API_KEY}'\n`);
+fs.writeFileSync(env, `VITE_GOOGLE_API_KEY='${apiKey}'\n`);
 
 console.log("web-app: Environment variables created successfully.");
