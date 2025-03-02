@@ -1,5 +1,5 @@
 {
-  "name": "windy-civi-pwa",
+  "name": "@windy-civi/web-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -9,15 +9,15 @@ import {
   type UpdateGlobalStateFn,
 } from "./feed-ui.types";
 import { cookieFactory, formatDate } from "./feed-ui.utils";
-import { DEFAULT_FILTERS } from "@windycivi/domain/constants";
+import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
 import {
   getLocation,
   hasTags,
   stringifyTags,
   createFilterParams,
-} from "@windycivi/domain/filters/filters.utils";
-import { FilterParams } from "@windycivi/domain/types";
-import { publishUserPreferences } from "../../../native-web-bridge";
+} from "@windy-civi/domain/filters/filters.utils";
+import { FilterParams } from "@windy-civi/domain/types";
+import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
 
 export function ForYouPage() {
   const result = useLoaderData() as FeedProps;

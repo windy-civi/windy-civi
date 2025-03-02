@@ -1,4 +1,4 @@
-import { Env } from "@windycivi/domain/types";
+import { Env } from "@windy-civi/domain/types";
 import type { FC } from "react";
 import AppContext from "./AppContext";
 

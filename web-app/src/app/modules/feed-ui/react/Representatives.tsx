@@ -1,7 +1,7 @@
-import { getLocationInformationText } from "@windycivi/domain/filters/filters.utils";
-import type { OfficialOffice } from "@windycivi/domain/representatives/representatives.types";
-import { getLegislators } from "@windycivi/domain/representatives/representatives.utils";
-import { LocationFilter } from "@windycivi/domain/types";
+import { getLocationInformationText } from "@windy-civi/domain/filters/filters.utils";
+import type { OfficialOffice } from "@windy-civi/domain/representatives/representatives.types";
+import { getLegislators } from "@windy-civi/domain/representatives/representatives.utils";
+import { LocationFilter } from "@windy-civi/domain/types";
 import { useState, type FC } from "react";
 import { DataField, ResultCard } from "~app/modules/design-system";
 import { FeedFilterProps } from "../feed-ui.types";
