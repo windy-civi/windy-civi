@@ -17,6 +17,7 @@
     "test": "jest --watchAll",
     "lint": "expo lint",
     "tsc": "tsc --noEmit",
+    "postinstall": "npm run copy-local-dependencies",
     "copy-local-dependencies": "node scripts/copy-domain.js",
     "watch-domain": "node scripts/copy-domain.js --watch"
   },
