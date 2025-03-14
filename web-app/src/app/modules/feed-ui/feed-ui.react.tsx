@@ -1,23 +1,22 @@
 import { useLoaderData, useSearchParams } from "react-router-dom";
 
+import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
+import {
+  getLocation,
+  hasTags,
+  stringifyTags,
+} from "@windy-civi/domain/filters/filters.utils";
+import { FilterParams } from "@windy-civi/domain/types";
 import { useEffect, useState } from "react";
-import { Feed } from "~app/modules/feed-ui";
-import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
+import { Feed } from "~app/modules/feed-ui/react/Feed";
+import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
+import { DEFAULT_GLOBAL_STATE } from "./feed-ui.constants";
 import {
   type FeedProps,
   type UpdateFiltersFn,
   type UpdateGlobalStateFn,
 } from "./feed-ui.types";
 import { cookieFactory, formatDate } from "./feed-ui.utils";
-import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
-import {
-  getLocation,
-  hasTags,
-  stringifyTags,
-  createFilterParams,
-} from "@windy-civi/domain/filters/filters.utils";
-import { FilterParams } from "@windy-civi/domain/types";
-import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
 
 export function ForYouPage() {
   const result = useLoaderData() as FeedProps;
@@ -28,10 +27,6 @@ export function ForYouPage() {
 
   // Update the last updated timestamp
   useEffect(() => {
-    // Ignore on intro
-    if (globalState.route === RouteOption.INTRO) {
-      return;
-    }
     const cookies = cookieFactory(document);
     const today = formatDate();
     const previousDate = cookies.get("lastVisited");
@@ -114,7 +109,6 @@ export function ForYouPage() {
     cookies.delete("level");
     cookies.delete("lastVisited");
     cookies.delete("lastVisitHold");
-    cookies.delete("hideLLMWarning");
     cookies.delete("pwa-install-prompt");
     setFilters(DEFAULT_FILTERS);
     setGlobalState(DEFAULT_GLOBAL_STATE);
@@ -123,43 +117,6 @@ export function ForYouPage() {
 
   const updateGlobalState: UpdateGlobalStateFn = (next) => {
     const newSearchParams = new URLSearchParams(searchParams.toString());
-    const cookies = cookieFactory(document);
-    if ("route" in next) {
-      // Get default filter data from your feed
-      if (next.route === RouteOption.EXPLORE) {
-        newSearchParams.set("showExplore", "true");
-      } else {
-        newSearchParams.delete("showExplore");
-      }
-
-      // Go through the filters and add/remove them based on the mode
-      ["location", "tags", "level"].forEach((filterParam) => {
-        if (next.route === RouteOption.EXPLORE) {
-          const savedParam = cookies.get(filterParam);
-          if (savedParam) {
-            newSearchParams.set(filterParam, savedParam);
-          }
-        } else {
-          newSearchParams.delete(filterParam);
-        }
-      });
-
-      if (next.route === RouteOption.FEED) {
-        const savedPreferences = createFilterParams({
-          location: cookies.get("location"),
-          level: cookies.get("level"),
-          tags: cookies.get("tags"),
-        });
-        setFilters({ ...filters, ...savedPreferences });
-
-        newSearchParams.delete("showExplore");
-      }
-    }
-
-    if ("hideLLMWarning" in next) {
-      cookies.set("hideLLMWarning", "true");
-    }
-
     setSearchParams(newSearchParams);
     setGlobalState({ ...globalState, ...next });
   };

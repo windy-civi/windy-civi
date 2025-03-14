@@ -6,7 +6,6 @@ import { ForYouPage } from "~app/modules/feed-ui/feed-ui.react";
 import { Support } from "~app/modules/support/Support";
 import { loader } from "./app/modules/feed-ui/feed-ui.loader";
 import "./index.css";
-
 const router = createHashRouter([
   {
     path: "/",

@@ -9,7 +9,6 @@ import {
   Tagging,
   classNames,
 } from "~app/modules/design-system";
-import { RouteOption } from "../feed-ui.constants";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { LegislatorsInfo } from "./Representatives";
 import { SupportedLocale, RepLevel } from "@windy-civi/domain/constants";
@@ -31,7 +30,6 @@ const LocationFilterContainer = (props: {
   afterLocation: React.ReactNode;
   onChange: (next: LocationFilter) => void;
   onClear: () => void;
-  introMode: boolean;
 }) => {
   const hasLocation = Boolean(props.location);
   const [isEditing, setIsEditing] = useState(!hasLocation);
@@ -39,7 +37,6 @@ const LocationFilterContainer = (props: {
   if (!isEditing) {
     return (
       <FilterContainer
-        largeTitle={props.introMode}
         title={
           <div>
             Location (
@@ -71,7 +68,6 @@ const LocationFilterContainer = (props: {
 
   return (
     <FilterContainer
-      largeTitle={props.introMode}
       title={
         <div>
           Location
@@ -209,11 +205,9 @@ export const LevelFilter = (props: FeedProps) => {
   );
 };
 
-export const YourFilterSummary = (
-  props: FeedFilterProps & { setIsExploring: (b: boolean) => void },
-) => {
+export const YourFilterSummary = (props: FeedFilterProps) => {
   const locationInfoText = getLocationInformationText(props.filters.location);
-  const locationName = getLocation(props.filters.location);
+  // const locationName = getLocation(props.filters.location);
   const address = getAddress(props.filters.location);
   const locationText = (
     <div className="mb-1 text-left font-serif text-sm lg:text-lg">
@@ -238,94 +232,49 @@ export const YourFilterSummary = (
     </div>
   );
 
-  const preferencesText = (
-    <span>
-      <span className="opacity-60">Preferences</span>
-      <span className="opacity-50">
-        {" "}
-        (
-        <span
-          role="button"
-          className="underline"
-          onClick={() => {
-            props.setIsExploring(true);
-          }}
-        >
-          Edit
-        </span>
-        |
-        <span
-          role="button"
-          className="underline"
-          onClick={() => {
-            const confirm = window.confirm(
-              "Are you sure you want to reset everything? All preferences will be lost",
-            );
-            if (confirm) {
-              props.deleteAllData();
-            }
-          }}
-        >
-          Reset
-        </span>
-        )
-      </span>
-    </span>
-  );
-
   const tagsToShow = getTagsBeingFiltered(props.filters);
 
   return (
-    <div className="bg-black bg-opacity-30 p-2 lg:mt-5 lg:rounded-lg lg:px-5 lg:py-3">
-      <div className="text-center text-white lg:text-left">
-        <div className="lg:text-right">{preferencesText}</div>
-        <div className="hidden lg:block">
-          {locationText}
-          {address && (
-            <>
-              <Divider type="white" className="my-5" />
-              <div className="text-lg">{address}</div>
-            </>
-          )}
+    <>
+      <div className="hidden lg:block">
+        {locationText}
+        {address && (
+          <>
+            <Divider type="white" className="my-5" />
+            <div className="text-lg">{address}</div>
+          </>
+        )}
+      </div>
+      <LegislatorsInfo
+        showAllReps={props.showAllReps}
+        location={props.filters.location}
+        offices={props.offices}
+      />
+      {/* Mobile Tags */}
+      <div className="lg:hidden lg:justify-end">
+        {tagsToShow.map((v) => {
+          return <Tag className="inline-block" key={v} type="tiny" text={v} />;
+        })}
+      </div>
+      {/* Desktop Tags */}
+      <div className="hidden lg:block">
+        <Divider type="white" className="my-5" />
+        <div className="mb-1 text-base font-bold uppercase opacity-80">
+          Following
         </div>
-        <div className="text-base lg:hidden">
-          {address ? address : `Location: ${locationName}`}
-        </div>
-        <LegislatorsInfo
-          showAllReps={props.showAllReps}
-          location={props.filters.location}
-          offices={props.offices}
-        />
-        {/* Mobile Tags */}
-        <div className="overflow-hidden font-sans lg:hidden lg:justify-end">
-          <div className="my-1 overflow-x-scroll whitespace-nowrap">
-            {tagsToShow.map((v) => {
-              return (
-                <Tag className="inline-block" key={v} type="tiny" text={v} />
-              );
-            })}
-          </div>
-        </div>
-        {/* Desktop Tags */}
-        <div className="hidden lg:block">
-          <Divider type="white" className="my-5" />
-          <div className="mb-1 text-base font-bold uppercase opacity-80">
-            Following
-          </div>
-          <div className="my-1 flex flex-wrap justify-center font-sans">
-            {tagsToShow.map((v) => {
-              return (
-                <Tag
-                  key={v}
-                  text={v}
-                  className="bg-opacity-60 text-sm lg:text-base"
-                />
-              );
-            })}
-          </div>
+        <div className="my-1 flex flex-wrap justify-center font-sans">
+          {tagsToShow.map((v) => {
+            return (
+              <Tag
+                key={v}
+                text={v}
+                className="bg-opacity-60 text-sm lg:text-base"
+              />
+            );
+          })}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -368,7 +317,6 @@ export const BillFilters = (
     title: string;
   },
 ) => {
-  const introMode = props.globalState.route === RouteOption.INTRO;
   const [filterState, setFilterState] = useState<FilterParams>(props.filters);
 
   const updateFilters = (next: Partial<FilterParams>) => {
@@ -387,7 +335,7 @@ export const BillFilters = (
     <>
       <Divider type="white" className="my-2 lg:my-3" />
       <LegislatorsInfo
-        className={classNames("opacity-80", introMode && "text-center")}
+        className={classNames("opacity-80")}
         offices={props.offices}
         location={filterState.location}
         showAllReps={props.showAllReps}
@@ -409,7 +357,6 @@ export const BillFilters = (
         >
           {/* Location Filter */}
           <LocationFilterContainer
-            introMode={introMode}
             location={filterState.location}
             afterLocation={afterLocation}
             onChange={(next) => {
@@ -426,7 +373,7 @@ export const BillFilters = (
           {/* Tags Filter */}
           {filterState.location && (
             <>
-              <FilterContainer title="Interests" largeTitle={introMode}>
+              <FilterContainer title="Interests">
                 <Tagging
                   tags={filterState.availableTags}
                   selected={filterState.tags}
@@ -440,7 +387,7 @@ export const BillFilters = (
               {/* Save Button */}
               <div className="mt-4 flex w-full justify-center">
                 <Button type="call-to-action" onClick={() => saveAsFeed()}>
-                  {introMode ? "See Legislation" : "Save As Feed"}
+                  Save As Feed
                 </Button>
               </div>
             </>

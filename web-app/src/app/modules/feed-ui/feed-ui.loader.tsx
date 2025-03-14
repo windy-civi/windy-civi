@@ -4,10 +4,7 @@ import { getEnv } from "~app/modules/config";
 import { getFilteredLegislation } from "@windy-civi/domain/filters/filters.api";
 
 import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
-import {
-  createFilterParams,
-  parseRepLevel,
-} from "@windy-civi/domain/filters/filters.utils";
+import { createFilterParams } from "@windy-civi/domain/filters/filters.utils";
 import { FilterParams } from "@windy-civi/domain/types";
 import { viteDataGetter } from "../../../api/vite-api";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
@@ -16,7 +13,7 @@ import { getCookieFromString } from "./feed-ui.utils";
 import { getRepresentativesWithCache } from "@windy-civi/domain/representatives/representatives.api";
 import { getAllOffices } from "@windy-civi/domain/representatives/representatives.utils";
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader: LoaderFunction = async () => {
   const globalState = DEFAULT_GLOBAL_STATE;
 
   // Feed State is in Cookies
@@ -42,59 +39,15 @@ export const loader: LoaderFunction = async ({ request }) => {
     const lastVisitHold = getCookieFromString(cookieHeader, "lastVisitHold");
     const lastVisited = getCookieFromString(cookieHeader, "lastVisited");
     globalState.lastVisited = lastVisitHold || lastVisited || "";
-
-    const hideLLMWarning = getCookieFromString(cookieHeader, "hideLLMWarning");
-    if (hideLLMWarning) {
-      globalState.hideLLMWarning = true;
-    }
   }
 
-  // Explore State is in the URL Search Params
-  const url = new URL(request.url);
-
-  const showExplore = url.searchParams.get("showExplore");
-
-  if (!savedPreferences) {
-    globalState.route = RouteOption.INTRO;
-  } else if (savedPreferences && showExplore) {
-    globalState.route = RouteOption.EXPLORE;
-  } else {
-    globalState.route = RouteOption.FEED;
-  }
-
-  const shouldAcceptSearchParams =
-    globalState.route === RouteOption.EXPLORE ||
-    globalState.route === RouteOption.INTRO;
-
-  const levelSearchParam = url.searchParams.get("level");
-  const locationSearchParam = url.searchParams.get("location");
-
-  let searchParams: FilterParams | null = null;
-  if (shouldAcceptSearchParams) {
-    const tags = url.searchParams.get("tags");
-    const level = levelSearchParam;
-    searchParams = createFilterParams({
-      location: locationSearchParam,
-      level,
-      tags,
-    });
-  }
-
-  // The one search param used on the feed is level
-  if (savedPreferences && levelSearchParam) {
-    savedPreferences = {
-      ...savedPreferences,
-      level: parseRepLevel(levelSearchParam),
-    };
-  }
+  // todo: update later
+  globalState.route = RouteOption.FEED;
 
   // Picking filters based on if feed or explore
-  const filters: FilterParams =
-    shouldAcceptSearchParams && searchParams
-      ? searchParams
-      : savedPreferences
-        ? savedPreferences
-        : DEFAULT_FILTERS;
+  const filters: FilterParams = savedPreferences
+    ? savedPreferences
+    : DEFAULT_FILTERS;
 
   const env = getEnv(import.meta.env);
   const representatives = await getRepresentativesWithCache(
