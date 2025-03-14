@@ -10,16 +10,6 @@ interface StyleComponent {
   children?: React.ReactNode;
 }
 
-export const Container: React.FC<StyleComponent> = ({
-  children,
-  style,
-  className,
-}) => (
-  <div className={className} style={{ ...(style || {}) }}>
-    {children}
-  </div>
-);
-
 export const Grid: React.FC<StyleComponent> = ({
   children,
   style,

@@ -17,8 +17,6 @@ import {
   isAddressFilter,
   isCityLevel,
   isStateLevel,
-  getLocationInformationText,
-  getAddress,
   getTagsBeingFiltered,
   parseAvailableTags,
 } from "@windy-civi/domain/filters/filters.utils";
@@ -205,76 +203,40 @@ export const LevelFilter = (props: FeedProps) => {
   );
 };
 
-export const YourFilterSummary = (props: FeedFilterProps) => {
-  const locationInfoText = getLocationInformationText(props.filters.location);
-  // const locationName = getLocation(props.filters.location);
-  const address = getAddress(props.filters.location);
-  const locationText = (
-    <div className="mb-1 text-left font-serif text-sm lg:text-lg">
-      {locationInfoText.locationName && (
-        <div className="mb-1 inline lg:block lg:text-3xl">
-          {locationInfoText.locationName}!{" "}
-        </div>
-      )}
-      {/* If only 1 layer, "combining" messaging doesn't make sense. */}
-      {locationInfoText.levelText === "National" ? (
-        <>
-          This feed is summarizing bills that impact the entire country in an an
-          easy to digest way.
-        </>
-      ) : (
-        <>
-          <span className="opacity-80 ">This feed is combining </span>
-          <span>{locationInfoText.levelText}</span>
-          <span className="opacity-80"> bills into a unified experience.</span>
-        </>
-      )}
-    </div>
-  );
+// const OverallSummary = (props: FeedFilterProps) => {
+//   const locationInfoText = getLocationInformationText(props.filters.location);
+//   return (
+//     <div className="mb-1 text-left font-serif text-sm lg:text-lg">
+//       {locationInfoText.locationName && (
+//         <div className="mb-1 inline lg:block lg:text-3xl">
+//           {locationInfoText.locationName}!{" "}
+//         </div>
+//       )}
+//       {/* If only 1 layer, "combining" messaging doesn't make sense. */}
+//       {locationInfoText.levelText === "National" ? (
+//         <>
+//           This feed is summarizing bills that impact the entire country in an an
+//           easy to digest way.
+//         </>
+//       ) : (
+//         <>
+//           <span className="opacity-80 ">This feed is combining </span>
+//           <span>{locationInfoText.levelText}</span>
+//           <span className="opacity-80"> bills into a unified experience.</span>
+//         </>
+//       )}
+//     </div>
+//   );
+// };
 
+export const TagNavigation = (props: FeedFilterProps) => {
   const tagsToShow = getTagsBeingFiltered(props.filters);
-
   return (
-    <>
-      <div className="hidden lg:block">
-        {locationText}
-        {address && (
-          <>
-            <Divider type="white" className="my-5" />
-            <div className="text-lg">{address}</div>
-          </>
-        )}
-      </div>
-      <LegislatorsInfo
-        showAllReps={props.showAllReps}
-        location={props.filters.location}
-        offices={props.offices}
-      />
-      {/* Mobile Tags */}
-      <div className="lg:hidden lg:justify-end">
-        {tagsToShow.map((v) => {
-          return <Tag className="inline-block" key={v} type="tiny" text={v} />;
-        })}
-      </div>
-      {/* Desktop Tags */}
-      <div className="hidden lg:block">
-        <Divider type="white" className="my-5" />
-        <div className="mb-1 text-base font-bold uppercase opacity-80">
-          Following
-        </div>
-        <div className="my-1 flex flex-wrap justify-center font-sans">
-          {tagsToShow.map((v) => {
-            return (
-              <Tag
-                key={v}
-                text={v}
-                className="bg-opacity-60 text-sm lg:text-base"
-              />
-            );
-          })}
-        </div>
-      </div>
-    </>
+    <div className="flex">
+      {tagsToShow.map((v) => {
+        return <Tag className="inline-block" key={v} type="tiny" text={v} />;
+      })}
+    </div>
   );
 };
 
