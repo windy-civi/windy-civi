@@ -8,7 +8,6 @@ import {
 } from "@windy-civi/domain/filters/filters.utils";
 import { FilterParams } from "@windy-civi/domain/types";
 import { useEffect, useState } from "react";
-import { Feed } from "~app/modules/feed-ui/react/Feed";
 import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
 import { DEFAULT_GLOBAL_STATE } from "./feed-ui.constants";
 import {
@@ -17,6 +16,7 @@ import {
   type UpdateGlobalStateFn,
 } from "./feed-ui.types";
 import { cookieFactory, formatDate } from "./feed-ui.utils";
+import { Feed } from "./react/Feed";
 
 export function ForYouPage() {
   const result = useLoaderData() as FeedProps;

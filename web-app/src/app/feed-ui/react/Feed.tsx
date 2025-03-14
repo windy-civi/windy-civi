@@ -1,8 +1,6 @@
 import React from "react";
-import { PWAInstall } from "~app/modules/app-shell/PwaInstaller";
-import type { StyleHack } from "~app/modules/design-system";
-import { classNames } from "~app/modules/design-system";
-import { Logo } from "~app/modules/design-system/Logo/Logo";
+import { PWAInstall } from "../../app-shell/PwaInstaller";
+import { Logo, StyleHack, classNames } from "../../design-system";
 import { FeedFilterProps, FeedProps } from "../feed-ui.types";
 import { FeedBills } from "./Bills";
 import { TagNavigation } from "./Filters";

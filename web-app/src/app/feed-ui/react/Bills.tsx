@@ -7,9 +7,7 @@ import {
   mapToReadableStatus,
 } from "@windy-civi/domain/filters/filters.utils";
 import { WindyCiviBill } from "@windy-civi/domain/types";
-import { Tag, classNames } from "~app/modules/design-system";
-import { Carousel } from "~app/modules/design-system/Carousel/Carousel";
-import { RobotSvg } from "~app/modules/design-system/Icons";
+import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
 import { FeedProps } from "../feed-ui.types";
 import { LevelFilter } from "./Filters";
 

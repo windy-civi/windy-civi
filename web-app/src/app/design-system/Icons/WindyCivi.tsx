@@ -1,4 +1,4 @@
-import windyCiviLogo from "./windy-civi-logo-1-line.png";
+import windyCiviLogo from "./windy-civi-logo.png";
 
 export const Logo = () => {
   return (

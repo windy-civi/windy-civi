@@ -1,12 +1,12 @@
 import { json, type LoaderFunction } from "react-router-dom";
-import { getEnv } from "~app/modules/config";
+import { getEnv } from "../config";
 
 import { getFilteredLegislation } from "@windy-civi/domain/filters/filters.api";
 
 import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
 import { createFilterParams } from "@windy-civi/domain/filters/filters.utils";
 import { FilterParams } from "@windy-civi/domain/types";
-import { viteDataGetter } from "../../../api/vite-api";
+import { viteDataGetter } from "../../api/vite-api";
 import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
 import { type FeedLoaderData } from "./feed-ui.types";
 import { getCookieFromString } from "./feed-ui.utils";
