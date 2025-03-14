@@ -47,7 +47,7 @@ export enum DataStores {
 }
 
 export const DEFAULT_FILTERS: FilterParams = {
-  location: null,
+  location: "usa",
   level: null,
   tags: null,
   availableTags: AVAILABLE_TAGS,

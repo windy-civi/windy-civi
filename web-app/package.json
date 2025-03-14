@@ -12,6 +12,7 @@
     "spellcheck": "cspell '**/*.{js,ts,jsx,tsx,json,css,md}'",
     "postinstall": "npm run create-env",
     "create-env": "node ./create-env.cjs",
+    "copy-release": "rm -rf ./dist_legislation && cp -r ./node_modules/@windy-civi/storage/data ./dist_legislation && ls ./dist_legislation",
     "typecheck": "tsc -b",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "quality": "run-p lint typecheck format:check spellcheck",

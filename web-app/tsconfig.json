@@ -16,8 +16,6 @@
 
     // Paths
     "paths": {
-      "~app/*": ["./src/app/*"],
-      "~/*": ["./src/app/modules/*"],
       "@windy-civi/domain/*": ["../domain/*"]
     },
 

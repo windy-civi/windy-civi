@@ -1,11 +1,15 @@
 import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import AppProvider from "~app/modules/app-shell/AppProvider";
-import { getEnv } from "~app/modules/config";
-import { ForYouPage } from "~app/modules/feed-ui/feed-ui.react";
-import { Support } from "~app/modules/support/Support";
-import { loader } from "./app/modules/feed-ui/feed-ui.loader";
-import "./index.css";
+import AppProvider from "./app/app-shell/AppProvider";
+import { getEnv } from "./app/config";
+import { ForYouPage } from "./app/feed-ui/feed-ui.react";
+import { Support } from "./app/support/Support";
+import { loader } from "./app/feed-ui/feed-ui.loader";
+
+/**
+ * Load tailwind
+ */
+import "./tailwind-install.css";
 
 const router = createHashRouter([
   {

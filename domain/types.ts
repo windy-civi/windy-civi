@@ -1,5 +1,10 @@
 import { RepLevel, SupportedLocale } from "./constants";
 
+// ## Legacy System Integration
+//
+// ### Legislation Types
+// These types support integration with existing legislation data sources.
+
 export type LegislationResult = {
   legislation: CiviLegislationData[];
   gpt: CiviGptLegislationData;
@@ -14,13 +19,15 @@ interface FilteredLegislationData {
   level: RepLevel;
 }
 
+// ### Sponsor Information
 export type Sponsor = {
   name: string;
   role: string;
   district: string;
 };
 
-// Typing the .legislation.json files
+// ### Core Legislation Data
+// Represents the primary structure of legislation information.
 export interface CiviLegislationData {
   status: string[];
   statusDate: string;
@@ -42,6 +49,7 @@ export interface CiviLegislationData {
   };
 }
 
+// ### Legislation Change Tracking
 export type CiviLegislationDataForDiff = Partial<
   Pick<CiviLegislationData, "id" | "status" | "statusDate"> & {
     sponsors?: Partial<Sponsor>[];
@@ -62,7 +70,7 @@ export type LegislationChange = {
   };
 };
 
-// Type for the .gpt.json files
+// ### GPT-Enhanced Data
 export interface CiviGptLegislationData {
   [bill_id: string]: {
     gpt_summary: string;
@@ -70,7 +78,7 @@ export interface CiviGptLegislationData {
   };
 }
 
-// Typing the wiki.json files
+// ### Wiki Integration
 export interface CiviWikiLegislationData {
   bill_id: string;
   summary: string;
@@ -79,16 +87,18 @@ export interface CiviWikiLegislationData {
   tags: string[];
 }
 
+// ## Feed Processing Types
+
 export type LegislationFeed = {
   fullLegislation: WindyCiviBill[];
   filteredLegislation: WindyCiviBill[];
 };
 
 export interface WindyCiviBill extends FilteredLegislationData {
-  // String that is the name of the rep that sponsored the bill
-  // note: this should become a OfficialOffice object
   sponsoredByRep?: string | false;
 }
+
+// ## Data Access Layer
 
 export interface DataStoreGetter {
   getLegislationData: (
@@ -100,9 +110,13 @@ export interface DataStoreGetter {
   locales: typeof SupportedLocale;
 }
 
+// ## Environment and Configuration
+
 export type Env = {
   GOOGLE_API_KEY: string;
 };
+
+// ## Localization and Filtering
 
 export type Locales = `${SupportedLocale}`;
 

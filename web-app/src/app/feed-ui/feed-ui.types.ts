@@ -18,7 +18,6 @@ export interface FeedProps extends FeedLoaderData {
 
 export interface GlobalState {
   lastVisited: string; // timestamp
-  hideLLMWarning: boolean;
   route: RouteOption;
 }
 
