@@ -2,7 +2,8 @@ import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import AppProvider from "./app/app-shell/AppProvider";
 import { getEnv } from "./app/config";
-import { loader } from "./app/navigator/loader";
+import { loader as feedLoader } from "./app/feed/loader";
+import { loader as navigatorLoader } from "./app/navigator/loader";
 import { Navigator } from "./app/navigator/element";
 import { Support } from "./app/support/Support";
 import { Preferences } from "./app/preferences/element";
@@ -18,12 +19,12 @@ import "./tailwind-install.css";
 const router = createHashRouter([
   {
     path: "/",
-    loader,
+    loader: navigatorLoader,
     element: <Navigator />,
     children: [
       {
         path: "/",
-        loader,
+        loader: feedLoader,
         element: <Feed />,
       },
       {

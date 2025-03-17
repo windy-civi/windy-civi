@@ -109,7 +109,6 @@ const sortLegislationByScore = (
 
 export const FeedBills = (props: Pick<FeedLoaderData, "feedData">) => {
   const sortedLegislation = sortLegislationByScore(props.feedData);
-
   return (
     <>
       {sortedLegislation.map((l) => (
