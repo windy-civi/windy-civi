@@ -20,7 +20,7 @@ import {
   Tagging,
   classNames,
 } from "../../design-system";
-import { FeedFilterProps, FeedProps } from "../feed-ui.types";
+import { FeedFilterProps, FeedProps } from "../types";
 import { LegislatorsInfo } from "./Representatives";
 
 const LocationFilterContainer = (props: {
@@ -230,7 +230,7 @@ export const LevelFilter = (props: FeedProps) => {
 // };
 
 export const TagNavigation = (props: FeedFilterProps) => {
-  const tagsToShow = getTagsBeingFiltered(props.filters);
+  const tagsToShow = getTagsBeingFiltered(props.filters).slice(0, 3);
   return (
     <div className="flex">
       {tagsToShow.map((v) => {

@@ -7,46 +7,22 @@ import {
   stringifyTags,
 } from "@windy-civi/domain/filters/filters.utils";
 import { FilterParams } from "@windy-civi/domain/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
-import { DEFAULT_GLOBAL_STATE } from "./feed-ui.constants";
+import { DEFAULT_GLOBAL_STATE } from "./constants";
 import {
   type FeedProps,
   type UpdateFiltersFn,
   type UpdateGlobalStateFn,
-} from "./feed-ui.types";
-import { cookieFactory, formatDate } from "./feed-ui.utils";
-import { Feed } from "./react/Feed";
+} from "./types";
+import { cookieFactory } from "./utils";
+import { FeedBills } from "./react/Bills";
 
-export function ForYouPage() {
+export function Feed() {
   const result = useLoaderData() as FeedProps;
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [globalState, setGlobalState] = useState(result.globalState);
   const [filters, setFilters] = useState(result.filters);
-
-  // Update the last updated timestamp
-  useEffect(() => {
-    const cookies = cookieFactory(document);
-    const today = formatDate();
-    const previousDate = cookies.get("lastVisited");
-    const holdDate = cookies.get("lastVisitedHold");
-    if (previousDate !== today) {
-      cookies.set("lastVisitHold", previousDate, 0.5);
-      cookies.set("lastVisited", today);
-      setGlobalState({ ...globalState, lastVisited: previousDate });
-    }
-    // If hold date exists, use it for global state
-    if (holdDate) {
-      setGlobalState({ ...globalState, lastVisited: holdDate });
-    }
-
-    publishUserPreferences({
-      filters: filters,
-    });
-    // Only want this to run once
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-  }, []);
 
   const updateFilters: UpdateFiltersFn = (next) => {
     // Decide which storage to use
@@ -122,7 +98,7 @@ export function ForYouPage() {
   };
 
   return (
-    <Feed
+    <FeedBills
       {...result}
       filters={filters}
       globalState={globalState}

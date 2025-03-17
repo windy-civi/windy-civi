@@ -542,7 +542,7 @@ import {
 } from "@windy-civi/domain/constants";
 
 export const Tag: React.FC<{
-  type?: "tiny";
+  type?: "tiny" | "icon";
   text: string;
   onClick?: () => void;
   className?: string;
@@ -615,6 +615,9 @@ export const Tag: React.FC<{
     default:
       icon = "";
       background = "bg-gray-500";
+  }
+  if (type === "icon") {
+    return <span className={classNames(className, background)}>{icon}</span>;
   }
   return (
     <span

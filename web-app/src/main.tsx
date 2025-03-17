@@ -2,24 +2,39 @@ import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import AppProvider from "./app/app-shell/AppProvider";
 import { getEnv } from "./app/config";
-import { ForYouPage } from "./app/feed-ui/feed-ui.react";
+import { loader } from "./app/navigator/loader";
+import { Navigator } from "./app/navigator/element";
 import { Support } from "./app/support/Support";
-import { loader } from "./app/feed-ui/feed-ui.loader";
+import { Preferences } from "./app/preferences/element";
+import { loader as preferencesLoader } from "./app/preferences/loader";
 
 /**
  * Load tailwind
  */
+import { Feed } from "./app/feed/element";
 import "./tailwind-install.css";
 
 const router = createHashRouter([
   {
     path: "/",
     loader,
-    element: <ForYouPage />,
-  },
-  {
-    path: "/help",
-    element: <Support />,
+    element: <Navigator />,
+    children: [
+      {
+        path: "/",
+        loader,
+        element: <Feed />,
+      },
+      {
+        path: "/help",
+        element: <Support />,
+      },
+      {
+        path: "/preferences",
+        loader: preferencesLoader,
+        element: <Preferences />,
+      },
+    ],
   },
 ]);
 

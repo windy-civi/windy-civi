@@ -8,7 +8,7 @@ import {
 } from "@windy-civi/domain/filters/filters.utils";
 import { WindyCiviBill } from "@windy-civi/domain/types";
 import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
-import { FeedProps } from "../feed-ui.types";
+import { FeedProps } from "../types";
 import { LevelFilter } from "./Filters";
 
 const newBillGlow = {

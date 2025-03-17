@@ -1,4 +1,4 @@
-import { GlobalState } from "./feed-ui.types";
+import { GlobalState } from "./types";
 
 export enum RouteOption {
   FEED = "FEED",

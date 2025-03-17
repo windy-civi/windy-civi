@@ -1,5 +1,5 @@
 import { Env, LegislationFeed, FilterParams } from "@windy-civi/domain/types";
-import { RouteOption } from "./feed-ui.constants";
+import { RouteOption } from "./constants";
 import { OfficialOffice } from "@windy-civi/domain/representatives/representatives.types";
 
 export interface FeedLoaderData extends LegislationFeed {

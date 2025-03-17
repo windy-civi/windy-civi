@@ -7,9 +7,9 @@ import { DEFAULT_FILTERS } from "@windy-civi/domain/constants";
 import { createFilterParams } from "@windy-civi/domain/filters/filters.utils";
 import { FilterParams } from "@windy-civi/domain/types";
 import { viteDataGetter } from "../../api/vite-api";
-import { DEFAULT_GLOBAL_STATE, RouteOption } from "./feed-ui.constants";
-import { type FeedLoaderData } from "./feed-ui.types";
-import { getCookieFromString } from "./feed-ui.utils";
+import { DEFAULT_GLOBAL_STATE, RouteOption } from "./constants";
+import { type FeedLoaderData } from "./types";
+import { getCookieFromString } from "./utils";
 import { getRepresentativesWithCache } from "@windy-civi/domain/representatives/representatives.api";
 import { getAllOffices } from "@windy-civi/domain/representatives/representatives.utils";
 
