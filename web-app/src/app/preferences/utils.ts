@@ -37,11 +37,6 @@ export const parseLocation = (locationParam: unknown): SupportedLocale =>
 // Making async to make it easier to port to future storage async behavior
 export const getPreferencesFromCookies = async (cookieHeader?: string) => {
   if (cookieHeader) {
-    console.log(
-      "cookieHeader",
-      cookieHeader,
-      getCookieFromString(cookieHeader, "location"),
-    );
     return {
       location: parseLocation(getCookieFromString(cookieHeader, "location")),
       tags: parseTags(getCookieFromString(cookieHeader, "tags")),
@@ -63,7 +58,6 @@ export const getPreferencesFromCookies = async (cookieHeader?: string) => {
 export const savePreferencesToCookies = (preferences: UserPreferences) => {
   // Save to cookies
   const cookies = cookieFactory(document);
-  console.log("preferences", preferences);
   Object.entries(preferences).forEach(([key, value]) => {
     if (value) {
       cookies.set(key, typeof value === "string" ? value : String(value));

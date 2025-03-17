@@ -1,11 +1,12 @@
 import { Outlet, NavLink, useLoaderData, useLocation } from "react-router-dom";
 
 import React from "react";
-import { PWAInstall } from "../app-shell/PwaInstaller";
+import { PWAInstall } from "./components/PwaInstaller";
 import { Logo, StyleHack, classNames } from "../design-system";
 import { Feed } from "../feed/element";
 import { FaGear } from "react-icons/fa6";
-import { NavigatorLoaderData } from "./types";
+import { AppShellLoaderData } from "./types";
+import { AppProvider } from "./context";
 
 const NavItem = ({
   name,
@@ -71,7 +72,7 @@ export const CommunityRoute = () => {
   );
 };
 
-const Navigation = (props: NavigatorLoaderData) => {
+const Navigation = (props: AppShellLoaderData) => {
   return (
     <HeaderScrollContainer>
       <Logo />
@@ -178,9 +179,14 @@ export const NavigatorShell = ({
   );
 };
 
-export function Navigator() {
-  const result = useLoaderData() as NavigatorLoaderData;
+export function AppShell() {
+  const result = useLoaderData() as AppShellLoaderData;
   return (
-    <NavigatorShell navigation={<Navigation {...result} />} feed={<Outlet />} />
+    <AppProvider value={result.env}>
+      <NavigatorShell
+        navigation={<Navigation {...result} />}
+        feed={<Outlet />}
+      />
+    </AppProvider>
   );
 }

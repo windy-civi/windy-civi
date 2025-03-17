@@ -5,7 +5,7 @@
 import Autocomplete from "react-google-autocomplete";
 
 import { ComponentType } from "react";
-import { useAppContext } from "../../app-shell/AppContext";
+import { useAppContext } from "../../app-shell/context";
 
 export const AddressLookup: ComponentType<{
   onPlaceSelected: (address: string) => void;

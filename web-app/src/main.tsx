@@ -1,32 +1,25 @@
 import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import AppProvider from "./app/app-shell/AppProvider";
-import { getEnv } from "./app/config";
+import { AppShell } from "./app/app-shell/element";
+import { loader as navigatorLoader } from "./app/app-shell/loader";
+import { Feed } from "./app/feed/element";
 import { loader as feedLoader } from "./app/feed/loader";
-import { loader as navigatorLoader } from "./app/navigator/loader";
-import { Navigator } from "./app/navigator/element";
-import { Support } from "./app/support/Support";
+import { action as preferencesAction } from "./app/preferences/action";
 import { Preferences } from "./app/preferences/element";
 import { loader as preferencesLoader } from "./app/preferences/loader";
-import { action as preferencesAction } from "./app/preferences/action";
+import { Support } from "./app/support/Support";
 
 /**
  * Load tailwind
  */
-import { Feed } from "./app/feed/element";
 import "./tailwind-install.css";
 
 const router = createHashRouter([
   {
     path: "/",
     loader: navigatorLoader,
-    element: <Navigator />,
+    element: <AppShell />,
     children: [
-      {
-        path: "/",
-        loader: feedLoader,
-        element: <Feed />,
-      },
       {
         path: "/help",
         element: <Support />,
@@ -37,14 +30,21 @@ const router = createHashRouter([
         action: preferencesAction,
         element: <Preferences />,
       },
+      {
+        path: "/",
+        loader: feedLoader,
+        element: <Feed />,
+      },
+      // Catch all feed routes
+      {
+        path: "/:id",
+        loader: feedLoader,
+        element: <Feed />,
+      },
     ],
   },
 ]);
 
-const env = getEnv(import.meta.env);
-
 createRoot(document.getElementById("root")!).render(
-  <AppProvider value={env}>
-    <RouterProvider router={router} />
-  </AppProvider>,
+  <RouterProvider router={router} />,
 );

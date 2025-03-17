@@ -10,7 +10,6 @@ export const ALLOWED_GPT_TAGS = [
   "States Rights",
   "Civil Rights",
   "Climate Change",
-  "Other",
 ];
 
 // City level filters for tags that are not GPT tags
