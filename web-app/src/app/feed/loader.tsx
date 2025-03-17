@@ -5,7 +5,7 @@ import { getFilteredLegislation } from "@windy-civi/domain/filters/filters.api";
 
 import { viteDataGetter } from "../../api/vite-api";
 import { getRepresentativesWithCache } from "@windy-civi/domain/representatives/representatives.api";
-import { getPreferencesFromCookies } from "../preferences/utils";
+import { getPreferencesFromCookies } from "../preferences/api";
 import { type FeedLoaderData } from "./types";
 
 export const loader: LoaderFunction = async () => {

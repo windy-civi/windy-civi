@@ -1,7 +1,7 @@
 import { publishUserPreferences } from "@windy-civi/domain/native-web-bridge/web-bridge";
 import { UserPreferences } from "@windy-civi/domain/types";
 import { ActionFunction, json } from "react-router-dom";
-import { savePreferencesToCookies } from "./utils";
+import { savePreferencesToCookies } from "./api";
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();

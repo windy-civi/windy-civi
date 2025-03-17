@@ -5,7 +5,7 @@ import { parseAvailableTags } from "@windy-civi/domain/filters/filters.utils";
 import { getRepresentativesWithCache } from "@windy-civi/domain/representatives/representatives.api";
 import { getAllOffices } from "@windy-civi/domain/representatives/representatives.utils";
 import { UserPreferencesLoaderData } from "./types";
-import { getPreferencesFromCookies } from "./utils";
+import { getPreferencesFromCookies } from "./api";
 
 // Preferences
 
