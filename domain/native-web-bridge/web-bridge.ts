@@ -1,4 +1,4 @@
-import { UserPreferences } from "@windy-civi/domain/types";
+import { UserPreferences } from "../types";
 
 // Theres a monorepo issue with native apps that isn't allowing symlinked packages to work in react native.
 // https://github.com/expo/expo/issues/9591#issuecomment-1485871356
@@ -11,7 +11,7 @@ export const publishUserPreferences = (userPreferences: UserPreferences) => {
       JSON.stringify({
         type: USER_PREFERENCES_CHANGED,
         payload: userPreferences,
-      }),
+      })
     );
   }
 };

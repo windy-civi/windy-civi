@@ -1,6 +1,6 @@
-import { ActionFunction, json } from "react-router-dom";
+import { publishUserPreferences } from "@windy-civi/domain/native-web-bridge/web-bridge";
 import { UserPreferences } from "@windy-civi/domain/types";
-import { publishUserPreferences } from "../native-web-bridge/native-web-bridge";
+import { ActionFunction, json } from "react-router-dom";
 import { savePreferencesToCookies } from "./utils";
 
 export const action: ActionFunction = async ({ request }) => {
