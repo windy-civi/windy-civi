@@ -1,21 +1,14 @@
 import { SupportedLocale } from "@windy-civi/domain/constants";
-import {
-  hasTags,
-  isSupportedLocale,
-} from "@windy-civi/domain/filters/filters.utils";
+import { hasTags, isSupportedLocale } from "@windy-civi/domain/feed/utils";
 import { UserPreferences } from "@windy-civi/domain/types";
 import { cookieFactory, getCookieFromString } from "../utils/cookies";
 
 const DEFAULT_TAGS = [] satisfies string[];
 const DEFAULT_LOCATION = "usa";
-const DEFAULT_HAS_REPRESENTATIVES = false;
-const DEFAULT_THEME = "default";
 
 const DEFAULT_USER_PREFERENCES: UserPreferences = {
   location: DEFAULT_LOCATION,
   tags: DEFAULT_TAGS,
-  representatives: DEFAULT_HAS_REPRESENTATIVES,
-  theme: DEFAULT_THEME,
 };
 
 /**
@@ -40,8 +33,6 @@ export const getPreferencesFromCookies = async (cookieHeader?: string) => {
     return {
       location: parseLocation(getCookieFromString(cookieHeader, "location")),
       tags: parseTags(getCookieFromString(cookieHeader, "tags")),
-      representatives: DEFAULT_HAS_REPRESENTATIVES,
-      theme: DEFAULT_THEME,
     } satisfies UserPreferences;
 
     // History State

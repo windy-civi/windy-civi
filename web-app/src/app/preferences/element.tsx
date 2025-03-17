@@ -8,7 +8,6 @@ import {
 } from "../design-system";
 import { useState } from "react";
 import { LocationPreferences } from "./components/Filters";
-import { AddressLookup } from "./components/AddressLookup";
 import { UserPreferences } from "@windy-civi/domain/types";
 import { UserPreferencesLoaderData } from "./types";
 import { PWAInstall } from "./components/PwaInstaller";
@@ -53,43 +52,6 @@ export function Preferences() {
           }}
         />
         <Section
-          title="Your Representatives"
-          description={
-            <div>
-              Use your address to save your elected officials and see the bills
-              they sponsor. We use Google Civic Information API to get this
-              information, and your address is not saved on any server.
-            </div>
-          }
-        >
-          <div className="flex flex-row gap-2">
-            <div
-              className={classNames(
-                "flex-1 rounded-md bg-black bg-opacity-30 shadow-md",
-              )}
-            >
-              <AddressLookup
-                // before={
-                //   <button
-                //     className="text-white opacity-60 hover:opacity-100"
-                //     onClick={() => props.onChange(SupportedLocale.USA)}
-                //   >
-                //     <FaBackspace />
-                //   </button>
-                // }
-                onClear={() => {}}
-                onPlaceSelected={
-                  () => {}
-                  // (address) => {
-                  // props.onChange({ address });
-                  // }
-                }
-                value={""}
-              />
-            </div>
-          </div>
-        </Section>
-        <Section
           title="Notifications"
           description={
             <div>
@@ -118,9 +80,11 @@ export function Preferences() {
           />
         </Section>
 
-        <Section title="Theme">
+        {/* todo: allow customization */}
+        {/* <Section title="Theme">
           <div></div>
-        </Section>
+        </Section> */}
+
         {/* Save Button */}
         <div className="mt-4 flex w-full justify-center">
           <Button type="submit">Save Preferences</Button>

@@ -1,23 +1,4 @@
-import {
-  CiviLegislationDataForDiff,
-  LegislationChange,
-  Sponsor,
-} from "../../domain";
-
-// Some of our data (check Chicago), doesn't have role/district data
-// todo: we should probably clean up sponsored to have a unique id generated.
-function areSponsorsEqual(
-  sponsor1: Partial<Sponsor>,
-  sponsor2: Partial<Sponsor>
-): boolean {
-  return (
-    (!sponsor1.name || !sponsor2.name || sponsor1.name === sponsor2.name) &&
-    (!sponsor1.role || !sponsor2.role || sponsor1.role === sponsor2.role) &&
-    (!sponsor1.district ||
-      !sponsor2.district ||
-      sponsor1.district === sponsor2.district)
-  );
-}
+import { CiviLegislationDataForDiff, LegislationChange } from "../../domain";
 
 export function findDifferences(
   prevBills: CiviLegislationDataForDiff[],
@@ -85,34 +66,6 @@ export function findDifferences(
           previous: prevBill.statusDate || null,
           new: newBill.statusDate,
         };
-      }
-
-      // Compare the sponsors array for added and removed items
-      if (!prevBill.sponsors && Array.isArray(newBill.sponsors)) {
-        differencesForItem.sponsors = {
-          added: newBill.sponsors,
-          removed: null,
-        };
-      } else if (
-        Array.isArray(prevBill.sponsors) &&
-        Array.isArray(newBill.sponsors)
-      ) {
-        const sponsoredAdded = newBill.sponsors.filter(
-          (s) =>
-            Array.isArray(prevBill.sponsors) &&
-            !prevBill.sponsors.some((p) => areSponsorsEqual(p, s))
-        );
-        const sponsoredRemoved = prevBill.sponsors.filter(
-          (s) =>
-            Array.isArray(newBill.sponsors) &&
-            !newBill.sponsors.some((p) => areSponsorsEqual(p, s))
-        );
-        if (sponsoredAdded.length > 0 || sponsoredRemoved.length > 0) {
-          differencesForItem.sponsors = {
-            added: sponsoredAdded,
-            removed: sponsoredRemoved,
-          };
-        }
       }
 
       if (Object.keys(differencesForItem).length > 0) {

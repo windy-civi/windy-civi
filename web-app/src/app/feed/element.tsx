@@ -6,5 +6,5 @@ import { FeedLoaderData } from "./types";
 export function Feed() {
   const result = useLoaderData() as FeedLoaderData;
 
-  return <FeedBills feedData={result.feedData} />;
+  return <FeedBills feed={result.feed} />;
 }

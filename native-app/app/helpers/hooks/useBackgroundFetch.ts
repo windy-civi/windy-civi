@@ -4,7 +4,7 @@ import * as TaskManager from "expo-task-manager";
 import { findDifferences } from "@windy-civi/domain/legislation-diff/diff";
 import { useStorage } from "./useStorage";
 import { useLocalPushNotifications } from "./useLocalPushNotifications";
-import { getFilteredLegislation } from "@windy-civi/domain/filters/filters.api";
+import { getFeed } from "@windy-civi/domain/feed/api";
 import { rnDataGetter } from "../rn-api";
 import { WindyCiviBill } from "@windy-civi/domain/types";
 
@@ -30,17 +30,16 @@ export const useBackgroundFetch = () => {
       const userPreferences = await getData({ key: "userPreferences" });
 
       // Fetch and store the legislation data
-      const newLegislation = await getFilteredLegislation({
+      const newLegislation = await getFeed({
         dataStoreGetter: rnDataGetter,
-        filters: userPreferences.filters,
-        representatives: null,
+        preferences: userPreferences.preferences,
       });
 
       // Check if old data is in storage
       const oldLegislation = await getData({ key: "legislation" });
 
-      if (oldLegislation?.filteredLegislation) {
-        const prevBills = oldLegislation.filteredLegislation.map(
+      if (oldLegislation?.feed) {
+        const prevBills = oldLegislation.feed.map(
           (legislation: WindyCiviBill) => ({
             id: legislation.bill.id,
             status: legislation.bill.status,
@@ -49,7 +48,7 @@ export const useBackgroundFetch = () => {
           })
         );
 
-        const currentBills = newLegislation.filteredLegislation.map(
+        const currentBills = newLegislation.feed.map(
           (legislation: WindyCiviBill) => ({
             id: legislation.bill.id,
             status: legislation.bill.status,

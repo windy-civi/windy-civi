@@ -6,7 +6,6 @@
 
 If wanting to develop outside GitHub Codespaces, run `npm install` on whichever project you want. You'll need the following APIs:
 
-- `GOOGLE_API_KEY`: For `web-app`. API Key from Google for Autocomplete/Civic Information API
 - `GOOGLE_SPREADSHEET_API_KEY`: For `scraper/wiki-summaries`. API key from Google to scrape Google Sheet for wiki (can be same as GOOGLE_API_KEY)
 - `OPENAI_API_KEY`: For `scraper/gpt`. API key to run OpenAI GPT commands
 

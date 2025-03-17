@@ -20,8 +20,6 @@ export enum CustomChicagoTag {
 
 export const ChicagoTags = Object.values(CustomChicagoTag);
 
-export const SPONSORED_BY_REP_TAG = "Bills Sponsored By Your Representatives";
-
 export const AVAILABLE_TAGS = [...ALLOWED_GPT_TAGS];
 
 export enum RepLevel {

@@ -91,12 +91,10 @@ export interface CiviWikiLegislationData {
 
 export type LegislationFeed = {
   fullLegislation: WindyCiviBill[];
-  filteredLegislation: WindyCiviBill[];
+  feed: WindyCiviBill[];
 };
 
-export interface WindyCiviBill extends FilteredLegislationData {
-  sponsoredByRep?: string | false;
-}
+export type WindyCiviBill = FilteredLegislationData;
 
 // ## Data Access Layer
 
@@ -111,10 +109,8 @@ export interface DataStoreGetter {
 }
 
 // ## Environment and Configuration
-
-export type Env = {
-  GOOGLE_API_KEY: string;
-};
+// Yay! no env variables for now.
+export type Env = null;
 
 // ## Localization and Filtering
 
@@ -130,6 +126,5 @@ export interface FilterParams {
 export type UserPreferences = {
   location: Locales; // source locale, which can be composed. For example, "chicago" -> "usa"
   tags: string[]; // list of Tag IDs user wants to subscribe to
-  representatives: boolean; // if we have rep data (saved separately from cookies)
-  theme: string; // theme user wants to use for the ForYou page
+  // theme: string; // theme user wants to use for the ForYou page
 };

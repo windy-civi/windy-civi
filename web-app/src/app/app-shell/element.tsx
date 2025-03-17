@@ -92,11 +92,7 @@ const Navigation = (props: AppShellLoaderData) => {
         name="Chicago Trending"
         icon={<>🇺🇸</>}
       />
-      <NavItem
-        href="/@you/representatives"
-        name="Your Representatives"
-        icon={<>🇺🇸</>}
-      />
+
       <NavItem
         href="/@tags/climate-change"
         name="Climate Change"

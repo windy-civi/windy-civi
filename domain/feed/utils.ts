@@ -3,7 +3,6 @@ import {
   AVAILABLE_TAGS,
   ChicagoTags,
   RepLevel,
-  SPONSORED_BY_REP_TAG,
   SupportedLocale,
 } from "../constants";
 
@@ -155,9 +154,6 @@ export const stringifyTags = (tags: string[]) => {
 export const parseRepLevel = (level?: string | null): RepLevel | null => {
   return !level ? null : level === "true" ? null : (level as RepLevel);
 };
-
-export const hasSponsoredByRepTag = (tags: string[] | null) =>
-  tags?.includes(SPONSORED_BY_REP_TAG);
 
 export const parseAvailableTags = (location: Locales) => {
   const availableTags = [];

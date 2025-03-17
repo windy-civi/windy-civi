@@ -1,7 +1,4 @@
-import {
-  CustomChicagoTag,
-  SPONSORED_BY_REP_TAG,
-} from "@windy-civi/domain/constants";
+import { CustomChicagoTag } from "@windy-civi/domain/constants";
 import React, { ComponentType, useState } from "react";
 import {
   FaAt,
@@ -392,18 +389,6 @@ export const DataField: ComponentType<DataFieldProps> = ({ type, id }) => {
 };
 
 /**
- * Instructions component for displaying help text
- */
-export function Instructions() {
-  return (
-    <div className="grow p-6">
-      <h2 className="text-xl font-bold">Find Your Representatives</h2>
-      <p>Use this site to find information about your representatives.</p>
-    </div>
-  );
-}
-
-/**
  * RadioPicker component for selecting options
  */
 type OptionLocation = "first" | "last" | "middle";
@@ -571,10 +556,6 @@ export const Tag: React.FC<{
     case CustomChicagoTag.Resolution:
       icon = "📜";
       background = "bg-rose-500";
-      break;
-    case SPONSORED_BY_REP_TAG:
-      icon = "👤";
-      background = "bg-blue-600";
       break;
     case "Other":
     default:

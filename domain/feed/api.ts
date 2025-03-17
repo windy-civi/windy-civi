@@ -1,25 +1,19 @@
 import { DataStores, RepLevel, SupportedLocale } from "../constants";
 import {
-  createFeedBillsFromMultipleSources,
-  filterNoisyCityBills,
-  selectBillsFromFilters,
-  sortByUpdatedAt,
-} from "./filters.selectors";
-import {
-  hasSponsoredByRepTag,
-  isLocationChicago,
-  isLocationIL,
-  uniqBy,
-} from "./filters.utils";
-import { RepresentativesResult } from "../representatives/representatives.types";
-import {
   CiviGptLegislationData,
   CiviLegislationData,
   DataStoreGetter,
-  FilterParams,
   LegislationFeed,
   LegislationResult,
+  UserPreferences,
 } from "../types";
+import { sortLegislationByScore } from "./scoring";
+import {
+  createFeedBillsFromMultipleSources,
+  filterNoisyCityBills,
+  sortByUpdatedAt,
+} from "./selectors";
+import { isLocationChicago, isLocationIL, uniqBy } from "./utils";
 
 // Helper function to create the API for getting legislation
 // This is to decouple the actual data store from the domain logic, making it easier to test
@@ -56,26 +50,25 @@ const getLegislation = async (
   return { legislation, gpt };
 };
 
-export const getFilteredLegislation = async ({
+export const getFeed = async ({
   dataStoreGetter,
-  filters,
-  representatives,
+  preferences,
 }: {
   dataStoreGetter: DataStoreGetter;
-  filters: FilterParams;
-  representatives: RepresentativesResult["offices"] | null;
+  preferences: UserPreferences;
 }): Promise<LegislationFeed> => {
   // Must set location to get data
-  if (!filters.location) {
+  if (!preferences.location) {
     return {
       fullLegislation: [],
-      filteredLegislation: [],
+      feed: [],
     };
   }
   // Check which bills to retrieve
   // todo: put this in a generic map to allow for extensibility
-  const shouldGetChicago = isLocationChicago(filters.location);
-  const shouldGetIllinois = shouldGetChicago || isLocationIL(filters.location);
+  const shouldGetChicago = isLocationChicago(preferences.location);
+  const shouldGetIllinois =
+    shouldGetChicago || isLocationIL(preferences.location);
 
   // Get all bills from all the network
   const allChicagoBills =
@@ -86,33 +79,22 @@ export const getFilteredLegislation = async ({
     (await getLegislation(dataStoreGetter, DataStores.Illinois));
   const allUSBills = await getLegislation(dataStoreGetter, DataStores.USA);
 
-  const showSponsoredBills = Boolean(
-    representatives && hasSponsoredByRepTag(filters.tags)
-  );
-
-  // First select all bills that are sponsored, if the user wants sponsored bills
-  let fullLegislation = createFeedBillsFromMultipleSources(representatives, [
-    [
-      allChicagoBills,
-      RepLevel.City,
-      [filterNoisyCityBills(showSponsoredBills)],
-    ],
+  // Select all bills
+  let fullLegislation = createFeedBillsFromMultipleSources([
+    [allChicagoBills, RepLevel.City, [filterNoisyCityBills()]],
     [allILBills, RepLevel.State, null],
     [allUSBills, RepLevel.National, null],
   ]);
 
   // Remove duplicates
   // TODO: should move to scraper
-  fullLegislation = uniqBy(fullLegislation, (b) => b.bill.id);
+  fullLegislation = sortByUpdatedAt(uniqBy(fullLegislation, (b) => b.bill.id));
 
-  // Then select and filter bills based on user filters
-  let filteredLegislation = selectBillsFromFilters(fullLegislation, filters);
-
-  // Sort by updated_at
-  filteredLegislation = sortByUpdatedAt(filteredLegislation);
+  // Sort by score
+  const feed = sortLegislationByScore(fullLegislation);
 
   return {
     fullLegislation,
-    filteredLegislation,
+    feed,
   };
 };

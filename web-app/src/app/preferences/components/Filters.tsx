@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { LocaleMap, SupportedLocale } from "@windy-civi/domain/constants";
-import { getTagsBeingFiltered } from "@windy-civi/domain/filters/filters.utils";
+import { getTagsBeingFiltered } from "@windy-civi/domain/feed/utils";
 import { Locales, UserPreferences } from "@windy-civi/domain/types";
 import { RadioPicker, Section, Tag } from "../../design-system";
 

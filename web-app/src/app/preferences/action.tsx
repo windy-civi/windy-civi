@@ -9,8 +9,6 @@ export const action: ActionFunction = async ({ request }) => {
   const validatedPreferences = validate({
     location: formData.get("location"),
     tags: formData.get("tags"),
-    representatives: formData.get("representatives"),
-    theme: formData.get("theme"),
   });
 
   // Save preferences to cookies
