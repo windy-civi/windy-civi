@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { SupportedLocale } from "@windy-civi/domain/constants";
+import { LocaleMap, SupportedLocale } from "@windy-civi/domain/constants";
 import { getTagsBeingFiltered } from "@windy-civi/domain/filters/filters.utils";
 import { Locales, UserPreferences } from "@windy-civi/domain/types";
 import { RadioPicker, Section, Tag } from "../../design-system";
@@ -14,6 +14,9 @@ export const LocationPreferences = (props: {
   onChange: (next: Locales) => void;
   onClear: () => void;
 }) => {
+  // highlight the locales that are supported by the selected locale
+  const [highlighted, setHighlighted] = useState(LocaleMap[props.location]);
+
   return (
     <Section
       title={<div>Sources</div>}
@@ -29,7 +32,9 @@ export const LocationPreferences = (props: {
           <RadioPicker
             handleChange={(next) => {
               props.onChange(next);
+              setHighlighted(LocaleMap[next]);
             }}
+            highlighted={highlighted}
             containerClassName="justify-end flex flex-row gap-2"
             defaultValue={props.location}
             optionClassName="flex-1 w-max rounded shadow"

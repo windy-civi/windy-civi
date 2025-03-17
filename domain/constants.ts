@@ -42,3 +42,13 @@ export enum DataStores {
   Illinois = "Illinois",
   USA = "USA",
 }
+
+export const LocaleMap: Record<SupportedLocale, SupportedLocale[]> = {
+  [SupportedLocale.Chicago]: [
+    SupportedLocale.Chicago,
+    SupportedLocale.Illinois,
+    SupportedLocale.USA,
+  ],
+  [SupportedLocale.Illinois]: [SupportedLocale.Illinois, SupportedLocale.USA],
+  [SupportedLocale.USA]: [SupportedLocale.USA],
+};

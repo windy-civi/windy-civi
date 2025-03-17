@@ -445,6 +445,7 @@ export const RadioPicker = <T extends string>({
   handleChange,
   defaultValue,
   type,
+  highlighted,
   optionClassName,
   containerClassName,
 }: {
@@ -452,6 +453,7 @@ export const RadioPicker = <T extends string>({
   handleChange: (s: T) => void;
   defaultValue: T;
   type?: "transparent";
+  highlighted?: T[];
   optionClassName?: string | false | null;
   containerClassName?: string | false | null;
 }) => {
@@ -472,7 +474,11 @@ export const RadioPicker = <T extends string>({
     >
       {options.map((option, i) => {
         const isSelected = option.value === selectedOption;
-        const location =
+        // Allowing multiple items to be highlighted for locales
+        const alsoHighlighted = highlighted?.includes(option.value) || false;
+        const isHighlighted = isSelected || alsoHighlighted;
+
+        const indexInGroup =
           i === 0 ? "first" : i === options.length - 1 ? "last" : "middle";
 
         return (
@@ -484,8 +490,8 @@ export const RadioPicker = <T extends string>({
             onClick={() => handleOptionChange(option.value as T)}
             className={classNames(
               optionClassName,
-              getRadioStyle(type || "solid", isSelected, location),
-              option.className?.(isSelected, location),
+              getRadioStyle(type || "solid", isHighlighted, indexInGroup),
+              option.className?.(isHighlighted, indexInGroup),
             )}
           >
             {option.label}
