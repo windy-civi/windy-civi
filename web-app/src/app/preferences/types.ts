@@ -1,9 +1,3 @@
-export interface PreferencesLoaderData {
-  darkMode: boolean;
-  notifications: {
-    enabled: boolean;
-    email: boolean;
-    push: boolean;
-  };
-  language: string;
-}
+import { FeedLoaderData } from "../feed/types";
+
+export type PreferencesLoaderData = FeedLoaderData;

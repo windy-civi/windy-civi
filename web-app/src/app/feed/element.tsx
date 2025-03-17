@@ -16,7 +16,7 @@ import {
   type UpdateGlobalStateFn,
 } from "./types";
 import { cookieFactory } from "./utils";
-import { FeedBills } from "./react/Bills";
+import { FeedBills } from "./components/Bills";
 
 export function Feed() {
   const result = useLoaderData() as FeedProps;

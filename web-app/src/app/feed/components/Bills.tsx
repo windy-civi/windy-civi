@@ -9,7 +9,6 @@ import {
 import { WindyCiviBill } from "@windy-civi/domain/types";
 import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
 import { FeedProps } from "../types";
-import { LevelFilter } from "./Filters";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
@@ -177,10 +176,7 @@ export const FeedBillsOld = (props: FeedProps) => {
   return (
     <section>
       <div className="flex justify-center">
-        <div className="flex max-w-lg flex-col justify-center">
-          <LevelFilter {...props} />
-          {bills}
-        </div>
+        <div className="flex max-w-lg flex-col justify-center">{bills}</div>
       </div>
     </section>
   );

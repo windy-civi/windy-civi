@@ -4,7 +4,7 @@ import { getLegislators } from "@windy-civi/domain/representatives/representativ
 import { LocationFilter } from "@windy-civi/domain/types";
 import { useState, type FC } from "react";
 import { DataField, ResultCard } from "../../design-system";
-import { FeedFilterProps } from "../types";
+import { FeedFilterProps } from "../../navigator/types";
 
 export const RepresentativesList: FC<{
   officialOffice: OfficialOffice[];

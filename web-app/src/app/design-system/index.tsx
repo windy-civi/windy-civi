@@ -23,7 +23,7 @@ export const AddressLookup: ComponentType<{
 }> = ({ value, onPlaceSelected, onClear }) => {
   const config = useAppContext();
   return config?.GOOGLE_API_KEY ? (
-    <div className="flex items-center p-2 lg:text-right">
+    <div className="flex items-center p-2">
       <div>🏠</div>
       <Autocomplete
         // Hack to force remount
@@ -32,7 +32,7 @@ export const AddressLookup: ComponentType<{
         apiKey={config.GOOGLE_API_KEY}
         placeholder="Enter Address..."
         defaultValue={value}
-        className="w-full rounded-md bg-transparent px-2 text-white outline-none lg:text-right lg:text-lg"
+        className="w-full rounded-md bg-transparent px-2 text-white outline-none"
         onPlaceSelected={({ formatted_address }) => {
           if (formatted_address) {
             onPlaceSelected(formatted_address);
@@ -70,7 +70,7 @@ export const Button: React.FC<{
   let typeClass = "";
   switch (type) {
     case "call-to-action":
-      typeClass = "bg-green-500 hover:bg-green-700";
+      typeClass = "bg-green-600 hover:bg-green-700";
       break;
     case "default":
     default:
@@ -677,7 +677,7 @@ export const Tagging = ({
           onClick={() => handleTagClick(tag)}
           className={classNames(
             "cursor-pointer",
-            selectedTags.includes(tag) || selectedTags.length === 0
+            selectedTags.includes(tag)
               ? "bg-opacity-70"
               : "bg-opacity-20 opacity-70 grayscale",
           )}
