@@ -2,8 +2,8 @@ import { getLocationInformationText } from "@windy-civi/domain/filters/filters.u
 import type { OfficialOffice } from "@windy-civi/domain/representatives/representatives.types";
 import { getLegislators } from "@windy-civi/domain/representatives/representatives.utils";
 import { LocationFilter } from "@windy-civi/domain/types";
-import { useState, type FC } from "react";
-import { DataField, ResultCard } from "../../design-system";
+import { ComponentType, useState, type FC } from "react";
+import { DataField } from "../../design-system";
 import { FeedFilterProps } from "../../navigator/types";
 
 export const RepresentativesList: FC<{
@@ -49,6 +49,22 @@ export const RepresentativeCard = (s: OfficialOffice) => {
         </>
       }
     />
+  );
+};
+
+const ResultCard: ComponentType<{
+  title?: string;
+  subtitle?: string;
+  channels: React.ReactNode;
+}> = ({ title, subtitle, channels }) => {
+  return (
+    <div className="flex select-text flex-col rounded-lg border border-solid border-gray-200 px-4 py-2">
+      <div className="text-xl font-semibold">{title}</div>
+      <div className="text-lg">{subtitle}</div>
+      <ul className="mt-1 flex list-none flex-wrap items-center gap-x-2">
+        {channels}
+      </ul>
+    </div>
   );
 };
 

@@ -1,3 +1,7 @@
+import {
+  CustomChicagoTag,
+  SPONSORED_BY_REP_TAG,
+} from "@windy-civi/domain/constants";
 import React, { ComponentType, useState } from "react";
 import {
   FaAt,
@@ -10,35 +14,9 @@ import {
 } from "react-icons/fa";
 import { classNames } from "./styles";
 
-/**
- * A styled text component for displaying descriptive annotations
- */
-export const Annotation: React.FC<{
-  children: React.ReactNode;
-}> = (props) => {
-  return (
-    <div className="text-sm text-white text-opacity-90 italic">
-      {props.children}
-    </div>
-  );
-};
-
-/**
- * A styled title component for section headers
- */
-export const SectionTitle: React.FC<{
-  children: React.ReactNode;
-}> = (props) => {
-  return (
-    <div className="font-serif">
-      <span
-        className={classNames("rounded-sm font-bold text-white", "lg:text-xl")}
-      >
-        {props.children}
-      </span>
-    </div>
-  );
-};
+// ==========================================
+// Layout Components
+// ==========================================
 
 /**
  * A container component for grouping related content with a title and description
@@ -63,6 +41,23 @@ export const Section: React.FC<{
       <div className={className}>{children}</div>
       <Divider className="my-4" />
     </section>
+  );
+};
+
+/**
+ * A styled title component for section headers
+ */
+export const SectionTitle: React.FC<{
+  children: React.ReactNode;
+}> = (props) => {
+  return (
+    <div className="font-serif">
+      <span
+        className={classNames("rounded-sm font-bold text-white", "lg:text-xl")}
+      >
+        {props.children}
+      </span>
+    </div>
   );
 };
 
@@ -92,6 +87,72 @@ export const CustomScreen: React.FC<{
     </main>
   );
 };
+
+/**
+ * Grid layout component that stacks vertically on mobile and shows a 2-column layout on desktop
+ */
+export const Grid: ComponentType<{
+  style?: React.CSSProperties;
+  className?: React.HTMLAttributes<HTMLElement>["className"];
+  children?: React.ReactNode;
+}> = ({ children, style, className }) => (
+  <section
+    className={classNames(
+      "grid grid-cols-1 lg:grid-cols-[minmax(300px,_500px)_1fr]",
+      className,
+    )}
+    style={style}
+  >
+    {children}
+  </section>
+);
+
+/**
+ * Modal component for displaying content in an overlay
+ */
+export const Modal: ComponentType<{
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}> = ({ isOpen, onClose, children }) => {
+  const handleClose = () => {
+    onClose();
+  };
+
+  const modalClasses = `flex justify-center items-center ${
+    isOpen ? "" : "hidden"
+  }`;
+
+  const backdropClasses = "inset-0 bg-gray-500 opacity-75";
+
+  return (
+    <div className={modalClasses}>
+      <div className="modal-overlay" onClick={handleClose} />
+      <div className="modal-container z-50 mx-auto w-11/12 overflow-y-auto rounded bg-white shadow-lg md:max-w-md">
+        <div className="modal-content py-4 px-6 text-left">
+          <div className="modal-header">
+            <button className="modal-close" onClick={handleClose}>
+              <span className="sr-only">Close</span>
+              <svg
+                className="h-6 w-6 fill-current"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M14.348 14.849a1 1 0 0 1-1.414 0L10 11.414l-2.93 2.93a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 0-1.414L7.586 10l-2.93-2.93a1 1 0 0 1 0-1.414l.707-.707a1 1 0 0 1 1.414 0L10 8.586l2.93-2.93a1 1 0 0 1 1.414 0l.707.707a1 1 0 0 1 0 1.414L12.414 10l2.93 2.93a1 1 0 0 1 0 1.414l-.707.707z" />
+              </svg>
+            </button>
+          </div>
+          <div className="modal-body">{children}</div>
+        </div>
+      </div>
+      <div className={backdropClasses} />
+    </div>
+  );
+};
+
+// ==========================================
+// Form Components
+// ==========================================
 
 export const Button: React.FC<{
   onClick?: () => void;
@@ -126,29 +187,77 @@ export const Button: React.FC<{
   );
 };
 
-/**
- * Carousel Component
- */
+// ==========================================
+// Atomic Components
+// ==========================================
 
+export const Annotation: React.FC<{
+  children: React.ReactNode;
+}> = (props) => {
+  return (
+    <div className="text-sm text-white text-opacity-90 italic">
+      {props.children}
+    </div>
+  );
+};
+
+// ==========================================
+// Special Components
+// ==========================================
+
+type DividerProps = {
+  className?: string;
+  children?: React.ReactNode;
+  type?: "black" | "white";
+};
+
+export const Divider: React.FC<DividerProps> = ({
+  className,
+  children,
+  type,
+}) => {
+  if (!children) {
+    return <HR className={className} type={type} />;
+  }
+  return (
+    <div className="flex items-center gap-2">
+      <HR className={className} type={type} />
+      <div className="opacity-50">{children}</div>
+      <HR className={className} type={type} />
+    </div>
+  );
+};
+
+const HR = ({ className, type }: DividerProps) => (
+  <hr
+    className={classNames(
+      "flex-1",
+      "border-dashed opacity-30",
+      type === "white" ? "border-white" : "border-black",
+      className,
+    )}
+  />
+);
+
+/**
+ * Carousel Component for displaying content in a slideshow format
+ */
 export const Carousel = ({
   data,
 }: {
   data: { title: string; content: React.ReactNode }[];
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0); // State to manage current index
-  const [touchStartX, setTouchStartX] = useState<null | number>(null); // State to store initial touch position
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<null | number>(null);
 
-  // Function to handle next button click
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
   };
 
-  // Function to handle previous button click
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
 
-  // Touch swipe event handlers
   const handleTouchStart = (currentX: number) => {
     if (data.length < 2) {
       return;
@@ -165,12 +274,10 @@ export const Carousel = ({
     }
     const difference = touchStartX - currentX;
 
-    // Swipe left
     if (difference > 5) {
       nextSlide();
     }
 
-    // Swipe right
     if (difference < -5) {
       prevSlide();
     }
@@ -284,44 +391,9 @@ export const DataField: ComponentType<DataFieldProps> = ({ type, id }) => {
   }
 };
 
-type DividerProps = {
-  className?: string;
-  children?: React.ReactNode;
-  type?: "black" | "white";
-};
-
-export const Divider: React.FC<DividerProps> = ({
-  className,
-  children,
-  type,
-}) => {
-  if (!children) {
-    return <HR className={className} type={type} />;
-  }
-  return (
-    <div className="flex items-center gap-2">
-      <HR className={className} type={type} />
-      <div className="opacity-50">{children}</div>
-      <HR className={className} type={type} />
-    </div>
-  );
-};
-
-const HR = ({ className, type }: DividerProps) => (
-  <hr
-    className={classNames(
-      "flex-1",
-      "border-dashed opacity-30",
-      type === "white" ? "border-white" : "border-black",
-      className,
-    )}
-  />
-);
-
 /**
- * Instructions
+ * Instructions component for displaying help text
  */
-
 export function Instructions() {
   return (
     <div className="grow p-6">
@@ -332,75 +404,8 @@ export function Instructions() {
 }
 
 /**
- * Layout related components
+ * RadioPicker component for selecting options
  */
-
-export const Grid: ComponentType<{
-  style?: React.CSSProperties;
-  className?: React.HTMLAttributes<HTMLElement>["className"];
-  children?: React.ReactNode;
-}> = ({ children, style, className }) => (
-  <section
-    /**
-     * Grid layout that stacks vertically on mobile (1 column) and shows a
-     * 2-column layout on desktop with:
-     * - Left column: Min 300px, max 500px width
-     * - Right column: Takes remaining space (1fr)
-     */
-    className={classNames(
-      "grid grid-cols-1 lg:grid-cols-[minmax(300px,_500px)_1fr]",
-      className,
-    )}
-    style={style}
-  >
-    {children}
-  </section>
-);
-
-export const Modal: ComponentType<{
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}> = ({ isOpen, onClose, children }) => {
-  const handleClose = () => {
-    onClose();
-  };
-
-  const modalClasses = `flex justify-center items-center ${
-    isOpen ? "" : "hidden"
-  }`;
-
-  const backdropClasses = "inset-0 bg-gray-500 opacity-75";
-
-  return (
-    <div className={modalClasses}>
-      <div className="modal-overlay" onClick={handleClose} />
-      <div className="modal-container z-50 mx-auto w-11/12 overflow-y-auto rounded bg-white shadow-lg md:max-w-md">
-        <div className="modal-content py-4 px-6 text-left">
-          <div className="modal-header">
-            <button className="modal-close" onClick={handleClose}>
-              <span className="sr-only">Close</span>
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M14.348 14.849a1 1 0 0 1-1.414 0L10 11.414l-2.93 2.93a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 0-1.414L7.586 10l-2.93-2.93a1 1 0 0 1 0-1.414l.707-.707a1 1 0 0 1 1.414 0L10 8.586l2.93-2.93a1 1 0 0 1 1.414 0l.707.707a1 1 0 0 1 0 1.414L12.414 10l2.93 2.93a1 1 0 0 1 0 1.414l-.707.707z" />
-              </svg>
-            </button>
-          </div>
-          <div className="modal-body">{children}</div>
-        </div>
-      </div>
-      <div className={backdropClasses} />
-    </div>
-  );
-};
-
-/**
- * RadioPicker
- */
-
 type OptionLocation = "first" | "last" | "middle";
 interface Option<T> {
   label: string;
@@ -408,10 +413,6 @@ interface Option<T> {
   className?: (isSelected: boolean, location: OptionLocation) => string;
 }
 
-// i === options.length - 1
-//         selectedOption === option.value
-
-// eslint-disable-next-line react-refresh/only-export-components
 export const getRadioStyle = (
   type: "transparent" | "solid",
   isSelected: boolean,
@@ -439,7 +440,6 @@ export const getRadioStyle = (
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
 export const RadioPicker = <T extends unknown>({
   options,
   handleChange,
@@ -499,30 +499,9 @@ export const RadioPicker = <T extends unknown>({
   );
 };
 
-export const ResultCard: ComponentType<{
-  title?: string;
-  subtitle?: string;
-  channels: React.ReactNode;
-}> = ({ title, subtitle, channels }) => {
-  return (
-    <div className="flex select-text flex-col rounded-lg border border-solid border-gray-200 px-4 py-2">
-      <div className="text-xl font-semibold">{title}</div>
-      <div className="text-lg">{subtitle}</div>
-      <ul className="mt-1 flex list-none flex-wrap items-center gap-x-2">
-        {channels}
-      </ul>
-    </div>
-  );
-};
-
 /**
- * Tags
+ * Tag components for displaying and managing tags
  */
-
-import {
-  CustomChicagoTag,
-  SPONSORED_BY_REP_TAG,
-} from "@windy-civi/domain/constants";
 
 export const Tag: React.FC<{
   type?: "tiny" | "icon";
