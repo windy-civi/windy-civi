@@ -1,7 +1,6 @@
 import { Outlet, NavLink, useLoaderData, useLocation } from "react-router-dom";
 
 import React from "react";
-import { PWAInstall } from "./components/PwaInstaller";
 import { Logo, StyleHack, classNames } from "../design-system";
 import { Feed } from "../feed/element";
 import { FaGear } from "react-icons/fa6";
@@ -164,7 +163,6 @@ export const NavigatorShell = ({
         }}
         className={classNames(screenCentered)}
       >
-        <PWAInstall />
         <div className="flex h-full w-full flex-1 flex-col">
           <header>{navigation}</header>
           <main

@@ -11,7 +11,7 @@ import { LocationPreferences } from "./components/Filters";
 import { AddressLookup } from "./components/AddressLookup";
 import { UserPreferences } from "@windy-civi/domain/types";
 import { UserPreferencesLoaderData } from "./types";
-
+import { PWAInstall } from "./components/PwaInstaller";
 export function Preferences() {
   const data = useLoaderData() as UserPreferencesLoaderData;
 
@@ -99,6 +99,7 @@ export function Preferences() {
             </div>
           }
         >
+          <PWAInstall />
           <div></div>
         </Section>
         {/* Tags Filter */}
