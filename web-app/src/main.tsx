@@ -7,6 +7,7 @@ import { Navigator } from "./app/navigator/element";
 import { Support } from "./app/support/Support";
 import { Preferences } from "./app/preferences/element";
 import { loader as preferencesLoader } from "./app/preferences/loader";
+import { action as preferencesAction } from "./app/preferences/action";
 
 /**
  * Load tailwind
@@ -32,6 +33,7 @@ const router = createHashRouter([
       {
         path: "/preferences",
         loader: preferencesLoader,
+        action: preferencesAction,
         element: <Preferences />,
       },
     ],

@@ -1,7 +1,4 @@
 import React, { ComponentType, useState } from "react";
-import Autocomplete from "react-google-autocomplete";
-import { useAppContext } from "../app-shell/AppContext";
-import { classNames, css, Skin, Spacing, Style } from "./styles";
 import {
   FaAt,
   FaFacebook,
@@ -11,60 +8,95 @@ import {
   FaWikipediaW,
   FaYoutube,
 } from "react-icons/fa";
+import { classNames } from "./styles";
 
 /**
- * Address Lookup Component
+ * A styled text component for displaying descriptive annotations
  */
-
-export const AddressLookup: ComponentType<{
-  onPlaceSelected: (address: string) => void;
-  onClear: () => void;
-  value?: string;
-}> = ({ value, onPlaceSelected, onClear }) => {
-  const config = useAppContext();
-  return config?.GOOGLE_API_KEY ? (
-    <div className="flex items-center p-2">
-      <div>🏠</div>
-      <Autocomplete
-        // Hack to force remount
-        key={value || ""}
-        options={{ types: ["address"] }}
-        apiKey={config.GOOGLE_API_KEY}
-        placeholder="Enter Address..."
-        defaultValue={value}
-        className="w-full rounded-md bg-transparent px-2 text-white outline-none"
-        onPlaceSelected={({ formatted_address }) => {
-          if (formatted_address) {
-            onPlaceSelected(formatted_address);
-          }
-        }}
-      />
-      {value && (
-        <button
-          style={{ width: "27px", height: "25px" }}
-          className="mx-1 rounded-full bg-black bg-opacity-40 text-xs text-white opacity-60 hover:opacity-100"
-          onClick={() => {
-            onClear();
-          }}
-        >
-          X
-        </button>
-      )}
+export const Annotation: React.FC<{
+  children: React.ReactNode;
+}> = (props) => {
+  return (
+    <div className="text-sm text-white text-opacity-90 italic">
+      {props.children}
     </div>
-  ) : (
-    <input
-      disabled
-      value={value}
-      placeholder="Loading..."
-      className="w-full rounded-md bg-transparent px-2 py-1 lg:text-right"
-    />
+  );
+};
+
+/**
+ * A styled title component for section headers
+ */
+export const SectionTitle: React.FC<{
+  children: React.ReactNode;
+}> = (props) => {
+  return (
+    <div className="font-serif">
+      <span
+        className={classNames("rounded-sm font-bold text-white", "lg:text-xl")}
+      >
+        {props.children}
+      </span>
+    </div>
+  );
+};
+
+/**
+ * A container component for grouping related content with a title and description
+ * @param title - Optional title for the section
+ * @param description - Optional description text
+ * @param className - Optional CSS classes to apply
+ * @param children - Child content to display
+ */
+export const Section: React.FC<{
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
+}> = ({ title, children, className, description }) => {
+  return (
+    <section>
+      <div className="mb-2">
+        {title && <SectionTitle>{title}</SectionTitle>}
+        <Annotation>{description}</Annotation>
+      </div>
+
+      <div className={className}>{children}</div>
+      <Divider className="my-4" />
+    </section>
+  );
+};
+
+/**
+ * A full-screen container component with a title and styled content area
+ * @param title - The title to display at the top of the screen
+ * @param children - Child content to display in the styled container
+ */
+export const CustomScreen: React.FC<{
+  children: React.ReactNode;
+  title: string;
+}> = ({ children, title }) => {
+  return (
+    <main className="mb-4">
+      <div className="my-2 font-serif text-2xl font-semibold leading-tight text-white lg:text-left">
+        {title}
+      </div>
+      <div
+        className={classNames(
+          "flex justify-center p-4",
+          "rounded-lg shadow-lg",
+        )}
+        style={{ backdropFilter: "blur(10px) brightness(0.7)" }}
+      >
+        {children}
+      </div>
+    </main>
   );
 };
 
 export const Button: React.FC<{
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
-  type?: "default" | "call-to-action";
+  type?: "default" | "call-to-action" | "submit";
   children: React.ReactNode;
 }> = ({ onClick, children, className, type }) => {
   let typeClass = "";
@@ -79,68 +111,19 @@ export const Button: React.FC<{
   }
 
   return (
-    <div
+    <button
       role="button"
+      type={type === "submit" ? "submit" : "button"}
       className={classNames(
         "rounded px-4 py-2 text-base font-semibold text-white",
         typeClass,
         className,
       )}
-      onClick={() => {
-        onClick();
-      }}
+      onClick={onClick}
     >
       {children}
-    </div>
+    </button>
   );
-};
-
-/**
- * Card Component
- */
-
-interface StyleComponent {
-  style?: Style.Properties;
-  children?: React.ReactNode;
-}
-
-type FC = {
-  children?: React.ReactNode;
-};
-
-export const Card: React.FC<StyleComponent> = ({ children, style }) => (
-  <div {...css({ ...styles.card, ...(style || {}) })}>{children}</div>
-);
-
-export const CardSection = ({ children }: FC) => (
-  <section style={{ margin: Spacing.FOUR, fontSize: "0.9rem" }}>
-    {children}
-  </section>
-);
-
-export const CardTitle = ({ children }: FC) => (
-  <h2
-    style={{
-      fontWeight: "bold",
-      padding: Spacing.ZERO,
-      marginTop: Spacing.TWO,
-      marginBottom: Spacing.TWO,
-      fontSize: "1.2rem",
-      textAlign: "left",
-    }}
-  >
-    {children}
-  </h2>
-);
-
-const styles: Style.StyleSheet<"card"> = {
-  card: {
-    padding: Spacing.FOUR,
-    marginTop: Spacing.FOUR,
-    marginBottom: Spacing.FOUR,
-    background: Skin.White,
-    textAlign: "left",
-  },
 };
 
 /**
