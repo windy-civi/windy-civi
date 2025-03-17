@@ -440,14 +440,13 @@ export const getRadioStyle = (
   }
 };
 
-export const RadioPicker = <T extends unknown>({
+export const RadioPicker = <T extends string>({
   options,
   handleChange,
   defaultValue,
   type,
   optionClassName,
   containerClassName,
-  before,
 }: {
   options: Option<T>[];
   handleChange: (s: T) => void;
@@ -455,7 +454,6 @@ export const RadioPicker = <T extends unknown>({
   type?: "transparent";
   optionClassName?: string | false | null;
   containerClassName?: string | false | null;
-  before?: React.ReactNode;
 }) => {
   const [selectedOption, setSelectedOption] = useState<T>(defaultValue);
 
@@ -472,7 +470,6 @@ export const RadioPicker = <T extends unknown>({
         containerClassName || "flex flex-row justify-center lg:justify-end"
       }
     >
-      {before}
       {options.map((option, i) => {
         const isSelected = option.value === selectedOption;
         const location =

@@ -120,19 +120,16 @@ export type Env = {
 
 export type Locales = `${SupportedLocale}`;
 
-export type LocationFilter = Locales | AddressFilter | Nullish;
-
-export type AddressFilter = { address: string };
-
 export type Nullish = undefined | "" | null;
 
 export interface FilterParams {
-  location: LocationFilter;
+  location: Locales;
   tags: string[] | null;
-  availableTags: string[];
-  level: RepLevel | null;
 }
 
-export interface UserPreferences {
-  filters: FilterParams;
-}
+export type UserPreferences = {
+  location: Locales; // source locale, which can be composed. For example, "chicago" -> "usa"
+  tags: string[]; // list of Tag IDs user wants to subscribe to
+  representatives: boolean; // if we have rep data (saved separately from cookies)
+  theme: string; // theme user wants to use for the ForYou page
+};

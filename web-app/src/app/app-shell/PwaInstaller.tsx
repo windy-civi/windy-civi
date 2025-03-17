@@ -2,9 +2,9 @@
 // but was having trouble with installing on Remix
 
 import { CSSProperties, useEffect, useState } from "react";
-import { cookieFactory } from "../navigator/utils";
 import { StyleHack, ZIndex, classNames } from "../design-system";
 import { ShareIOS } from "../design-system/Icons";
+import { cookieFactory } from "../utils/cookies";
 
 // iOS Safari
 const isIos = (window: Window) => {

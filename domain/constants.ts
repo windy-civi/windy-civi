@@ -1,5 +1,3 @@
-import type { FilterParams } from "./types";
-
 export const ALLOWED_GPT_TAGS = [
   "Education",
   "Democracy",
@@ -38,7 +36,6 @@ export enum SupportedLocale {
   Chicago = "chicago",
   Illinois = "illinois",
   USA = "usa",
-  Custom = "custom",
 }
 
 export enum DataStores {
@@ -46,10 +43,3 @@ export enum DataStores {
   Illinois = "Illinois",
   USA = "USA",
 }
-
-export const DEFAULT_FILTERS: FilterParams = {
-  location: "usa",
-  level: null,
-  tags: null,
-  availableTags: AVAILABLE_TAGS,
-};

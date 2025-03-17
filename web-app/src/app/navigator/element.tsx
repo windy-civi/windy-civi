@@ -1,31 +1,40 @@
 import { Outlet, NavLink, useLoaderData, useLocation } from "react-router-dom";
 
-import { type FeedProps } from "./types";
-
 import React from "react";
 import { PWAInstall } from "../app-shell/PwaInstaller";
 import { Logo, StyleHack, classNames } from "../design-system";
-import { FeedFilterProps } from "./types";
 import { Feed } from "../feed/element";
 import { FaGear } from "react-icons/fa6";
+import { NavigatorLoaderData } from "./types";
 
 const NavItem = ({
   name,
   href,
   icon,
-  // ...props
 }: {
   name: string;
   href: string;
-  icon: React.ReactNode;
-} & FeedFilterProps) => {
+  icon?: React.ReactNode;
+}) => {
   return (
-    <NavButton href={href}>
-      <div className="flex flex-row items-center gap-2">
-        <span className="text-sm">{icon}</span>
-        {name}
-      </div>
-    </NavButton>
+    <div className="flex self-stretch">
+      <NavLink
+        className={({ isActive }) =>
+          classNames(
+            "uppercase font-bold py-1 px-2 rounded cursor-pointer hover:shadow-lg text-xs flex items-center self-stretch",
+            isActive
+              ? "text-black text-opacity-90 bg-white bg-opacity-60"
+              : "text-white bg-black bg-opacity-40",
+          )
+        }
+        to={href}
+      >
+        <div className="flex flex-row items-center gap-2">
+          {icon && <span className="text-sm">{icon}</span>}
+          {name}
+        </div>
+      </NavLink>
+    </div>
   );
 };
 
@@ -62,18 +71,38 @@ export const CommunityRoute = () => {
   );
 };
 
-const Navigation = (props: FeedFilterProps) => {
+const Navigation = (props: NavigatorLoaderData) => {
   return (
     <HeaderScrollContainer>
       <Logo />
-      <NavButton href="/help">Give Feedback</NavButton>
+      <NavItem name="Give Feedback" href="/help" />
+      <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
+      <NavItem href="/" name="Your Feed" icon={<>👤</>} />
+      {props.availableFeeds.map((feed) => (
+        <NavItem href={feed} name={feed} icon={<>👤</>} />
+      ))}
+      {/* <NavItem href="/location/usa" name="USA Trending" icon={<>🇺🇸</>} />
       <NavItem
-        href="/preferences"
-        name="Preferences"
-        icon={<FaGear />}
-        {...props}
+        href="/location/illinois"
+        name="Illinois Trending"
+        icon={<>🇺🇸</>}
       />
-      <NavItem href="/" name="Trending" icon={<>🇺🇸</>} {...props} />
+      <NavItem
+        href="/location/chicago"
+        name="Chicago Trending"
+        icon={<>🇺🇸</>}
+      />
+      <NavItem
+        href="/@you/representatives"
+        name="Your Representatives"
+        icon={<>🇺🇸</>}
+      />
+      <NavItem
+        href="/@tags/climate-change"
+        name="Climate Change"
+        icon={<>🌍</>}
+      />
+      <NavItem href="/@tags/abortion" name="Abortion" icon={<>👶</>} /> */}
     </HeaderScrollContainer>
   );
 };
@@ -113,10 +142,8 @@ export const NavigatorShell = ({
   feed: React.ReactNode;
 }) => {
   const skipToContentId = "main-content";
-  const backgroundTheme =
+  const defaultBackgroundTheme =
     "linear-gradient(to bottom, rgba(255,29,135,1) 0px, rgba(255,82,37,1) 600px, rgba(238,145, 126,1) 1000px, rgba(0,0,0,0.1) 1500px)";
-  // const backgroundThemeMuted =
-  //   "linear-gradient(to bottom, rgba(0,0,0,0.3) 0vh, rgba(0,0,0,0.2) 100vh)";
 
   const screenCentered =
     "flex min-h-screen min-w-full flex-col items-center lg:justify-center";
@@ -131,7 +158,8 @@ export const NavigatorShell = ({
       </a>
       <div
         style={{
-          background: backgroundTheme as StyleHack,
+          background:
+            `var(--background-theme, ${defaultBackgroundTheme})` as StyleHack,
         }}
         className={classNames(screenCentered)}
       >
@@ -150,34 +178,8 @@ export const NavigatorShell = ({
   );
 };
 
-const NavButton = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="flex self-stretch">
-      <NavLink
-        className={({ isActive }) =>
-          classNames(
-            "uppercase font-bold py-1 px-2 rounded cursor-pointer hover:shadow-lg text-xs flex items-center self-stretch",
-            isActive
-              ? "text-black text-opacity-90 bg-white bg-opacity-60"
-              : "text-white bg-black bg-opacity-40",
-          )
-        }
-        to={href}
-      >
-        {children}
-      </NavLink>
-    </div>
-  );
-};
-
 export function Navigator() {
-  const result = useLoaderData() as FeedProps;
+  const result = useLoaderData() as NavigatorLoaderData;
   return (
     <NavigatorShell navigation={<Navigation {...result} />} feed={<Outlet />} />
   );

@@ -7,13 +7,7 @@ import {
   SupportedLocale,
 } from "../constants";
 
-import type {
-  AddressFilter,
-  FilterParams,
-  Locales,
-  LocationFilter,
-  Nullish,
-} from "../types";
+import type { Locales, Nullish } from "../types";
 
 // TODO: Move to backend
 export const mapToReadableStatus = (
@@ -96,26 +90,6 @@ export const getLocale = (
     : null;
 };
 
-export const getAddress = <T>(location: T): string | Nullish => {
-  if (isAddressFilter(location)) {
-    return location.address;
-  }
-  return null;
-};
-
-export const isAddressFilter = (
-  location: unknown
-): location is AddressFilter => {
-  if (
-    typeof location === "object" &&
-    location !== null &&
-    "address" in location
-  ) {
-    return true;
-  }
-  return false;
-};
-
 export const isNullish = (location: unknown | Nullish): location is Nullish => {
   return [null, "", undefined].includes(location as string | null | undefined);
 };
@@ -123,9 +97,6 @@ export const isNullish = (location: unknown | Nullish): location is Nullish => {
 export const isSupportedLocale = (
   locationParam: unknown
 ): locationParam is SupportedLocale => {
-  if (isAddressFilter(locationParam)) {
-    return false;
-  }
   if (isNullish(locationParam)) {
     return false;
   }
@@ -134,30 +105,14 @@ export const isSupportedLocale = (
   );
 };
 
-export const getLocation = (
-  location: string | AddressFilter | Nullish
-): string | null => {
-  return isAddressFilter(location) ? location.address : location || null;
-};
-
-export const createLocationFilterFromString = (
-  locationParam: unknown
-): LocationFilter =>
-  isSupportedLocale(locationParam)
-    ? locationParam
-    : typeof locationParam === "string" && locationParam.length > 0
-    ? ({ address: locationParam } as AddressFilter)
-    : null;
-
 // City Level
-export const isCityLevel = (location: LocationFilter): boolean =>
+export const isCityLevel = (location: Locales): boolean =>
   isLocationChicago(location);
 
-export const isLocationChicago = (location: LocationFilter) =>
+export const isLocationChicago = (location: Locales) =>
   isAddressChicago(location) || location === SupportedLocale.Chicago;
 
-const isAddressChicago = (location: LocationFilter) =>
-  isAddressFilter(location) &&
+const isAddressChicago = (location: Locales) =>
   stringIsInAddress(
     ["Chicago, IL", "Chicago,IL", "Chicago, Illinois", "Chicago,Illinois"],
     location
@@ -165,39 +120,36 @@ const isAddressChicago = (location: LocationFilter) =>
 
 // State Level
 
-export const isStateLevel = (location: LocationFilter): boolean =>
+export const isStateLevel = (location: Locales): boolean =>
   isLocationIL(location);
 
-const isAddressIL = (location: LocationFilter) =>
-  isAddressFilter(location) && stringIsInAddress([", IL", ",IL"], location);
+const isAddressIL = (location: Locales) =>
+  stringIsInAddress([", IL", ",IL"], location);
 
-export const isLocationIL = (location: LocationFilter) =>
+export const isLocationIL = (location: Locales) =>
   isAddressIL(location) || location === SupportedLocale.Illinois;
 
-const stringIsInAddress = (variations: string[], location: AddressFilter) =>
-  variations.some((str) =>
-    location.address.toLowerCase().includes(str.toLowerCase())
+const stringIsInAddress = (variations: string[], str: string) =>
+  variations.some((variation) =>
+    str.toLowerCase().includes(variation.toLowerCase())
   );
 
 export const hasTags = (tags: unknown): tags is string[] => {
   return Boolean(tags && Array.isArray(tags) && tags.length > 0);
 };
 
-export const getTagsBeingFiltered = (
-  filters: Pick<FilterParams, "tags" | "availableTags">
-) => {
-  return hasTags(filters?.tags) ? filters.tags : filters.availableTags;
+export const getTagsBeingFiltered = ({
+  tags,
+  availableTags,
+}: {
+  tags: string[];
+  availableTags: string[];
+}) => {
+  return hasTags(tags) ? tags : availableTags;
 };
 
 export const stringifyTags = (tags: string[]) => {
   return tags.join(",");
-};
-
-export const parseTagsString = (
-  tags: string | null | undefined
-): string[] | null => {
-  const parsed = tags?.split(",").filter((tag) => tag.length > 0);
-  return hasTags(parsed) ? parsed : null;
 };
 
 export const parseRepLevel = (level?: string | null): RepLevel | null => {
@@ -207,27 +159,10 @@ export const parseRepLevel = (level?: string | null): RepLevel | null => {
 export const hasSponsoredByRepTag = (tags: string[] | null) =>
   tags?.includes(SPONSORED_BY_REP_TAG);
 
-export const createFilterParams = (p: {
-  location: string | Nullish;
-  level: string | Nullish;
-  tags: string | Nullish;
-}) => {
-  const location = createLocationFilterFromString(p.location);
-  return {
-    location,
-    level: parseRepLevel(p.level),
-    tags: parseTagsString(p.tags),
-    availableTags: parseAvailableTags(location),
-  };
-};
-
-export const parseAvailableTags = (location: LocationFilter) => {
+export const parseAvailableTags = (location: Locales) => {
   const availableTags = [];
-  const isAddress = isAddressFilter(location);
-  if (isAddress) {
-    availableTags.push(SPONSORED_BY_REP_TAG);
-  }
 
+  // TODO: Move to dynamic tags
   if (isLocationChicago(location)) {
     availableTags.push(...ChicagoTags);
   }
@@ -237,7 +172,7 @@ export const parseAvailableTags = (location: LocationFilter) => {
   return availableTags;
 };
 
-export const getLocationInformationText = (location: LocationFilter) => {
+export const getLocationInformationText = (location: Locales) => {
   let locationName = "";
   let levelText = "";
   if (isLocationChicago(location)) {

@@ -8,7 +8,7 @@ import {
 } from "@windy-civi/domain/filters/filters.utils";
 import { WindyCiviBill } from "@windy-civi/domain/types";
 import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
-import { FeedProps } from "../types";
+import { FeedLoaderData } from "../types";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
@@ -107,9 +107,8 @@ const sortLegislationByScore = (
   });
 };
 
-export const FeedBills = (props: FeedProps) => {
-  const { filteredLegislation } = props;
-  const sortedLegislation = sortLegislationByScore(filteredLegislation);
+export const FeedBills = (props: Pick<FeedLoaderData, "feedData">) => {
+  const sortedLegislation = sortLegislationByScore(props.feedData);
 
   return (
     <>
@@ -120,85 +119,23 @@ export const FeedBills = (props: FeedProps) => {
   );
 };
 
-export const FeedBillsOld = (props: FeedProps) => {
-  const lastVisited = props.globalState.lastVisited;
-
-  // Getting the index of the first item after the last visit date, and splitting there.
-  let indexOfSplit = -1;
-  for (let i = 0; i < props.filteredLegislation.length; i++) {
-    const billUpdatedAt = getBillUpdateAt(props.filteredLegislation[i]);
-    if (billUpdatedAt <= lastVisited) {
-      indexOfSplit = i;
-      break;
-    }
-  }
-
-  let bills: React.ReactNode;
-  // No Results
-  if (props.filteredLegislation.length === 0) {
-    bills = <NoResults />;
-    // We have a last read date
-  } else if (indexOfSplit > 0) {
-    const unreadList = props.filteredLegislation.slice(0, indexOfSplit);
-    const readList = props.filteredLegislation.slice(indexOfSplit);
-    bills = (
-      <>
-        <div
-          style={newBillGlow}
-          className="mt-4 rounded bg-blue-500 px-3 py-1 text-center text-lg font-bold uppercase"
-        >
-          New Updates Since Your Last Visit
-        </div>
-        {unreadList.map((l) => (
-          <Bill key={l.bill.id + l.bill.title} {...l} glow={true} />
-        ))}
-        <div
-          style={{ height: "40px" }}
-          className="mt-4 flex items-center justify-center rounded bg-green-500 px-3 py-1 text-center text-lg font-bold uppercase"
-        >
-          All Caught Up
-        </div>
-        {readList.map((l) => (
-          <Bill key={l.bill.id + l.bill.title} {...l} />
-        ))}
-      </>
-    );
-  } else {
-    bills = (
-      <>
-        {props.filteredLegislation.map((l) => (
-          <Bill key={l.bill.id + l.bill.title} {...l} />
-        ))}
-      </>
-    );
-  }
-
-  return (
-    <section>
-      <div className="flex justify-center">
-        <div className="flex max-w-lg flex-col justify-center">{bills}</div>
-      </div>
-    </section>
-  );
-};
-
-const NoResults = () => (
-  <div className="mt-5 w-full flex-1 rounded bg-white bg-opacity-80 p-10 font-serif text-black">
-    <div className="text-xl">No Results Found.</div>
-    <p>
-      Try updating your preferences. Also feel free to submit a bug on our{" "}
-      <a
-        className="underline"
-        href="https://github.com/chihacknight/breakout-groups/issues/219"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Chi Hack Night
-      </a>{" "}
-      channel.
-    </p>
-  </div>
-);
+// const NoResults = () => (
+//   <div className="mt-5 w-full flex-1 rounded bg-white bg-opacity-80 p-10 font-serif text-black">
+//     <div className="text-xl">No Results Found.</div>
+//     <p>
+//       Try updating your preferences. Also feel free to submit a bug on our{" "}
+//       <a
+//         className="underline"
+//         href="https://github.com/chihacknight/breakout-groups/issues/219"
+//         target="_blank"
+//         rel="noreferrer"
+//       >
+//         Chi Hack Night
+//       </a>{" "}
+//       channel.
+//     </p>
+//   </div>
+// );
 
 const Bill = ({
   bill,

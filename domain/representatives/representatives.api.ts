@@ -1,5 +1,4 @@
-import { getAddress } from "../filters/filters.utils";
-import { Env, LocationFilter } from "../types";
+import { Env } from "../types";
 import { getRepresentatives } from "./representatives.google";
 import {
   getRepsAndOfficesLocalStorage,
@@ -9,7 +8,7 @@ import { RepresentativesResult } from "./representatives.types";
 
 export const getRepresentativesWithCache = async (
   env: Env,
-  location: LocationFilter
+  address: string
 ): Promise<RepresentativesResult["offices"] | null> => {
   try {
     const local = getRepsAndOfficesLocalStorage();
@@ -22,7 +21,6 @@ export const getRepresentativesWithCache = async (
   }
 
   // Get representatives from Google
-  const address = getAddress(location);
   const representatives = address
     ? await getRepresentatives(address, env)
     : null;
