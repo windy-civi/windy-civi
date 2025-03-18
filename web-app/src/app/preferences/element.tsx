@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData, useBlocker } from "react-router-dom";
 import {
   Button,
   CustomScreen,
@@ -6,7 +6,7 @@ import {
   Section,
   Tagging,
 } from "../design-system";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UserPreferencesLoaderData } from "./types";
 import { PWAInstall } from "./components/PwaInstaller";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
@@ -88,20 +88,27 @@ const LocationPreferences = (props: {
 
 export function Preferences() {
   const data = useLoaderData() as UserPreferencesLoaderData;
-
   const [formState, setFormState] = useState<UserPreferences>(data.preferences);
 
-  // const afterLocation = getLegislators(data.offices).length > 0 && (
-  //   <>
-  //     <Divider type="white" className="my-2 lg:my-3" />
-  //     <LegislatorsInfo
-  //       className={classNames("opacity-80")}
-  //       offices={data.offices}
-  //       location={filterState.location}
-  //       showAllReps={() => {}}
-  //     />
-  //   </>
-  // );
+  // Track if form fields are dirty by comparing with initial state
+  const hasLocationChanged = formState.location !== data.preferences.location;
+  const hasTagsChanged =
+    !formState.tags?.every((tag) => data.preferences.tags?.includes(tag)) ||
+    !data.preferences.tags?.every((tag) => formState.tags?.includes(tag));
+
+  const isDirty = hasLocationChanged || hasTagsChanged;
+
+  // Block navigation when form is dirty
+  const blocker = useBlocker(isDirty);
+
+  useEffect(() => {
+    if (
+      blocker.state === "blocked" &&
+      !confirm("You have unsaved changes. Are you sure you want to leave?")
+    ) {
+      blocker.reset();
+    }
+  }, [blocker]);
 
   return (
     <CustomScreen title="Preferences">
@@ -118,7 +125,6 @@ export function Preferences() {
         {/* Location Filter */}
         <LocationPreferences
           location={formState.location}
-          // afterLocation={afterLocation}
           onChange={(next) => {
             setFormState({ ...formState, location: next });
           }}
@@ -164,7 +170,9 @@ export function Preferences() {
 
         {/* Save Button */}
         <div className="mt-4 flex w-full justify-center">
-          <Button type="submit">Save Preferences</Button>
+          <Button type="call-to-action" htmlType="submit" disabled={!isDirty}>
+            Save Preferences
+          </Button>
         </div>
       </Form>
     </CustomScreen>

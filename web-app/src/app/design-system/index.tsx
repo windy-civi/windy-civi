@@ -154,13 +154,17 @@ export const Modal: ComponentType<{
 export const Button: React.FC<{
   onClick?: () => void;
   className?: string;
-  type?: "default" | "call-to-action" | "submit";
+  type?: "default" | "call-to-action";
+  htmlType?: "button" | "reset" | "submit" | undefined;
+  disabled?: boolean;
   children: React.ReactNode;
-}> = ({ onClick, children, className, type }) => {
+}> = ({ onClick, children, className, type, disabled, htmlType }) => {
   let typeClass = "";
   switch (type) {
     case "call-to-action":
-      typeClass = "bg-green-600 hover:bg-green-700";
+      typeClass = disabled
+        ? "bg-black bg-opacity-40"
+        : "bg-green-600 hover:bg-green-700";
       break;
     case "default":
     default:
@@ -171,10 +175,13 @@ export const Button: React.FC<{
   return (
     <button
       role="button"
-      type={type === "submit" ? "submit" : "button"}
+      type={htmlType}
+      disabled={disabled}
+      title={disabled ? "No changes detected" : ""}
       className={classNames(
         "rounded px-4 py-2 text-base font-semibold text-white",
         typeClass,
+        disabled ? "opacity-50 cursor-not-allowed hover:bg-opacity-40" : "",
         className,
       )}
       onClick={onClick}
