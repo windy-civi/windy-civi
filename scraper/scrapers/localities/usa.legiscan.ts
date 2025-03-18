@@ -1,4 +1,4 @@
-import { CiviLegislationData } from "@windy-civi/domain/types";
+import { CiviLegislationData } from "@windy-civi/domain/legislation";
 import { getCiviLegislationBills } from "../sources/legiscan";
 import { filterMasterList, legiscanToCivi } from "./usa.selector";
 
