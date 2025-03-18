@@ -67,4 +67,3 @@ ${text}
   }
   return res.trim();
 };
-
