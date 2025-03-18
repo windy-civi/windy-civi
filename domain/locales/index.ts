@@ -136,3 +136,29 @@ export const levelsMap: Record<RepLevel, string> = {
   [RepLevel.County]: "Cook County",
   [RepLevel.National]: "USA",
 };
+
+// Total number of representatives in each legislative body
+export const TOTAL_REPRESENTATIVES = {
+  [RepLevel.National]: {
+    SENATE: 100, // 100 US Senators
+    HOUSE: 435, // 435 US Representatives
+    TOTAL: 535, // Total Congress members
+  },
+  [RepLevel.State]: {
+    ILLINOIS: {
+      SENATE: 59, // Illinois State Senators
+      HOUSE: 118, // Illinois State Representatives
+      TOTAL: 177, // Total Illinois General Assembly
+    },
+  },
+  [RepLevel.City]: {
+    CHICAGO: {
+      COUNCIL: 50, // Chicago City Council Alderpersons
+      TOTAL: 50,
+    },
+  },
+  [RepLevel.County]: {
+    // For future use if needed
+    TOTAL: 0,
+  },
+} as const;

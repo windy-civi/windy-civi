@@ -1,9 +1,4 @@
-import {
-  AllAllowedTags,
-  ALLOWED_TAGS,
-  CustomChicagoTag,
-  DEFAULT_TAG_PREFERENCES,
-} from "../tags";
+import { DataStoreGetter } from "../drivers";
 import {
   CiviGptLegislationData,
   CiviLegislationData,
@@ -12,16 +7,22 @@ import {
   LegislationResult,
   WindyCiviBill,
 } from "../legislation";
-import { UserPreferences } from "../user-preferences";
 import {
   DataStores,
   isLocationChicago,
   isLocationIL,
   RepLevel,
   SupportedLocale,
+  TOTAL_REPRESENTATIVES,
 } from "../locales";
-import { DataStoreGetter } from "../drivers";
 import { findStringOverlap, uniqBy } from "../scalars";
+import {
+  AllAllowedTags,
+  ALLOWED_TAGS,
+  CustomChicagoTag,
+  DEFAULT_TAG_PREFERENCES,
+} from "../tags";
+import { UserPreferences } from "../user-preferences";
 
 // Helper function to create the API for getting legislation
 // This is to decouple the actual data store from the domain logic, making it easier to test
@@ -274,9 +275,11 @@ const LEVEL_PRIORITIES: Record<RepLevel, number> = {
 
 // Scoring weights for different factors
 const SCORING_WEIGHTS = {
-  tags: 0.6, // 60% weight for tag relevance
-  freshness: 0.3, // 30% weight for how recent the bill is
-  level: 0.1, // 10% weight for government level
+  tags: 0.3, // 35% weight for tag relevance
+  billType: 0.2, // 15% weight for bill type (bill vs resolution)
+  popularity: 0.2, // 20% weight for bill popularity based on sponsors
+  freshness: 0.15, // 15% weight for how recent the bill is
+  level: 0.05, // 5% weight for government level
 };
 
 const calculateTagScore = (
@@ -309,6 +312,63 @@ const calculateLevelScore = (level: RepLevel): number => {
   return LEVEL_PRIORITIES[level] / Math.max(...Object.values(LEVEL_PRIORITIES));
 };
 
+const calculatePopularityScore = (item: WindyCiviBill): number => {
+  const bill = item.bill;
+  if (!bill.sponsors) {
+    return 0;
+  }
+
+  // Get total representatives based on level and classification
+  let totalReps = 0;
+  // Calculate baseline score for cases where we can't determine total reps
+  const baselineScore = Math.min(bill.sponsors.length / 10, 1);
+
+  switch (item.level) {
+    case RepLevel.National:
+      totalReps = TOTAL_REPRESENTATIVES[RepLevel.National].TOTAL;
+      break;
+    case RepLevel.State:
+      if (bill.source_id.startsWith("IL")) {
+        totalReps = TOTAL_REPRESENTATIVES[RepLevel.State].ILLINOIS.TOTAL;
+      }
+      break;
+    case RepLevel.City:
+      if (bill.source_id.startsWith("CHI")) {
+        totalReps = TOTAL_REPRESENTATIVES[RepLevel.City].CHICAGO.TOTAL;
+      }
+      break;
+    default:
+      // If we can't determine the total reps, fall back to absolute number scoring
+      return baselineScore;
+  }
+
+  // Calculate percentage of representatives who are sponsors
+  const sponsorPercentage =
+    totalReps > 0 ? bill.sponsors.length / totalReps : 0;
+  // Return normalized score between 0 and 1
+  return Math.min(sponsorPercentage, 1);
+};
+
+const calculateBillTypeScore = (item: WindyCiviBill): number => {
+  const { classification, id } = item.bill;
+
+  // For US bills, check if it's a House or Senate bill. Prefer bills over resolutions.
+  if (item.level === RepLevel.National) {
+    const billId = id.toUpperCase();
+    return billId.startsWith("HR ") || billId.startsWith("S ") ? 1.0 : 0.0;
+  }
+
+  // For chicago bills, check if it's a bill or ordinance. Prefer ordinances over resolutions.
+  if (item.level === RepLevel.City) {
+    const classificationLower = classification?.toLowerCase();
+    return classificationLower === "bill" || classificationLower === "ordinance"
+      ? 1.0
+      : 0.0;
+  }
+
+  return 0.0;
+};
+
 const calculateTotalScore = (
   preferences: UserPreferences,
   item: WindyCiviBill
@@ -316,10 +376,15 @@ const calculateTotalScore = (
   const tagScore = calculateTagScore(preferences.tags, item.allTags);
   const freshnessScore = calculateFreshnessScore(item);
   const levelScore = calculateLevelScore(item.level);
+  const popularityScore = calculatePopularityScore(item);
+  const billTypeScore = calculateBillTypeScore(item);
+
   return (
     tagScore * SCORING_WEIGHTS.tags +
     freshnessScore * SCORING_WEIGHTS.freshness +
-    levelScore * SCORING_WEIGHTS.level
+    levelScore * SCORING_WEIGHTS.level +
+    popularityScore * SCORING_WEIGHTS.popularity +
+    billTypeScore * SCORING_WEIGHTS.billType
   );
 };
 
