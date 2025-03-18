@@ -1,4 +1,5 @@
-import { CiviLegislationData, Locales } from "@windy-civi/domain";
+import { CiviLegislationData } from "@windy-civi/domain/legislation";
+import { Locales } from "@windy-civi/domain/locales";
 import { storage } from "@windy-civi/storage";
 import axios from "axios";
 import { getLegiscanAPIKey } from "../../config/env";

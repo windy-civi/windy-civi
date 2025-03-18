@@ -3,6 +3,7 @@ import { ComponentType, createContext, useContext } from "react";
 
 const AppContext = createContext<Env | null>(null);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAppContext = () => useContext(AppContext);
 
 export const AppProvider: ComponentType<{
