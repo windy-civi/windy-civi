@@ -2,7 +2,7 @@
   "name": "@windy-civi/domain",
   "version": "0.1.0",
   "scripts": {
-    "test": "ts-node ./tests/run.test.node.ts",
+    "test": "ts-node ./scripts/runTests.test.ts",
     "typecheck": "tsc",
     "prettier": "prettier '**/*.{js,ts,jsx,tsx,json,css,md}'",
     "format": "npm run prettier -- --write",

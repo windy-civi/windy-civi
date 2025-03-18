@@ -1,5 +1,5 @@
 import assert from "assert";
-import { CiviLegislationDataForDiff, LegislationChange } from "..";
+import { CiviLegislationDataForDiff, LegislationChange } from "../legislation";
 import { findDifferences } from "./diff";
 
 const tests: {

@@ -1,5 +1,5 @@
-import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
-import { CiviGptLegislationData, Locales } from "@windy-civi/domain/types";
+import { CiviGptLegislationData } from "@windy-civi/domain/legislation";
+import { forEachLocale, Locales } from "@windy-civi/domain/locales";
 import { storage } from "@windy-civi/storage";
 import { getCacheDir, getLocale, getShouldSkipCache } from "../config/env";
 import { categorizeText, summarizeText } from "./prompts";

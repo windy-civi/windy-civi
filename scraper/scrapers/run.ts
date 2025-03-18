@@ -1,10 +1,8 @@
-import { CiviLegislationData } from "@windy-civi/domain";
-import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
-import { findDifferences } from "@windy-civi/domain/legislation-diff/diff";
+import { findDifferences } from "@windy-civi/domain/feed-diff/diff";
+import { CiviLegislationData } from "@windy-civi/domain/legislation";
+import { forEachLocale, Locales } from "@windy-civi/domain/locales";
 import { storage } from "@windy-civi/storage";
 import { getCacheDir, getLocale, getShouldSkipCache } from "../config/env";
-
-import { Locales } from "@windy-civi/domain/types";
 import * as il from "./localities/illinois.legiscan";
 import * as usa from "./localities/usa.legiscan";
 import { councilmatic } from "./sources/councilmatic";

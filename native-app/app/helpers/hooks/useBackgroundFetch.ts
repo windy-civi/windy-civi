@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { getFeed } from "@windy-civi/domain/feed";
+import { findDifferences } from "@windy-civi/domain/feed-diff/diff";
+import { WindyCiviBill } from "@windy-civi/domain/legislation";
 import * as BackgroundFetch from "expo-background-fetch";
 import * as TaskManager from "expo-task-manager";
-import { findDifferences } from "@windy-civi/domain/legislation-diff/diff";
-import { useStorage } from "./useStorage";
-import { useLocalPushNotifications } from "./useLocalPushNotifications";
-import { getFeed } from "@windy-civi/domain/feed/api";
+import { useEffect, useState } from "react";
 import { rnDataGetter } from "../rn-api";
-import { WindyCiviBill } from "@windy-civi/domain/types";
+import { useLocalPushNotifications } from "./useLocalPushNotifications";
+import { useStorage } from "./useStorage";
 
 const BACKGROUND_FETCH_TASK = "background-fetch";
 

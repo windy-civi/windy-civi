@@ -1,4 +1,4 @@
-import { CiviLegislationDataForDiff, LegislationChange } from "../../domain";
+import { CiviLegislationDataForDiff, LegislationChange } from "../legislation";
 
 export function findDifferences(
   prevBills: CiviLegislationDataForDiff[],

@@ -317,7 +317,7 @@ export const getFeed = async ({
 }: {
   dataStoreGetter: DataStoreGetter;
   preferences: UserPreferences;
-  filterBy: (bill: WindyCiviBill) => boolean;
+  filterBy?: (bill: WindyCiviBill) => boolean;
 }): Promise<LegislationFeed> => {
   if (!preferences.location) {
     return {
@@ -325,6 +325,9 @@ export const getFeed = async ({
       feed: [],
     };
   }
+
+  // If no filter is provided, use the default filter
+  filterBy = filterBy || (() => true);
 
   const shouldGetChicago = isLocationChicago(preferences.location);
   const shouldGetIllinois =
