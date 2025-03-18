@@ -37,7 +37,7 @@ const router = createHashRouter([
       },
       // Catch all feed routes
       {
-        path: "/:id",
+        path: "/:feedId",
         loader: feedLoader,
         element: <Feed />,
       },

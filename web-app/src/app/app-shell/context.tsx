@@ -1,4 +1,4 @@
-import { Env } from "@windy-civi/domain/types";
+import { Env } from "@windy-civi/domain/drivers";
 import { ComponentType, createContext, useContext } from "react";
 
 const AppContext = createContext<Env | null>(null);

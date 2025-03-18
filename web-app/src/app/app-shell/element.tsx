@@ -7,7 +7,41 @@ import { FaGear } from "react-icons/fa6";
 import { AppShellLoaderData } from "./types";
 import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaHeart } from "react-icons/fa";
+import { getFlagIcon } from "@windy-civi/domain/locales/flags";
+import { isSupportedLocale } from "@windy-civi/domain/locales";
+import { isSupportedTag, TagMap } from "@windy-civi/domain/tags";
+
+// Add this new component before the Navigation component
+const FeedNavItem = ({ href, name }: { href: string; name: string }) => {
+  if (name === "For You") {
+    return <NavItem key={href} href={href} name={name} icon={<FaHeart />} />;
+  }
+
+  if (isSupportedLocale(name)) {
+    return (
+      <NavItem
+        key={href}
+        href={href}
+        name={name}
+        icon={<img className="h-4" src={getFlagIcon(name)} />}
+      />
+    );
+  }
+
+  if (isSupportedTag(name)) {
+    return (
+      <NavItem
+        key={href}
+        href={href}
+        name={name}
+        icon={<span>{TagMap[name].icon}</span>}
+      />
+    );
+  }
+
+  return <NavItem key={href} href={href} name={name} />;
+};
 
 const NavItem = ({
   name,
@@ -16,7 +50,7 @@ const NavItem = ({
 }: {
   name: string;
   href: string;
-  icon?: React.ReactNode;
+  icon?: JSX.Element;
 }) => {
   return (
     <div className="flex self-stretch">
@@ -70,38 +104,6 @@ export const CommunityRoute = () => {
       <h1 className="text-2xl font-bold">{displayName}</h1>
       <Feed />
     </div>
-  );
-};
-
-const Navigation = (props: AppShellLoaderData) => {
-  return (
-    <HeaderScrollContainer>
-      <Logo />
-      <NavItem name="Contribute" href="/contribute" icon={<FaCode />} />
-      <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
-      <NavItem href="/" name="Your Feed" icon={<>👤</>} />
-      {props.availableFeeds.map((feed) => (
-        <NavItem href={feed} name={feed} icon={<>👤</>} />
-      ))}
-      {/* <NavItem href="/location/usa" name="USA Trending" icon={<>🇺🇸</>} />
-      <NavItem
-        href="/location/illinois"
-        name="Illinois Trending"
-        icon={<>🇺🇸</>}
-      />
-      <NavItem
-        href="/location/chicago"
-        name="Chicago Trending"
-        icon={<>🇺🇸</>}
-      />
-
-      <NavItem
-        href="/@tags/climate-change"
-        name="Climate Change"
-        icon={<>🌍</>}
-      />
-      <NavItem href="/@tags/abortion" name="Abortion" icon={<>👶</>} /> */}
-    </HeaderScrollContainer>
   );
 };
 
@@ -172,6 +174,20 @@ export const NavigatorShell = ({
         </div>
       </div>
     </div>
+  );
+};
+
+const Navigation = (props: AppShellLoaderData) => {
+  return (
+    <HeaderScrollContainer>
+      <Logo />
+      <NavItem href="/contribute" name="Contribute" icon={<FaCode />} />
+      <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
+      {/* Adds links for feeds based on user preferences */}
+      {props.availableFeeds.map(({ href, name }) => (
+        <FeedNavItem key={href} href={href} name={name} />
+      ))}
+    </HeaderScrollContainer>
   );
 };
 

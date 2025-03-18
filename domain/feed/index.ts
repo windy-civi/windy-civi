@@ -313,9 +313,11 @@ export const sortLegislationByScore = (
 export const getFeed = async ({
   dataStoreGetter,
   preferences,
+  filterBy,
 }: {
   dataStoreGetter: DataStoreGetter;
   preferences: UserPreferences;
+  filterBy: (bill: WindyCiviBill) => boolean;
 }): Promise<LegislationFeed> => {
   if (!preferences.location) {
     return {
@@ -337,9 +339,13 @@ export const getFeed = async ({
   const allUSBills = await getLegislation(dataStoreGetter, DataStores.USA);
 
   let fullLegislation = createFeedBillsFromMultipleSources([
-    [allChicagoBills, SupportedLocale.Chicago, [filterNoisyCityBills()]],
-    [allILBills, SupportedLocale.Illinois, null],
-    [allUSBills, SupportedLocale.USA, null],
+    [
+      allChicagoBills,
+      SupportedLocale.Chicago,
+      [filterNoisyCityBills(), filterBy],
+    ],
+    [allILBills, SupportedLocale.Illinois, [filterBy]],
+    [allUSBills, SupportedLocale.USA, [filterBy]],
   ]);
 
   fullLegislation = sortByUpdatedAt(uniqBy(fullLegislation, (b) => b.bill.id));

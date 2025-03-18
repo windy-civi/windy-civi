@@ -65,3 +65,14 @@ export const findStringOverlap = <T extends string>(
 export const pipe = <T, R>(value: T, ...fns: Array<(arg: any) => any>): R => {
   return fns.reduce((acc, fn) => fn(acc), value as unknown) as R;
 };
+
+export const slugify = (title: string): string => {
+  return title.toLowerCase().replace(/\s+/g, "-");
+};
+
+export const deslugify = (slug: string): string => {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};

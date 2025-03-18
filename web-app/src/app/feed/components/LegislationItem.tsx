@@ -4,7 +4,7 @@ import {
   WindyCiviBill,
 } from "@windy-civi/domain/legislation";
 import { SupportedLocale } from "@windy-civi/domain/locales";
-import { getOverlappingTags } from "@windy-civi/domain/tags";
+import { filterAllowedTags, getOverlappingTags } from "@windy-civi/domain/tags";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { FaGlobe } from "react-icons/fa";
 import { Carousel, Tag } from "../../design-system";
@@ -135,46 +135,50 @@ export const LegislationItem = ({
 
   const linkTitle = locale === SupportedLocale.Chicago ? `${identifier}` : id;
 
+  const tags = filterAllowedTags(allTags);
+
   const summaries = [
-    {
-      title: "AI Summary",
-      content: gpt?.gpt_summary && (
-        <div className="relative px-3">
-          <RobotSvg
-            style={{
-              width: "33px",
-              position: "absolute",
-              right: "-15px",
-              top: "-15px",
-              transform: "rotate(9deg)",
-              opacity: "0.5",
-            }}
-          />
-          <h4 className="font-mono text-sm">{gpt.gpt_summary}</h4>
-        </div>
-      ),
+    gpt?.gpt_summary
+      ? {
+          title: "AI Summary",
+          content: (
+            <div className="relative px-3">
+              <RobotSvg
+                style={{
+                  width: "33px",
+                  position: "absolute",
+                  right: "-15px",
+                  top: "-15px",
+                  transform: "rotate(9deg)",
+                  opacity: "0.5",
+                }}
+              />
+              <h4 className="font-mono text-sm">{gpt.gpt_summary}</h4>
+            </div>
+          ),
+        }
+      : false,
+    description && {
+      title: "Official Summary",
+      content: description,
     },
     // If the official title is different from the description, add it to the carousel
-    title !== description
+    title !== description && {
+      title: "Official Title",
+      content: title,
+    },
+    tags.length > 0
       ? {
-          title: "Official Title",
-          content: title,
+          title: "All Tags",
+          content: (
+            <div className="flex flex-row flex-wrap justify-center">
+              {tags.map((v) => (
+                <Tag key={v} className="text-xs" text={v} />
+              ))}
+            </div>
+          ),
         }
-      : null,
-    {
-      title: "Official Summary",
-      content: description && description,
-    },
-    {
-      title: "All Tags",
-      content: allTags.length > 0 && (
-        <div className="flex flex-row flex-wrap justify-center">
-          {allTags.map((v) => (
-            <Tag key={v} className="text-xs" text={v} />
-          ))}
-        </div>
-      ),
-    },
+      : false,
     {
       title: "Metadata",
       content: (
@@ -183,10 +187,7 @@ export const LegislationItem = ({
         </pre>
       ),
     },
-  ].filter(
-    (item): item is Summary =>
-      item !== null && item.content !== undefined && item.content !== false,
-  );
+  ].filter((item): item is Summary => item !== false);
 
   // Get the tags that overlap with the user's preferences
   const tagsToDisplay = getOverlappingTags(allTags, preferences.tags);

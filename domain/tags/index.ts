@@ -140,6 +140,12 @@ export const filterAllowedTags = (tags: string[]): AllAllowedTags[] => {
     : [];
 };
 
+export const isSupportedTag = (tag: unknown): tag is AllAllowedTags => {
+  return (
+    typeof tag === "string" && ALL_ALLOWED_TAGS.includes(tag as AllAllowedTags)
+  );
+};
+
 export const parseAvailableTags = (location: Locales) => {
   const availableTags: AllAllowedTags[] = [];
 
