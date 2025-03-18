@@ -2,7 +2,7 @@
 // but was having trouble with installing on Remix
 
 import { CSSProperties, useEffect, useState } from "react";
-import { StyleHack, ZIndex, classNames } from "../../design-system";
+import { StyleHack, ZIndex, classNames } from "../../design-system/styles";
 import { ShareIOS } from "../../design-system/Icons";
 import { cookieFactory } from "../../utils/cookies";
 

@@ -269,7 +269,7 @@ const LEVEL_PRIORITIES: Record<RepLevel, number> = {
   [RepLevel.National]: 4,
   [RepLevel.State]: 3,
   [RepLevel.City]: 2,
-  [RepLevel.County]: 1, // technically we dont even have county data
+  [RepLevel.County]: 1, // technically we don't even have county data
 };
 
 // Scoring weights for different factors

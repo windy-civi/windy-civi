@@ -6,8 +6,10 @@ import {
   WindyCiviBill,
 } from "@windy-civi/domain/legislation";
 import { RepLevel } from "@windy-civi/domain/locales";
-import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
+import { Carousel, Tag } from "../../design-system";
 import { FeedLoaderData } from "../types";
+import { RobotSvg } from "../../design-system/Icons";
+import { classNames } from "../../design-system/styles";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",

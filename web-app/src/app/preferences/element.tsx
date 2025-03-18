@@ -1,16 +1,11 @@
 import { Form, useLoaderData } from "react-router-dom";
-import {
-  Button,
-  classNames,
-  CustomScreen,
-  Section,
-  Tagging,
-} from "../design-system";
+import { Button, CustomScreen, Section, Tagging } from "../design-system";
 import { useState } from "react";
 import { LocationPreferences } from "./components/Filters";
-import { UserPreferences } from "@windy-civi/domain/types";
 import { UserPreferencesLoaderData } from "./types";
 import { PWAInstall } from "./components/PwaInstaller";
+import { UserPreferences } from "@windy-civi/domain/user-preferences";
+import { classNames } from "../design-system/styles";
 export function Preferences() {
   const data = useLoaderData() as UserPreferencesLoaderData;
 

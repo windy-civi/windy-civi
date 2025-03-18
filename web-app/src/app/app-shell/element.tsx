@@ -1,11 +1,12 @@
 import { Outlet, NavLink, useLoaderData, useLocation } from "react-router-dom";
 
 import React from "react";
-import { Logo, StyleHack, classNames } from "../design-system";
+import { StyleHack, classNames } from "../design-system/styles";
 import { Feed } from "../feed/element";
 import { FaGear } from "react-icons/fa6";
 import { AppShellLoaderData } from "./types";
 import { AppProvider } from "./context";
+import { Logo } from "../design-system/Icons";
 
 const NavItem = ({
   name,

@@ -398,6 +398,7 @@ interface Option<T> {
   className?: (isSelected: boolean, location: OptionLocation) => string;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const getRadioStyle = (
   type: "transparent" | "solid",
   isSelected: boolean,
@@ -538,19 +539,19 @@ export const Tag: React.FC<{
   );
 };
 
-export const Tagging = ({
+export const Tagging = <T extends string>({
   tags,
   selected,
   handleClick,
 }: {
-  tags: string[];
-  selected: string[] | null;
-  handleClick: (updatedTags: string[]) => void;
+  tags: T[];
+  selected: T[] | null;
+  handleClick: (updatedTags: T[]) => void;
 }) => {
-  const [selectedTags, setSelectedTags] = useState<string[]>(selected ?? []);
+  const [selectedTags, setSelectedTags] = useState<T[]>(selected ?? []);
 
-  const handleTagClick = (tag: string) => {
-    let updatedTags: string[] = [];
+  const handleTagClick = (tag: T) => {
+    let updatedTags: T[] = [];
     if (selectedTags.includes(tag)) {
       updatedTags = selectedTags.filter((t) => t !== tag);
     } else {
@@ -580,6 +581,3 @@ export const Tagging = ({
 };
 
 const baseTag = "px-3 py-1 m-1 mr-0 rounded-full border-none text-center";
-
-export * from "./Icons";
-export * from "./styles";

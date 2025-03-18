@@ -141,7 +141,7 @@ export const filterAllowedTags = (tags: string[]): AllAllowedTags[] => {
 };
 
 export const parseAvailableTags = (location: Locales) => {
-  const availableTags = [];
+  const availableTags: AllAllowedTags[] = [];
 
   // TODO: Move to dynamic tags
   if (isLocationChicago(location)) {
