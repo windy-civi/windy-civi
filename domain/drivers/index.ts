@@ -1,6 +1,6 @@
 // ## Data Access Layer
 
-import { SupportedLocale } from "../constants";
+import { SupportedLocale } from "../locales";
 import { CiviGptLegislationData, CiviLegislationData } from "../legislation";
 
 export interface DataStoreGetter {

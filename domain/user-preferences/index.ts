@@ -1,4 +1,4 @@
-import { AllAllowedTags } from "../constants";
+import { AllAllowedTags } from "../tags";
 import { Locales } from "../locales";
 
 export type UserPreferences = {
