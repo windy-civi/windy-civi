@@ -275,11 +275,16 @@ const LEVEL_PRIORITIES: Record<RepLevel, number> = {
 
 // Scoring weights for different factors
 const SCORING_WEIGHTS = {
-  tags: 0.3, // 35% weight for tag relevance
-  billType: 0.2, // 15% weight for bill type (bill vs resolution)
-  popularity: 0.2, // 20% weight for bill popularity based on sponsors
-  freshness: 0.15, // 15% weight for how recent the bill is
-  level: 0.05, // 5% weight for government level
+  // Highest weight on de-prioritizing resolutions
+  billType: 0.3,
+  // Followed by tag relevance
+  tags: 0.25,
+  // Then popularity
+  popularity: 0.2,
+  // Then freshness
+  freshness: 0.15,
+  // Then government level
+  level: 0.05,
 };
 
 const calculateTagScore = (
