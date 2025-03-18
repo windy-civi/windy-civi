@@ -18,6 +18,20 @@ import {
 } from "@windy-civi/domain/locales";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
 
+const LocationOption = ({ locale }: { locale: SupportedLocale }) => {
+  const flagSrc = getFlagIcon(locale);
+  return (
+    <div className="flex items-center gap-2 uppercase font-bold">
+      <img
+        src={flagSrc}
+        alt={`${locale} flag`}
+        className="w-5 h-3 object-cover"
+      />
+      {locale}
+    </div>
+  );
+};
+
 /**
  * A container for displaying location filter options and address lookup
  */
@@ -53,15 +67,15 @@ const LocationPreferences = (props: {
             optionClassName="flex-1 w-max rounded shadow"
             options={[
               {
-                label: <>{getFlagIcon(SupportedLocale.USA)} USA</>,
+                label: <LocationOption locale={SupportedLocale.USA} />,
                 value: SupportedLocale.USA,
               },
               {
-                label: "Illinois",
+                label: <LocationOption locale={SupportedLocale.Illinois} />,
                 value: SupportedLocale.Illinois,
               },
               {
-                label: "Chicago",
+                label: <LocationOption locale={SupportedLocale.Chicago} />,
                 value: SupportedLocale.Chicago,
               },
             ]}
@@ -112,19 +126,6 @@ export function Preferences() {
             setFormState({ ...formState, location: data.preferences.location });
           }}
         />
-        <Section
-          title="Notifications"
-          description={
-            <div>
-              We create notifications based on your "For You feed", which is
-              based on your interests and location. To get notifications,
-              download the iOS App or the PWA on Android / Desktop.
-            </div>
-          }
-        >
-          <PWAInstall />
-          <div></div>
-        </Section>
         {/* Tags Filter */}
         <Section
           title="Issues"
@@ -140,6 +141,20 @@ export function Preferences() {
               setFormState({ ...formState, tags: updatedTags });
             }}
           />
+        </Section>
+
+        <Section
+          title="Notifications"
+          description={
+            <div>
+              We create notifications based on your "For You feed", which is
+              based on your interests and location. To get notifications,
+              download the iOS App or the PWA on Android / Desktop.
+            </div>
+          }
+        >
+          <PWAInstall />
+          <div></div>
         </Section>
 
         {/* todo: allow customization */}

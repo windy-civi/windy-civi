@@ -11,7 +11,5 @@ export const getFlagIcon = (locale: SupportedLocale) => {
       return IllinoisFlag;
     case SupportedLocale.Chicago:
       return ChicagoFlag;
-    default:
-      return null;
   }
 };

@@ -421,7 +421,7 @@ export const getRadioStyle = (
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-white bg-opacity-50 text-black" : "bg-black text-white opacity-30"}`,
+      `${isSelected ? "bg-gradient-to-r from-black to-slate-700 opacity-80 text-white" : "bg-black text-white opacity-40"}`,
     );
   }
 };
@@ -552,11 +552,25 @@ export const Tagging = <T extends string>({
 }) => {
   const [selectedTags, setSelectedTags] = useState<T[]>(selected ?? []);
 
+  // Sort tags based on initial selection so it doesn't
+  // change when the user clicks on a tag
+  const sortedTags = tags.sort((a, b) => {
+    const s = selected ?? [];
+    const aSelected = s.includes(a);
+    const bSelected = s.includes(b);
+    if (aSelected && !bSelected) return -1;
+    if (!aSelected && bSelected) return 1;
+    return 0;
+  });
+
   const handleTagClick = (tag: T) => {
     let updatedTags: T[] = [];
     if (selectedTags.includes(tag)) {
       updatedTags = selectedTags.filter((t) => t !== tag);
     } else if (maxTags && selectedTags.length >= maxTags) {
+      alert("You can only select up to 5 tags");
+      return;
+    } else {
       updatedTags = [...selectedTags, tag];
     }
     handleClick(updatedTags);
@@ -565,7 +579,7 @@ export const Tagging = <T extends string>({
 
   return (
     <div className="flex flex-wrap justify-center text-center">
-      {tags.map((tag) => (
+      {sortedTags.map((tag) => (
         <Tag
           text={tag}
           key={tag}
