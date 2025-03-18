@@ -428,7 +428,7 @@ export const getRadioStyle = (
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-gradient-to-r from-black to-slate-700 opacity-80 text-white" : "bg-black text-white opacity-40"}`,
+      `${isSelected ? "bg-gradient-to-r from-white to-slate-300 text-black" : "bg-black text-white opacity-40"}`,
     );
   }
 };
@@ -460,7 +460,7 @@ export const RadioPicker = <T extends string>({
   return (
     <div
       role="radiogroup"
-      aria-label="Filter By City, State, or National Bills"
+      aria-label="Select your sources"
       className={
         containerClassName || "flex flex-row justify-center lg:justify-end"
       }
