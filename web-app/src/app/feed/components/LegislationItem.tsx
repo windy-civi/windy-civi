@@ -170,7 +170,7 @@ export const LegislationItem = ({
       content: allTags.length > 0 && (
         <div className="flex flex-row flex-wrap justify-center">
           {allTags.map((v) => (
-            <Tag className="text-xs" text={v} />
+            <Tag key={v} className="text-xs" text={v} />
           ))}
         </div>
       ),

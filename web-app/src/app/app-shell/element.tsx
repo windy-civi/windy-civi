@@ -7,6 +7,7 @@ import { FaGear } from "react-icons/fa6";
 import { AppShellLoaderData } from "./types";
 import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
+import { FaCode } from "react-icons/fa";
 
 const NavItem = ({
   name,
@@ -76,7 +77,7 @@ const Navigation = (props: AppShellLoaderData) => {
   return (
     <HeaderScrollContainer>
       <Logo />
-      <NavItem name="Give Feedback" href="/help" />
+      <NavItem name="Contribute" href="/contribute" icon={<FaCode />} />
       <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
       <NavItem href="/" name="Your Feed" icon={<>👤</>} />
       {props.availableFeeds.map((feed) => (

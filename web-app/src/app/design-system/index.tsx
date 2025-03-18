@@ -77,7 +77,7 @@ export const CustomScreen: React.FC<{
           "flex justify-center p-4",
           "rounded-lg shadow-lg",
         )}
-        style={{ backdropFilter: "blur(10px) brightness(0.7)" }}
+        style={{ backdropFilter: "blur(10px) brightness(0.6)" }}
       >
         {children}
       </div>

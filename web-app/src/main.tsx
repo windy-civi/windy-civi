@@ -7,7 +7,7 @@ import { loader as feedLoader } from "./app/feed/loader";
 import { action as preferencesAction } from "./app/preferences/action";
 import { Preferences } from "./app/preferences/element";
 import { loader as preferencesLoader } from "./app/preferences/loader";
-import { Support } from "./app/support/Support";
+import { Contribute } from "./app/contribute/Contribute";
 
 /**
  * Load tailwind
@@ -21,8 +21,8 @@ const router = createHashRouter([
     element: <AppShell />,
     children: [
       {
-        path: "/help",
-        element: <Support />,
+        path: "/contribute",
+        element: <Contribute />,
       },
       {
         path: "/preferences",
