@@ -1,5 +1,5 @@
 import { isLocationChicago, Locales } from "../locales";
-import { findOverlap, findStringOverlap, hasOverlap } from "../scalars";
+import { findStringOverlap, hasOverlap } from "../scalars";
 
 // City level filters for tags that are not GPT tags
 export enum CustomChicagoTag {

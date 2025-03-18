@@ -62,6 +62,7 @@ export const findStringOverlap = <T extends string>(
   return overlap;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const pipe = <T, R>(value: T, ...fns: Array<(arg: any) => any>): R => {
   return fns.reduce((acc, fn) => fn(acc), value as unknown) as R;
 };
