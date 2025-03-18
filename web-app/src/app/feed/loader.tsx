@@ -9,16 +9,16 @@ import { type FeedLoaderData } from "./types";
 
 export const loader: LoaderFunction = async () => {
   const env = getEnv(import.meta.env);
-  const userPreferences = await getPreferencesFromCookies(document.cookie);
+  const preferences = await getPreferencesFromCookies(document.cookie);
 
   const feedData = await getFeed({
-    preferences: userPreferences,
+    preferences,
     dataStoreGetter: viteDataGetter,
   });
 
   return json<FeedLoaderData>({
     env,
-    userPreferences,
+    preferences,
     feed: feedData.feed,
   });
 };

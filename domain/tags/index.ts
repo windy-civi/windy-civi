@@ -1,5 +1,5 @@
 import { isLocationChicago, Locales } from "../locales";
-import { hasOverlap } from "../scalars";
+import { findOverlap, findStringOverlap, hasOverlap } from "../scalars";
 
 // City level filters for tags that are not GPT tags
 export enum CustomChicagoTag {
@@ -157,4 +157,11 @@ export const tagsOverLap = (tagList1: unknown, tagList2: unknown) => {
   return (
     hasTags(tagList1) && hasTags(tagList2) && hasOverlap(tagList1, tagList2)
   );
+};
+
+export const getOverlappingTags = <T extends string>(
+  tagList1: T[],
+  tagList2: T[]
+) => {
+  return findStringOverlap(tagList1, tagList2);
 };

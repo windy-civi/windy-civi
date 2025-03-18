@@ -129,3 +129,10 @@ export const getLocationInformationText = (location: Locales) => {
   }
   return { locationName, levelText };
 };
+
+export const levelsMap: Record<RepLevel, string> = {
+  [RepLevel.City]: "Chicago",
+  [RepLevel.State]: "IL",
+  [RepLevel.County]: "Cook County",
+  [RepLevel.National]: "USA",
+};

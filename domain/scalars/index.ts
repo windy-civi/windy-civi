@@ -45,9 +45,9 @@ export const findOverlap = (arr1: string[], arr2: string[]): string | false => {
   return false;
 };
 
-export const findStringOverlap = (
-  arr1: readonly string[],
-  arr2: readonly string[]
+export const findStringOverlap = <T extends string>(
+  arr1: readonly T[],
+  arr2: readonly T[]
 ) => {
   const overlap = [];
 
