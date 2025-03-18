@@ -1,4 +1,4 @@
-import { UserPreferences } from "@windy-civi/domain/types";
+import { UserPreferences } from "@windy-civi/domain/user-preferences";
 
 export const USER_PREFERENCES_CHANGED = "ON_USER_PREFERENCES_CHANGED";
 

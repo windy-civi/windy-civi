@@ -1,11 +1,11 @@
 import { FaGlobe } from "react-icons/fa";
 
-import { RepLevel } from "@windy-civi/domain/constants";
 import {
   getLastStatus,
   mapToReadableStatus,
-} from "@windy-civi/domain/feed/utils";
-import { WindyCiviBill } from "@windy-civi/domain/types";
+  WindyCiviBill,
+} from "@windy-civi/domain/legislation";
+import { RepLevel } from "@windy-civi/domain/locales";
 import { Carousel, RobotSvg, Tag, classNames } from "../../design-system";
 import { FeedLoaderData } from "../types";
 

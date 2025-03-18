@@ -1,7 +1,8 @@
-import { SupportedLocale } from "@windy-civi/domain/constants";
-import { hasTags, isSupportedLocale } from "@windy-civi/domain/feed/utils";
-import { UserPreferences } from "@windy-civi/domain/types";
+import { isSupportedLocale, SupportedLocale } from "@windy-civi/domain/locales";
+import { pipe } from "@windy-civi/domain/scalars";
+import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { cookieFactory, getCookieFromString } from "../utils/cookies";
+import { filterAllowedTags } from "@windy-civi/domain/tags";
 
 const DEFAULT_TAGS = [] satisfies string[];
 const DEFAULT_LOCATION = "usa";
@@ -14,9 +15,8 @@ const DEFAULT_USER_PREFERENCES: UserPreferences = {
 /**
  * Parses a comma-separated string of tags into an array of strings.
  */
-export const parseTags = (tags: string | null | undefined): string[] => {
-  const parsed = tags?.split(",").filter((tag) => tag.length > 0);
-  return hasTags(parsed) ? parsed : [];
+export const parseTagString = (tags: string | null | undefined): string[] => {
+  return tags?.split(",").filter((tag) => tag.length > 0) ?? [];
 };
 
 /**
@@ -31,8 +31,15 @@ export const parseLocation = (locationParam: unknown): SupportedLocale =>
 export const getPreferencesFromCookies = async (cookieHeader?: string) => {
   if (cookieHeader) {
     return {
-      location: parseLocation(getCookieFromString(cookieHeader, "location")),
-      tags: parseTags(getCookieFromString(cookieHeader, "tags")),
+      location: pipe(
+        getCookieFromString(cookieHeader, "location"),
+        parseLocation,
+      ),
+      tags: pipe(
+        getCookieFromString(cookieHeader, "tags"),
+        parseTagString,
+        filterAllowedTags,
+      ),
     } satisfies UserPreferences;
 
     // History State

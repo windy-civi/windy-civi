@@ -1,7 +1,7 @@
 import { json, type LoaderFunction } from "react-router-dom";
 import { getEnv } from "../config";
 
-import { getFeed } from "@windy-civi/domain/feed/api";
+import { getFeed } from "@windy-civi/domain/feed";
 
 import { viteDataGetter } from "../../api/vite-api";
 import { getPreferencesFromCookies } from "../preferences/api";

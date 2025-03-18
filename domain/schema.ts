@@ -11,7 +11,7 @@
 //
 // ## Core Graph Types
 
-import { CiviLegislationData } from "./types";
+import { CiviLegislationData } from "./legislation";
 
 // ### Base Node Interface
 // The foundational type for all entities in our graph system.

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
-import { LocaleMap, SupportedLocale } from "@windy-civi/domain/constants";
-import { getTagsBeingFiltered } from "@windy-civi/domain/feed/utils";
-import { Locales, UserPreferences } from "@windy-civi/domain/types";
+import {
+  LocaleMap,
+  Locales,
+  SupportedLocale,
+} from "@windy-civi/domain/locales";
+import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { RadioPicker, Section, Tag } from "../../design-system";
+import { getTagsBeingFiltered } from "@windy-civi/domain/tags";
 
 /**
  * A container for displaying location filter options and address lookup

@@ -9,7 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { classNames, StyleHack } from "./styles";
-import { TagMap } from "@windy-civi/domain/constants";
+import { TagMap } from "@windy-civi/domain/tags";
 
 // ==========================================
 // Layout Components

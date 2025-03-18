@@ -1,3 +1,6 @@
+import { isLocationChicago, Locales } from "../locales";
+import { hasOverlap } from "../scalars";
+
 // City level filters for tags that are not GPT tags
 export enum CustomChicagoTag {
   "Ordinance" = "City Wide Ordinance",
@@ -22,6 +25,8 @@ export const ALLOWED_TAGS = [
   "LGBTQ Rights",
   "Trans Rights",
 ] as const;
+
+export const ALL_ALLOWED_TAGS = [...ALLOWED_TAGS, ...ChicagoTags] as const;
 
 export type AllowedGptTag = (typeof ALLOWED_TAGS)[number];
 
@@ -109,31 +114,47 @@ export const DEFAULT_TAG_PREFERENCES: AllAllowedTags[] = [
 
 export const AVAILABLE_TAGS = [...ALLOWED_TAGS];
 
-export enum RepLevel {
-  City = "city",
-  County = "county",
-  State = "state",
-  National = "national",
-}
+export const hasTags = (tags: unknown): tags is string[] => {
+  return Boolean(tags && Array.isArray(tags) && tags.length > 0);
+};
 
-export enum SupportedLocale {
-  Chicago = "chicago",
-  Illinois = "illinois",
-  USA = "usa",
-}
+export const getTagsBeingFiltered = ({
+  tags,
+  availableTags,
+}: {
+  tags: string[];
+  availableTags: string[];
+}) => {
+  return hasTags(tags) ? tags : availableTags;
+};
 
-export enum DataStores {
-  Chicago = "Chicago",
-  Illinois = "Illinois",
-  USA = "USA",
-}
+export const stringifyTags = (tags: string[]) => {
+  return tags.join(",");
+};
 
-export const LocaleMap: Record<SupportedLocale, SupportedLocale[]> = {
-  [SupportedLocale.Chicago]: [
-    SupportedLocale.Chicago,
-    SupportedLocale.Illinois,
-    SupportedLocale.USA,
-  ],
-  [SupportedLocale.Illinois]: [SupportedLocale.Illinois, SupportedLocale.USA],
-  [SupportedLocale.USA]: [SupportedLocale.USA],
+export const filterAllowedTags = (tags: string[]): AllAllowedTags[] => {
+  return hasTags(tags)
+    ? tags.filter((tag): tag is AllAllowedTags =>
+        ALL_ALLOWED_TAGS.includes(tag as AllAllowedTags)
+      )
+    : [];
+};
+
+export const parseAvailableTags = (location: Locales) => {
+  const availableTags = [];
+
+  // TODO: Move to dynamic tags
+  if (isLocationChicago(location)) {
+    availableTags.push(...ChicagoTags);
+  }
+
+  availableTags.push(...AVAILABLE_TAGS);
+
+  return availableTags;
+};
+
+export const tagsOverLap = (tagList1: unknown, tagList2: unknown) => {
+  return (
+    hasTags(tagList1) && hasTags(tagList2) && hasOverlap(tagList1, tagList2)
+  );
 };

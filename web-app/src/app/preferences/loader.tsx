@@ -1,9 +1,9 @@
 import { json, type LoaderFunction } from "react-router-dom";
 import { getEnv } from "../config";
 
-import { parseAvailableTags } from "@windy-civi/domain/feed/utils";
-import { UserPreferencesLoaderData } from "./types";
+import { parseAvailableTags } from "@windy-civi/domain/tags";
 import { getPreferencesFromCookies } from "./api";
+import { UserPreferencesLoaderData } from "./types";
 
 // Preferences
 

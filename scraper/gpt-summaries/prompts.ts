@@ -1,4 +1,4 @@
-import { ALLOWED_TAGS } from "@windy-civi/domain/constants";
+import { ALLOWED_TAGS } from "@windy-civi/domain/tags";
 import { postTextCompletions } from "./openai-api";
 
 export const categorizeText = async (
