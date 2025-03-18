@@ -18,9 +18,11 @@ Transit
 Abortion
 Immigration
 Foreign Policy
-States Rights
-Civil Rights
 Climate Change
+2nd Amendment
+Civil Rights
+LGBTQ Rights
+Trans Rights
 
 If no categories match, respond with "Other".
 `;

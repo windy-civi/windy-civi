@@ -6,8 +6,13 @@
 
 If wanting to develop outside GitHub Codespaces, run `npm install` on whichever project you want. You'll need the following APIs:
 
-- `GOOGLE_SPREADSHEET_API_KEY`: For `scraper/wiki-summaries`. API key from Google to scrape Google Sheet for wiki (can be same as GOOGLE_API_KEY)
-- `OPENAI_API_KEY`: For `scraper/gpt`. API key to run OpenAI GPT commands
+```env
+# For scraper/wiki-summaries: API key from Google to scrape Google Sheet for wiki (can be same as GOOGLE_API_KEY)
+GOOGLE_SPREADSHEET_API_KEY=
+
+# For scraper/gpt: API key to run OpenAI GPT commands
+OPENAI_API_KEY=
+```
 
 ## Folder Structure
 
@@ -17,11 +22,11 @@ By being a monorepo, we prioritize making PR management unified, and also making
 
 ### Folders
 
-- `.devcontainer`: For setting up GitHub Codespaces.
-- `.github`: We use GitHub Actions for all CI, including running scrapers & checking code quality.
-- `.vscode`: Recommended settings for vscode.
-- `domain`: Core business logic (should not have external dependencies, and just focuses on data logic/types/transformations). See [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
-- `web-app`: Progress Web App built on React/Tailwind/TypeScript/Vite.
-- `scraper`: Make the data, including get GPT summaries.
-- `native-app`: Expo React Native App. Local development won't work on codespaces.
-- `storage`: For getting/writing data from github releases / the filesystem.
+- [`.devcontainer`](.devcontainer): For setting up GitHub Codespaces.
+- [`.github`](.github): We use GitHub Actions for all CI, including running scrapers & checking code quality.
+- [`.vscode`](.vscode): Recommended settings for vscode.
+- [`domain`](domain): Core business logic (should not have external dependencies, and just focuses on data logic/types/transformations). See [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
+- [`web-app`](web-app): Progressive Web App built on React/Tailwind/TypeScript/Vite.
+- [`scraper`](scraper): Make the data, including get GPT summaries.
+- [`native-app`](native-app): Expo React Native App. Local development won't work on codespaces.
+- [`storage`](storage): For getting/writing data from github releases / the filesystem.
