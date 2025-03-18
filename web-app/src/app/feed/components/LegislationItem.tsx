@@ -3,7 +3,7 @@ import {
   mapToReadableStatus,
   WindyCiviBill,
 } from "@windy-civi/domain/legislation";
-import { levelsMap, RepLevel } from "@windy-civi/domain/locales";
+import { SupportedLocale } from "@windy-civi/domain/locales";
 import { getOverlappingTags } from "@windy-civi/domain/tags";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { FaGlobe } from "react-icons/fa";
@@ -16,17 +16,17 @@ const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
 };
 interface LegislationLinkProps {
-  level: RepLevel;
+  locale: SupportedLocale;
   link: string;
   linkTitle: string;
 }
 
 export const LegislationLink = ({
-  level,
+  locale,
   link,
   linkTitle,
 }: LegislationLinkProps) => {
-  const flagSrc = getFlagIcon(level);
+  const flagSrc = getFlagIcon(locale);
 
   return (
     <div className="flex flex-wrap items-center justify-end">
@@ -36,7 +36,7 @@ export const LegislationLink = ({
         rel="noreferrer"
         className={classNames(
           "relative flex items-center gap-2 px-3 py-1 transition-all hover:shadow-md",
-          "text-slate-800 font-bold text-sm uppercase",
+          "text-slate-800 text-sm uppercase",
           "rounded-lg border border-opacity-10 border-black",
           "bg-white",
         )}
@@ -44,28 +44,28 @@ export const LegislationLink = ({
         {flagSrc && (
           <img
             src={flagSrc}
-            alt={`${levelsMap[level]} flag`}
+            alt={`${locale} flag`}
             className="w-5 h-3 object-cover"
           />
         )}
-        <span>
-          {levelsMap[level]} {linkTitle} <FaGlobe className="pl-1 inline" />
-        </span>
+        <div className="flex flex-row items-center gap-1">
+          {locale} {linkTitle} <FaGlobe className="inline opacity-60" />
+        </div>
       </a>
     </div>
   );
 };
 
 type BillStatusProps = {
-  level: RepLevel;
+  locale: SupportedLocale;
   status: string[];
   link: string;
   date?: string;
 };
 
-const BillStatus = ({ level, status, link, date }: BillStatusProps) => {
+const BillStatus = ({ locale, status, link, date }: BillStatusProps) => {
   const lastStatus = getLastStatus(status);
-  const readableStatus = mapToReadableStatus(level, lastStatus);
+  const readableStatus = mapToReadableStatus(locale, lastStatus);
 
   return (
     <a
@@ -110,7 +110,7 @@ type Summary = {
 export const LegislationItem = ({
   bill,
   gpt,
-  level,
+  locale,
   allTags,
   preferences,
   glow,
@@ -133,7 +133,7 @@ export const LegislationItem = ({
     return <></>;
   }
 
-  const linkTitle = level === RepLevel.City ? `${identifier}` : id;
+  const linkTitle = locale === SupportedLocale.Chicago ? `${identifier}` : id;
 
   const summaries = [
     {
@@ -207,9 +207,14 @@ export const LegislationItem = ({
       <div className="flex flex-col gap-1 items-center">
         {/* First Row - Link and Status */}
         <div className="flex flex-row gap-2">
-          <LegislationLink level={level} link={link} linkTitle={linkTitle} />
+          <LegislationLink locale={locale} link={link} linkTitle={linkTitle} />
           <div className="flex items-stretch">
-            <BillStatus level={level} status={status} link={link} date={date} />
+            <BillStatus
+              locale={locale}
+              status={status}
+              link={link}
+              date={date}
+            />
           </div>
         </div>
         {/* Second Row - Tags */}

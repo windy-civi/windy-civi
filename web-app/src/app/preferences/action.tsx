@@ -1,5 +1,5 @@
 import { publishUserPreferences } from "../native-web-bridge/web-bridge";
-import { UserPreferences } from "@windy-civi/domain/types";
+import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { ActionFunction, json } from "react-router-dom";
 import { savePreferencesToCookies } from "./api";
 
@@ -16,6 +16,8 @@ export const action: ActionFunction = async ({ request }) => {
 
   // Notify native app of preference changes
   publishUserPreferences(validatedPreferences);
+
+  alert("Preferences saved");
 
   return json({ success: true });
 };

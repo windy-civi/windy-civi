@@ -3,7 +3,7 @@
 // ### Legislation Types
 // These types support integration with existing legislation data sources.
 
-import { RepLevel } from "../locales";
+import { SupportedLocale } from "../locales";
 import { toTitleCase } from "../scalars";
 import { AllAllowedTags } from "../tags";
 
@@ -93,7 +93,7 @@ export type WindyCiviBill = {
   bill: CiviLegislationData;
   gpt?: CiviGptData;
   allTags: AllAllowedTags[];
-  level: RepLevel;
+  locale: SupportedLocale;
 };
 
 export const getBillUpdateAt = (bill: WindyCiviBill) =>
@@ -101,11 +101,11 @@ export const getBillUpdateAt = (bill: WindyCiviBill) =>
 
 // TODO: Move to backend
 export const mapToReadableStatus = (
-  level: RepLevel,
+  locale: SupportedLocale,
   status: string
 ): { name: string; type: "in-progress" | "pass" | "fail" } => {
-  switch (level) {
-    case RepLevel.City:
+  switch (locale) {
+    case SupportedLocale.Chicago:
       switch (status) {
         case "introduction":
           return { name: "Introduced", type: "in-progress" };
@@ -123,7 +123,7 @@ export const mapToReadableStatus = (
             type: "in-progress",
           };
       }
-    case RepLevel.State:
+    case SupportedLocale.Illinois:
       switch (status) {
         case "Pass":
           return { name: "Became Law", type: "pass" };
@@ -133,7 +133,7 @@ export const mapToReadableStatus = (
             type: "in-progress",
           };
       }
-    case RepLevel.National:
+    case SupportedLocale.USA:
       switch (status) {
         case "Engross":
           return { name: "Passed House", type: "in-progress" };

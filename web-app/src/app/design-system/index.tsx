@@ -393,7 +393,7 @@ export const DataField: ComponentType<DataFieldProps> = ({ type, id }) => {
  */
 type OptionLocation = "first" | "last" | "middle";
 interface Option<T> {
-  label: string;
+  label: React.ReactNode;
   value: T;
   className?: (isSelected: boolean, location: OptionLocation) => string;
 }
@@ -415,13 +415,13 @@ export const getRadioStyle = (
     );
   } else {
     return classNames(
-      "mx-0 inline-flex cursor-pointer py-2 px-4 text-white",
+      "mx-0 inline-flex cursor-pointer py-2 px-4",
       location === "first"
         ? "rounded-l-lg"
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-black bg-opacity-50" : "bg-black bg-opacity-20"}`,
+      `${isSelected ? "bg-white bg-opacity-50 text-black" : "bg-black text-white opacity-30"}`,
     );
   }
 };
@@ -543,10 +543,12 @@ export const Tagging = <T extends string>({
   tags,
   selected,
   handleClick,
+  maxTags,
 }: {
   tags: T[];
   selected: T[] | null;
   handleClick: (updatedTags: T[]) => void;
+  maxTags?: number;
 }) => {
   const [selectedTags, setSelectedTags] = useState<T[]>(selected ?? []);
 
@@ -554,7 +556,7 @@ export const Tagging = <T extends string>({
     let updatedTags: T[] = [];
     if (selectedTags.includes(tag)) {
       updatedTags = selectedTags.filter((t) => t !== tag);
-    } else {
+    } else if (maxTags && selectedTags.length >= maxTags) {
       updatedTags = [...selectedTags, tag];
     }
     handleClick(updatedTags);

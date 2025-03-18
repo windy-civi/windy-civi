@@ -1,12 +1,5 @@
 import { isNullish, Nullish } from "../scalars";
 
-export enum RepLevel {
-  City = "city",
-  County = "county",
-  State = "state",
-  National = "national",
-}
-
 export enum SupportedLocale {
   Chicago = "chicago",
   Illinois = "illinois",
@@ -110,10 +103,6 @@ const stringIsInAddress = (variations: string[], str: string) =>
     str.toLowerCase().includes(variation.toLowerCase())
   );
 
-export const parseRepLevel = (level?: string | null): RepLevel | null => {
-  return !level ? null : level === "true" ? null : (level as RepLevel);
-};
-
 export const getLocationInformationText = (location: Locales) => {
   let locationName = "";
   let levelText = "";
@@ -130,35 +119,20 @@ export const getLocationInformationText = (location: Locales) => {
   return { locationName, levelText };
 };
 
-export const levelsMap: Record<RepLevel, string> = {
-  [RepLevel.City]: "Chicago",
-  [RepLevel.State]: "IL",
-  [RepLevel.County]: "Cook County",
-  [RepLevel.National]: "USA",
-};
-
 // Total number of representatives in each legislative body
 export const TOTAL_REPRESENTATIVES = {
-  [RepLevel.National]: {
+  [SupportedLocale.USA]: {
     SENATE: 100, // 100 US Senators
     HOUSE: 435, // 435 US Representatives
     TOTAL: 535, // Total Congress members
   },
-  [RepLevel.State]: {
-    ILLINOIS: {
-      SENATE: 59, // Illinois State Senators
-      HOUSE: 118, // Illinois State Representatives
-      TOTAL: 177, // Total Illinois General Assembly
-    },
+  [SupportedLocale.Illinois]: {
+    SENATE: 59, // Illinois State Senators
+    HOUSE: 118, // Illinois State Representatives
+    TOTAL: 177, // Total Illinois General Assembly
   },
-  [RepLevel.City]: {
-    CHICAGO: {
-      COUNCIL: 50, // Chicago City Council Alderpersons
-      TOTAL: 50,
-    },
-  },
-  [RepLevel.County]: {
-    // For future use if needed
-    TOTAL: 0,
+  [SupportedLocale.Chicago]: {
+    COUNCIL: 50, // Chicago City Council Alderpersons
+    TOTAL: 50,
   },
 } as const;

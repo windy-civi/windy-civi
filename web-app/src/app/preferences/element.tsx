@@ -1,11 +1,77 @@
 import { Form, useLoaderData } from "react-router-dom";
-import { Button, CustomScreen, Section, Tagging } from "../design-system";
+import {
+  Button,
+  CustomScreen,
+  RadioPicker,
+  Section,
+  Tagging,
+} from "../design-system";
 import { useState } from "react";
-import { LocationPreferences } from "./components/Filters";
 import { UserPreferencesLoaderData } from "./types";
 import { PWAInstall } from "./components/PwaInstaller";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { classNames } from "../design-system/styles";
+import {
+  LocaleMap,
+  Locales,
+  SupportedLocale,
+} from "@windy-civi/domain/locales";
+import { getFlagIcon } from "@windy-civi/domain/locales/flags";
+
+/**
+ * A container for displaying location filter options and address lookup
+ */
+const LocationPreferences = (props: {
+  location: Locales;
+  afterLocation?: React.ReactNode;
+  onChange: (next: Locales) => void;
+  onClear: () => void;
+}) => {
+  // highlight the locales that are supported by the selected locale
+  const [highlighted, setHighlighted] = useState(LocaleMap[props.location]);
+
+  return (
+    <Section
+      title={<div>Sources</div>}
+      description={
+        <>
+          Sources are synced to your device. For example, if you pick "Chicago",
+          the app will sync data from Chicago, Illinois, and Federal sources.
+        </>
+      }
+    >
+      <div>
+        <div className="flex-1 rounded-b-md">
+          <RadioPicker
+            handleChange={(next) => {
+              props.onChange(next);
+              setHighlighted(LocaleMap[next]);
+            }}
+            highlighted={highlighted}
+            containerClassName="justify-end flex flex-row gap-2"
+            defaultValue={props.location}
+            optionClassName="flex-1 w-max rounded shadow"
+            options={[
+              {
+                label: <>{getFlagIcon(SupportedLocale.USA)} USA</>,
+                value: SupportedLocale.USA,
+              },
+              {
+                label: "Illinois",
+                value: SupportedLocale.Illinois,
+              },
+              {
+                label: "Chicago",
+                value: SupportedLocale.Chicago,
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </Section>
+  );
+};
+
 export function Preferences() {
   const data = useLoaderData() as UserPreferencesLoaderData;
 
@@ -63,10 +129,11 @@ export function Preferences() {
         <Section
           title="Issues"
           description={
-            <>Pick up to 3. We use these to score and prioritize your feed.</>
+            <>Pick up to 5. We use these to score and prioritize your feed.</>
           }
         >
           <Tagging
+            maxTags={5}
             tags={data.data.availableTags}
             selected={data.preferences.tags}
             handleClick={(updatedTags) => {
