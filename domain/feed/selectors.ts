@@ -1,4 +1,4 @@
-import { ALLOWED_GPT_TAGS, CustomChicagoTag, RepLevel } from "../constants";
+import { ALLOWED_TAGS, CustomChicagoTag, RepLevel } from "../constants";
 import type {
   CiviGptLegislationData,
   CiviLegislationData,
@@ -93,7 +93,7 @@ const createFeedBill =
     gptTags = gptTags.filter((str) => str !== "Other");
 
     // Verify GPT tag exists in allowed tags
-    gptTags = findStringOverlap(gptTags, ALLOWED_GPT_TAGS);
+    gptTags = findStringOverlap(gptTags, ALLOWED_TAGS);
 
     // if it has no categories, add other
     if (gptTags.length === 0) {

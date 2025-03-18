@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-import { forEachLocale } from "@windy-civi/domain/filters/filters.utils";
+import { forEachLocale } from "@windy-civi/domain/feed/utils";
 import path from "path";
 import { fs } from "./utils/fs-save";
 import { storage } from ".";

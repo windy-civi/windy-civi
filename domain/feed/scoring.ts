@@ -1,36 +1,13 @@
 // Tag priority mapping - higher number means higher priority
 
-import { RepLevel } from "../constants";
-import { WindyCiviBill } from "../types";
+import {
+  AllAllowedTags,
+  ALLOWED_TAGS,
+  DEFAULT_TAG_PREFERENCES,
+  RepLevel,
+} from "../constants";
+import { UserPreferences, WindyCiviBill } from "../types";
 import { getBillUpdateAt } from "./utils";
-
-// Leaning pretty liberal for this MVP. todo: make more balanced.
-const TAG_PRIORITIES: Record<string, number> = {
-  // Highest Priority (5) - Immediate impact on basic rights and safety
-  Abortion: 5,
-  "Climate Change": 5,
-
-  // High Priority (4) - Essential services and major policy areas
-  "Health Care": 4,
-  Education: 4,
-  Transit: 4,
-
-  // Medium Priority (3) - Important but less immediate impact
-  Immigration: 3,
-  "Public Safety": 3,
-  "Civil Rights": 3,
-  Economy: 3,
-  Democracy: 3,
-  Ordinance: 3,
-
-  // Lower Priority (2) - Procedural and structural issues
-  Resolution: 2,
-  "States Rights": 2,
-  "Foreign Policy": 2,
-
-  // Base Priority (1) - Catchall
-  Other: 1,
-};
 
 // Level priorities - higher number means higher priority
 const LEVEL_PRIORITIES: Record<RepLevel, number> = {
@@ -42,20 +19,23 @@ const LEVEL_PRIORITIES: Record<RepLevel, number> = {
 
 // Scoring weights for different factors
 const SCORING_WEIGHTS = {
-  tags: 0.4, // 40% weight for tag relevance
-  freshness: 0.35, // 35% weight for how recent the bill is
-  level: 0.25, // 25% weight for government level
+  tags: 0.6, // 60% weight for tag relevance
+  freshness: 0.3, // 30% weight for how recent the bill is
+  level: 0.1, // 10% weight for government level
 };
 
-const calculateTagScore = (tags: string[] | undefined): number => {
-  if (!tags || tags.length === 0) return 0;
+const calculateTagScore = (
+  userTags: UserPreferences["tags"] = DEFAULT_TAG_PREFERENCES,
+  itemTags?: AllAllowedTags[]
+): number => {
+  if (!itemTags || itemTags.length === 0) return 0;
 
-  const totalPriority = tags.reduce((priority, tag) => {
-    return priority + (TAG_PRIORITIES[tag] || 0);
-  }, 0);
+  // Find overlap between user tags and item tags
+  const matchedTags = userTags.filter((tag) => itemTags.includes(tag));
+  const overlapBooster = matchedTags.length * 3;
 
-  // Normalize to 0-1 range (assuming max possible score is 15)
-  return Math.min(totalPriority / 15, 1);
+  // Normalize to 0-1 range (assuming max possible score is the length of allowed tags)
+  return Math.min(overlapBooster / ALLOWED_TAGS.length, 1);
 };
 
 const calculateFreshnessScore = (item: WindyCiviBill): number => {
@@ -74,8 +54,11 @@ const calculateLevelScore = (level: RepLevel): number => {
   return LEVEL_PRIORITIES[level] / Math.max(...Object.values(LEVEL_PRIORITIES));
 };
 
-const calculateTotalScore = (item: WindyCiviBill): number => {
-  const tagScore = calculateTagScore(item.allTags);
+const calculateTotalScore = (
+  preferences: UserPreferences,
+  item: WindyCiviBill
+): number => {
+  const tagScore = calculateTagScore(preferences.tags, item.allTags);
   const freshnessScore = calculateFreshnessScore(item);
   const levelScore = calculateLevelScore(item.level);
   return (
@@ -86,15 +69,12 @@ const calculateTotalScore = (item: WindyCiviBill): number => {
 };
 
 export const sortLegislationByScore = (
-  legislation: WindyCiviBill[]
+  legislation: WindyCiviBill[],
+  preferences: UserPreferences
 ): WindyCiviBill[] => {
-  console.log(
-    "sorting legislation by score",
-    legislation.filter((a) => !a.allTags.some((a) => a === "Other"))[0]
-  );
   return [...legislation].sort((a, b) => {
-    const scoreA = calculateTotalScore(a);
-    const scoreB = calculateTotalScore(b);
+    const scoreA = calculateTotalScore(preferences, a);
+    const scoreB = calculateTotalScore(preferences, b);
     return scoreB - scoreA;
   });
 };

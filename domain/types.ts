@@ -1,4 +1,4 @@
-import { RepLevel, SupportedLocale } from "./constants";
+import { AllAllowedTags, RepLevel, SupportedLocale } from "./constants";
 
 // ## Legacy System Integration
 //
@@ -15,7 +15,7 @@ type CiviGptData = CiviGptLegislationData[keyof CiviGptLegislationData];
 interface FilteredLegislationData {
   bill: CiviLegislationData;
   gpt?: CiviGptData;
-  allTags: string[];
+  allTags: AllAllowedTags[];
   level: RepLevel;
 }
 
@@ -125,6 +125,6 @@ export interface FilterParams {
 
 export type UserPreferences = {
   location: Locales; // source locale, which can be composed. For example, "chicago" -> "usa"
-  tags: string[]; // list of Tag IDs user wants to subscribe to
+  tags: AllAllowedTags[]; // list of Tag IDs user wants to subscribe to
   // theme: string; // theme user wants to use for the ForYou page
 };

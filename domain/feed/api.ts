@@ -91,7 +91,7 @@ export const getFeed = async ({
   fullLegislation = sortByUpdatedAt(uniqBy(fullLegislation, (b) => b.bill.id));
 
   // Sort by score
-  const feed = sortLegislationByScore(fullLegislation);
+  const feed = sortLegislationByScore(fullLegislation, preferences);
 
   return {
     fullLegislation,

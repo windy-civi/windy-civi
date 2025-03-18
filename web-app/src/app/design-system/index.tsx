@@ -1,4 +1,3 @@
-import { CustomChicagoTag } from "@windy-civi/domain/constants";
 import React, { ComponentType, useState } from "react";
 import {
   FaAt,
@@ -9,7 +8,8 @@ import {
   FaWikipediaW,
   FaYoutube,
 } from "react-icons/fa";
-import { classNames } from "./styles";
+import { classNames, StyleHack } from "./styles";
+import { TagMap } from "@windy-civi/domain/constants";
 
 // ==========================================
 // Layout Components
@@ -498,96 +498,42 @@ export const Tag: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ type, text, className, style, onClick }) => {
-  let icon: string;
-  let background: string;
-  switch (text) {
-    case "Climate Change":
-      icon = "🌍";
-      background = "bg-green-500";
-      break;
-    case "Health Care":
-      icon = "🏥";
-      background = "bg-blue-500";
-      break;
-    case "Education":
-      icon = "🎓";
-      background = "bg-yellow-500";
-      break;
-    case "Economy":
-      icon = "💰";
-      background = "bg-purple-500";
-      break;
-    case "Civil Rights":
-      icon = "👥";
-      background = "bg-red-500";
-      break;
-    case "Public Safety":
-      icon = "🚓";
-      background = "bg-indigo-500";
-      break;
-    case "Foreign Policy":
-      icon = "🌐";
-      background = "bg-pink-500";
-      break;
-    case "Democracy":
-      icon = "🗳";
-      background = "bg-gray-500";
-      break;
-    case "Transit":
-      icon = "🚇";
-      background = "bg-orange-500";
-      break;
-    case "States Rights":
-      icon = "🏛";
-      background = "bg-teal-500";
-      break;
-    case "Abortion":
-      icon = "👶";
-      background = "bg-rose-500";
-      break;
-    case "Immigration":
-      icon = "🛂";
-      background = "bg-cyan-500";
-      break;
-    case CustomChicagoTag.Ordinance:
-      icon = "🏙️";
-      background = "bg-teal-500";
-      break;
-    case CustomChicagoTag.Resolution:
-      icon = "📜";
-      background = "bg-rose-500";
-      break;
-    case "Other":
-    default:
-      icon = "";
-      background = "bg-gray-500";
+  // We only render allowed tags
+  if (!(text in TagMap)) {
+    return <></>;
   }
+
+  const tag = TagMap[text as keyof typeof TagMap];
+
   if (type === "icon") {
-    return <span className={classNames(className, background)}>{icon}</span>;
+    return (
+      <span className={classNames(className, tag.background)}>{tag.icon}</span>
+    );
   }
   return (
     <span
       role={onClick ? "option" : "none"}
       onClick={() => onClick?.()}
-      style={style}
+      style={{
+        ...style,
+        background: tag.background as StyleHack,
+      }}
       className={
         type === "tiny"
           ? classNames(
               className,
               "m-1 rounded-full px-3 text-xs",
-              background,
               "bg-opacity-60",
             )
           : classNames(
               className,
               baseTag,
               "font-medium uppercase text-opacity-90",
-              background,
               "text-white",
             )
       }
     >
-      {text} {icon}
+      {text} {tag.icon}
     </span>
   );
 };

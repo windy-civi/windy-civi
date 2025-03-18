@@ -211,7 +211,10 @@ export const findOverlap = (arr1: string[], arr2: string[]): string | false => {
   return false;
 };
 
-export const findStringOverlap = (arr1: string[], arr2: string[]) => {
+export const findStringOverlap = (
+  arr1: readonly string[],
+  arr2: readonly string[]
+) => {
   const overlap = [];
 
   for (let i = 0; i < arr1.length; i++) {
