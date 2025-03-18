@@ -17,8 +17,6 @@ export const action: ActionFunction = async ({ request }) => {
   // Notify native app of preference changes
   publishUserPreferences(validatedPreferences);
 
-  alert("Preferences saved");
-
   return json({ success: true });
 };
 

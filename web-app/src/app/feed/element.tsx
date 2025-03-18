@@ -1,13 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 
 import { FeedLoaderData } from "./types";
-import { LegislationItem } from "./components/LegislationItem";
+import { LegislationItem, NoResults } from "./components/LegislationItem";
 
 export function Feed() {
   const result = useLoaderData() as FeedLoaderData;
 
+  if (result.feed.length === 0) {
+    return <NoResults />;
+  }
+
   return (
-    <>
+    <div className="mb-10">
       {result.feed.map((item) => (
         <LegislationItem
           preferences={result.preferences}
@@ -15,6 +19,6 @@ export function Feed() {
           {...item}
         />
       ))}
-    </>
+    </div>
   );
 }

@@ -9,13 +9,24 @@ import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
 import { FaCode, FaHeart } from "react-icons/fa";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
-import { isSupportedLocale } from "@windy-civi/domain/locales";
+import { isSupportedLocale, SupportedLocale } from "@windy-civi/domain/locales";
 import { isSupportedTag, TagMap } from "@windy-civi/domain/tags";
 
 // Add this new component before the Navigation component
 const FeedNavItem = ({ href, name }: { href: string; name: string }) => {
   if (name === "For You") {
     return <NavItem key={href} href={href} name={name} icon={<FaHeart />} />;
+  }
+
+  if (name === "USA Trending") {
+    return (
+      <NavItem
+        key={href}
+        href={href}
+        name={name}
+        icon={<img className="h-4" src={getFlagIcon(SupportedLocale.USA)} />}
+      />
+    );
   }
 
   if (isSupportedLocale(name)) {

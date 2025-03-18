@@ -171,3 +171,15 @@ export const getOverlappingTags = <T extends string>(
 ) => {
   return findStringOverlap(tagList1, tagList2);
 };
+
+// Normalize tag casing by finding a case-insensitive match in ALLOWED_TAGS
+export const normalizeTagCase = (tag: string): AllAllowedTags | null => {
+  const lowercaseTag = tag.toLowerCase();
+  const matchingTag = ALL_ALLOWED_TAGS.find(
+    (allowedTag) => allowedTag.toLowerCase() === lowercaseTag
+  );
+  if (!matchingTag) {
+    return null;
+  }
+  return matchingTag as AllAllowedTags;
+};

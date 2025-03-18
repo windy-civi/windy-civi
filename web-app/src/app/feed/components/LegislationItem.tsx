@@ -84,23 +84,23 @@ const BillStatus = ({ locale, status, link, date }: BillStatusProps) => {
   );
 };
 
-// const NoResults = () => (
-//   <div className="mt-5 w-full flex-1 rounded bg-white bg-opacity-80 p-10 font-serif text-black">
-//     <div className="text-xl">No Results Found.</div>
-//     <p>
-//       Try updating your preferences. Also feel free to submit a bug on our{" "}
-//       <a
-//         className="underline"
-//         href="https://github.com/chihacknight/breakout-groups/issues/219"
-//         target="_blank"
-//         rel="noreferrer"
-//       >
-//         Chi Hack Night
-//       </a>{" "}
-//       channel.
-//     </p>
-//   </div>
-// );
+export const NoResults = () => (
+  <div className="mt-5 w-full flex-1 rounded bg-white bg-opacity-80 p-10 font-serif text-black">
+    <div className="text-xl">No Results Found.</div>
+    <p>
+      Try updating your preferences. Also feel free to submit a bug on our{" "}
+      <a
+        className="underline"
+        href="#/contribute"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Slack
+      </a>{" "}
+      channel.
+    </p>
+  </div>
+);
 
 type Summary = {
   title: string;
@@ -190,7 +190,10 @@ export const LegislationItem = ({
   ].filter((item): item is Summary => item !== false);
 
   // Get the tags that overlap with the user's preferences
-  const tagsToDisplay = getOverlappingTags(allTags, preferences.tags);
+  const tagsToDisplay =
+    preferences.tags.length > 0
+      ? getOverlappingTags(allTags, preferences.tags)
+      : allTags;
 
   // If there are no summaries, don't render the component
   if (summaries.length === 0) {

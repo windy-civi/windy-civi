@@ -1,4 +1,4 @@
-import { Form, useLoaderData, useBlocker } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
 import {
   Button,
   CustomScreen,
@@ -6,9 +6,8 @@ import {
   Section,
   Tagging,
 } from "../design-system";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { UserPreferencesLoaderData } from "./types";
-import { PWAInstall } from "./components/PwaInstaller";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { classNames } from "../design-system/styles";
 import {
@@ -99,16 +98,16 @@ export function Preferences() {
   const isDirty = hasLocationChanged || hasTagsChanged;
 
   // Block navigation when form is dirty
-  const blocker = useBlocker(isDirty);
+  // const blocker = useBlocker(isDirty);
 
-  useEffect(() => {
-    if (
-      blocker.state === "blocked" &&
-      !confirm("You have unsaved changes. Are you sure you want to leave?")
-    ) {
-      blocker.reset();
-    }
-  }, [blocker]);
+  // useEffect(() => {
+  //   if (
+  //     blocker.state === "blocked" &&
+  //     !confirm("You have unsaved changes. Are you sure you want to leave?")
+  //   ) {
+  //     blocker.reset();
+  //   }
+  // }, [blocker]);
 
   return (
     <CustomScreen title="Preferences">
@@ -149,7 +148,8 @@ export function Preferences() {
           />
         </Section>
 
-        <Section
+        {/* Todo: add notifications */}
+        {/* <Section
           title="Notifications"
           description={
             <div>
@@ -161,7 +161,7 @@ export function Preferences() {
         >
           <PWAInstall />
           <div></div>
-        </Section>
+        </Section> */}
 
         {/* todo: allow customization */}
         {/* <Section title="Theme">
