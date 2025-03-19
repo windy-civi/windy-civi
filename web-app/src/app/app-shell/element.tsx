@@ -141,7 +141,7 @@ const HeaderScrollContainer = ({
         "flex-row",
         "items-stretch",
         "overflow-x-auto",
-        "lg:justify-center",
+        "xl:justify-center",
         "gap-3",
         "whitespace-nowrap",
         "px-5",
@@ -193,7 +193,7 @@ export const NavigatorShell = ({
             id={skipToContentId}
             className="h-full w-full flex justify-center"
           >
-            <div className="mx-3 lg:max-w-prose">{feed}</div>
+            <div className="mx-3 md:max-w-prose">{feed}</div>
           </main>
         </div>
       </div>
