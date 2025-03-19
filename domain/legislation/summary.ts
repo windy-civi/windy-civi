@@ -1,3 +1,5 @@
+import { WindyCiviBill } from ".";
+
 /**
  * Extracts the headline and summary details from a GPT summary that follows the format:
  * 'Headline' - Rest of the summary
@@ -8,12 +10,19 @@
  * @returns Object containing the headline and summary details if found, or null if invalid format
  */
 export const extractHeadlineFromSummary = (
-  summary?: string | null
+  gpt?: WindyCiviBill["gpt"] | null
 ): { headline: string | null; details: string | null } => {
-  if (!summary) return { headline: null, details: null };
+  if (!gpt) return { headline: null, details: null };
 
+  if (gpt.gpt_title && gpt.gpt_subtitle) {
+    return { headline: gpt.gpt_title, details: gpt.gpt_subtitle };
+  }
+
+  // Old format. May be removed in the future.
+  const summary = gpt.gpt_summary;
   // Check if the summary starts with a single quote
-  if (!summary.startsWith("'")) return { headline: null, details: null };
+  if (!gpt.gpt_summary.startsWith("'"))
+    return { headline: null, details: null };
 
   // Find the end of the headline (either a closing quote followed by " - " or just a closing quote)
   const headlineEndWithDetails = summary.indexOf("' - ");

@@ -301,7 +301,7 @@ export const Carousel = ({
       <div className="relative">
         <div
           className={classNames(
-            "flex items-center",
+            "flex items-start",
             data.length > 1 ? "justify-between" : "justify-center",
           )}
         >
