@@ -194,6 +194,8 @@ export const NavigatorShell = ({
           <header
             className={classNames(
               "fixed top-0 left-0 right-0 z-10 backdrop-blur-3xl w-full",
+              // There is a weird bug in iOS where the blur doesn't work while scrolling
+              // but it only happens on select backgrounds. 🤷
               isWebview() && "bg-white bg-opacity-50",
             )}
           >
