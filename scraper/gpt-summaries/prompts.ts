@@ -31,18 +31,19 @@ If no categories match, respond with "Other".
 export const summarizeText = async (text: string) => {
   const res = await postTextCompletions(
     `
-For each piece of legislation data, create a 2-3 sentence summary where the first sentence serves as an eye-catching, slightly provocative headline that still conveys the essence of the legislation. The headline should use more colorful language, dynamic verbs, and attention-grabbing phrasing while still communicating the core purpose.
-Follow this with 1-2 sentences that provide the concrete details present in the legislation data. Integrate the political backing (bipartisan, Republican-led, or Democrat-led) naturally into one of these sentences. The supporting sentences should be more measured while still maintaining reader interest.
-Examples of effective sensationalist headlines:
+For each piece of legislation data, create a 2-3 sentence summary where the first sentence functions as a newspaper-style headline. The headline should be concise, present-tense, and capture the most newsworthy aspect of the legislation.
+If data is available, integrate the political backing (bipartisan, Republican-led, or Democrat-led) into the headline. The entire summary should read like the opening of a news article.
+Examples of effective headlines:
 
-'Farm Bill Showdown: Rural Broadband Gets Massive Boost in 11th Hour Deal'
-'Crumbling No More: Bridge Repair Bonanza Unleashed in Infrastructure Package'
-'Republicans Draw Battle Lines with ICC in Bold Protection Move for U.S. Personnel'
-'Climate Crisis Confronted: Ambitious New Bill Slashes Emissions in Half'
-'Tech Giants Under Fire as Democrats Target Data Harvesting Practices'
-'Military Paychecks Get Supersized in Latest Defense Spending Spree'
+'Senate Passes Farm Bill with Expanded Rural Broadband Funding'
+'Bipartisan Infrastructure Package Allocates $25 Billion for Bridge Repairs'
+'Republican-Led Bill Seeks to Deter ICC from Targeting U.S. Personnel'
+'New Climate Legislation Aims to Cut Emissions 50% by 2035'
+'Democrat-Sponsored Privacy Act Would Restrict Data Collection by Tech Giants'
+'Defense Authorization Increases Military Pay by 3.5% in Coming Fiscal Year'
 
-While making headlines more engaging, ensure the substantive information remains accurate and complete. Avoid fabricating details or misrepresenting the legislation's actual content.
+Avoid speculating on missing information, like if the legislation doesn't seem sponsored, repeating the title unnecessarily, or using stock phrases like 'Bill introduced.' Focus only on information explicitly provided while maintaining a neutral, factual tone throughout.
+
 === START LEGISLATION DATA ===
 
 ${text}
