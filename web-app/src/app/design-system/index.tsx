@@ -304,7 +304,7 @@ export const Carousel = ({
             }}
             onTouchEnd={() => setTouchStartX(null)}
           >
-            <div className="select-none text-xs w-full text-center opacity-70 uppercase font-medium">
+            <div className="select-none text-xs w-full text-center opacity-60 uppercase font-medium mb-1">
               {data[currentIndex].title}
             </div>
             {data[currentIndex].content}
