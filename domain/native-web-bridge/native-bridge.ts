@@ -1,24 +1,23 @@
 import { UserPreferences } from "../types";
 
-export const USER_PREFERENCES_CHANGED = "ON_USER_PREFERENCES_CHANGED";
+export const USER_PREFERENCES_CHANGED = "USER_PREFERENCES_CHANGED";
 export const REQUEST_NATIVE_NOTIFICATION_PERMISSIONS =
   "REQUEST_NATIVE_NOTIFICATION_PERMISSIONS";
 export const NATIVE_NOTIFICATION_STATUS_REQUESTED =
-  "ON_NATIVE_NOTIFICATION_STATUS_REQUESTED";
+  "NATIVE_NOTIFICATION_STATUS_REQUESTED";
 
-export type UserPreferencesChangedEvent = {
-  type: typeof USER_PREFERENCES_CHANGED;
-  payload: UserPreferences;
+type EventToPayloadMap = {
+  [USER_PREFERENCES_CHANGED]: UserPreferences;
+  [REQUEST_NATIVE_NOTIFICATION_PERMISSIONS]: boolean;
+  [NATIVE_NOTIFICATION_STATUS_REQUESTED]: boolean;
 };
 
-export type Events =
-  | UserPreferencesChangedEvent
-  | {
-      type: typeof REQUEST_NATIVE_NOTIFICATION_PERMISSIONS;
-    }
-  | {
-      type: typeof NATIVE_NOTIFICATION_STATUS_REQUESTED;
-    };
+export type Events = {
+  [K in keyof EventToPayloadMap]: {
+    type: K;
+    payload: EventToPayloadMap[K];
+  };
+}[keyof EventToPayloadMap];
 
 export type Callback = <T extends Events>(cb: T) => void;
 
