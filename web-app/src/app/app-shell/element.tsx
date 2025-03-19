@@ -188,10 +188,12 @@ export const NavigatorShell = ({
         className={classNames(screenCentered)}
       >
         <div className="flex h-full w-full flex-1 flex-col">
-          <header>{navigation}</header>
+          <header className="fixed top-0 left-0 right-0 z-10 backdrop-blur-3xl w-full">
+            {navigation}
+          </header>
           <main
             id={skipToContentId}
-            className="h-full w-full flex justify-center"
+            className="h-full w-full flex justify-center mt-14"
           >
             <div className="mx-3 md:max-w-prose">{feed}</div>
           </main>
