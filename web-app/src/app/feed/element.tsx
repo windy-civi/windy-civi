@@ -11,7 +11,7 @@ export function Feed() {
   }
 
   return (
-    <div className="mb-10">
+    <div className="xl:mt-2">
       {result.feed.map((item) => (
         <LegislationItem
           preferences={result.preferences}

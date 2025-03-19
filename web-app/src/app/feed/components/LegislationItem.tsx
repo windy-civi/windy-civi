@@ -216,11 +216,11 @@ export const LegislationItem = ({
         ...(glow && newBillGlow),
       }}
       className={classNames(
-        "mt-4 flex select-text flex-col rounded-md border border-gray-20 p-1",
+        "mb-4 flex select-text flex-col rounded-md border border-gray-20 p-1",
       )}
     >
       {/* Top Header */}
-      <div className="flex flex-col  gap-1 justify-between items-center">
+      <div className="flex flex-col gap-1 justify-between items-center">
         {/* First Row - Link and Status */}
         <div className="flex flex-row">
           <LegislationLink locale={locale} link={link} linkTitle={linkTitle} />
