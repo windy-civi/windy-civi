@@ -140,7 +140,7 @@ const HeadlineBlurb = ({
       <div>
         <div className="font-serif text-lg text-center mb-2">{title}</div>
         {description && (
-          <h4 className="font-mono text-sm text-center">{description}</h4>
+          <h4 className="font-mono text-sm text-center mb-2">{description}</h4>
         )}
       </div>
     </div>
@@ -180,7 +180,8 @@ export const LegislationItem = ({
       : false,
     officialTitle || officialSummary
       ? {
-          title: "Official",
+          // Hack for now, should decompose better
+          title: bill.bill_summary ? "Councilmatic Summary" : "Official",
           content: (
             <HeadlineBlurb headline={officialTitle} details={officialSummary} />
           ),

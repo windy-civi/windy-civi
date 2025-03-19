@@ -88,25 +88,6 @@ export const CustomScreen: React.FC<{
 };
 
 /**
- * Grid layout component that stacks vertically on mobile and shows a 2-column layout on desktop
- */
-export const Grid: ComponentType<{
-  style?: React.CSSProperties;
-  className?: React.HTMLAttributes<HTMLElement>["className"];
-  children?: React.ReactNode;
-}> = ({ children, style, className }) => (
-  <section
-    className={classNames(
-      "grid grid-cols-1 lg:grid-cols-[minmax(300px,_500px)_1fr]",
-      className,
-    )}
-    style={style}
-  >
-    {children}
-  </section>
-);
-
-/**
  * Modal component for displaying content in an overlay
  */
 export const Modal: ComponentType<{
@@ -453,7 +434,7 @@ export const getRadioStyle = (
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-gradient-to-r from-white to-slate-300 text-black shadow-lg" : "bg-black text-white opacity-40"}`,
+      `${isSelected ? "bg-white bg-opacity-50 text-black shadow-lg" : "bg-black text-white opacity-40"}`,
     );
   }
 };
