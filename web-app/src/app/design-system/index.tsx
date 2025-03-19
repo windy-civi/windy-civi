@@ -627,7 +627,7 @@ const JSONCard = ({
 }) => (
   <div
     className={classNames(
-      "px-2 py-1",
+      !clear && "px-2 py-1",
       !clear &&
         "rounded border border-black border-opacity-10 bg-white bg-opacity-50",
       className,
@@ -640,9 +640,9 @@ const JSONCard = ({
 export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
   if (Array.isArray(data)) {
     return (
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         {data.map((item, index) => (
-          <JSONCard key={index} clear={true}>
+          <JSONCard key={index}>
             <JsonViewer data={item} level={level + 1} />
           </JSONCard>
         ))}
@@ -677,8 +677,8 @@ export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
     );
 
     return (
-      <div className="flex flex-col gap-1">
-        <JSONCard className="flex flex-col gap-1">
+      <div className="flex flex-col">
+        <JSONCard clear={level > 0}>
           {/* Render primitives in a flex row */}
           {primitiveEntries.length > 0 && (
             <div className="flex flex-row flex-wrap gap-2">
@@ -696,7 +696,7 @@ export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
 
         {/* Render complex values in a column */}
         {complexEntries.map(([key, value]) => (
-          <JSONCard key={key}>
+          <JSONCard key={key} clear={true}>
             <span className="font-bold uppercase text-xs">{key}</span>
             <div className="flex-1">
               <JsonViewer data={value} level={level + 1} />
