@@ -10,7 +10,6 @@ import {
   REQUEST_NATIVE_NOTIFICATION_PERMISSIONS,
   NATIVE_NOTIFICATION_STATUS_REQUESTED,
   Events,
-  UserPreferencesChangedEvent,
 } from "@windy-civi/domain/native-web-bridge/native-bridge";
 import { useStorage } from "../helpers/hooks/useStorage";
 
@@ -26,10 +25,10 @@ export default function WebView() {
       }
 
       // Define side effects. Type should force exhaustive checking of events
-      const sideEffects = <T extends Events>(
-        type: T["type"],
-        payload: T["payload"]
-      ): T["type"] => {
+      const sideEffects = (
+        type: Events["type"],
+        payload: Events["payload"]
+      ) => {
         switch (type) {
           case USER_PREFERENCES_CHANGED:
             storeData({
@@ -47,7 +46,7 @@ export default function WebView() {
       };
 
       // Run the side effect
-      sideEffects(e.type, e.payload);
+      sideEffects(e.type as Events["type"], e.payload);
     },
     [storeData]
   );
