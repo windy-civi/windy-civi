@@ -225,6 +225,8 @@ const createFeedBill =
     const cleanedGpt = {
       gpt_summary: gptSummaries.gpt_summary,
       gpt_tags: gptTags,
+      gpt_title: gptSummaries.gpt_title,
+      gpt_subtitle: gptSummaries.gpt_subtitle,
     };
 
     const chicagoTags = isChicagoImportantOrdinance(bill)
