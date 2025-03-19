@@ -2,8 +2,8 @@ import {
   CiviGptLegislationData,
   CiviLegislationData,
   LegislationChange,
-  Locales,
-} from "@windy-civi/domain";
+} from "@windy-civi/domain/legislation";
+import { Locales } from "@windy-civi/domain/locales";
 import { default as fsNode } from "fs";
 import path from "path";
 

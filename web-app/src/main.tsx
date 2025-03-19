@@ -1,28 +1,50 @@
 import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import AppProvider from "~app/modules/app-shell/AppProvider";
-import { getEnv } from "~app/modules/config";
-import { ForYouPage } from "~app/modules/feed-ui/feed-ui.react";
-import { Support } from "~app/modules/support/Support";
-import { loader } from "./app/modules/feed-ui/feed-ui.loader";
-import "./index.css";
+import { AppShell } from "./app/app-shell/element";
+import { loader as navigatorLoader } from "./app/app-shell/loader";
+import { Feed } from "./app/feed/element";
+import { loader as feedLoader } from "./app/feed/loader";
+import { action as preferencesAction } from "./app/preferences/action";
+import { Preferences } from "./app/preferences/element";
+import { loader as preferencesLoader } from "./app/preferences/loader";
+import { Contribute } from "./app/contribute/Contribute";
+
+/**
+ * Load tailwind
+ */
+import "./tailwind-install.css";
 
 const router = createHashRouter([
   {
     path: "/",
-    loader,
-    element: <ForYouPage />,
-  },
-  {
-    path: "/help",
-    element: <Support />,
+    loader: navigatorLoader,
+    element: <AppShell />,
+    children: [
+      {
+        path: "/contribute",
+        element: <Contribute />,
+      },
+      {
+        path: "/preferences",
+        loader: preferencesLoader,
+        action: preferencesAction,
+        element: <Preferences />,
+      },
+      {
+        path: "/",
+        loader: feedLoader,
+        element: <Feed />,
+      },
+      // Catch all feed routes
+      {
+        path: "/:feedId",
+        loader: feedLoader,
+        element: <Feed />,
+      },
+    ],
   },
 ]);
 
-const env = getEnv(import.meta.env);
-
 createRoot(document.getElementById("root")!).render(
-  <AppProvider value={env}>
-    <RouterProvider router={router} />
-  </AppProvider>,
+  <RouterProvider router={router} />,
 );

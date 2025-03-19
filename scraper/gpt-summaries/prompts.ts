@@ -1,3 +1,4 @@
+import { ALLOWED_TAGS } from "@windy-civi/domain/tags";
 import { postTextCompletions } from "./openai-api";
 
 export const categorizeText = async (
@@ -9,20 +10,7 @@ ${text}
 
 The only categories you should pick from are: 
 
-Economy
-Education
-Democracy
-Health Care
-Public Safety
-Transit
-Abortion
-Immigration
-Foreign Policy
-Climate Change
-2nd Amendment
-Civil Rights
-LGBTQ Rights
-Trans Rights
+${ALLOWED_TAGS.join("\n")}
 
 If no categories match, respond with "Other".
 `;

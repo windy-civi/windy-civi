@@ -15,7 +15,7 @@ export const legiscanToCivi: LegiscanToCiviMapFn = (bill) => {
     id: bill.bill_number,
     title: bill.title,
     description: bill.description,
-    status: [STATUS_MAP[bill.status]] || [],
+    status: [STATUS_MAP[bill.status]],
     statusDate: bill.status_date,
     sponsors: bill.sponsors.map((sponsor) => ({
       name: sponsor.name,

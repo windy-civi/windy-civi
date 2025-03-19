@@ -1,5 +1,5 @@
 import { isBefore, subDays } from "date-fns";
-import { CiviLegislationData } from "@windy-civi/domain";
+import { CiviLegislationData } from "@windy-civi/domain/legislation";
 import { BillQueryResponse, Sponsor, Vote } from "./councilmatic.types";
 import {
   getSQLForBillSponsors,

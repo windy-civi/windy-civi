@@ -8,5 +8,5 @@ export default defineConfig({
     preset: "2023",
   },
   preset,
-  images: ["public/icons/civi-logo-500.png"],
+  images: ["public/icons/apple-touch-icon.png"],
 });

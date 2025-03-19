@@ -1,7 +1,8 @@
-import { CiviWikiLegislationData, Locales } from "@windy-civi/domain/types";
+import { CiviWikiLegislationData } from "@windy-civi/domain/legislation";
+import { Locales } from "@windy-civi/domain/locales";
+import { storage } from "@windy-civi/storage";
 import axios, { AxiosError } from "axios";
 import { getCacheDir, getGoogleSheetAPIKey } from "../config/env";
-import { storage } from "@windy-civi/storage";
 import { SHEET, SPREADSHEET_ID } from "./constants";
 
 type StringKeysOfCiviGoogleSheet = keyof Omit<CiviWikiLegislationData, "tags">;

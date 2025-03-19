@@ -1,8 +1,8 @@
-import { SupportedLocale } from "@windy-civi/domain/constants";
 import {
   isLocale,
   localeValueToEnum,
-} from "@windy-civi/domain/filters/filters.utils";
+  SupportedLocale,
+} from "@windy-civi/domain/locales";
 import path from "path";
 
 export const getShouldSkipCache = () => {
