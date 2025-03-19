@@ -28,13 +28,16 @@ const FeedNavItem = ({ href, name }: { href: string; name: string }) => {
         key={href}
         href={href}
         name={name}
-        icon={<img className="h-4" src={getFlagIcon(SupportedLocale.USA)} />}
+        icon={
+          <div className="w-5">
+            <img className="h-4 w-4" src={getFlagIcon(SupportedLocale.USA)} />
+          </div>
+        }
       />
     );
   }
 
   if (isSupportedLocale(name)) {
-    console.log("name", name, isSupportedLocale(name), getFlagIcon(name));
     return (
       <NavItem
         key={href}
@@ -188,7 +191,12 @@ export const NavigatorShell = ({
         className={classNames(screenCentered)}
       >
         <div className="flex h-full w-full flex-1 flex-col">
-          <header className="fixed top-0 left-0 right-0 z-10 backdrop-blur-3xl w-full">
+          <header
+            className={classNames(
+              "fixed top-0 left-0 right-0 z-10 backdrop-blur-3xl w-full",
+              isWebview() && "bg-black bg-opacity-50",
+            )}
+          >
             {navigation}
           </header>
           <main
@@ -228,3 +236,19 @@ export function AppShell() {
     </AppProvider>
   );
 }
+
+const isWebview = () => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const navigator = window.navigator;
+
+  // Check if running in standalone mode (added to home screen)
+  const standalone = "standalone" in navigator;
+  const userAgent = navigator.userAgent.toLowerCase();
+  const safari = /safari/.test(userAgent);
+  const ios = /iphone|ipod|ipad/.test(userAgent);
+
+  return ios ? !standalone && !safari : /\bwv\b/.test(userAgent);
+};
