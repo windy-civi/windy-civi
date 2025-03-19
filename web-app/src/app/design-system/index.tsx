@@ -1,6 +1,8 @@
 import React, { ComponentType, useState } from "react";
 import {
   FaAt,
+  FaCaretLeft,
+  FaCaretRight,
   FaFacebook,
   FaGlobe,
   FaPhone,
@@ -290,11 +292,16 @@ export const Carousel = ({
   };
 
   return (
-    <div className="container mx-auto rounded-2xl border border-gray-200 bg-gray-100 p-4 px-4 ">
+    <div
+      className={classNames(
+        "container mx-auto py-2",
+        // "rounded-2xl border border-gray-200 bg-gray-100",
+      )}
+    >
       <div className="relative">
         <div
           className={classNames(
-            "mb-4 flex items-center",
+            "flex items-center",
             data.length > 1 ? "justify-between" : "justify-center",
           )}
         >
@@ -303,32 +310,50 @@ export const Carousel = ({
               onClick={prevSlide}
               className="select-none text-black focus:outline-none"
             >
-              {"<"}
+              <FaCaretLeft className="text-2xl opacity-40" />
             </button>
           )}
-          <div className="select-none text-sm font-bold">
-            {data[currentIndex].title}
+          <div
+            className="px-4"
+            onTouchStart={(e) => {
+              handleTouchStart(e.touches[0].clientX);
+            }}
+            onTouchMove={(e) => {
+              handleTouchMove(e.touches[0].clientX);
+            }}
+            onTouchEnd={() => setTouchStartX(null)}
+          >
+            <div className="select-none text-xs w-full text-center opacity-70 uppercase font-medium">
+              {data[currentIndex].title}
+            </div>
+            {data[currentIndex].content}
           </div>
           {data.length > 1 && (
             <button
               onClick={nextSlide}
               className="select-none text-black focus:outline-none"
             >
-              {">"}
+              <FaCaretRight className="text-2xl opacity-40" />
             </button>
           )}
         </div>
-        <div
-          onTouchStart={(e) => {
-            handleTouchStart(e.touches[0].clientX);
-          }}
-          onTouchMove={(e) => {
-            handleTouchMove(e.touches[0].clientX);
-          }}
-          onTouchEnd={() => setTouchStartX(null)}
-        >
-          {data[currentIndex].content}
-        </div>
+        {data.length > 1 && (
+          <div className="flex justify-center gap-2 mt-2">
+            {data.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={classNames(
+                  "w-2 h-2 rounded-full transition-all duration-200",
+                  index === currentIndex
+                    ? "bg-black bg-opacity-40 w-4"
+                    : "bg-black bg-opacity-30 hover:bg-opacity-50",
+                )}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -604,3 +629,105 @@ export const Tagging = <T extends string>({
 };
 
 const baseTag = "px-3 py-1 m-1 mr-0 rounded-full border-none text-center";
+
+type JsonViewerProps<T> = {
+  data: T;
+  level?: number;
+};
+
+const JSONCard = ({
+  children,
+  className,
+  clear,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  clear?: boolean;
+}) => (
+  <div
+    className={classNames(
+      "px-2 py-1",
+      !clear &&
+        "rounded border border-black border-opacity-10 bg-white bg-opacity-50",
+      className,
+    )}
+  >
+    {children}
+  </div>
+);
+
+export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
+  if (Array.isArray(data)) {
+    return (
+      <div className="flex flex-col gap-2">
+        {data.map((item, index) => (
+          <JSONCard key={index} clear={true}>
+            <JsonViewer data={item} level={level + 1} />
+          </JSONCard>
+        ))}
+      </div>
+    );
+  }
+
+  if (typeof data === "object" && data !== null) {
+    // Sort entries so primitive values appear first, then by string length
+    const entries = Object.entries(data).sort(([, a], [, b]) => {
+      const aIsPrimitive = typeof a !== "object" || a === null;
+      const bIsPrimitive = typeof b !== "object" || b === null;
+
+      // First sort by primitive vs complex
+      if (aIsPrimitive && !bIsPrimitive) return -1;
+      if (!aIsPrimitive && bIsPrimitive) return 1;
+
+      // If both are primitive, sort by string length
+      if (aIsPrimitive && bIsPrimitive) {
+        return String(a).length - String(b).length;
+      }
+
+      return 0;
+    });
+
+    // Split entries into primitives and complex values
+    const primitiveEntries = entries.filter(
+      ([, value]) => typeof value !== "object" || value === null,
+    );
+    const complexEntries = entries.filter(
+      ([, value]) => typeof value === "object" && value !== null,
+    );
+
+    return (
+      <div className="flex flex-col gap-1">
+        <JSONCard className="flex flex-col gap-1">
+          {/* Render primitives in a flex row */}
+          {primitiveEntries.length > 0 && (
+            <div className="flex flex-row flex-wrap gap-2">
+              {primitiveEntries.map(([key, value]) => (
+                <JSONCard key={key} className="flex flex-col" clear={true}>
+                  <span className="font-bold uppercase text-xs whitespace-nowrap">
+                    {key}
+                  </span>
+                  <span className="text-sm">{String(value)}</span>
+                </JSONCard>
+              ))}
+            </div>
+          )}
+        </JSONCard>
+
+        {/* Render complex values in a column */}
+        {complexEntries.map(([key, value]) => (
+          <JSONCard key={key}>
+            <span className="font-bold uppercase text-xs">{key}</span>
+            <div className="flex-1">
+              <JsonViewer data={value} level={level + 1} />
+            </div>
+          </JSONCard>
+        ))}
+      </div>
+    );
+  }
+  if (data === null) {
+    return <span>null</span>;
+  }
+
+  return <span>{String(data)}</span>;
+};

@@ -61,9 +61,9 @@ const LocationPreferences = (props: {
               setHighlighted(LocaleMap[next]);
             }}
             highlighted={highlighted}
-            containerClassName="justify-end flex flex-row gap-2"
+            containerClassName="justify-end flex flex-row"
             defaultValue={props.location}
-            optionClassName="flex-1 w-max rounded shadow"
+            optionClassName="flex-1 w-max shadow"
             options={[
               {
                 label: <LocationOption locale={SupportedLocale.USA} />,

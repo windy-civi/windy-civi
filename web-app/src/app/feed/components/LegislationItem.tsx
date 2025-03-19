@@ -4,13 +4,13 @@ import {
   WindyCiviBill,
 } from "@windy-civi/domain/legislation";
 import { SupportedLocale } from "@windy-civi/domain/locales";
-import { filterAllowedTags, getOverlappingTags } from "@windy-civi/domain/tags";
+import { getOverlappingTags } from "@windy-civi/domain/tags";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { FaGlobe } from "react-icons/fa";
-import { Carousel, Tag } from "../../design-system";
-import { RobotSvg } from "../../design-system/Icons";
-import { classNames } from "../../design-system/styles";
+import { Carousel, JsonViewer, Tag } from "../../design-system";
+import { classNames, StyleHack } from "../../design-system/styles";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
+import { extractHeadlineFromSummary } from "@windy-civi/domain/legislation/summary";
 
 const newBillGlow = {
   filter: "drop-shadow(0px 0px 8px rgb(59, 130, 246))",
@@ -36,8 +36,8 @@ export const LegislationLink = ({
         rel="noreferrer"
         className={classNames(
           "relative flex items-center gap-2 px-3 py-1 transition-all hover:shadow-md",
-          "text-slate-800 text-sm uppercase",
-          "rounded-lg border border-opacity-10 border-black",
+          "text-slate-800 text-xs uppercase",
+          "rounded-l-lg border border-opacity-10 border-black",
           "bg-white",
         )}
       >
@@ -72,7 +72,7 @@ const BillStatus = ({ locale, status, link, date }: BillStatusProps) => {
       target="_blank"
       href={link}
       className={classNames(
-        "inline-flex items-center justify-center rounded px-2 text-sm uppercase h-full",
+        "inline-flex items-center justify-center rounded-r-lg px-2 text-xs uppercase h-full",
         readableStatus.type === "pass" && "bg-green-200",
         readableStatus.type === "in-progress" && "bg-blue-200",
         readableStatus.type === "fail" && "bg-red-200",
@@ -107,6 +107,43 @@ type Summary = {
   content: React.ReactElement;
 };
 
+const HeadlineBlurb = ({
+  headline,
+  details,
+}: {
+  headline?: string | null;
+  details?: string | null;
+}) => {
+  let title = null;
+  let description = null;
+
+  const areTheSame = headline && details && headline === details;
+  if (areTheSame) {
+    title = headline;
+  }
+  const hasBoth = headline && details;
+  if (hasBoth) {
+    title = headline;
+    description = details;
+  }
+
+  if (headline && !details) {
+    title = headline;
+  }
+  if (!headline && details) {
+    title = details;
+  }
+
+  return (
+    <div className="relative px-3">
+      <div>
+        <div className="font-serif text-lg text-center mb-2">{title}</div>
+        {description && <h4 className="font-mono text-sm">{description}</h4>}
+      </div>
+    </div>
+  );
+};
+
 export const LegislationItem = ({
   bill,
   gpt,
@@ -115,77 +152,56 @@ export const LegislationItem = ({
   preferences,
   glow,
 }: WindyCiviBill & { glow?: boolean; preferences: UserPreferences }) => {
-  const {
-    identifier,
-    id,
-    status,
-    link,
-    description,
-    updated_at,
-    statusDate,
-    title,
-  } = bill;
+  const { identifier, id, status, link, updated_at, statusDate } = bill;
   const date = updated_at || statusDate;
 
   // If there is no AI summary or official summary, don't render the component
   // todo: we should filter this from the feed itself.
-  if (!gpt?.gpt_summary && !description) {
+  if (!gpt?.gpt_summary && !bill.description && !bill.bill_summary) {
     return <></>;
   }
 
   const linkTitle = locale === SupportedLocale.Chicago ? `${identifier}` : id;
 
-  const tags = filterAllowedTags(allTags);
+  const { headline, details } = extractHeadlineFromSummary(gpt?.gpt_summary);
+
+  const officialTitle = bill.title;
+  const officialSummary = bill.description || bill.bill_summary;
 
   const summaries = [
-    gpt?.gpt_summary
+    headline || details
       ? {
-          title: "AI Summary",
+          title: "Windy Civi Summary",
+          content: <HeadlineBlurb headline={headline} details={details} />,
+        }
+      : false,
+    officialTitle || officialSummary
+      ? {
+          title: "Official",
           content: (
-            <div className="relative px-3">
-              <RobotSvg
-                style={{
-                  width: "33px",
-                  position: "absolute",
-                  right: "-15px",
-                  top: "-15px",
-                  transform: "rotate(9deg)",
-                  opacity: "0.5",
-                }}
-              />
-              <h4 className="font-mono text-sm">{gpt.gpt_summary}</h4>
-            </div>
+            <HeadlineBlurb headline={officialTitle} details={officialSummary} />
           ),
         }
       : false,
-    description && {
-      title: "Official Summary",
-      content: description,
-    },
-    // If the official title is different from the description, add it to the carousel
-    title !== description && {
-      title: "Official Title",
-      content: title,
-    },
-    tags.length > 0
-      ? {
-          title: "All Tags",
-          content: (
-            <div className="flex flex-row flex-wrap justify-center">
-              {tags.map((v) => (
-                <Tag key={v} className="text-xs" text={v} />
-              ))}
-            </div>
-          ),
-        }
-      : false,
+    // userHasTags && tags.length > 0
+    //   ? {
+    //       title: "All Tags",
+    //       content: (
+    //         <div className="flex flex-row flex-wrap justify-center">
+    //           {tags.map((v) => (
+    //             <Tag key={v} className="text-xs" text={v} />
+    //           ))}
+    //         </div>
+    //       ),
+    //     }
+    //   : false,
     {
-      title: "Metadata",
-      content: (
-        <pre className="whitespace-pre-wrap break-words text-xs font-mono text-gray-600">
-          {JSON.stringify(bill, null, 2)}
-        </pre>
-      ),
+      title: "Legislation Details",
+      content: <JsonViewer data={bill} />,
+    },
+    gpt?.gpt_summary && {
+      title: "Windy Civi Analysis Results",
+      content: <JsonViewer data={gpt} />,
     },
   ].filter((item): item is Summary => item !== false);
 
@@ -202,15 +218,19 @@ export const LegislationItem = ({
 
   return (
     <article
-      style={glow ? newBillGlow : {}}
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.85)" as StyleHack,
+        backdropFilter: "blur(10px)",
+        ...(glow && newBillGlow),
+      }}
       className={classNames(
-        "mt-4 flex select-text flex-col gap-y-2 rounded border border-gray-200 bg-white p-4",
+        "mt-4 flex select-text flex-col rounded-md border border-gray-20 p-1",
       )}
     >
       {/* Top Header */}
-      <div className="flex flex-col gap-1 items-center">
+      <div className="flex flex-col  gap-1 justify-between items-center">
         {/* First Row - Link and Status */}
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row">
           <LegislationLink locale={locale} link={link} linkTitle={linkTitle} />
           <div className="flex items-stretch">
             <BillStatus
@@ -221,25 +241,21 @@ export const LegislationItem = ({
             />
           </div>
         </div>
-        {/* Second Row - Tags */}
-        {tagsToDisplay && (
-          <div className="flex flex-row flex-wrap justify-center">
-            {tagsToDisplay.map((v) => (
-              <div className="inline-flex" key={v}>
-                <Tag className="text-xs" text={v} />
-              </div>
-            ))}
-          </div>
-        )}
       </div>
-
-      {/* Only show the title if it's different from the description */}
-      {title !== description && title && (
-        <div className="font-serif text-lg text-center">{title}</div>
-      )}
 
       {/* Carousel of summaries */}
       {summaries.length > 0 && <Carousel data={summaries} />}
+
+      {/* Second Row - Tags */}
+      {tagsToDisplay && (
+        <div className="flex flex-row flex-wrap justify-center">
+          {tagsToDisplay.map((v) => (
+            <div className="inline-flex" key={v}>
+              <Tag className="text-xs" text={v} />
+            </div>
+          ))}
+        </div>
+      )}
     </article>
   );
 };

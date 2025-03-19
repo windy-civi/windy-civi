@@ -30,12 +30,17 @@ const FeedNavItem = ({ href, name }: { href: string; name: string }) => {
   }
 
   if (isSupportedLocale(name)) {
+    console.log("name", name, isSupportedLocale(name), getFlagIcon(name));
     return (
       <NavItem
         key={href}
         href={href}
         name={name}
-        icon={<img className="h-4" src={getFlagIcon(name)} />}
+        icon={
+          <div className="w-5">
+            <img className="h-4" src={getFlagIcon(name)} />
+          </div>
+        }
       />
     );
   }
@@ -77,8 +82,8 @@ const NavItem = ({
         to={href}
       >
         <div className="flex flex-row items-center gap-2">
-          {icon && <span className="text-sm">{icon}</span>}
-          {name}
+          {icon}
+          <div>{name}</div>
         </div>
       </NavLink>
     </div>
