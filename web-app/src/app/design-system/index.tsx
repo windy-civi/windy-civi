@@ -627,7 +627,7 @@ const JSONCard = ({
 }) => (
   <div
     className={classNames(
-      !clear && "px-2 py-1",
+      !clear && "p-2",
       !clear &&
         "rounded border border-black border-opacity-10 bg-white bg-opacity-50",
       className,
@@ -681,7 +681,7 @@ export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
         <JSONCard clear={level > 0}>
           {/* Render primitives in a flex row */}
           {primitiveEntries.length > 0 && (
-            <div className="flex flex-row flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-4">
               {primitiveEntries.map(([key, value]) => (
                 <JSONCard key={key} className="flex flex-col" clear={true}>
                   <span className="font-bold uppercase text-xs whitespace-nowrap">
