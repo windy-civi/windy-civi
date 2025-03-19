@@ -65,6 +65,17 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
         // pass a combo of the title and the description to open ai.
         const text = legislation.title + "\n" + legislation.description;
         gpt_summary = await summarizeText(text);
+
+        // Check if summary has exactly 2 lines after trimming
+        // The summary prompt is designed to output exactly 2 lines
+        if (gpt_summary && gpt_summary.trim().split("\n").length === 2) {
+          const [gpt_title, gpt_subtitle] = gpt_summary.trim().split("\n");
+          legislationWithAi[legislation.id] = {
+            ...(legislationWithAi[legislation.id] || {}),
+            gpt_title: gpt_title.trim(),
+            gpt_subtitle: gpt_subtitle.trim(),
+          };
+        }
       }
       // If there isn't a summary even after all this, run edge cases.
       if (!gpt_summary) {
@@ -79,8 +90,6 @@ const generateGptSummaries = async (locale: Locales, billId?: string) => {
           console.log("could not get get summary or cache.");
         }
       }
-
-      console.log("summarized", gpt_summary);
 
       // Add gpt summary
       legislationWithAi[legislation.id] = {

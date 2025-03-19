@@ -35,7 +35,7 @@ export const LegislationLink = ({
         href={link}
         rel="noreferrer"
         className={classNames(
-          "relative flex items-center gap-2 px-3 py-1 transition-all hover:shadow-md",
+          "relative flex items-center gap-2 px-3 py-1 transition-all hover:shadow-sm",
           "text-slate-800 text-xs uppercase",
           "rounded-l-lg border border-opacity-10 border-black",
           "bg-white",
@@ -73,6 +73,7 @@ const BillStatus = ({ locale, status, link, date }: BillStatusProps) => {
       href={link}
       className={classNames(
         "inline-flex items-center justify-center rounded-r-lg px-2 text-xs uppercase h-full",
+        "transition-all hover:shadow-sm",
         readableStatus.type === "pass" && "bg-green-200",
         readableStatus.type === "in-progress" && "bg-blue-200",
         readableStatus.type === "fail" && "bg-red-200",
@@ -138,7 +139,9 @@ const HeadlineBlurb = ({
     <div className="relative px-3">
       <div>
         <div className="font-serif text-lg text-center mb-2">{title}</div>
-        {description && <h4 className="font-mono text-sm">{description}</h4>}
+        {description && (
+          <h4 className="font-mono text-sm text-center">{description}</h4>
+        )}
       </div>
     </div>
   );
@@ -163,7 +166,7 @@ export const LegislationItem = ({
 
   const linkTitle = locale === SupportedLocale.Chicago ? `${identifier}` : id;
 
-  const { headline, details } = extractHeadlineFromSummary(gpt?.gpt_summary);
+  const { headline, details } = extractHeadlineFromSummary(gpt);
 
   const officialTitle = bill.title;
   const officialSummary = bill.description || bill.bill_summary;
@@ -183,18 +186,6 @@ export const LegislationItem = ({
           ),
         }
       : false,
-    // userHasTags && tags.length > 0
-    //   ? {
-    //       title: "All Tags",
-    //       content: (
-    //         <div className="flex flex-row flex-wrap justify-center">
-    //           {tags.map((v) => (
-    //             <Tag key={v} className="text-xs" text={v} />
-    //           ))}
-    //         </div>
-    //       ),
-    //     }
-    //   : false,
     {
       title: "Legislation Details",
       content: <JsonViewer data={bill} />,

@@ -30,19 +30,25 @@ If no categories match, respond with "Other".
 
 export const summarizeText = async (text: string) => {
   const res = await postTextCompletions(
-    `
-For each piece of legislation data, create a 2-3 sentence summary where the first sentence functions as a newspaper-style headline. The headline should be concise, present-tense, and capture the most newsworthy aspect of the legislation.
-If data is available, integrate the political backing (bipartisan, Republican-led, or Democrat-led) into the headline. The entire summary should read like the opening of a news article.
-Examples of effective headlines:
+    `Here's a prompt for generating task-oriented legislation summaries:
 
-'Senate Passes Farm Bill with Expanded Rural Broadband Funding'
-'Bipartisan Infrastructure Package Allocates $25 Billion for Bridge Repairs'
-'Republican-Led Bill Seeks to Deter ICC from Targeting U.S. Personnel'
-'New Climate Legislation Aims to Cut Emissions 50% by 2035'
-'Democrat-Sponsored Privacy Act Would Restrict Data Collection by Tech Giants'
-'Defense Authorization Increases Military Pay by 3.5% in Coming Fiscal Year'
+"For each piece of legislation data, create a task-oriented summary with exactly two lines. Line 1 being the 'headline' and Line 2 being the 'subtitle'.
 
-Avoid speculating on missing information, like if the legislation doesn't seem sponsored, repeating the title unnecessarily, or using stock phrases like 'Bill introduced.' Focus only on information explicitly provided while maintaining a neutral, factual tone throughout.
+The 'headline' should be a single sentence framed as a task / action statement that clearly communicates what the legislation aims to accomplish. Use active verbs and direct language that emphasizes the primary objective or mission.
+
+The 'subtitle' should be 1-2 sentences providing concrete details from the legislation data, including the political backing (bipartisan, Republican-led, or Democrat-led) as a natural part of the text.
+
+Focus only on information explicitly provided in the legislation data while ensuring the headline clearly communicates the primary goal as a task statement.
+
+Examples of proper response format would be a new line to separate the headline and subtitle:
+
+Example 1:
+Expand Rural Broadband Access and Support Agricultural Communities
+The bipartisan bill allocates $2 billion toward high-speed internet infrastructure in under served farming regions. Implementation would begin in January 2026 targeting 1,500 rural counties.
+
+Example 2:
+Protect U.S. Personnel from International Criminal Court Jurisdiction
+This Republican-led legislation establishes legal safeguards and response mechanisms against potential ICC prosecution of American service members. The bill passed committee with a 12-8 vote and moves to the Senate floor next month.
 
 === START LEGISLATION DATA ===
 

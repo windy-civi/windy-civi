@@ -74,7 +74,7 @@ export const postTextCompletions = async (content: string) => {
             content,
           },
         ],
-        max_tokens: 60,
+        max_tokens: 1000,
       },
       {
         headers: {
