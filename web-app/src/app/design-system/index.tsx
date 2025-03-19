@@ -453,7 +453,7 @@ export const getRadioStyle = (
         : location === "last"
           ? "rounded-r-lg"
           : "",
-      `${isSelected ? "bg-gradient-to-r from-white to-slate-300 text-black" : "bg-black text-white opacity-40"}`,
+      `${isSelected ? "bg-gradient-to-r from-white to-slate-300 text-black shadow-lg" : "bg-black text-white opacity-40"}`,
     );
   }
 };

@@ -34,11 +34,11 @@ const LOCALE_PRIORITIES: Record<SupportedLocale, number> = {
 };
 
 const SCORING_WEIGHTS = {
-  billType: 0.3, // Highest weight on de-prioritizing resolutions
-  tags: 0.25, // Followed by tag relevance
+  tags: 0.4, // Highest weight
+  billType: 0.0, // todo: fix this. its making chicago bills get way too much weight
   popularity: 0.2, // Then popularity
-  freshness: 0.15, // Then freshness
-  level: 0.05, // Then government level
+  freshness: 0.1, // Then freshness
+  level: 0.1, // Then government level
 };
 
 // Utility Functions

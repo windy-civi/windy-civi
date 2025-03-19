@@ -136,3 +136,72 @@ export const TOTAL_REPRESENTATIVES = {
     TOTAL: 50,
   },
 } as const;
+
+export const LOCALE_GRADIENTS = {
+  [SupportedLocale.USA]:
+    "linear-gradient(to bottom, rgba(0,0,255,1.0) 0px, rgba(255,255,255,1.0) 600px, rgba(255,0,0,1.0) 1000px, rgba(0,0,0,0.1) 1500px)",
+  [SupportedLocale.Illinois]:
+    "linear-gradient(to bottom, rgba(255,255,255,1.0) 0px, rgba(255,196,0,1.0) 600px, rgba(255,255,255,1.0) 1000px, rgba(0,0,0,0.1) 1500px)",
+  [SupportedLocale.Chicago]:
+    "linear-gradient(to bottom, rgba(31,124,192,1.0) 0px, rgba(255,255,255,1.0) 600px, rgba(206,17,38,1.0) 1000px, rgba(0,0,0,0.1) 1500px)",
+} as const;
+
+export const DEFAULT_GRADIENT =
+  "linear-gradient(to bottom, rgba(255,29,135,1) 0px, rgba(255,82,37,1) 600px, rgba(238,145, 126,1) 1000px, rgba(0,0,0,0.1) 1500px)";
+
+// should probably be in tags, but co-locating for now with other skin stuff
+export const TAG_GRADIENTS = {
+  economy:
+    "linear-gradient(to bottom, rgba(168, 85, 247, 1.0) 0px, rgba(168, 85, 247, 0.1) 600px, rgba(168, 85, 247, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  education:
+    "linear-gradient(to bottom, rgba(234, 179, 8, 1.0) 0px, rgba(234, 179, 8, 0.1) 600px, rgba(234, 179, 8, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  democracy:
+    "linear-gradient(to bottom, rgba(107, 114, 128, 1.0) 0px, rgba(107, 114, 128, 0.1) 600px, rgba(107, 114, 128, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "health-care":
+    "linear-gradient(to bottom, rgba(59, 130, 246, 1.0) 0px, rgba(59, 130, 246, 0.1) 600px, rgba(59, 130, 246, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "public-safety":
+    "linear-gradient(to bottom, rgba(99, 102, 241, 1.0) 0px, rgba(99, 102, 241, 0.1) 600px, rgba(99, 102, 241, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  transit:
+    "linear-gradient(to bottom, rgba(249, 115, 22, 1.0) 0px, rgba(249, 115, 22, 0.1) 600px, rgba(249, 115, 22, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  abortion:
+    "linear-gradient(to bottom, rgba(244, 63, 94, 1.0) 0px, rgba(244, 63, 94, 0.1) 600px, rgba(244, 63, 94, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  immigration:
+    "linear-gradient(to bottom, rgba(6, 182, 212, 1.0) 0px, rgba(6, 182, 212, 0.1) 600px, rgba(6, 182, 212, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "foreign-policy":
+    "linear-gradient(to bottom, rgba(236, 72, 153, 1.0) 0px, rgba(236, 72, 153, 0.1) 600px, rgba(236, 72, 153, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "climate-change":
+    "linear-gradient(to bottom, rgba(34, 197, 94, 1.0) 0px, rgba(34, 197, 94, 0.1) 600px, rgba(34, 197, 94, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "2nd-amendment":
+    "linear-gradient(to bottom, rgba(6, 182, 212, 1.0) 0px, rgba(6, 182, 212, 0.1) 600px, rgba(6, 182, 212, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "civil-rights":
+    "linear-gradient(to bottom, rgba(239, 68, 68, 1.0) 0px, rgba(239, 68, 68, 0.1) 600px, rgba(239, 68, 68, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "lgbtq-rights":
+    "linear-gradient(to bottom, rgba(168, 85, 247, 1.0) 0px, rgba(168, 85, 247, 0.1) 600px, rgba(168, 85, 247, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+  "trans-rights":
+    "linear-gradient(to bottom, rgba(168, 85, 247, 1.0) 0px, rgba(168, 85, 247, 0.1) 600px, rgba(168, 85, 247, 0.05) 1000px, rgba(0,0,0,0.1) 1500px)",
+} as const;
+
+export const getLocaleGradient = (
+  locale: SupportedLocale | null | undefined,
+  pathname?: string
+): string => {
+  // Handle special routes
+  if (!locale && (!pathname || pathname === "/" || pathname === "/@you")) {
+    return DEFAULT_GRADIENT;
+  }
+
+  // Check if it's a tag route
+  if (pathname) {
+    const tagSlug = pathname.replace("/", "");
+    if (tagSlug in TAG_GRADIENTS) {
+      return TAG_GRADIENTS[tagSlug as keyof typeof TAG_GRADIENTS];
+    }
+  }
+
+  // Handle locale routes
+  if (locale) {
+    return LOCALE_GRADIENTS[locale] || DEFAULT_GRADIENT;
+  }
+
+  return DEFAULT_GRADIENT;
+};

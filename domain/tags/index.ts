@@ -89,8 +89,8 @@ export const TagMap: Record<
     background: "rgba(168, 85, 247, 1.0)", // purple-500
   },
   "Trans Rights": {
-    icon: "🏳️‍🌈",
-    background: "rgba(168, 85, 247, 1.0)", // purple-500
+    icon: "🏳️‍⚧️",
+    background: "rgba(85, 205, 255, 1.0)",
   },
   [CustomChicagoTag.Ordinance]: {
     icon: "🏙️",

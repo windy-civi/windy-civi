@@ -9,7 +9,11 @@ import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
 import { FaCode, FaHeart } from "react-icons/fa";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
-import { isSupportedLocale, SupportedLocale } from "@windy-civi/domain/locales";
+import {
+  isSupportedLocale,
+  SupportedLocale,
+  getLocaleGradient,
+} from "@windy-civi/domain/locales";
 import { isSupportedTag, TagMap } from "@windy-civi/domain/tags";
 
 // Add this new component before the Navigation component
@@ -158,8 +162,13 @@ export const NavigatorShell = ({
   feed: React.ReactNode;
 }) => {
   const skipToContentId = "main-content";
-  const defaultBackgroundTheme =
-    "linear-gradient(to bottom, rgba(255,29,135,1) 0px, rgba(255,82,37,1) 600px, rgba(238,145, 126,1) 1000px, rgba(0,0,0,0.1) 1500px)";
+  const { pathname } = useLocation();
+
+  const getBackgroundTheme = () => {
+    // Extract locale from pathname
+    const locale = pathname.replace("/", "") as SupportedLocale;
+    return getLocaleGradient(locale, pathname);
+  };
 
   const screenCentered =
     "flex min-h-screen min-w-full flex-col items-center lg:justify-center";
@@ -174,8 +183,7 @@ export const NavigatorShell = ({
       </a>
       <div
         style={{
-          background:
-            `var(--background-theme, ${defaultBackgroundTheme})` as StyleHack,
+          background: getBackgroundTheme() as StyleHack,
         }}
         className={classNames(screenCentered)}
       >
