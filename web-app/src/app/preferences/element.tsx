@@ -16,6 +16,7 @@ import {
   SupportedLocale,
 } from "@windy-civi/domain/locales";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
+import { PWAInstall } from "./components/PwaInstaller";
 
 const LocationOption = ({ locale }: { locale: SupportedLocale }) => {
   const flagSrc = getFlagIcon(locale);
@@ -149,7 +150,7 @@ export function Preferences() {
         </Section>
 
         {/* Todo: add notifications */}
-        {/* <Section
+        <Section
           title="Notifications"
           description={
             <div>
@@ -160,8 +161,7 @@ export function Preferences() {
           }
         >
           <PWAInstall />
-          <div></div>
-        </Section> */}
+        </Section>
 
         {/* todo: allow customization */}
         {/* <Section title="Theme">
