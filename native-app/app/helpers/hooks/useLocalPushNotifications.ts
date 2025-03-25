@@ -99,9 +99,19 @@ export const useLocalPushNotifications = () => {
     return false;
   }, [registerForLocalPushNotifications]);
 
+  const getNotificationStatus = useCallback(async () => {
+    if (!Device.isDevice) {
+      return false;
+    }
+
+    const { status } = await Notifications.getPermissionsAsync();
+    return status;
+  }, []);
+
   return {
     initializeNotifications,
     registerForLocalPushNotifications,
     scheduleLocalPushNotification,
+    getNotificationStatus,
   };
 };
