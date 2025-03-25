@@ -1,4 +1,4 @@
-import { UserPreferences } from "../types";
+import { UserPreferences } from "../user-preferences";
 
 export const USER_PREFERENCES_CHANGED = "USER_PREFERENCES_CHANGED";
 export const REQUEST_NATIVE_NOTIFICATION_PERMISSIONS =
