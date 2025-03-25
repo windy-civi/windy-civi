@@ -16,7 +16,7 @@ import {
   SupportedLocale,
 } from "@windy-civi/domain/locales";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
-import { PWAInstall } from "./components/PwaInstaller";
+import { NotificationPreferences } from "./components/NotificationPreferences";
 
 const LocationOption = ({ locale }: { locale: SupportedLocale }) => {
   const flagSrc = getFlagIcon(locale);
@@ -122,6 +122,21 @@ export function Preferences() {
         <input type="hidden" name="location" value={formState.location} />
         <input type="hidden" name="tags" value={formState.tags?.join(",")} />
 
+        {/* Notifications & Installation */}
+        <Section
+          title="Notifications & Installation"
+          description={
+            <div>
+              We create notifications based on your "For You feed", which is
+              based on your interests and location.
+            </div>
+          }
+        >
+          <div className="space-y-4">
+            <NotificationPreferences />
+          </div>
+        </Section>
+
         {/* Location Filter */}
         <LocationPreferences
           location={formState.location}
@@ -132,6 +147,7 @@ export function Preferences() {
             setFormState({ ...formState, location: data.preferences.location });
           }}
         />
+
         {/* Tags Filter */}
         <Section
           title="Issues"
@@ -147,20 +163,6 @@ export function Preferences() {
               setFormState({ ...formState, tags: updatedTags });
             }}
           />
-        </Section>
-
-        {/* Todo: add notifications */}
-        <Section
-          title="Notifications"
-          description={
-            <div>
-              We create notifications based on your "For You feed", which is
-              based on your interests and location. To get notifications,
-              download the iOS App or the PWA on Android / Desktop.
-            </div>
-          }
-        >
-          <PWAInstall />
         </Section>
 
         {/* todo: allow customization */}
