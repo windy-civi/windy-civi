@@ -1,4 +1,4 @@
-import { publishUserPreferences } from "@windy-civi/domain/native-web-bridge/web-bridge";
+import { publishUserPreferences } from "@windy-civi/domain/native-web-bridge/native-bridge";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { ActionFunction, json } from "react-router-dom";
 import { savePreferencesToCookies } from "./api";

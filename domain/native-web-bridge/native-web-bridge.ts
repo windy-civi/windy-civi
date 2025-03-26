@@ -5,7 +5,7 @@ export const REQUEST_NATIVE_NOTIFICATION_PERMISSIONS =
   "REQUEST_NATIVE_NOTIFICATION_PERMISSIONS";
 export const NATIVE_NOTIFICATION_STATUS_REQUESTED =
   "NATIVE_NOTIFICATION_STATUS_REQUESTED";
-
+export const NATIVE_BRIDGE_ERROR = "NATIVE_BRIDGE_ERROR";
 type EventToPayloadMap = {
   [USER_PREFERENCES_CHANGED]: UserPreferences;
   [REQUEST_NATIVE_NOTIFICATION_PERMISSIONS]: boolean;
@@ -48,4 +48,16 @@ export const parseEvent = (action: unknown): Events | null => {
 
 const isEvent = (action: unknown): action is Events => {
   return typeof action === "object" && action !== null && "type" in action;
+};
+
+export const publishUserPreferences = (userPreferences: UserPreferences) => {
+  if ("ReactNativeWebView" in window) {
+    // @ts-expect-error no types for react native webview
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: USER_PREFERENCES_CHANGED,
+        payload: userPreferences,
+      })
+    );
+  }
 };
