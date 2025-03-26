@@ -1,5 +1,23 @@
 import { UserPreferences } from "../user-preferences";
 
+/**
+ * Copied from expo-notifications
+ */
+export enum PermissionStatus {
+  /**
+   * User has granted the permission.
+   */
+  GRANTED = "granted",
+  /**
+   * User hasn't granted or denied the permission yet.
+   */
+  UNDETERMINED = "undetermined",
+  /**
+   * User has denied the permission.
+   */
+  DENIED = "denied",
+}
+
 // Sent from web to native
 export const UPDATE_USER_PREFERENCES = "UPDATE_USER_PREFERENCES";
 export const INITIALIZE_NATIVE_NOTIFICATIONS =
@@ -15,7 +33,7 @@ type EventToPayloadMap = {
   [UPDATE_USER_PREFERENCES]: UserPreferences;
   [INITIALIZE_NATIVE_NOTIFICATIONS]: boolean;
   [GET_NATIVE_NOTIFICATION_STATUS]: boolean;
-  [SEND_NATIVE_NOTIFICATION_STATUS]: string;
+  [SEND_NATIVE_NOTIFICATION_STATUS]: PermissionStatus;
   [NATIVE_BRIDGE_ERROR]: Error;
 };
 

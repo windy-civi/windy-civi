@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
 import { classNames } from "../../design-system/styles";
 import { StatusMessage } from "../../design-system";
+import {
+  INITIALIZE_NATIVE_NOTIFICATIONS,
+  GET_NATIVE_NOTIFICATION_STATUS,
+  PermissionStatus,
+} from "@windy-civi/domain/native-web-bridge/native-web-bridge";
+import { useHandleNativeBridgeMessage } from "../../utils/useHandleNativeBridgeMessage";
 
 const isNativeWebView = () => {
   if (typeof window === "undefined") return false;
   const userAgent = window.navigator.userAgent.toLowerCase();
   return /wv/.test(userAgent) || /webview/.test(userAgent);
 };
-
-// Notification permission states
-type NotificationPermission = "default" | "granted" | "denied";
-
-type ExpoNotificationStatus =
-  | "not-determined"
-  | "denied"
-  | "authorized"
-  | "provisional"
-  | "ephemeral";
 
 interface NotificationPreferencesProps {
   className?: string;
@@ -27,11 +23,26 @@ const WebViewNotificationStatus = ({
   status,
   onRequestPermission,
 }: {
-  status: ExpoNotificationStatus | null;
+  status: PermissionStatus | null;
   onRequestPermission: () => void;
 }) => {
   switch (status) {
-    case "not-determined":
+    case PermissionStatus.DENIED:
+      return (
+        <StatusMessage
+          type="error"
+          message="Notifications are blocked. Please enable them in your device settings."
+        />
+      );
+    case PermissionStatus.GRANTED:
+      return (
+        <StatusMessage
+          type="success"
+          message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
+        />
+      );
+    case PermissionStatus.UNDETERMINED:
+    default:
       return (
         <div className="text-sm text-white">
           <p>
@@ -46,24 +57,6 @@ const WebViewNotificationStatus = ({
           </button>
         </div>
       );
-    case "denied":
-      return (
-        <StatusMessage
-          type="error"
-          message="Notifications are blocked. Please enable them in your device settings."
-        />
-      );
-    case "authorized":
-    case "provisional":
-    case "ephemeral":
-      return (
-        <StatusMessage
-          type="success"
-          message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
-        />
-      );
-    default:
-      return null;
   }
 };
 
@@ -111,8 +104,16 @@ export const NotificationPreferences: React.FC<
 > = ({ className }) => {
   const [permission, setPermission] =
     useState<NotificationPermission>("default");
-  const [expoStatus, setExpoStatus] = useState<ExpoNotificationStatus | null>(
-    null,
+  const [status, setStatus] = useState<PermissionStatus | null>(null);
+
+  const { handleNativeBridgeMessage } = useHandleNativeBridgeMessage(
+    (status) => {
+      setStatus(status as PermissionStatus);
+    },
+    (error) => {
+      console.error("Native notification error:", error);
+      setStatus(PermissionStatus.DENIED);
+    },
   );
 
   useEffect(() => {
@@ -121,17 +122,37 @@ export const NotificationPreferences: React.FC<
       setPermission(Notification.permission as NotificationPermission);
     }
 
-    // Check if we're in a WebView and get Expo notification status
+    // Set up message listener for native bridge
+    window.addEventListener("message", handleNativeBridgeMessage);
+    return () =>
+      window.removeEventListener("message", handleNativeBridgeMessage);
+  }, [handleNativeBridgeMessage]);
+
+  useEffect(() => {
+    // Request native notification status when in WebView
     if (isNativeWebView()) {
-      // This would be handled by the native bridge
-      // For now, we'll simulate it
-      setExpoStatus("not-determined");
+      if ("ReactNativeWebView" in window) {
+        // @ts-expect-error no types for react native webview
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({
+            type: GET_NATIVE_NOTIFICATION_STATUS,
+            payload: true,
+          }),
+        );
+      }
     }
   }, []);
 
   const handleWebViewPermissionRequest = () => {
-    // This would trigger the native bridge to request permissions
-    setExpoStatus("authorized");
+    if ("ReactNativeWebView" in window) {
+      // @ts-expect-error no types for react native webview
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({
+          type: INITIALIZE_NATIVE_NOTIFICATIONS,
+          payload: true,
+        }),
+      );
+    }
   };
 
   const handleWebPermissionRequest = () => {
@@ -145,7 +166,7 @@ export const NotificationPreferences: React.FC<
       {/* Show appropriate notification status based on environment */}
       {isNativeWebView() && (
         <WebViewNotificationStatus
-          status={expoStatus}
+          status={status}
           onRequestPermission={handleWebViewPermissionRequest}
         />
       )}
