@@ -1,16 +1,20 @@
 import { useCallback } from "react";
-import { WebViewMessageEvent } from "react-native-webview";
+import { WebViewMessageEvent, WebView } from "react-native-webview";
 import {
   parseEvent,
   USER_PREFERENCES_CHANGED,
   REQUEST_NATIVE_NOTIFICATION_PERMISSIONS,
   NATIVE_NOTIFICATION_STATUS_REQUESTED,
+  NATIVE_BRIDGE_ERROR,
   Events,
-} from "@windy-civi/domain/native-web-bridge/native-bridge";
+} from "@windy-civi/domain/native-web-bridge/native-web-bridge";
 import { useStorage } from "./useStorage";
 import { useLocalPushNotifications } from "./useLocalPushNotifications";
 import { useBackgroundFetch } from "./useBackgroundFetch";
-export const useHandleWebBridgeMessage = () => {
+
+export const useHandleWebBridgeMessage = (
+  webViewRef: React.RefObject<WebView>
+) => {
   const { storeData } = useStorage();
   const { initializeNotifications, getNotificationStatus } =
     useLocalPushNotifications();
@@ -29,32 +33,74 @@ export const useHandleWebBridgeMessage = () => {
       ) => {
         switch (type) {
           case USER_PREFERENCES_CHANGED:
-            storeData({
-              key: "userPreferences",
-              value: JSON.stringify(payload),
-            });
+            try {
+              storeData({
+                key: "userPreferences",
+                value: JSON.stringify(payload),
+              });
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: USER_PREFERENCES_CHANGED,
+                  payload: "Successfully updated user preferences!",
+                })
+              );
+            } catch (error) {
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: NATIVE_BRIDGE_ERROR,
+                  payload: error,
+                })
+              );
+            }
             break;
           case REQUEST_NATIVE_NOTIFICATION_PERMISSIONS:
-            const success = await initializeNotifications();
-            if (success) {
-              console.log("Notification scheduled successfully");
-            }
-            if (!isRegistered) {
-              await toggleFetchTask();
-              console.log("Background fetch task registered");
+            try {
+              await initializeNotifications();
+              if (!isRegistered) {
+                await toggleFetchTask();
+              }
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: REQUEST_NATIVE_NOTIFICATION_PERMISSIONS,
+                  payload:
+                    "Successfully requested native notification permissions!",
+                })
+              );
+            } catch (error) {
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: NATIVE_BRIDGE_ERROR,
+                  payload: error,
+                })
+              );
             }
             break;
           case NATIVE_NOTIFICATION_STATUS_REQUESTED:
-            const status = await getNotificationStatus();
+            try {
+              const status = await getNotificationStatus();
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: NATIVE_NOTIFICATION_STATUS_REQUESTED,
+                  payload: status,
+                })
+              );
+            } catch (error) {
+              webViewRef.current?.postMessage(
+                JSON.stringify({
+                  type: NATIVE_BRIDGE_ERROR,
+                  payload: error,
+                })
+              );
+            }
             break;
           default:
-            throw new Error(`Unknown event type: ${type}`);
         }
       };
 
       sideEffects(e.type as Events["type"], e.payload);
     },
     [
+      webViewRef,
       storeData,
       initializeNotifications,
       isRegistered,
