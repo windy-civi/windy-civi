@@ -1,15 +1,22 @@
 import { UserPreferences } from "../user-preferences";
 
-export const USER_PREFERENCES_CHANGED = "USER_PREFERENCES_CHANGED";
-export const REQUEST_NATIVE_NOTIFICATION_PERMISSIONS =
-  "REQUEST_NATIVE_NOTIFICATION_PERMISSIONS";
-export const NATIVE_NOTIFICATION_STATUS_REQUESTED =
-  "NATIVE_NOTIFICATION_STATUS_REQUESTED";
+// Sent from web to native
+export const UPDATE_USER_PREFERENCES = "UPDATE_USER_PREFERENCES";
+export const INITIALIZE_NATIVE_NOTIFICATIONS =
+  "INITIALIZE_NATIVE_NOTIFICATIONS";
+export const GET_NATIVE_NOTIFICATION_STATUS = "GET_NATIVE_NOTIFICATION_STATUS";
+
+// Sent from native to web
 export const NATIVE_BRIDGE_ERROR = "NATIVE_BRIDGE_ERROR";
+export const SEND_NATIVE_NOTIFICATION_STATUS =
+  "SEND_NATIVE_NOTIFICATION_STATUS";
+
 type EventToPayloadMap = {
-  [USER_PREFERENCES_CHANGED]: UserPreferences;
-  [REQUEST_NATIVE_NOTIFICATION_PERMISSIONS]: boolean;
-  [NATIVE_NOTIFICATION_STATUS_REQUESTED]: boolean;
+  [UPDATE_USER_PREFERENCES]: UserPreferences;
+  [INITIALIZE_NATIVE_NOTIFICATIONS]: boolean;
+  [GET_NATIVE_NOTIFICATION_STATUS]: boolean;
+  [SEND_NATIVE_NOTIFICATION_STATUS]: string;
+  [NATIVE_BRIDGE_ERROR]: Error;
 };
 
 export type Events = {
@@ -20,16 +27,6 @@ export type Events = {
 }[keyof EventToPayloadMap];
 
 export type Callback = <T extends Events>(cb: T) => void;
-
-export const onUserPreferences = (
-  cb: (u: UserPreferences) => void,
-  action: unknown
-) => {
-  const parsedAction = parseEvent(action);
-  if (parsedAction && parsedAction.type === USER_PREFERENCES_CHANGED) {
-    cb(parsedAction.payload);
-  }
-};
 
 export const parseEvent = (action: unknown): Events | null => {
   try {
@@ -48,16 +45,4 @@ export const parseEvent = (action: unknown): Events | null => {
 
 const isEvent = (action: unknown): action is Events => {
   return typeof action === "object" && action !== null && "type" in action;
-};
-
-export const publishUserPreferences = (userPreferences: UserPreferences) => {
-  if ("ReactNativeWebView" in window) {
-    // @ts-expect-error no types for react native webview
-    window.ReactNativeWebView.postMessage(
-      JSON.stringify({
-        type: USER_PREFERENCES_CHANGED,
-        payload: userPreferences,
-      })
-    );
-  }
 };

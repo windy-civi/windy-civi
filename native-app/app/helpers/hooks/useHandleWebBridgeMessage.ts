@@ -2,11 +2,12 @@ import { useCallback } from "react";
 import { WebViewMessageEvent, WebView } from "react-native-webview";
 import {
   parseEvent,
-  USER_PREFERENCES_CHANGED,
-  REQUEST_NATIVE_NOTIFICATION_PERMISSIONS,
-  NATIVE_NOTIFICATION_STATUS_REQUESTED,
+  UPDATE_USER_PREFERENCES,
+  INITIALIZE_NATIVE_NOTIFICATIONS,
+  GET_NATIVE_NOTIFICATION_STATUS,
   NATIVE_BRIDGE_ERROR,
   Events,
+  SEND_NATIVE_NOTIFICATION_STATUS,
 } from "@windy-civi/domain/native-web-bridge/native-web-bridge";
 import { useStorage } from "./useStorage";
 import { useLocalPushNotifications } from "./useLocalPushNotifications";
@@ -32,18 +33,13 @@ export const useHandleWebBridgeMessage = (
         payload: Events["payload"]
       ) => {
         switch (type) {
-          case USER_PREFERENCES_CHANGED:
+          case UPDATE_USER_PREFERENCES:
             try {
               storeData({
                 key: "userPreferences",
                 value: JSON.stringify(payload),
               });
-              webViewRef.current?.postMessage(
-                JSON.stringify({
-                  type: USER_PREFERENCES_CHANGED,
-                  payload: "Successfully updated user preferences!",
-                })
-              );
+              // no need to send a response back to the web app
             } catch (error) {
               webViewRef.current?.postMessage(
                 JSON.stringify({
@@ -53,17 +49,18 @@ export const useHandleWebBridgeMessage = (
               );
             }
             break;
-          case REQUEST_NATIVE_NOTIFICATION_PERMISSIONS:
+          case INITIALIZE_NATIVE_NOTIFICATIONS:
             try {
               await initializeNotifications();
               if (!isRegistered) {
                 await toggleFetchTask();
               }
+              const status = await getNotificationStatus();
+
               webViewRef.current?.postMessage(
                 JSON.stringify({
-                  type: REQUEST_NATIVE_NOTIFICATION_PERMISSIONS,
-                  payload:
-                    "Successfully requested native notification permissions!",
+                  type: SEND_NATIVE_NOTIFICATION_STATUS,
+                  payload: status,
                 })
               );
             } catch (error) {
@@ -75,12 +72,12 @@ export const useHandleWebBridgeMessage = (
               );
             }
             break;
-          case NATIVE_NOTIFICATION_STATUS_REQUESTED:
+          case GET_NATIVE_NOTIFICATION_STATUS:
             try {
               const status = await getNotificationStatus();
               webViewRef.current?.postMessage(
                 JSON.stringify({
-                  type: NATIVE_NOTIFICATION_STATUS_REQUESTED,
+                  type: SEND_NATIVE_NOTIFICATION_STATUS,
                   payload: status,
                 })
               );

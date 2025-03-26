@@ -1,7 +1,19 @@
-import { publishUserPreferences } from "@windy-civi/domain/native-web-bridge/native-bridge";
+import { UPDATE_USER_PREFERENCES } from "@windy-civi/domain/native-web-bridge/native-web-bridge";
 import { UserPreferences } from "@windy-civi/domain/user-preferences";
 import { ActionFunction, json } from "react-router-dom";
 import { savePreferencesToCookies } from "./api";
+
+export const publishUserPreferences = (userPreferences: UserPreferences) => {
+  if ("ReactNativeWebView" in window) {
+    // @ts-expect-error no types for react native webview
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        type: UPDATE_USER_PREFERENCES,
+        payload: userPreferences,
+      }),
+    );
+  }
+};
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
