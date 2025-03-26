@@ -60,6 +60,42 @@ const WebViewNotificationStatus = ({
   }
 };
 
+const NotificationToggle = ({
+  isEnabled,
+  onClick,
+}: {
+  isEnabled: boolean;
+  onClick: () => void;
+}) => (
+  <button
+    onClick={onClick}
+    className={`relative inline-flex h-8 w-16 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg ${
+      isEnabled
+        ? "bg-blue-600 hover:bg-blue-700"
+        : "bg-gray-200 hover:bg-gray-300"
+    }`}
+  >
+    <span
+      className={`pointer-events-none inline-block h-7 w-7 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
+        isEnabled ? "translate-x-8" : "translate-x-0"
+      }`}
+    />
+  </button>
+);
+
+const NotificationContainer = ({
+  children,
+  toggle,
+}: {
+  children: React.ReactNode;
+  toggle?: React.ReactNode;
+}) => (
+  <div className="flex items-center justify-between w-full">
+    {children}
+    {toggle}
+  </div>
+);
+
 // Web PWA Notification Status
 const WebPWANotificationStatus = ({
   permission,
@@ -68,31 +104,38 @@ const WebPWANotificationStatus = ({
   permission: NotificationPermission;
   onRequestPermission: () => void;
 }) => {
+  const isEnabled = permission === "granted";
+  const toggle = (
+    <NotificationToggle isEnabled={isEnabled} onClick={onRequestPermission} />
+  );
+
   switch (permission) {
     case "granted":
       return (
-        <StatusMessage
-          type="success"
-          message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
-        />
+        <NotificationContainer>
+          <StatusMessage
+            type="success"
+            message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
+          />
+        </NotificationContainer>
       );
     case "denied":
       return (
-        <StatusMessage
-          type="error"
-          message="Notifications are blocked. Please enable them in your browser settings."
-        />
+        <NotificationContainer>
+          <StatusMessage
+            type="error"
+            message="Notifications are blocked. Please enable them in your browser settings."
+          />
+        </NotificationContainer>
       );
     case "default":
       return (
-        <div className="text-sm text-white flex w-full justify-center">
-          <button
-            className="mt-2 rounded bg-blue-600 bg-opacity-80 uppercase font-bold px-4 py-2 text-white hover:bg-blue-600 hover:shadow-lg"
-            onClick={onRequestPermission}
-          >
-            Enable Push Notifications
-          </button>
-        </div>
+        <NotificationContainer toggle={toggle}>
+          <div className="text-sm text-white">
+            Enable notifications to get updates about legislation you care
+            about.
+          </div>
+        </NotificationContainer>
       );
     default:
       return null;

@@ -24,12 +24,13 @@ import { TagMap } from "@windy-civi/domain/tags";
  * @param className - Optional CSS classes to apply
  * @param children - Child content to display
  */
-export const Section: React.FC<{
+export const Subsection: React.FC<{
   title?: React.ReactNode;
   description?: React.ReactNode;
   className?: string;
   children: React.ReactNode;
-}> = ({ title, children, className, description }) => {
+  divider?: boolean;
+}> = ({ title, children, className, description, divider = true }) => {
   return (
     <section>
       <div className="mb-2">
@@ -38,7 +39,7 @@ export const Section: React.FC<{
       </div>
 
       <div className={className}>{children}</div>
-      <Divider className="my-4" />
+      {divider && <Divider className="my-4" />}
     </section>
   );
 };
@@ -65,25 +66,25 @@ export const SectionTitle: React.FC<{
  * @param title - The title to display at the top of the screen
  * @param children - Child content to display in the styled container
  */
-export const CustomScreen: React.FC<{
+export const CustomSection: React.FC<{
   children: React.ReactNode;
   title: string;
 }> = ({ children, title }) => {
   return (
-    <main className="mb-4">
+    <section className="mb-4">
       <div className="my-2 font-serif text-2xl font-semibold leading-tight text-white lg:text-left">
         {title}
       </div>
       <div
         className={classNames(
-          "flex justify-center p-4",
+          "flex flex-col justify-center p-4",
           "rounded-lg shadow-lg",
         )}
         style={{ backdropFilter: "blur(10px) brightness(0.6)" }}
       >
         {children}
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -28,44 +28,41 @@ interface InstallationPreferencesProps {
 const InstallationBadges = () => {
   return (
     <div className="space-y-4">
-      <div className="text-sm text-white">
-        <p>To get push notifications, install the iOS, Android or Web App.</p>
-        <div className="mt-2 flex flex-row gap-2 items-center justify-center w-full h-full">
-          <div className="flex">
-            <PWAInstall />
-          </div>
-          <div className="flex">
-            <a
-              href="https://apps.apple.com/us/app/windy-civi/id6737817607"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
+      <div className="mt-2 flex flex-row gap-2 items-center justify-center w-full h-full">
+        <div className="flex">
+          <PWAInstall />
+        </div>
+        <div className="flex">
+          <a
+            href="https://apps.apple.com/us/app/windy-civi/id6737817607"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <img
+              src={AppleAppStoreIcon}
+              alt="Download on the App Store"
+              className="h-10"
+            />
+          </a>
+        </div>
+        <div className="flex">
+          <a
+            href="#"
+            className="inline-block cursor-not-allowed"
+            onClick={(e) => e.preventDefault()}
+          >
+            <div className="relative group">
               <img
-                src={AppleAppStoreIcon}
-                alt="Download on the App Store"
+                src={GooglePlayIcon}
+                alt="Get it on Google Play"
                 className="h-10"
               />
-            </a>
-          </div>
-          <div className="flex">
-            <a
-              href="#"
-              className="inline-block cursor-not-allowed"
-              onClick={(e) => e.preventDefault()}
-            >
-              <div className="relative group">
-                <img
-                  src={GooglePlayIcon}
-                  alt="Get it on Google Play"
-                  className="h-10"
-                />
-                <div className="absolute z-20 inset-0 flex items-center justify-center bg-black bg-opacity-70">
-                  <span className="text-white font-medium">Coming Soon</span>
-                </div>
+              <div className="absolute z-20 inset-0 flex items-center justify-center bg-black bg-opacity-70">
+                <span className="text-white font-medium">Coming Soon</span>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>

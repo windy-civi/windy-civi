@@ -217,7 +217,6 @@ const Navigation = (props: AppShellLoaderData) => {
   return (
     <HeaderScrollContainer>
       <Logo />
-      <NavItem href="/contribute" name="Contribute" icon={<FaCode />} />
       <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
       {/* Adds links for feeds based on user preferences */}
       {props.availableFeeds.map(({ href, name }) => (
