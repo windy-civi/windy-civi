@@ -85,12 +85,12 @@ const WebPWANotificationStatus = ({
       );
     case "default":
       return (
-        <div className="text-sm text-white">
+        <div className="text-sm text-white flex w-full justify-center">
           <button
-            className="mt-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            className="mt-2 rounded bg-blue-600 bg-opacity-80 uppercase font-bold px-4 py-2 text-white hover:bg-blue-600 hover:shadow-lg"
             onClick={onRequestPermission}
           >
-            Enable Notifications
+            Enable Push Notifications
           </button>
         </div>
       );

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { classNames } from "../../design-system/styles";
 import { StatusMessage } from "../../design-system";
 import { PWAInstall } from "./PwaInstaller";
@@ -6,7 +5,7 @@ import AppleAppStoreIcon from "./assets/apple-app-store.svg";
 import GooglePlayIcon from "./assets/google-play.svg";
 
 // Environment detection
-const isStandalone = () => {
+const isPWAInstalled = () => {
   if (typeof window === "undefined") return false;
   return (
     window.matchMedia("(display-mode: standalone)").matches ||
@@ -15,7 +14,7 @@ const isStandalone = () => {
   );
 };
 
-const isNativeWebView = () => {
+const isInsideNativeApp = () => {
   if (typeof window === "undefined") return false;
   const userAgent = window.navigator.userAgent.toLowerCase();
   return /wv/.test(userAgent) || /webview/.test(userAgent);
@@ -26,39 +25,47 @@ interface InstallationPreferencesProps {
 }
 
 // Native App Installation Options
-const NativeAppInstallation = () => {
+const InstallationBadges = () => {
   return (
     <div className="space-y-4">
       <div className="text-sm text-white">
-        <p>
-          To get notifications, install the iOS or Android app from the App
-          Store.
-        </p>
-        <div className="mt-2 space-y-4">
-          <a
-            href="https://apps.apple.com/us/app/windy-civi/id6737817607"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <img
-              src={AppleAppStoreIcon}
-              alt="Download on the App Store"
-              className="h-10"
-            />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.windycivi.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <img
-              src={GooglePlayIcon}
-              alt="Get it on Google Play"
-              className="h-10"
-            />
-          </a>
+        <p>To get push notifications, install the iOS, Android or Web App.</p>
+        <div className="mt-2 flex flex-row gap-2 items-center justify-center w-full h-full">
+          <div className="flex">
+            <PWAInstall />
+          </div>
+          <div className="flex">
+            <a
+              href="https://apps.apple.com/us/app/windy-civi/id6737817607"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <img
+                src={AppleAppStoreIcon}
+                alt="Download on the App Store"
+                className="h-10"
+              />
+            </a>
+          </div>
+          <div className="flex">
+            <a
+              href="#"
+              className="inline-block cursor-not-allowed"
+              onClick={(e) => e.preventDefault()}
+            >
+              <div className="relative group">
+                <img
+                  src={GooglePlayIcon}
+                  alt="Get it on Google Play"
+                  className="h-10"
+                />
+                <div className="absolute z-20 inset-0 flex items-center justify-center bg-black bg-opacity-70">
+                  <span className="text-white font-medium">Coming Soon</span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -68,17 +75,12 @@ const NativeAppInstallation = () => {
 export const InstallationPreferences: React.FC<
   InstallationPreferencesProps
 > = ({ className }) => {
-  const [isStandaloneMode, setIsStandaloneMode] = useState(false);
-
-  useEffect(() => {
-    // Check if we're in standalone mode
-    setIsStandaloneMode(isStandalone());
-  }, []);
-
+  const pwaInstalled = isPWAInstalled();
+  const insideNativeApp = isInsideNativeApp();
   return (
     <div className={classNames("w-full space-y-4", className)}>
       {/* Show success message if installed as PWA */}
-      {isStandaloneMode && (
+      {pwaInstalled && (
         <StatusMessage
           type="success"
           message="✓ Windy Civi Web App is installed on your device"
@@ -86,7 +88,7 @@ export const InstallationPreferences: React.FC<
       )}
 
       {/* Show success message if installed as native app */}
-      {isNativeWebView() && (
+      {insideNativeApp && (
         <StatusMessage
           type="success"
           message="✓ Windy Civi Native App is installed on your device"
@@ -94,10 +96,7 @@ export const InstallationPreferences: React.FC<
       )}
 
       {/* Show native app installation if not in native view or installed as PWA */}
-      {!isNativeWebView() && !isStandaloneMode && <NativeAppInstallation />}
-
-      {/* PWAInstall is only shown in web browser mode */}
-      {!isNativeWebView() && !isStandaloneMode && <PWAInstall />}
+      {!insideNativeApp && !pwaInstalled && <InstallationBadges />}
     </div>
   );
 };
