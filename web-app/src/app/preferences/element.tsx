@@ -17,6 +17,7 @@ import {
 } from "@windy-civi/domain/locales";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
 import { NotificationPreferences } from "./components/NotificationPreferences";
+import { InstallationPreferences } from "./components/InstallationPreferences";
 
 const LocationOption = ({ locale }: { locale: SupportedLocale }) => {
   const flagSrc = getFlagIcon(locale);
@@ -122,9 +123,14 @@ export function Preferences() {
         <input type="hidden" name="location" value={formState.location} />
         <input type="hidden" name="tags" value={formState.tags?.join(",")} />
 
-        {/* Notifications & Installation */}
+        {/* Installation */}
+        <Section title="Installation">
+          <InstallationPreferences />
+        </Section>
+
+        {/* Notifications */}
         <Section
-          title="Notifications & Installation"
+          title="Notifications"
           description={
             <div>
               We create notifications based on your "For You feed", which is
@@ -132,9 +138,7 @@ export function Preferences() {
             </div>
           }
         >
-          <div className="space-y-4">
-            <NotificationPreferences />
-          </div>
+          <NotificationPreferences />
         </Section>
 
         {/* Location Filter */}

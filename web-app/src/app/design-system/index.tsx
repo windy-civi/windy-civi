@@ -712,3 +712,29 @@ export const JsonViewer = <T,>({ data, level = 0 }: JsonViewerProps<T>) => {
 
   return <span>{String(data)}</span>;
 };
+
+type StatusType = "success" | "error";
+
+interface StatusMessageProps {
+  type: StatusType;
+  message: string;
+  className?: string;
+}
+
+export const StatusMessage: React.FC<StatusMessageProps> = ({
+  type,
+  message,
+  className,
+}) => {
+  const baseStyles = "text-sm shadow rounded-md p-2 text-white";
+  const typeStyles = {
+    success: "bg-green-900",
+    error: "bg-red-900",
+  };
+
+  return (
+    <div className={classNames(baseStyles, typeStyles[type], className)}>
+      <p>{message}</p>
+    </div>
+  );
+};

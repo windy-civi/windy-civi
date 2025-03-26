@@ -1,18 +1,6 @@
 import { useEffect, useState } from "react";
 import { classNames } from "../../design-system/styles";
-import { PWAInstall } from "./PwaInstaller";
-import AppleAppStoreIcon from "./assets/apple-app-store.svg";
-import GooglePlayIcon from "./assets/google-play.svg";
-
-// Environment detection
-const isStandalone = () => {
-  if (typeof window === "undefined") return false;
-  return (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    (window.navigator as Navigator & { standalone?: boolean }).standalone ===
-      true
-  );
-};
+import { StatusMessage } from "../../design-system";
 
 const isNativeWebView = () => {
   if (typeof window === "undefined") return false;
@@ -21,11 +9,8 @@ const isNativeWebView = () => {
 };
 
 // Notification permission states
-type NotificationPermission =
-  | "granted"
-  | "denied"
-  | "prompt"
-  | "not-determined";
+type NotificationPermission = "default" | "granted" | "denied";
+
 type ExpoNotificationStatus =
   | "not-determined"
   | "denied"
@@ -36,46 +21,6 @@ type ExpoNotificationStatus =
 interface NotificationPreferencesProps {
   className?: string;
 }
-
-// Native App Installation Options
-const NativeAppInstallation = () => {
-  return (
-    <div className="space-y-4">
-      <div className="text-sm text-white">
-        <p>
-          To get notifications, install the iOS or Android app from the App
-          Store.
-        </p>
-        <div className="mt-2 space-y-4">
-          <a
-            href="https://apps.apple.com/us/app/windy-civi/id6737817607"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <img
-              src={AppleAppStoreIcon}
-              alt="Download on the App Store"
-              className="h-10"
-            />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.windycivi.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <img
-              src={GooglePlayIcon}
-              alt="Get it on Google Play"
-              className="h-10"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // WebView Notification Status
 const WebViewNotificationStatus = ({
@@ -88,7 +33,7 @@ const WebViewNotificationStatus = ({
   switch (status) {
     case "not-determined":
       return (
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-white">
           <p>
             Enable notifications to get updates about legislation you care
             about.
@@ -103,23 +48,19 @@ const WebViewNotificationStatus = ({
       );
     case "denied":
       return (
-        <div className="text-sm text-red-600">
-          <p>
-            Notifications are blocked. Please enable them in your device
-            settings.
-          </p>
-        </div>
+        <StatusMessage
+          type="error"
+          message="Notifications are blocked. Please enable them in your device settings."
+        />
       );
     case "authorized":
     case "provisional":
     case "ephemeral":
       return (
-        <div className="text-sm text-green-600">
-          <p>
-            Notifications are enabled! You'll receive updates about legislation
-            you care about.
-          </p>
-        </div>
+        <StatusMessage
+          type="success"
+          message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
+        />
       );
     default:
       return null;
@@ -137,30 +78,21 @@ const WebPWANotificationStatus = ({
   switch (permission) {
     case "granted":
       return (
-        <div className="text-sm text-green-600">
-          <p>
-            Notifications are enabled! You'll receive updates about legislation
-            you care about.
-          </p>
-        </div>
+        <StatusMessage
+          type="success"
+          message="✓ Notifications are enabled! You'll receive updates about legislation you care about."
+        />
       );
     case "denied":
       return (
-        <div className="text-sm text-red-600">
-          <p>
-            Notifications are blocked. Please enable them in your browser
-            settings.
-          </p>
-        </div>
+        <StatusMessage
+          type="error"
+          message="Notifications are blocked. Please enable them in your browser settings."
+        />
       );
-    case "prompt":
-    case "not-determined":
+    case "default":
       return (
-        <div className="text-sm text-gray-600">
-          <p>
-            Enable notifications to get updates about legislation you care
-            about.
-          </p>
+        <div className="text-sm text-white">
           <button
             className="mt-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
             onClick={onRequestPermission}
@@ -178,24 +110,15 @@ export const NotificationPreferences: React.FC<
   NotificationPreferencesProps
 > = ({ className }) => {
   const [permission, setPermission] =
-    useState<NotificationPermission>("not-determined");
+    useState<NotificationPermission>("default");
   const [expoStatus, setExpoStatus] = useState<ExpoNotificationStatus | null>(
     null,
   );
-  const [isStandaloneMode, setIsStandaloneMode] = useState(false);
 
   useEffect(() => {
-    // Check if we're in standalone mode
-    setIsStandaloneMode(isStandalone());
-
     // Check notification permissions
     if ("Notification" in window) {
       setPermission(Notification.permission as NotificationPermission);
-
-      // Listen for permission changes
-      Notification.requestPermission().then((result) => {
-        setPermission(result as NotificationPermission);
-      });
     }
 
     // Check if we're in a WebView and get Expo notification status
@@ -219,22 +142,20 @@ export const NotificationPreferences: React.FC<
 
   return (
     <div className={classNames("w-full space-y-4", className)}>
-      {/* Show native app installation if not in native WebView */}
-      {!isNativeWebView() && !isStandaloneMode && <NativeAppInstallation />}
-
       {/* Show appropriate notification status based on environment */}
-      {isNativeWebView() ? (
+      {isNativeWebView() && (
         <WebViewNotificationStatus
           status={expoStatus}
           onRequestPermission={handleWebViewPermissionRequest}
         />
-      ) : isStandaloneMode ? (
+      )}
+
+      {/* WebPWANotificationStatus shows for both standalone and web */}
+      {!isNativeWebView() && (
         <WebPWANotificationStatus
           permission={permission}
           onRequestPermission={handleWebPermissionRequest}
         />
-      ) : (
-        <PWAInstall />
       )}
     </div>
   );
