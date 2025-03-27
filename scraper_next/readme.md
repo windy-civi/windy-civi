@@ -5,7 +5,7 @@ This guide provides instructions for importing OpenStates bulk data into a local
 
 **Note**: These instructions are specifically for Windows 10 machines and implies pgAdmin4 is already installed.
 
-## 🛠 Requirements
+## Requirements
 - pgAdmin 4
 - PostgreSQL
 - Significant storage space (current PostgreSQL directory: ~35GB)
