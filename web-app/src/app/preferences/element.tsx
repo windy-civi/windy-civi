@@ -1,9 +1,9 @@
 import { Form, useLoaderData } from "react-router-dom";
 import {
   Button,
-  CustomScreen,
+  CustomSection,
   RadioPicker,
-  Section,
+  Subsection,
   Tagging,
 } from "../design-system";
 import { useState } from "react";
@@ -16,6 +16,9 @@ import {
   SupportedLocale,
 } from "@windy-civi/domain/locales";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
+import { NotificationPreferences } from "./components/NotificationPreferences";
+import { InstallationPreferences } from "./components/InstallationPreferences";
+import { Contribute } from "./components/Contribute";
 
 const LocationOption = ({ locale }: { locale: SupportedLocale }) => {
   const flagSrc = getFlagIcon(locale);
@@ -44,7 +47,7 @@ const LocationPreferences = (props: {
   const [highlighted, setHighlighted] = useState(LocaleMap[props.location]);
 
   return (
-    <Section
+    <Subsection
       title={<div>Sources</div>}
       description={
         <>
@@ -81,7 +84,7 @@ const LocationPreferences = (props: {
           />
         </div>
       </div>
-    </Section>
+    </Subsection>
   );
 };
 
@@ -110,71 +113,74 @@ export function Preferences() {
   // }, [blocker]);
 
   return (
-    <CustomScreen title="Preferences">
-      <Form
-        method="post"
-        className={classNames(
-          "flex w-full max-w-screen-md flex-col justify-center",
-        )}
-      >
-        {/* Hidden inputs to capture state */}
-        <input type="hidden" name="location" value={formState.location} />
-        <input type="hidden" name="tags" value={formState.tags?.join(",")} />
+    <>
+      <CustomSection title="App Experience">
+        {/* Installation */}
+        <Subsection title="Installation">
+          <InstallationPreferences />
+        </Subsection>
 
-        {/* Location Filter */}
-        <LocationPreferences
-          location={formState.location}
-          onChange={(next) => {
-            setFormState({ ...formState, location: next });
-          }}
-          onClear={() => {
-            setFormState({ ...formState, location: data.preferences.location });
-          }}
-        />
-        {/* Tags Filter */}
-        <Section
-          title="Issues"
-          description={
-            <>Pick up to 5. We use these to score and prioritize your feed.</>
-          }
+        {/* Notifications */}
+        <Subsection divider={false} title="Push Notifications">
+          <NotificationPreferences />
+        </Subsection>
+      </CustomSection>
+      <CustomSection title="Preferences">
+        <Form
+          method="post"
+          className={classNames(
+            "flex w-full max-w-screen-md flex-col justify-center",
+          )}
         >
-          <Tagging
-            maxTags={5}
-            tags={data.data.availableTags}
-            selected={data.preferences.tags}
-            handleClick={(updatedTags) => {
-              setFormState({ ...formState, tags: updatedTags });
+          {/* Hidden inputs to capture state */}
+          <input type="hidden" name="location" value={formState.location} />
+          <input type="hidden" name="tags" value={formState.tags?.join(",")} />
+
+          {/* Location Filter */}
+          <LocationPreferences
+            location={formState.location}
+            onChange={(next) => {
+              setFormState({ ...formState, location: next });
+            }}
+            onClear={() => {
+              setFormState({
+                ...formState,
+                location: data.preferences.location,
+              });
             }}
           />
-        </Section>
 
-        {/* Todo: add notifications */}
-        {/* <Section
-          title="Notifications"
-          description={
-            <div>
-              We create notifications based on your "For You feed", which is
-              based on your interests and location. To get notifications,
-              download the iOS App or the PWA on Android / Desktop.
-            </div>
-          }
-        >
-          <PWAInstall />
+          {/* Tags Filter */}
+          <Subsection
+            title="Issues"
+            description={
+              <>Pick up to 5. We use these to score and prioritize your feed.</>
+            }
+          >
+            <Tagging
+              maxTags={5}
+              tags={data.data.availableTags}
+              selected={data.preferences.tags}
+              handleClick={(updatedTags) => {
+                setFormState({ ...formState, tags: updatedTags });
+              }}
+            />
+          </Subsection>
+
+          {/* todo: allow customization */}
+          {/* <Subsection title="Theme">
           <div></div>
-        </Section> */}
+        </Subsection> */}
 
-        {/* todo: allow customization */}
-        {/* <Section title="Theme">
-          <div></div>
-        </Section> */}
-
-        {/* Save Button */}
-        <div className="mt-4 flex w-full justify-center">
-          <Button type="call-to-action" htmlType="submit" disabled={!isDirty}>
-            Save Preferences
-          </Button>
-        </div>
-      </Form>
-    </CustomScreen>
+          {/* Save Button */}
+          <div className="mt-4 flex w-full justify-center">
+            <Button type="call-to-action" htmlType="submit" disabled={!isDirty}>
+              Save Preferences
+            </Button>
+          </div>
+        </Form>
+      </CustomSection>
+      <Contribute />
+    </>
   );
 }

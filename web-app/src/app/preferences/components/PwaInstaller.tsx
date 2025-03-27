@@ -1,29 +1,7 @@
 // TODO: Ideally should just use a 3rd party library for this
-// but was having trouble with installing on Remix
 
-import { CSSProperties, useEffect, useState } from "react";
-import { StyleHack, ZIndex, classNames } from "../../design-system/styles";
-import { ShareIOS } from "../../design-system/Icons";
-import { cookieFactory } from "../../utils/cookies";
-
-// iOS Safari
-const isIos = (window: Window) => {
-  if (!window) return false;
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test(userAgent);
-};
-
-const isChrome = (window: Window) => {
-  if (!window) return false;
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /chrome/.test(userAgent) && !/edg/.test(userAgent); // Ensure it's not Edge
-};
-
-const isAndroid = (window: Window) => {
-  if (!window) return false;
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /android/.test(userAgent);
-};
+import { useEffect, useState } from "react";
+import { StyleHack } from "../../design-system/styles";
 
 export interface BeforeInstallPromptEvent extends Event {
   readonly userChoice: Promise<{
@@ -115,122 +93,60 @@ class PwaInstallHandler {
 
 interface PwaInstallPromptProps {
   showModal: boolean;
-  onClose: () => void;
+  // onClose: () => void;
   onInstall: () => void;
 }
 
 const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
   showModal,
-  onClose,
+  // onClose,
   onInstall,
 }) => {
   if (!showModal) return null;
 
-  const mobileStyle: CSSProperties = {
-    position: "fixed",
-    bottom: "0px",
-    width: "100%",
-    zIndex: ZIndex["z-index-4"],
-  };
-
-  const desktopStyle: CSSProperties = {
-    width: "100%",
-  };
-
-  const close = (
-    <button className="text-white opacity-60" onClick={onClose}>
-      x
-    </button>
+  return (
+    <div>
+      <button
+        className="rounded-md bg-black hover:bg-opacity-80 text-white opacity-90 border border-white border-opacity-70"
+        style={{ padding: "4px 10px 2px 10px" as StyleHack }}
+        onClick={onInstall}
+      >
+        <div className="flex items-center gap-2">
+          <div className="text-2xl">↓</div>
+          <div className="flex flex-col justify-center items-start">
+            <div
+              className="uppercase"
+              style={{ fontSize: "8px", lineHeight: "9px" }}
+            >
+              Download as
+            </div>
+            <div style={{ fontSize: "14px", lineHeight: "16px" }}>Web App</div>
+          </div>
+        </div>
+      </button>
+    </div>
   );
-
-  if (isIos(window)) {
-    return (
-      <div style={mobileStyle}>
-        <div
-          className="bg-black bg-opacity-80 p-6 text-white backdrop-blur-2xl"
-          style={{ boxShadow: "rgba(0, 0, 0, 0.4) 0px -7px 10px" }}
-        >
-          <div className="mb-2 flex items-start text-sm">
-            <div>
-              Add App To Home Screen To Stay Up To Date With Legislation.
-            </div>
-            {close}
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center">
-              <div className="" style={{ width: "30px" }}>
-                <ShareIOS />
-              </div>
-              <div>Press share in navigation bar</div>
-            </div>
-
-            <div className="flex items-center justify-start">
-              <div>
-                <div
-                  className="flex items-center justify-center rounded border-2  border-solid border-white px-1 font-bold text-white"
-                  style={{
-                    width: "23px",
-                    height: "23px",
-                    marginLeft: "4px" as StyleHack,
-                  }}
-                >
-                  +
-                </div>
-              </div>
-              <div className="pl-2">Press Add to Home Screen</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  if (isChrome(window)) {
-    const android = isAndroid(window);
-    return (
-      <div style={isAndroid(window) ? mobileStyle : desktopStyle}>
-        <div
-          className={classNames(
-            "flex items-center justify-center gap-3 bg-black bg-opacity-60 text-white opacity-90 shadow-lg backdrop-blur-2xl",
-            android ? "p-4" : "p-1",
-          )}
-        >
-          <div className="text-sm opacity-70">
-            Add Windy Civi To Your Desktop To Stay Up To Date With Legislation.
-          </div>
-          <button
-            className="my-1 mr-2 rounded bg-green-500 bg-opacity-50 px-2 text-white opacity-90"
-            onClick={onInstall}
-          >
-            Install
-          </button>
-          <div className="py-1">{close}</div>
-        </div>
-      </div>
-    );
-  }
-  return <></>;
 };
 
 const pwaInstallHandler = new PwaInstallHandler();
 
-export const PWAInstallClient = () => {
-  const cookies = cookieFactory(document);
+export const PWAInstall = () => {
+  // const cookies = cookieFactory(document);
   const [showPrompt, setShowPrompt] = useState(false);
   useEffect(() => {
     pwaInstallHandler.addListener((canInstall) => {
-      const shouldDismiss = cookies.get("dismiss-pwa-install-prompt");
-      if (canInstall && !shouldDismiss) {
+      // const shouldDismiss = cookies.get("dismiss-pwa-install-prompt");
+      if (canInstall) {
         setShowPrompt(true);
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onClose = () => {
-    const cookies = cookieFactory(document);
-    cookies.set("dismiss-pwa-install-prompt", "true", 30);
-    setShowPrompt(false);
-  };
+  // const onClose = () => {
+  //   // const cookies = cookieFactory(document);
+  //   // cookies.set("dismiss-pwa-install-prompt", "true", 30);
+  //   setShowPrompt(false);
+  // };
 
   const onInstall = async () => {
     pwaInstallHandler.install();
@@ -239,28 +155,8 @@ export const PWAInstallClient = () => {
   return (
     <PwaInstallPrompt
       showModal={showPrompt}
-      onClose={onClose}
+      // onClose={onClose}
       onInstall={onInstall}
     />
   );
 };
-
-export const ClientOnly = (props: { children: () => JSX.Element }) => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    if (window.document) {
-      setIsClient(true);
-    }
-  }, []);
-
-  if (isClient) {
-    return props.children();
-  } else {
-    return <></>;
-  }
-};
-
-export const PWAInstall = () => (
-  <ClientOnly>{() => <PWAInstallClient />}</ClientOnly>
-);
