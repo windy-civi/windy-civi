@@ -6,7 +6,7 @@ import { FaGear } from "react-icons/fa6";
 import { AppShellLoaderData } from "./types";
 import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
-import { FaCode, FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
 import {
   isSupportedLocale,
