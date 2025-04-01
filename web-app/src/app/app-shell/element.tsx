@@ -1,13 +1,12 @@
 import { Outlet, NavLink, useLoaderData, useLocation } from "react-router-dom";
-
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleHack, classNames } from "../design-system/styles";
 import { Feed } from "../feed/element";
 import { FaGear } from "react-icons/fa6";
 import { AppShellLoaderData } from "./types";
 import { AppProvider } from "./context";
 import { Logo } from "../design-system/Icons";
-import { FaCode, FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { getFlagIcon } from "@windy-civi/domain/locales/flags";
 import {
   isSupportedLocale,
@@ -15,6 +14,7 @@ import {
   getLocaleGradient,
 } from "@windy-civi/domain/locales";
 import { isSupportedTag, TagMap } from "@windy-civi/domain/tags";
+import { useHandleNativeBridgeMessage } from "../utils/useHandleNativeBridgeMessage";
 
 // Add this new component before the Navigation component
 const FeedNavItem = ({ href, name }: { href: string; name: string }) => {
@@ -217,7 +217,6 @@ const Navigation = (props: AppShellLoaderData) => {
   return (
     <HeaderScrollContainer>
       <Logo />
-      <NavItem href="/contribute" name="Contribute" icon={<FaCode />} />
       <NavItem href="/preferences" name="Preferences" icon={<FaGear />} />
       {/* Adds links for feeds based on user preferences */}
       {props.availableFeeds.map(({ href, name }) => (
@@ -229,6 +228,24 @@ const Navigation = (props: AppShellLoaderData) => {
 
 export function AppShell() {
   const result = useLoaderData() as AppShellLoaderData;
+
+  const { handleNativeBridgeMessage } = useHandleNativeBridgeMessage(
+    (status) => {
+      // Handle notification status updates
+      alert(`${status} is the status`);
+    },
+    (error) => {
+      // Handle native bridge errors
+      alert(`${error} is the error`);
+    },
+  );
+
+  useEffect(() => {
+    window.addEventListener("message", handleNativeBridgeMessage);
+    return () =>
+      window.removeEventListener("message", handleNativeBridgeMessage);
+  }, [handleNativeBridgeMessage]);
+
   return (
     <AppProvider value={result.env}>
       <NavigatorShell

@@ -1,34 +1,20 @@
-import { useCallback } from "react";
-import {
-  WebView as NativeWebView,
-  WebViewMessageEvent,
-} from "react-native-webview";
+import { WebView as NativeWebView } from "react-native-webview";
 import { Linking } from "react-native";
-import { onUserPreferences } from "../helpers/native-web-bridge";
-import { useStorage } from "../helpers/hooks/useStorage";
+import { useHandleWebBridgeMessage } from "../helpers/hooks/useHandleWebBridgeMessage";
+import { useRef } from "react";
 
 export default function WebView() {
-  const { storeData } = useStorage();
-
-  const handleMessage = useCallback(
-    (event: WebViewMessageEvent) => {
-      onUserPreferences((userPreferences) => {
-        storeData({
-          key: "userPreferences",
-          value: JSON.stringify(userPreferences),
-        });
-      }, event.nativeEvent.data);
-    },
-    [storeData]
-  );
+  const webViewRef = useRef<NativeWebView>(null);
+  const { handleWebBridgeMessage } = useHandleWebBridgeMessage(webViewRef);
 
   return (
     <NativeWebView
+      ref={webViewRef}
       source={{ uri: "https://windycivi.com/" }}
       bounces={false}
       overScrollMode="never"
       pullToRefreshEnabled={false}
-      onMessage={handleMessage}
+      onMessage={handleWebBridgeMessage}
       onShouldStartLoadWithRequest={(event) => {
         if (event.navigationType === "click" && event.url) {
           Linking.openURL(event.url);

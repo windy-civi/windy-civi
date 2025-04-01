@@ -1,8 +1,8 @@
-import { CustomScreen } from "../design-system";
+import { CustomSection } from "../../design-system";
 
 export const Contribute = () => {
   return (
-    <CustomScreen title="About Us">
+    <CustomSection title="About Us">
       <div className="max-w-screen-md text-center mb-8">
         <p className="mb-4 text-white">
           We are a non-profit open source project that is built at Chi Hack
@@ -45,6 +45,6 @@ export const Contribute = () => {
           </a>
         </div>
       </div>
-    </CustomScreen>
+    </CustomSection>
   );
 };
