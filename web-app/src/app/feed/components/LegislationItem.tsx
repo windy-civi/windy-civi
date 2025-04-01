@@ -191,10 +191,12 @@ export const LegislationItem = ({
       title: "Legislation Details",
       content: <JsonViewer data={bill} />,
     },
-    gpt?.gpt_summary && {
-      title: "Windy Civi Analysis Results",
-      content: <JsonViewer data={gpt} />,
-    },
+    gpt?.gpt_summary
+      ? {
+          title: "Windy Civi Analysis Results",
+          content: <JsonViewer data={gpt} />,
+        }
+      : false,
   ].filter((item): item is Summary => item !== false);
 
   // Get the tags that overlap with the user's preferences
