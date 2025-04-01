@@ -19,10 +19,9 @@ export const extractHeadlineFromSummary = (
   }
 
   // Old format. May be removed in the future.
-  const summary = gpt.gpt_summary;
+  const summary = gpt.gpt_summary || "";
   // Check if the summary starts with a single quote
-  if (!gpt.gpt_summary.startsWith("'"))
-    return { headline: null, details: null };
+  if (!summary.startsWith("'")) return { headline: null, details: null };
 
   // Find the end of the headline (either a closing quote followed by " - " or just a closing quote)
   const headlineEndWithDetails = summary.indexOf("' - ");
