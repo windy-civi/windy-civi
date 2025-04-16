@@ -62,21 +62,22 @@
 - 🧩 **Submodules Keep Repos Lean**  
   Git submodules let us split large datasets across repos, so no single repo gets bloated.
 
-## Government Update Data Sources
+## Environment Setup For This Experiment
 
-Both datasets below are built around the OpenCivicData format.
+For now, we aren't doing any coding that touches the previous code. All code/decisions should be in this `scraper_next` folder as an isolated experiment. If you don't have git access, message @sartaj.
 
-### State/Federal Legislation (via OpenStates)
-- [How to run the OpenStates Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper)
+### Playing With The Data
+
+- [OpenState Illinois Scraper Output Files](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
 - [State/Federal OpenStates Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9)
   - password is ChiHackNight closing group phrase all lowercase
-- **Scrape Options + Tradeoffs**
-  - (We are using this for v1) [By running the scrapers directly](https://github.com/openstates/openstates-scrapers) Data will be much more up to date as it scrapes data directly.
-  - [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
+- [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
 
-### Chicago Legislation (via Councilmatic)
-Councilmatic also exports data in OCD format.
-  - [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
+### Advanced: Running Scrapers / PG Dumps
+- Open States
+  - [via Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper). We are using this for v1. [By running the scrapers directly](https://github.com/openstates/openstates-scrapers), data will be much more up to date as it scrapes data directly. It also allow us to run certain scrapers, like USA, multiple times a day.
+  - [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
+- [Chicago SQL Dump](https://github.com/datamade/chicago-council-scrapers/releases). This updates every night and is managed by Datamade, who we have already been collaborating with on Chicago data. They also do stuff like AI summaries that we can pre-pull.
 
 ## Proposal
 
