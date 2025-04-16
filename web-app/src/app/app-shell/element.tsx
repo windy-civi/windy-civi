@@ -232,11 +232,11 @@ export function AppShell() {
   const { handleNativeBridgeMessage } = useHandleNativeBridgeMessage(
     (status) => {
       // Handle notification status updates
-      alert(`${status} is the status`);
+      console.log(`${status} is the status`);
     },
     (error) => {
       // Handle native bridge errors
-      alert(`${error} is the error`);
+      console.log(`${error} is the error`);
     },
   );
 
