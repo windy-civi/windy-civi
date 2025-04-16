@@ -12,27 +12,45 @@
 
 I'll update the bolded parts to make them more accessible to non-technical people while maintaining the marketing-oriented style:
 
-## Why Hashed Append Only Log
+## Why Use a Hashed Append-Only Log?
 
-I'll update the bullet points with appropriate emojis and give the bolded headers a more political activist tone:
+- 🔐 **Truly Peer-to-Peer**  
+  Everyone keeps their own copy of the data—no central server needed, no extra cost.
 
-I'll clean this up for you to make the information more concise and ensure consistent formatting with headers and emojis for all items.
+- 📜 **The Constitution Is Basically a Blockchain**  
+  Government changes through amendments. Our log reflects this: permanent, append-only, and transparent.
 
-## Why Hashed Append Only Log
+- 💻 **Highly Tailored Custom Feeds Built With Code + AI**  
+  Composable event logs will be easy to filter, tag, and summarize. Orgs can compose those feeds too in order to make highly tailored feeds for publishing.
 
-- 🔐 **Fully P2P/Distrubuted Database** - Users maintain their own copy of government data, creating a decentralized ecosystem where civic information lives on the edge without increasing costs.
-- 📜 **The Constitution Is A Blockchain** - Government updates follow immutable patterns with permanent legislation and amendments as change mechanisms—our architecture mirrors this naturally.
-- 💻 **Highly Tailored Feeds** - Composable Event Logs allow orgs to filter/tag/summarize updates with AI and code. Those feeds can then be used to compose even more tailored feeds, where AI can be used to make highly readable news feed updates.
-- 🤖 **Bots On Bots** - Enables organizations (including us!) to easily create bots for tasks like updating Bluesky feeds or replying on Reddit.
-- ⛓️ **Decentralized Verification** - Blockchain hashing and public key verification allow users to independently validate content and authorship without centralized authority. For signatures, we will use the [Decentralized Identifier Open Standard](https://www.w3.org/TR/did-1.0/) (same one used by blueky).
-- 📢 **Get/Push Updates All The Ways** - Update mechanisms works with P2P sync, polling, pub-sub models, WebRTC, email, RSS, and push notifications.
-- ⏪ **Bonus: Expose Hidden Patterns of Power** - Not for us, but would be a dope breakout: Architecture enables "replay" of legislative sessions, revealing voting patterns, timing dependencies, and influence networks.
+- 🤖 **Bots Can Build On Bots**  
+  Organizations can automate updates—think Reddit replies or Bluesky posts—on top of each other.
 
-## Why Open Civic Data As The Parent Schema
-- 🤝 **Interop With Civic Tech Community** - Event log regenerates Open Civic Data structures, ensuring interoperability with the broader civic technology ecosystem.
-- 🔄 **Leverage Existing Data Sources** - Compatible with established sources (openstates, councilmatic) that use open civic data format, increasing likelihood of adoption by other organizations.
-- 📱 **Enhanced Client App Performance** - WindyCivi client app can sync just updated information, enabling better push notifications and Web3 functionality.
-- 🧠 **Streamlined AI Workflows** - Future AI processes can easily iterate over event logs for efficient analysis.
+- ⛓️ **Trust Without a Middleman**  
+  Blockchain hashes + public key signatures let users verify data themselves. We use [Decentralized Identifiers](https://www.w3.org/TR/did-1.0/), just like Bluesky.
+
+- 📢 **So Many Outputs**  
+  Supports everything: peer-to-peer, pub-sub, polling, WebRTC, email, RSS, push—notifications, etc. They will all work naturally.
+
+- ⏪ **Bonus: Reveal Power Dynamics**  
+  Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
+
+- 📱 **Smarter Windy Civi App (and enables other people to make clients)**  
+  Only syncs what changed. Enables real-time updates, push notifications, and Web3 features.
+
+---
+
+## Why Open Civic Data as the Base Schema?
+
+- 🤝 **Plug Into the Civic Tech Ecosystem**  
+  Uses familiar Open Civic Data formats, making it easy to integrate with existing tools and scrapers.
+
+- 🔄 **Reuse Existing Data**  
+  Works with platforms like OpenStates and Councilmatic, giving us access to many data sources.
+
+## What about other Feeds
+
+Lot of government data, like executive orders, are RSS feeds. This architecture should naturally allow us to add RSS feeds.
 
 ## Exploring Data
 
