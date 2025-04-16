@@ -9,6 +9,7 @@
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
 - [How append-only logs](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html) are used in p2p/blockchain applications.
 - [Beginners guide](https://www.kurrent.io/event-sourcing) to event sourced databases and their benefits.
+- [Bluesky LGBTQ+ Legislation Alerts](https://bsky.app/profile/legialerts.org) This incredible team has manually created a system that I think we can make tooling for that they would potentially want to use.
 
 ## Why Use a Hashed Append-Only Log?
 
@@ -21,8 +22,8 @@
 - 💻 **Highly Tailored Custom Feeds Built With Code + AI**  
   Composable event logs will be easy to filter, tag, and summarize. Orgs can compose those feeds too in order to make highly tailored feeds for publishing.
 
-- 🤖 **Bots Can Build On Bots**  
-  Organizations can automate updates—think Reddit replies or Bluesky posts—on top of each other.
+- 🤖 **Publish Everywhere with Bots**  
+  Organizations can automate updates to any number of platforms easily, from Blue Sky Bot Alert posters] —think Reddit replies or Bluesky posts—on top of each other. In addition, we can make tooling to have public RSS feeds that can then be imported by news organizations.
 
 - ⛓️ **Trust Without a Middleman**  
   Blockchain hashes + public key signatures let users verify data themselves. We use [Decentralized Identifiers](https://www.w3.org/TR/did-1.0/), just like Bluesky.
@@ -34,7 +35,7 @@
   Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
 - 📱 **Our App Becomes A Glorified P2P Feed Reader With Civic Tendencies**  
-  By being a P2P feed reader with special features around civic data, we simplify the app itself, allow others to make client apps, and makes it easy for us to do things like allow users to add custom RSS feeds on their end.
+  By being a P2P feed reader with special features around civic data, we simplify the app itself, and allow others to make their own client apps.
 
 - 🛜 **RSS Feeds Just Work**  
   Feed-based design lets us easily pull in existing sources like Executive Orders or court decisions via RSS, and allows organizations to pull news website feeds.
