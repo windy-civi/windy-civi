@@ -33,7 +33,7 @@
 - ⏪ **Bonus: Reveal Power Dynamics**  
   Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
-- 📱 **Windy Civi App Becomes A Suped Up P2P Feed Reader**  
+- 📱 **Our App Becomes A Glorified P2P Feed Reader With Civic Tendencies**  
   By being a P2P feed reader with special features around civic data, we simplify the app itself, allow others to make client apps, and makes it easy for us to do things like allow users to add custom RSS feeds on their end.
 
 - 🛜 **RSS Feeds Just Work**  
