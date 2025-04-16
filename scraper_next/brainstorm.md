@@ -37,7 +37,7 @@ Councilmatic also exports data in OCD format.
 
 ## Proposals
 
-### Potential Folder Structure + Filename Convention
+## Overall Folder Structure + Filename Convention
 
 ```
 /open-civic-data-blockchain/
@@ -92,7 +92,7 @@ Councilmatic also exports data in OCD format.
 
 ### Potential Git Structure
 
-#### Session Repo
+### Session Repo
 ```
 # This repo should be a blockchain-like append only log
 /
@@ -120,7 +120,7 @@ Councilmatic also exports data in OCD format.
     └── ...
 ```
 
-#### Locale Repo
+### Locale Repo
 Will contain links to git submodules that have event logs for different sessions. Will also contain scripts to rebuild data easily.
 
 ```
@@ -144,7 +144,7 @@ ocd-blockchain-illinois/
    └── 2014-2018/
 ```
 
-#### Main Repo
+### Main Repo
 
 ```
 open-civic-data-blockchain/
@@ -170,7 +170,7 @@ open-civic-data-blockchain/
         └── scotland/                           # Scotland submodule
 ```
 
-#### How to handle metadata changes
+### How to handle metadata changes
 
 The metadata in `bill` can change scrape over scrape. We can use the fieldMask method here for keeping events small.
 
@@ -184,12 +184,12 @@ The metadata in `bill` can change scrape over scrape. We can use the fieldMask m
 }
 ```
 
-## To Solve
+## TODO
 
 ### Timestamps: Scrape Oriented vs Gov Oriented
 Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
 
-### Solving Unique IDs
+### Unique IDs
 There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
 
 - Jurisdiction ID: will follow OCD ID naming convention for folder structure `country:us/state:fl/government`
@@ -199,7 +199,7 @@ There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucut
 - Person ID: TODO
 - Event ID: TODO
 
-### Solving Bill Folder + Filename Convention
+### Bill Folder + Filename Convention
 - `bill.metadata`: `bill_id`/log/metadata_update_{TODO}.json
 - `bill.actions`: `bill_id`/log/action_{TODO}.json
 - `bill.votes`: `bill_id`/log/vote_{TODO}.json
