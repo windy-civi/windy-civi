@@ -3,6 +3,9 @@
 ## Important Links
 - [OpenStates Scraper Output Zip File](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
 - [Slack Discussion Thread](https://chihacknight.slack.com/archives/C047500M5RS/p1744230231887699)
+- [How to run the OpenStates Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper)
+- [State/Federal OpenStates OCD Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9) (this won't be the output we use, but is useful for exploring how OpenStates works) (password is ChiHackNight closing group phrase all lowercase)
+- [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
 
 ## Overview
 
