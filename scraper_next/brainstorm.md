@@ -33,8 +33,8 @@
 - ⏪ **Bonus: Reveal Power Dynamics**  
   Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
-- 📱 **Smarter P2P WindyCivi Client (And Competitors)**  
-  P2P enables decentralized features like notifications—and others can build their own apps using the same data.
+- 📱 **Windy Civi App Becomes A Suped Up P2P Feed Reader**  
+  By being a P2P feed reader with special features around civic data, we simplify the app itself, allow others to make client apps, and makes it easy for us to do things like allow users to add custom RSS feeds on their end.
 
 - 🛜 **RSS Feeds Just Work**  
   Feed-based design lets us easily pull in existing sources like Executive Orders or court decisions via RSS, and allows organizations to pull news website feeds.
