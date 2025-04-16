@@ -1,15 +1,83 @@
-# Brainstorm: Open Civic Data Format => Open Civic Blockchain Format
+# Open Civic Data Blockchain Brainstorm
 
-## Communications
+## Housekeeping & Environment Setup
+
+### Communications
 - [Discussion via Slack](https://chihacknight.slack.com/archives/C047500M5RS/p1744230231887699)
 - [Task Board via Slack](https://chihacknight.slack.com/lists/T04KM9VQY/F07ECPCHH5M?view_id=View08NQ33E5R7)
 - (this file) [Collaborative Brainstorming via Git](https://github.com/windy-civi/windy-civi/blob/60-blockchain-open-civic-data/scraper_next/brainstorm.md): Feel free to edit.
 
-## Prior Art
+### Prior Art
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
 - [How append-only logs](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html) are used in p2p/blockchain applications.
 - [Beginners guide](https://www.kurrent.io/event-sourcing) to event sourced databases and their benefits.
 - [Bluesky LGBTQ+ Legislation Alerts](https://bsky.app/profile/legialerts.org) This incredible team has manually created a system that I think we can make tooling for that they would potentially want to use.
+
+### Environment Setup
+
+For now, we aren't doing any coding that touches the previous code. All code/decisions should be in this `scraper_next` folder as an isolated experiment. If you don't have git access, message @sartaj.
+
+#### Easy: Download Data and Explore With SQL Explorers
+
+- [OpenState Illinois Scraper Output Files](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
+- [State/Federal OpenStates Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9)
+  - password is ChiHackNight closing group phrase all lowercase
+- [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
+
+#### Advanced: Running Scrapers / Importing PG Dumps
+- Open States
+  - [via Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper). We are using this for v1. [By running the scrapers directly](https://github.com/openstates/openstates-scrapers), data will be much more up to date as it scrapes data directly. It also allow us to run certain scrapers, like USA, multiple times a day.
+  - [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
+- [Chicago SQL Dump](https://github.com/datamade/chicago-council-scrapers/releases). This updates every night and is managed by Datamade, who we have already been collaborating with on Chicago data. They also do stuff like AI summaries that we can pre-pull.
+
+## TODO List
+
+- [ ] **Timestamps: Scrape-Oriented vs. Gov-Oriented**  
+  Are log timestamps the time we scraped the data, or the time of the actual government update?  
+  What if a specific event doesn't have a timestamp?  
+  ➤ [Open Civic Data also discussed this](https://open-civic-data.readthedocs.io/en/latest/proposals/0101.html)
+- [ ] **Unique IDs**  
+  OpenStates uses a lot of generated UUIDs. Ideally, our folder/file structure and naming conventions should follow official legislative data.  
+  - **Jurisdiction ID**: Follows OCD naming convention — `country:us/state:fl/government`
+  - **Session ID**: TODO
+  - **Bill ID**: `jurisdiction_id/sessions/:session_id/bill.identifier` — use official ID like `HB250`
+  - **Vote Event ID**: TODO
+  - **Person ID**: TODO
+  - **Event ID**: TODO
+- [ ] **Bill Folder + Filename Convention**  
+  - `bill.metadata`: `bill_id/log/metadata_update_{TODO}.json`
+  - `bill.actions`: `bill_id/log/action_{TODO}.json`
+  - `bill.votes`: `bill_id/log/vote_{TODO}.json`
+  - `bill.sponsors`: `bill_id/log/sponsor_update_{TODO}.json`
+  - `bill.versions`:  
+    - File: `bill_id/files/version_{TODO}.pdf`  
+    - Log: `bill_id/log/version_add_{TODO}.json` (we can extract PDF content to JSON)
+  - `bill.documents`:  
+    - File: `bill_id/files/documents_{TODO}.pdf`  
+    - Log: `bill_id/log/document_add_{TODO}.json` (we can extract PDF content to JSON)
+- [ ] **Event Folder Convention**  
+  Events tied to sessions should live inside the session folder.  
+  Out-of-session events: can we define a reliable alternate time span for organization?
+- [ ] **How to Handle Metadata Changes**  
+  Metadata (like `bill`) may change from scrape to scrape.  
+  Use `fieldMask` for lightweight updates, or consider JSON Patch.  
+  ➤ https://jsonpatch.com  
+  ```json
+  // bill.metadata_events
+  {
+    "fieldMask": ["from_organization"],
+    "bill": {
+      "from_organization": ""
+    }
+  }
+  ```
+
+---
+
+
+# Open Civic Data Blockchain Proposal
+
+This proposal outlines a decentralized, peer-to-peer system for managing and publishing civic data using a blockchain-like append-only log. Built on the Open Civic Data schema and powered by Git, this architecture enables transparency, tamper-resistance, and flexibility in how public information is stored, shared, and consumed. By treating government data as a series of verifiable, timestamped events, we create an ecosystem where organizations and individuals can build custom civic feeds, automate updates, and uncover hidden dynamics in governance—all without relying on centralized servers.
 
 ## Why Use a Hashed Append-Only Log?
 
@@ -62,24 +130,6 @@
 - 🧩 **Submodules Keep Repos Lean**  
   Git submodules let us split large datasets across repos, so no single repo gets bloated.
 
-## Environment Setup For This Experiment
-
-For now, we aren't doing any coding that touches the previous code. All code/decisions should be in this `scraper_next` folder as an isolated experiment. If you don't have git access, message @sartaj.
-
-### Playing With The Data
-
-- [OpenState Illinois Scraper Output Files](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
-- [State/Federal OpenStates Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9)
-  - password is ChiHackNight closing group phrase all lowercase
-- [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
-
-### Advanced: Running Scrapers / PG Dumps
-- Open States
-  - [via Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper). We are using this for v1. [By running the scrapers directly](https://github.com/openstates/openstates-scrapers), data will be much more up to date as it scrapes data directly. It also allow us to run certain scrapers, like USA, multiple times a day.
-  - [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
-- [Chicago SQL Dump](https://github.com/datamade/chicago-council-scrapers/releases). This updates every night and is managed by Datamade, who we have already been collaborating with on Chicago data. They also do stuff like AI summaries that we can pre-pull.
-
-## Proposal
 
 ### Folder Structure + Filename Convention
 
@@ -132,33 +182,6 @@ For now, we aren't doing any coding that touches the previous code. All code/dec
 └── country:ca/                                 # Canada
     └── ...
 ```
-
-#### TODO
-
-##### Timestamps: Scrape Oriented vs Gov Oriented
-Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
-[Open Civic Data also discussed this](https://open-civic-data.readthedocs.io/en/latest/proposals/0101.html)
-
-##### Unique IDs
-There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
-
-- Jurisdiction ID: will follow OCD ID naming convention for folder structure `country:us/state:fl/government`
-- Session ID: TODO
-- Bill ID: `jurisidiction_id/sessions/:session_id`/`bill.identifier` - This ID should be the government ID, like HB250
-- Vote Event ID: TODO
-- Person ID: TODO
-- Event ID: TODO
-
-##### Bill Folder + Filename Convention
-- `bill.metadata`: `bill_id`/log/metadata_update_{TODO}.json
-- `bill.actions`: `bill_id`/log/action_{TODO}.json
-- `bill.votes`: `bill_id`/log/vote_{TODO}.json
-- `bill.sponsors`: `bill_id`/log/sponsor_update{TODO}.json
-- `bill.versions`: `bill_id`/files/version_{TODO}.pdf + `bill_id`/log/version_add{TODO}.json (we can extract the content as JSON)
-- `bill.documents`: `bill_id`/files/documents_{TODO}.pdf + `bill_id`/log/document_add{TODO}.json (we can extract the content as JSON)
-
-##### Event Folder Convention
-I think putting events specific to sessions within the session makes sense, but what about out of session events? Can we find some other reliable time span?
 
 ### Git Architecture
 
@@ -241,18 +264,4 @@ open-civic-data-blockchain/
     └── country:uk/
         ├── england/                            # England submodule
         └── scotland/                           # Scotland submodule
-```
-
-#### How to handle metadata changes
-
-The metadata in `bill` can change scrape over scrape. We can use the fieldMask method here for keeping events small.
-Also, lets check out JSON Patch: https://jsonpatch.com
-```
-// bill.metadata_events
-{
-    fieldMask: ["from_organization"]
-    bill: {
-        from_organization: ""
-    }
-}
 ```
