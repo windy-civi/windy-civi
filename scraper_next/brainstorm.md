@@ -7,8 +7,8 @@
 
 ## Prior Art
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
-- [How append-only logs are used in p2p/blockchain applications](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html).
-- [Beginners Guide To Event Sourced DB](https://www.kurrent.io/event-sourcing)
+- [How append-only logs](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html) are used in p2p/blockchain applications.
+- [Beginners guide](https://www.kurrent.io/event-sourcing) to event sourced databases and their benefits.
 
 ## Why Use a Hashed Append-Only Log?
 
@@ -40,8 +40,6 @@
 - 🛜 **Works For Free With RSS Feeds**  
   By being feed based, we can also import any RSS feeds with easy into our pipelines, allowing us to get things like Executive Order RSS feeds and Judicial decision feeds easily.
 
----
-
 ## Why Open Civic Data as the Base Schema?
 
 - 🤝 **Plug Into the Civic Tech Ecosystem**  
@@ -49,8 +47,24 @@
 
 - 🔄 **Reuse Existing Data**  
   Works with platforms like OpenStates and Councilmatic, giving us access to many data sources.
-  
-## Exploring Data
+
+## Why Git for Data Storage?
+
+- 📁 **Folders + Files = Maximum Portability**  
+  The most universal data structure—easy to read, edit, and share across tools and platforms.
+
+- 🔄 **Git Is Already Peer-to-Peer**  
+  Git is built on a distributed log. `git pull` works seamlessly in our app and AI workflows.
+
+- 🌐 **GitHub = Easy Browsing**  
+  Markdown rendering and file previews make GitHub a friendly UI for exploring without needing to clone.
+
+- 🧩 **Submodules Keep Repos Lean**  
+  Git submodules let us split large datasets across repos, so no single repo gets bloated.
+
+## Government Update Data Sources
+
+Both datasets below are built around the OpenCivicData format.
 
 ### State/Federal Legislation (via OpenStates)
 - [How to run the OpenStates Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper)
@@ -63,7 +77,6 @@
 ### Chicago Legislation (via Councilmatic)
 Councilmatic also exports data in OCD format.
   - [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
-
 
 ## Proposal
 
@@ -149,12 +162,6 @@ I think putting events specific to sessions within the session makes sense, but 
 ### Git Architecture
 
 We plan to auto-generate many git repo. 
-
-**Why Git:**
-- Of all data structures, folders+files are the most portable/readable by the most people.
-- Git is naturally p2p (its also built on a distributed log), making `git pull` an easy method to get updated data within our WindyCivi app and AI workflows.
-- GitHub makes exploring git easy. It's rich markdown and file renderes make it easy for people to explore without downloading.
-- Git submodules allows us to have a way to separate repos so 1 repo doesn't get too big in size.
 
 #### Session Git Repo
 
