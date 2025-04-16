@@ -9,9 +9,7 @@ import {
 import { useHandleNativeBridgeMessage } from "../../utils/useHandleNativeBridgeMessage";
 
 const isNativeWebView = () => {
-  if (typeof window === "undefined") return false;
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /wv/.test(userAgent) || /webview/.test(userAgent);
+  return "ReactNativeWebView" in window;
 };
 
 interface NotificationPreferencesProps {
