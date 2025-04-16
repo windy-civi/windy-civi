@@ -37,7 +37,7 @@ Councilmatic also exports data in OCD format.
 
 ## Proposals
 
-## Potential Folder Structure + Filename Convention
+### Potential Folder Structure + Filename Convention
 
 ```
 /open-civic-data-blockchain/
@@ -92,7 +92,7 @@ Councilmatic also exports data in OCD format.
 
 ### Potential Git Structure
 
-### Session Repo
+#### Session Repo
 ```
 # This repo should be a blockchain-like append only log
 /
@@ -120,7 +120,7 @@ Councilmatic also exports data in OCD format.
     └── ...
 ```
 
-### Locale Repo
+#### Locale Repo
 Will contain links to git submodules that have event logs for different sessions. Will also contain scripts to rebuild data easily.
 
 ```
@@ -144,7 +144,7 @@ ocd-blockchain-illinois/
    └── 2014-2018/
 ```
 
-### Main Repo
+#### Main Repo
 
 ```
 open-civic-data-blockchain/
@@ -170,7 +170,7 @@ open-civic-data-blockchain/
         └── scotland/                           # Scotland submodule
 ```
 
-### How to handle metadata changes
+#### How to handle metadata changes
 
 The metadata in `bill` can change scrape over scrape. We can use the fieldMask method here for keeping events small.
 
