@@ -1,33 +1,38 @@
 # Brainstorm: Open Civic Data Format => Open Civic Blockchain Format
 
-## Important Links
-
+## Communications
 - [Discussion via Slack](https://chihacknight.slack.com/archives/C047500M5RS/p1744230231887699)
 - [Task Board via Slack](https://chihacknight.slack.com/lists/T04KM9VQY/F07ECPCHH5M?view_id=View08NQ33E5R7)
 - (this file) [Collaborative Brainstorming via Git](https://github.com/windy-civi/windy-civi/blob/60-blockchain-open-civic-data/scraper_next/brainstorm.md): Feel free to edit.
 
-## Why Append Only Log
-
-Append only logs, or blockchains, or event sourcing, whatever you want to call it, serves as the data foundation of many types of Apps, including
-
-- Nearly all P2P systems use append-only logs with hashes (i.e. lite blockchain) for syncing. We intend to decentralize/distribute the Windy Civi data this way.
-- Maps well to government updates, as legislation is written as immutable items, with amendments used for edits.
-- We can rebuild other data structures easily from there, including the Open Civic Data format.
-- Works well for creating AI analysis pipelines for organizations that want to filter updates on things they care about.
-- Lend themselves well to future realtime data update capabilties since all UI will be event reactive. Ideally we could update federal data in real time.
-- Updates are very portable. Can be done with P2P syncing, timers, pubsub, webrtc, email, RSS, and push notifications.
-- Party trick: could we ever "replay" legislative sessions, and maybe even start getting data like how certain people submit votes after others vote?
-
-## Why Open Civic Data As The Parent Schema
-Both our data sources ([openstates](https://github.com/openstates/openstates-scrapers) and [councilmatic](https://github.com/datamade/chicago-council-scrapers)), expose things in the open civic data format. So making our model be backwards compatible with opencivicdata would make interop and chance of adoption by other orgs more likely.
-
-- Publish to All Social Media: P2P social media is built on blockchain tech. By having events, we can easily publish updates to different automated feeds across BlueSky, Mastadon, etc.
-- For WindyCivi client app: Our client app can sync just updated info, which will allow Windy Civi to better serve push, and be a Web3 app.
-- AI Workflows: Our future AI workflows can easily just iterate over the event logs.
-
-### Prior art/reading:
+## Prior Art
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
 - [How append-only logs are used in p2p/blockchain applications](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html).
+- [Beginners Guide To Event Sourced DB](https://www.kurrent.io/event-sourcing)
+
+I'll update the bolded parts to make them more accessible to non-technical people while maintaining the marketing-oriented style:
+
+## Why Hashed Append Only Log
+
+I'll update the bullet points with appropriate emojis and give the bolded headers a more political activist tone:
+
+I'll clean this up for you to make the information more concise and ensure consistent formatting with headers and emojis for all items.
+
+## Why Hashed Append Only Log
+
+- 🔐 **Fully P2P/Distrubuted Database** - Users maintain their own copy of government data, creating a decentralized ecosystem where civic information lives on the edge without increasing costs.
+- 📜 **The Constitution Is A Blockchain** - Government updates follow immutable patterns with permanent legislation and amendments as change mechanisms—our architecture mirrors this naturally.
+- 💻 **Highly Tailored Feeds** - Composable Event Logs allow orgs to filter/tag/summarize updates with AI and code. Those feeds can then be used to compose even more tailored feeds, where AI can be used to make highly readable news feed updates.
+- 🤖 **Bots On Bots** - Enables organizations (including us!) to easily create bots for tasks like updating Bluesky feeds or replying on Reddit.
+- ⛓️ **Decentralized Verification** - Blockchain hashing and public key verification allow users to independently validate content and authorship without centralized authority. For signatures, we will use the [Decentralized Identifier Open Standard](https://www.w3.org/TR/did-1.0/) (same one used by blueky).
+- 📢 **Get/Push Updates All The Ways** - Update mechanisms works with P2P sync, polling, pub-sub models, WebRTC, email, RSS, and push notifications.
+- ⏪ **Bonus: Expose Hidden Patterns of Power** - Not for us, but would be a dope breakout: Architecture enables "replay" of legislative sessions, revealing voting patterns, timing dependencies, and influence networks.
+
+## Why Open Civic Data As The Parent Schema
+- 🤝 **Interop With Civic Tech Community** - Event log regenerates Open Civic Data structures, ensuring interoperability with the broader civic technology ecosystem.
+- 🔄 **Leverage Existing Data Sources** - Compatible with established sources (openstates, councilmatic) that use open civic data format, increasing likelihood of adoption by other organizations.
+- 📱 **Enhanced Client App Performance** - WindyCivi client app can sync just updated information, enabling better push notifications and Web3 functionality.
+- 🧠 **Streamlined AI Workflows** - Future AI processes can easily iterate over event logs for efficient analysis.
 
 ## Exploring Data
 
