@@ -229,16 +229,7 @@ const Navigation = (props: AppShellLoaderData) => {
 export function AppShell() {
   const result = useLoaderData() as AppShellLoaderData;
 
-  const { handleNativeBridgeMessage } = useHandleNativeBridgeMessage(
-    (status) => {
-      // Handle notification status updates
-      alert(`${status} is the status`);
-    },
-    (error) => {
-      // Handle native bridge errors
-      alert(`${error} is the error`);
-    },
-  );
+  const { handleNativeBridgeMessage } = useHandleNativeBridgeMessage();
 
   useEffect(() => {
     window.addEventListener("message", handleNativeBridgeMessage);
