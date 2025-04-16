@@ -3,6 +3,7 @@ https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip
 
 ## Potential Folder Structure + Filename Convention
 
+```
 ocd-jurisdiction
 	/country:us
 		/state:fl/government
@@ -16,7 +17,7 @@ ocd-jurisdiction
 					/votes
 						hb250/
 			/events
-				
+```				
 
 ## Other Events
 
