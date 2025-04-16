@@ -208,7 +208,7 @@ open-civic-data-blockchain/
 #### How to handle metadata changes
 
 The metadata in `bill` can change scrape over scrape. We can use the fieldMask method here for keeping events small.
-
+Also, lets check out JSON Patch: https://jsonpatch.com
 ```
 // bill.metadata_events
 {
