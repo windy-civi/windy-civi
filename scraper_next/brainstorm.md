@@ -5,10 +5,21 @@
 - [Official Open Civic Data Standard](https://open-civic-data.readthedocs.io/en/latest/index.html)
 
 ## Exploring Source Data
-- [OpenStates Scraper Output Illinois Zip File](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
+
+###  **Zip Files For Anaylsis / Test Data**
+- [OpenStates Scraper Output For Illinois](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
+
+### State/Federal Legislation (via OpenStates)
 - [How to run the OpenStates Scraper](https://docs.openstates.org/contributing/scrapers/#running-your-first-scraper)
-- [State/Federal OpenStates Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9) (this won't be the output we use, but is useful for exploring how OpenStates works) (password is ChiHackNight closing group phrase all lowercase)
-- [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
+- [State/Federal OpenStates Data Explorer](https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoia1V2WEx4YUJnWlUzaXFYODdGbTM4TEd6ajVKVXYyK01tVUxFWXBjSHpoalBqZEZRVE4vRGFGU2hZRjRpRTdxMjBWU3poaS9RNG1wNiIsInMiOiJUTnROd2J3dHNxdjQrSEdlVnV3SzhRPT0iLCJpIjoieEZoK2xtZXJlZTRRMk1JQSJ9)
+  - password is ChiHackNight closing group phrase all lowercase
+- **Scrape Options + Tradeoffs**
+  - (We are using this for v1) [By running the scrapers directly](https://github.com/openstates/openstates-scrapers) Data will be much more up to date as it scrapes data directly.
+  - [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
+
+### Chicago Legislation (via Councilmatic)
+Councilmatic also exports data in OCD format.
+  - [Chicago OCD Data Explorer](https://puddle.datamade.us/chicago_council-347e82e) Explore Councilmatic PG Dump for Chicago OCD data
 
 ## Overview
 
@@ -23,12 +34,6 @@ Both our data sources ([openstates](https://github.com/openstates/openstates-scr
 ### Prior art/reading:
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
 - [How append-only logs are used in p2p/blockchain applications](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html).
-
-### OpenStates Specific Info
-
-We can get OpenStates data 2 ways
-- [via SQL Dump](https://open.pluralpolicy.com/data/), which updates every few days, and has bill full text, in addition to a lot of other content like maps data.
-- [By running the scrapers directly](https://github.com/openstates/openstates-scrapers) Data will be much more up to date as it scrapes data directly.
 
 ## Potential Folder Structure + Filename Convention
 
