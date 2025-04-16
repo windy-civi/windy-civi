@@ -40,19 +40,53 @@ Councilmatic also exports data in OCD format.
 ## Potential Folder Structure + Filename Convention
 
 ```
-ocd-jurisdiction
-	/country:us
-		/state:fl/government
-			/sessions
-				/session-214
-					/bills
-						/HB250
-								vote_event_{timestamp}.json
-								bill_event_somenamingconvetion.json
-								bill_event_somenamingconvetion.json
-					/votes
-						hb250/
-			/events
+/open-civic-data-blockchain/
+├── country:us/                                 # United States
+│   ├── state:il/                               # Illinois state
+│   │   ├── sessions/                           # Legislative sessions
+│   │   │   ├── ocd-session/country:us/state:il/2023-2024/  # Full OCD session ID
+│   │   │   │   ├── bills/                      # Bills in this session
+│   │   │   │   │   ├── sb1234/                 # Senate Bill 1234
+│   │   │   │   │   │   ├── logs/               # Event logs folder
+│   │   │   │   │   │   │   ├── 20240115T123045Z_session_bill_created.json  # Initial bill creation in session
+│   │   │   │   │   │   │   ├── 20240115T123045Z_metadata_created.json      # Initial metadata creation
+│   │   │   │   │   │   │   ├── 20240117T143022Z_metadata_updated.json      # Metadata update with field mask
+│   │   │   │   │   │   │   ├── 20240117T143156Z_sponsor_added.json         # Sponsors added
+│   │   │   │   │   │   │   ├── 20240120T092133Z_version_added.json         # Version document added
+│   │   │   │   │   │   │   ├── 20240130T152247Z_action_added.json          # Action recorded
+│   │   │   │   │   │   │   ├── 20240215T103045Z_doc_added.json             # Supporting document added
+│   │   │   │   │   │   │   ├── 20240315T140011Z_vote_initiated.json        # Vote started
+│   │   │   │   │   │   │   ├── 20240315T143022Z_vote_updated.json          # Vote partial results
+│   │   │   │   │   │   │   └── 20240315T150537Z_vote_finalized.json        # Vote complete
+│   │   │   │   │   │   └── files/              # Raw file storage
+│   │   │   │   │   │       ├── bill_introduced.pdf      # Original version document
+│   │   │   │   │   │       ├── bill_amended.pdf         # Amended version document
+│   │   │   │   │   │       └── fiscal_note.pdf          # Supporting document
+│   │   │   │   │   ├── hb0789/                 # House Bill 789
+│   │   │   │   │   │   ├── logs/               # Event logs folder
+│   │   │   │   │   │   │   ├── 20240118T090023Z_session_bill_created.json  # Initial bill creation in session
+│   │   │   │   │   │   │   ├── 20240118T090023Z_metadata_created.json      # Initial metadata creation
+│   │   │   │   │   │   │   └── ...
+│   │   │   │   │   │   └── files/              # Raw file storage
+│   │   │   │   │   │       └── ...
+│   │   │   │   │   └── ...
+│   │   │   │   └── events/                     # Events for this session
+│   │   │   │       ├── 2024-04-15-senate-appropriations-hearing.json  # Senate committee hearing
+│   │   │   │       ├── 2024-02-22-house-floor-session.json            # House floor session
+│   │   │   │       └── ...
+│   │   │   ├── ocd-session/country:us/state:il/2021-2022/  # Previous session
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   └── events/                            # Events not tied to a specific session
+│   │       ├── 2024-07-15-joint-commission-meeting.json  # Joint commission meeting
+│   │       ├── 2024-08-20-special-task-force.json        # Special task force meeting
+│   │       └── ...
+│   ├── state:ca/                               # California state
+│   │   └── ...
+│   └── state:ny/                               # New York state
+│       └── ...
+└── country:ca/                                 # Canada
+    └── ...
 ```				
 
 ### Other Events To Consider
