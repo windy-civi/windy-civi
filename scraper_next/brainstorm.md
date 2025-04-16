@@ -39,7 +39,7 @@
 - 🛜 **RSS Feeds Just Work**  
   Feed-based design lets us easily pull in existing sources like Executive Orders or court decisions via RSS, and allows organizations to pull news website feeds.
 
-## Why Open Civic Data as the Base Schema?
+## Why [Open Civic Data](https://open-civic-data.readthedocs.io/en/latest/) as the Base Schema?
 
 - 🤝 **Plug Into the Civic Tech Ecosystem**  
   Uses familiar Open Civic Data formats, making it easy to integrate with existing tools and scrapers.
