@@ -89,14 +89,85 @@ Councilmatic also exports data in OCD format.
     └── ...
 ```				
 
-### Other Events To Consider
+
+### Potential Git Structure
+
+### Session Repo
+```
+# This repo should be a blockchain-like append only log
+/
+├── README.md                  # Session-specific information
+├── bills/                     # Bills in this session
+│   ├── sb1234/                # Senate Bill 1234
+│   │   ├── logs/              # Event logs folder
+│   │   │   ├── 20240115T123045Z_session_bill_created.json
+│   │   │   ├── 20240115T123045Z_metadata_created.json
+│   │   │   ├── 20240117T143022Z_metadata_updated.json
+│   │   │   └── ...
+│   │   └── files/             # Raw file storage
+│   │       ├── bill_introduced.pdf
+│   │       ├── bill_amended.pdf
+│   │       └── fiscal_note.pdf
+│   ├── hb0789/                # House Bill 789
+│   │   ├── logs/
+│   │   │   └── ...
+│   │   └── files/
+│   │       └── ...
+│   └── ...
+└── events/                    # Events for this session
+    ├── 2024-04-15-senate-appropriations-hearing.json
+    ├── 2024-02-22-house-floor-session.json
+    └── ...
+```
+
+### Locale Repo
+Will contain links to git submodules that have event logs for different sessions. Will also contain scripts to rebuild data easily.
 
 ```
-// bill.actions
-// bill.sponsorships
-// bill.versions
-// bill.scrape_correction
-  // the scraper got messsed up and we need to update some old data.
+# This repository implements the Open Civic Data format as a git-based system.
+# Git submodules function as append-only blockchain logs to track all changes
+# with complete history and traceability.
+
+ocd-blockchain-illinois/
+├── .gitmodules
+├── README.md
+├── scripts/
+│   ├── scrape.py # Shortcut to directly scrape for this locale
+|   └── rebuild.py # To rebuild OCD data from blockchain logs
+├── sessions/
+│   ├── ocd-blockchain-illinois/ocd-session/country:us/state:il/2023-2024/
+│   ├── ocd-blockchain-illinois/ocd-session/country:us/state:il/2021-2022/
+│   └── ocd-blockchain-illinois/ocd-session/country:us/state:il/2019-2020/
+└── events/
+   ├── 2022-2026/
+   ├── 2018-2022/
+   └── 2014-2018/
+```
+
+### Main Repo
+
+```
+open-civic-data-blockchain/
+├── .gitmodules
+├── README.md
+├── scripts/
+│   ├── update_all.sh
+│   ├── integrity_check.py
+│   └── generate_cross_jurisdictional_report.py
+└── jurisdictions/
+    ├── country:us/
+    │   ├── state:il/                           # Illinois submodule
+    │   ├── state:ca/                           # California submodule
+    │   ├── state:ny/                           # New York submodule
+    │   ├── district:dc/                        # Washington DC submodule
+    │   ├── county:us/state:va/fairfax/         # Fairfax County submodule
+    │   └── place:us/state:tx/austin/           # City of Austin submodule
+    ├── country:ca/
+    │   ├── province:on/                        # Ontario province submodule
+    │   └── province:bc/                        # British Columbia submodule
+    └── country:uk/
+        ├── england/                            # England submodule
+        └── scotland/                           # Scotland submodule
 ```
 
 ### How to handle metadata changes
@@ -114,6 +185,9 @@ The metadata in `bill` can change scrape over scrape. We can use the fieldMask m
 ```
 
 ## To Solve
+
+### Timestamps: Scrape Oriented vs Gov Oriented
+Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
 
 ### Solving Unique IDs
 There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
