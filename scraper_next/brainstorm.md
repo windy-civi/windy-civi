@@ -1,4 +1,4 @@
-# Brainstorm: Open Civic Data => Blockchain
+# Brainstorm: Open Civic Data Format => Open Civic Blockchain Format
 
 ## Important Links
 
@@ -6,10 +6,19 @@
 - [Task Board via Slack](https://chihacknight.slack.com/lists/T04KM9VQY/F07ECPCHH5M?view_id=View08NQ33E5R7)
 - (this file) [Collaborative Brainstorming via Git](https://github.com/windy-civi/windy-civi/blob/60-blockchain-open-civic-data/scraper_next/brainstorm.md): Feel free to edit.
 
-## Overview
+## Why Append Only Log
 
-By building Open Civic Data like as an immutable append-only event log, we can better enable a number of things.
+Append only logs, or blockchains, or event sourcing, whatever you want to call it, serves as the data foundation of many types of Apps, including
 
+- Nearly all P2P systems use append-only logs with hashes (i.e. lite blockchain) for syncing. We intend to decentralize/distribute the Windy Civi data this way.
+- Maps well to government updates, as legislation is written as immutable items, with amendments used for edits.
+- We can rebuild other data structures easily from there, including the Open Civic Data format.
+- Works well for creating AI analysis pipelines for organizations that want to filter updates on things they care about.
+- Lend themselves well to future realtime data update capabilties since all UI will be event reactive. Ideally we could update federal data in real time.
+- Updates are very portable. Can be done with P2P syncing, timers, pubsub, webrtc, email, RSS, and push notifications.
+- Party trick: could we ever "replay" legislative sessions, and maybe even start getting data like how certain people submit votes after others vote?
+
+## Why Open Civic Data As The Parent Schema
 Both our data sources ([openstates](https://github.com/openstates/openstates-scrapers) and [councilmatic](https://github.com/datamade/chicago-council-scrapers)), expose things in the open civic data format. So making our model be backwards compatible with opencivicdata would make interop and chance of adoption by other orgs more likely.
 
 - Publish to All Social Media: P2P social media is built on blockchain tech. By having events, we can easily publish updates to different automated feeds across BlueSky, Mastadon, etc.
