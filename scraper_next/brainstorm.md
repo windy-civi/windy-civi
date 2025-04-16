@@ -33,12 +33,11 @@
 - ⏪ **Bonus: Reveal Power Dynamics**  
   Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
-- 📱 **Smarter P2P Windy Civi Client (+ others can make competitor clients)**  
-  By being P2P, it's easier for us to implement things like decentralized notifications.
-  Also, anyone else can make client apps too, so the dataset could outlive our app.
+- 📱 **Smarter P2P WindyCivi Client (And Competitors)**  
+  P2P enables decentralized features like notifications—and others can build their own apps using the same data.
 
-- 🛜 **Works For Free With RSS Feeds**  
-  By being feed based, we can also import any RSS feeds with easy into our pipelines, allowing us to get things like Executive Order RSS feeds and Judicial decision feeds easily.
+- 🛜 **RSS Feeds Just Work**  
+  Feed-based design lets us easily pull in existing sources like Executive Orders or court decisions via RSS, and allows organizations to pull news website feeds.
 
 ## Why Open Civic Data as the Base Schema?
 
