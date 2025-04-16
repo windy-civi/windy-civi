@@ -10,8 +10,6 @@
 - [How append-only logs are used in p2p/blockchain applications](https://scuttlebot.io/more/protocols/secure-scuttlebutt.html).
 - [Beginners Guide To Event Sourced DB](https://www.kurrent.io/event-sourcing)
 
-I'll update the bolded parts to make them more accessible to non-technical people while maintaining the marketing-oriented style:
-
 ## Why Use a Hashed Append-Only Log?
 
 - 🔐 **Truly Peer-to-Peer**  
