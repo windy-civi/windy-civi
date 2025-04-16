@@ -87,14 +87,51 @@ Councilmatic also exports data in OCD format.
 │       └── ...
 └── country:ca/                                 # Canada
     └── ...
-```				
+```
 
+#### TODO
+
+##### Timestamps: Scrape Oriented vs Gov Oriented
+Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
+
+##### Unique IDs
+There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
+
+- Jurisdiction ID: will follow OCD ID naming convention for folder structure `country:us/state:fl/government`
+- Session ID: TODO
+- Bill ID: `jurisidiction_id/sessions/:session_id`/`bill.identifier` - This ID should be the government ID, like HB250
+- Vote Event ID: TODO
+- Person ID: TODO
+- Event ID: TODO
+
+##### Bill Folder + Filename Convention
+- `bill.metadata`: `bill_id`/log/metadata_update_{TODO}.json
+- `bill.actions`: `bill_id`/log/action_{TODO}.json
+- `bill.votes`: `bill_id`/log/vote_{TODO}.json
+- `bill.sponsors`: `bill_id`/log/sponsor_update{TODO}.json
+- `bill.versions`: `bill_id`/files/version_{TODO}.pdf + `bill_id`/log/version_add{TODO}.json (we can extract the content as JSON)
+- `bill.documents`: `bill_id`/files/documents_{TODO}.pdf + `bill_id`/log/document_add{TODO}.json (we can extract the content as JSON)
+
+##### Event Folder Convention
+I think putting events specific to sessions within the session makes sense, but what about out of session events? Can we find some other reliable time span?
 
 ### Git Architecture
 
-#### Session Repo
+We plan to auto-generate many git repo. 
+
+**Why Git:**
+- Of all data structures, folders+files are the most portable/readable by the most people.
+- Git is naturally p2p (its also built on a distributed log), making `git pull` an easy method to get updated data within our WindyCivi app and AI workflows.
+- GitHub makes exploring git easy. It's rich markdown and file renderes make it easy for people to explore without downloading.
+- Git submodules allows us to have a way to separate repos so 1 repo doesn't get too big in size.
+
+#### Session Git Repo
+
+This repo should be a blockchain-like append only log, making syncing data as easy as `git pull`.
+
+**Question:** what about the files like PDFS? They feel right to keep in here as a copy, but also, would balloon the size of these. Maybe yet another submodule for session files?
+
 ```
-# This repo should be a blockchain-like append only log
 /
 ├── README.md                  # Session-specific information
 ├── bills/                     # Bills in this session
@@ -120,14 +157,10 @@ Councilmatic also exports data in OCD format.
     └── ...
 ```
 
-#### Locale Repo
-Will contain links to git submodules that have event logs for different sessions. Will also contain scripts to rebuild data easily.
+#### Locale Git Repo
+Overall locale repo (also generated). Contain links to git submodules that have event logs for different sessions/events. Will also contain scripts to rebuild data into Open Civic Data formats.
 
 ```
-# This repository implements the Open Civic Data format as a git-based system.
-# Git submodules function as append-only blockchain logs to track all changes
-# with complete history and traceability.
-
 ocd-blockchain-illinois/
 ├── .gitmodules
 ├── README.md
@@ -145,6 +178,7 @@ ocd-blockchain-illinois/
 ```
 
 #### Main Repo
+The primary repo (also generated) that people can clone to get all civic data easily via the submodules.
 
 ```
 open-civic-data-blockchain/
@@ -183,26 +217,3 @@ The metadata in `bill` can change scrape over scrape. We can use the fieldMask m
     }
 }
 ```
-
-## TODO
-
-### Timestamps: Scrape Oriented vs Gov Oriented
-Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
-
-### Unique IDs
-There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
-
-- Jurisdiction ID: will follow OCD ID naming convention for folder structure `country:us/state:fl/government`
-- Session ID: TODO
-- Bill ID: `jurisidiction_id/sessions/:session_id`/`bill.identifier` - This ID should be the government ID, like HB250
-- Vote Event ID: TODO
-- Person ID: TODO
-- Event ID: TODO
-
-### Bill Folder + Filename Convention
-- `bill.metadata`: `bill_id`/log/metadata_update_{TODO}.json
-- `bill.actions`: `bill_id`/log/action_{TODO}.json
-- `bill.votes`: `bill_id`/log/vote_{TODO}.json
-- `bill.sponsors`: `bill_id`/log/sponsor_update{TODO}.json
-- `bill.versions`: `bill_id`/files/version_{TODO}.pdf + `bill_id`/log/version_add{TODO}.json (we can extract the content as JSON)
-- `bill.documents`: `bill_id`/files/documents_{TODO}.pdf + `bill_id`/log/document_add{TODO}.json (we can extract the content as JSON)
