@@ -49,11 +49,7 @@
 
 - 🔄 **Reuse Existing Data**  
   Works with platforms like OpenStates and Councilmatic, giving us access to many data sources.
-
-## What about other Feeds
-
-Lot of government data, like executive orders, are RSS feeds. This architecture should naturally allow us to add RSS feeds.
-
+  
 ## Exploring Data
 
 ### State/Federal Legislation (via OpenStates)
