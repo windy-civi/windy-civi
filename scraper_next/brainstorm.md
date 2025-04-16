@@ -93,6 +93,7 @@ Councilmatic also exports data in OCD format.
 
 ##### Timestamps: Scrape Oriented vs Gov Oriented
 Are log timestamps the time we scraped, or the gov update? What if a specific event doesn't have a timestamp?
+[Open Civic Data also discussed this](https://open-civic-data.readthedocs.io/en/latest/proposals/0101.html)
 
 ##### Unique IDs
 There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
