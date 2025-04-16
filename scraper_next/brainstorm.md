@@ -79,7 +79,7 @@ The metadata in `bill` can change scrape over scrape. We can use the fieldMask m
 }
 ```
 
-## To Discover
+## To Solve
 
 ### Solving Unique IDs
 There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucutre + naming convention should follow actual legislative data instead of generated data like UUIDs.
@@ -91,7 +91,7 @@ There are a lot of OpenStates generaated UUIDs. Ideally, our folder/file strucut
 - Person ID: TODO
 - Event ID: TODO
 
-## Solving File Naming Convention
+### Solving Bill Folder + Filename Convention
 - `bill.metadata`: `bill_id`/log/metadata_update_{TODO}.json
 - `bill.actions`: `bill_id`/log/action_{TODO}.json
 - `bill.votes`: `bill_id`/log/vote_{TODO}.json
