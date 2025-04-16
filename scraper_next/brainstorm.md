@@ -1,3 +1,6 @@
+## Link to OpenStates Output
+https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip
+
 ## Potential Folder Structure + Filename Convention
 
 ocd-jurisdiction
