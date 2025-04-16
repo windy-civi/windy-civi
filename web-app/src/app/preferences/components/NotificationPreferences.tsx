@@ -24,6 +24,11 @@ const WebViewNotificationStatus = ({
   status: PermissionStatus | null;
   onRequestPermission: () => void;
 }) => {
+  const isEnabled = status === PermissionStatus.GRANTED;
+  const toggle = (
+    <NotificationToggle isEnabled={isEnabled} onClick={onRequestPermission} />
+  );
+
   switch (status) {
     case PermissionStatus.DENIED:
       return (
@@ -42,18 +47,12 @@ const WebViewNotificationStatus = ({
     case PermissionStatus.UNDETERMINED:
     default:
       return (
-        <div className="text-sm text-white">
-          <p>
+        <NotificationContainer toggle={toggle}>
+          <div className="text-sm text-white">
             Enable notifications to get updates about legislation you care
             about.
-          </p>
-          <button
-            className="mt-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-            onClick={onRequestPermission}
-          >
-            Enable Notifications
-          </button>
-        </div>
+          </div>
+        </NotificationContainer>
       );
   }
 };
