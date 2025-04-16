@@ -2,6 +2,7 @@
 
 ## Important Links
 - [Slack Discussion Thread](https://chihacknight.slack.com/archives/C047500M5RS/p1744230231887699)
+- [Official Open Civic Data Standard](https://open-civic-data.readthedocs.io/en/latest/index.html)
 
 ## Exploring Source Data
 - [OpenStates Scraper Output Illinois Zip File](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
