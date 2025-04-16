@@ -1,4 +1,4 @@
-# From Open Civic Data => Blockchain Open Civic Data
+# Brainstorm: Open Civic Data => Blockchain
 
 ## Important Links
 - [OpenStates Scraper Output Zip File](https://chihacknight.slack.com/files/U08L58C7ZTJ/F08NL4DGGSU/il_openstates.zip)
