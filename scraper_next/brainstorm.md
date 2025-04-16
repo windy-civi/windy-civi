@@ -33,8 +33,12 @@
 - ⏪ **Bonus: Reveal Power Dynamics**  
   Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
-- 📱 **Smarter Windy Civi App (and enables other people to make clients)**  
-  Only syncs what changed. Enables real-time updates, push notifications, and Web3 features.
+- 📱 **Smarter P2P Windy Civi Client (+ others can make competitor clients)**  
+  By being P2P, it's easier for us to implement things like decentralized notifications.
+  Also, anyone else can make client apps too, so the dataset could outlive our app.
+
+- 🛜 **Works For Free With RSS Feeds**  
+  By being feed based, we can also import any RSS feeds with easy into our pipelines, allowing us to get things like Executive Order RSS feeds and Judicial decision feeds easily.
 
 ---
 
