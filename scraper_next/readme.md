@@ -125,11 +125,10 @@ This proposal outlines a decentralized, peer-to-peer system for managing and pub
   Git is built on a distributed log. `git pull` works seamlessly in our app and AI workflows.
 
 - 🌐 **GitHub = Easy Browsing**  
-  Markdown rendering and file previews make GitHub a friendly UI for exploring without needing to clone.
+  Markdown rendering and file previews make GitHub a friendly UI for exploring without needing to clone. We can also expose RSS feeds via GHPages.
 
 - 🧩 **Submodules Keep Repos Lean**  
   Git submodules let us split large datasets across repos, so no single repo gets bloated.
-
 
 ### Folder Structure + Filename Convention
 
