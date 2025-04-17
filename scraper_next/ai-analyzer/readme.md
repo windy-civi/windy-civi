@@ -1,1 +1,85 @@
+## WIP: Config File
 
+```yaml
+# Policy Analysis Pipeline Configuration
+name: "Executive Order Impact Analysis"
+description: "Monitor and evaluate presidential executive orders for their impact on key activist issues"
+llm_settings:
+  model: "llama-2" # Gonna focus on LLMs that can run locally within Github Action's free mode.
+  # ... more settings
+
+# Pipeline definition
+pipeline:
+  # 1. Sources - Feeds to subscribe to
+  sources:
+    # Using this naming convention to allow users to select gov udpates. This `country:us` would mean all USA data would be imported.
+    - '@windy-civi/ocd-division/country:us'
+    # Theoretically other orgs can host the source feeds. Most ideally in the future the gov should provide this source.
+    - '@datamade/ocd-division/country:us/state:il/place:chicago'   
+    # By working with RSS, we allow users to us news articles for better analyzing/scoring updates.
+    - "http://rss.cnn.com/rss/cnn_topstories.rss"
+
+  # 2. Processing steps - Only tag and filter operations
+  # Each step would get the following inputs
+  # - event: The immutable event object, which would be of a known type by us (one of our ocd event updates, or fallback to simple RSS style)
+  # - type: Describes the event type, so that we can easily get things like schema info.
+  # - object: A rebuilt OCD-formatted version of the bill if its a bill, + any other OCD objects. Allows user to easily see the entire bill data.
+  # - analysis: An analysis artifact that each step can add to. This could be of type {[bill_id]: {tags, summaries}}.
+  pipe:
+    # Filter step - Allow users to ignore data of certain types. We can provide specific baked in filters since legislation can be very noisy.
+    - type: "filter"
+      key: "windycivi_active_bills"
+
+    # Tag step - Score this update against a scorecard defined by the user.
+    - type: "tag"
+      key: "climate_action"
+      description: "Score and tag policies for climate impact"
+      scorecard: "./tags/climate_action.yaml"
+
+    # Filter step - Allow users to ignore data based on previous step analysis 
+    - type: "filter"
+      key: "high_impact_filter"
+      description: "Filter to only include high impact policies"
+      condition:
+        op: "GTE"
+        field: "impact_score"
+        value: 3
+        abs: true
+
+  # 3. Render artifacts
+  render:
+    - type: "feed"
+      algorithm: "relevance_score" # string enum or path to custom ranking algorithm
+      title:
+        type: "prompt"
+        value: "./templates/feed/title_prompt.md"
+        max_length: 100
+      summary:
+        type: "prompt" 
+        value: "./templates/feed/description_prompt.md"
+        max_length: 500
+      image:
+        type: "transformer"
+        value: "./renderers/feed_media_renderer.py"
+
+    # V1 won't have this, but have this here for the sake of making sure the YAML is extendable.
+    - type: "report"
+      template: "@windy-civi/session-summary"
+
+  # 4. Publish - Send rendered content to destinations
+  publish:
+    # Publish to github pages if this project is in a public github repo.
+    - type: "github_pages"
+      rss_feeds: true
+
+    # Publish to social medias
+    - type: "bluesky"
+      # ... bluesky specific credentials, including env vars for secrets
+    # Other potential publishes
+    - type: "reddit-bot"
+    - type: "slack-bot"
+    - type: "meta-threads"
+    - type: "email"
+```
+
+### WIP: Prompt Template
