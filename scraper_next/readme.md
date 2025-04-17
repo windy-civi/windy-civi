@@ -93,20 +93,20 @@ This proposal outlines a decentralized, peer-to-peer system for managing and pub
 - 🤖 **Publish Everywhere with Bots**  
   Organizations can automate updates to any number of platforms easily, from Blue Sky Bot Alert posters] —think Reddit replies or Bluesky posts—on top of each other. In addition, we can make tooling to have public RSS feeds that can then be imported by news organizations.
 
-- ⛓️ **Trust Without a Middleman**  
-  Blockchain hashes + public key signatures let users verify data themselves. We use [Decentralized Identifiers](https://www.w3.org/TR/did-1.0/), just like Bluesky.
+- ⛓️ **Blockchain without the Cringe or Cost**  
+  Blockchain hashes + public key signatures let users verify data themselves without expensive proof algorithms. For IDs, [Decentralized Identifiers](https://www.w3.org/TR/did-1.0/) are the new standard, and interop with Bluesky.
 
-- 📢 **So Many Outputs**  
+- ☎️ **Network Agnostic**  
   Supports everything: peer-to-peer, pub-sub, polling, WebRTC, email, RSS, push—notifications, etc. They will all work naturally.
-
-- ⏪ **Bonus: Reveal Power Dynamics**  
-  Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
 - 📱 **Our App Becomes A Glorified P2P Feed Reader With Civic Tendencies**  
   By being a P2P feed reader with special features around civic data, we simplify the app itself, and allow others to make their own client apps.
 
 - 🛜 **RSS Feeds Just Work**  
   Feed-based design lets us easily pull in existing sources like Executive Orders or court decisions via RSS, and allows organizations to pull news website feeds.
+
+- ⏪ **Bonus: Reveal Power Dynamics**  
+  Replay legislative logs to uncover hidden patterns—who votes when, with whom, and under whose influence.
 
 ## Why [Open Civic Data](https://open-civic-data.readthedocs.io/en/latest/) as the Base Schema?
 
