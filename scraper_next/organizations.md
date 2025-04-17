@@ -1,5 +1,10 @@
 A proposal for how to allow users/orgs to configure custom feeds and reports, and do AI analysis of gov updates in general.
 
+## Guiding Principles
+- Decentralized organizations feeds: If users want to add an org's feed to windy civi, they most likely will have to add the url. This gives them freedom, and removes us from moderation requirements.
+- Should be config based: easy enough for most organization to set up.
+- Enabling GitHub Actions + GitHub Pages as the main platform, since its free and can be set up with templates.
+
 ## WIP: Config File
 
 ```yaml
@@ -114,3 +119,59 @@ Create a concise executive summary for a detailed policy analysis report.
 ## Output Format
 Generate a well-structured executive summary with no additional explanation.
 ```
+
+## Moonshot: Coalition Graph i.e. Rainbow Coalition 2.0
+
+With this config data + doing regular scraping of politican sites, we can create a knowledge graph of related issues, discovering potential coalitions between groups. 
+
+### Prior Art: 
+- [Fred Hampton's Rainbow Coalition](https://en.wikipedia.org/wiki/Rainbow_Coalition_(Fred_Hampton)), where Black Panthers made a coalition with a White Nationalist group in name of fighting for economic inequality.
+
+### Example 
+
+```
+[Politician: Rep. Andy Harris (R)] ----addresses----> [Statement: "Adjusting Tax Rates for Million-Dollar Earners"]
+        |                                                       |
+        |                                                  similar_to
+        |                                                       |
+        |                           [Statement: "Tax the Ultra-Wealthy for Economic Justice"]
+        |                                                       |
+        |                                                       |
+        |                                                       |
+[Politician: Sen. Bernie Sanders (D)] ----addresses------------|
+        |                                                       |
+        |                                               categorized_as
+        |                                                       |
+        \----supports----> [Topic: Taxation of Wealthy] <----supports---- [Politician: Sen. Bernie Sanders (D)]
+                                    |
+                                    |
+                               relates_to
+                                    |
+                                    v
+                           [Topic: Economic Inequality]
+```
+
+### Graph Structure
+
+**Nodes:**
+- **Politicians**: Elected officials or candidates
+- **Raw Issue Statements**: Original text from websites
+- **Topic Categories**: Standardized high-level categories (healthcare, economy, etc.)
+- **Concepts**: Key terms appearing across issues
+
+**Relationships:**
+- **Addresses**: Politician → Issue Statement
+- **Categorized_As**: Issue Statement → Topic Category
+- **Similar_To**: Connects similarly worded statements
+- **Supports/Opposes**: Politician stance on issues
+- **Relates_To**: Topic ↔ Topic connections
+
+### Issue Normalization Approach
+
+Our solution addresses differently worded issues through:
+- Semantic similarity matching between statements
+- Mapping raw statements to standardized topics
+- Preserving original framing while enabling comparison
+- Calculating confidence scores for topic assignments
+
+
