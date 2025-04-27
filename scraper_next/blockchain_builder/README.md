@@ -1,191 +1,50 @@
-import os
-import json
-import shutil
-from pathlib import Path
-from datetime import datetime
+# Blockchain Folder Builder for Open Civic Data Files
 
-# -------------------------
+This Python script processes civic JSON files (bills, vote events, and others) and organizes them into a blockchain-style folder and file structure for permanent archival and easy GitHub management.
 
-# CONFIGURATION
+---
 
-# -------------------------
+## Features
 
-INPUT_FOLDER = "input_json_files"
-OUTPUT_FOLDER = "open-civic-data-FULL-blockchain"
+- Parses civic JSON input files (`bill_`, `vote_event_`, and others)
+- Dynamically dispatches processing based on file type
+- Extracts timestamps directly from event metadata (not file creation dates)
+- Saves files into a blockchain-style nested folder structure:
+  ```
+  /country:us/state:il/sessions/ocd-session/country:us/state:il/2023-2024/bills/SB1234/logs/...
+  /country:us/state:il/sessions/ocd-session/country:us/state:il/2023-2024/bills/SB1234/files/...
+  ```
+- Automatically creates placeholder bills when vote events reference missing bills
+- Names JSON files using ISO8601 timestamps + event type (e.g., `20250312T000000Z_vote_event.json`)
+- Modular codebase with separate handlers:
+  - `handle_bill(content)`
+  - `handle_vote_event(content)`
+  - `handle_other(content)`
+  - `format_timestamp(date_str)`
 
-SESSION_MAPPING = {
-"104th": "2023-2024",
-"103rd": "2021-2022", # Add more mappings later
-}
+---
 
-# -------------------------
+## How to Run
 
-# HELPERS
+- Update `INPUT_FOLDER` and `OUTPUT_FOLDER` variables in `main.py` as needed.
+- When running the script, it will automatically ask if you want to delete the existing `OUTPUT_FOLDER` before starting.
+- If you confirm, it will clear the output for a clean run.
+- A `sample_input_files/` folder is included for testing the script with a small dataset.cd
 
-# -------------------------
+```bash
+python main.py
+```
 
-def format_timestamp(date_str):
-try:
-dt = datetime.fromisoformat(date_str)
-return dt.strftime("%Y%m%dT%H%M%SZ")
-except Exception:
-return None
+---
 
-# -------------------------
+## Notes
 
-# HANDLERS
+- Session mapping is currently hardcoded for `104th` → `2023-2024` and `103rd` → `2021-2022`. Extend `SESSION_MAPPING` as needed.
+- Folder structure is based on Open Civic Data conventions.
+- Placeholder bills are marked with `"placeholder": true` in their JSON files until full bill information is available.
 
-# -------------------------
+---
 
-def handle_bill(content, session_folder, output_folder):
-bill_identifier = content.get("identifier")
-if not bill_identifier:
-print("⚠️ Warning: Bill missing identifier")
-return
+## Author
 
-    save_path = Path(output_folder).joinpath(
-        "country:us",
-        "state:il",
-        "sessions",
-        "ocd-session",
-        "country:us",
-        "state:il",
-        session_folder,
-        "bills",
-        bill_identifier,
-    )
-    (save_path / "logs").mkdir(parents=True, exist_ok=True)
-    (save_path / "files").mkdir(parents=True, exist_ok=True)
-
-    actions = content.get("actions", [])
-    if actions:
-        dates = [a.get("date") for a in actions if a.get("date")]
-        if dates:
-            first_date = sorted(dates)[0]
-            timestamp = format_timestamp(first_date)
-        else:
-            timestamp = None
-    else:
-        timestamp = None
-
-    if not timestamp:
-        print(f"⚠️ Warning: Bill {bill_identifier} missing action dates")
-        timestamp = "unknown"
-
-    filename = f"{timestamp}_bill_created.json"
-    output_file = save_path.joinpath("logs", filename)
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(content, f, indent=2)
-    print(f"✅ Saved bill {bill_identifier}")
-
-def handle_vote_event(content, session_folder, output_folder):
-referenced_bill_id = content.get("bill_identifier")
-if not referenced_bill_id:
-print("⚠️ Warning: Vote missing bill_identifier")
-return
-
-    save_path = Path(output_folder).joinpath(
-        "country:us",
-        "state:il",
-        "sessions",
-        "ocd-session",
-        "country:us",
-        "state:il",
-        session_folder,
-        "bills",
-        referenced_bill_id,
-    )
-    (save_path / "logs").mkdir(parents=True, exist_ok=True)
-    (save_path / "files").mkdir(parents=True, exist_ok=True)
-
-    placeholder_file = save_path / "placeholder.json"
-    if not placeholder_file.exists():
-        placeholder_content = {"identifier": referenced_bill_id, "placeholder": True}
-        with open(placeholder_file, "w", encoding="utf-8") as f:
-            json.dump(placeholder_content, f, indent=2)
-        print(f"📝 Created placeholder for missing bill {referenced_bill_id}")
-
-    start_date = content.get("start_date")
-    timestamp = format_timestamp(start_date) if start_date else None
-
-    if not timestamp:
-        print(f"⚠️ Warning: Vote event missing start_date")
-        timestamp = "unknown"
-
-    filename = f"{timestamp}_vote_event.json"
-    file_id = content.get("_id", "unknown_id")
-    output_file = save_path.joinpath("logs", filename)
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(content, f, indent=2)
-    print(f"✅ Saved vote event {file_id} under bill {referenced_bill_id}")
-
-def handle_other(content, session_folder, output_folder):
-save_path = Path(output_folder).joinpath(
-"country:us",
-"state:il",
-"sessions",
-"ocd-session",
-"country:us",
-"state:il",
-session_folder,
-"events",
-)
-save_path.mkdir(parents=True, exist_ok=True)
-
-    file_id = content.get("_id", None)
-    if not file_id:
-        print("⚠️ Warning: Unknown file missing _id")
-        return
-
-    event_file = save_path / f"{file_id}.json"
-    with open(event_file, "w", encoding="utf-8") as f:
-        json.dump(content, f, indent=2)
-    print(f"🔹 Saved unclassified file {file_id}")
-
-# -------------------------
-
-# MAIN SCRIPT
-
-# -------------------------
-
-def load_json_files(input_folder):
-all_data = []
-for filename in os.listdir(input_folder):
-if filename.endswith(".json"):
-filepath = os.path.join(input_folder, filename)
-with open(filepath, "r", encoding="utf-8") as f:
-data = json.load(f)
-all_data.append((filename, data))
-return all_data
-
-def clear_output_folder(output_folder):
-if os.path.exists(output_folder):
-shutil.rmtree(output_folder)
-print(f"🧹 Cleared existing output folder: {output_folder}")
-
-def process_and_save(data, output_folder):
-for filename, content in data:
-session_name = content.get("legislative_session")
-if not session_name:
-print(f"⚠️ Warning: Skipping {filename}, missing legislative_session")
-continue
-
-        session_folder = SESSION_MAPPING.get(session_name)
-        if not session_folder:
-            print(f"⚠️ Warning: Unknown session {session_name} for {filename}")
-            continue
-
-        if "bill_" in filename:
-            handle_bill(content, session_folder, output_folder)
-        elif "vote_event_" in filename:
-            handle_vote_event(content, session_folder, output_folder)
-        else:
-            handle_other(content, session_folder, output_folder)
-
-def main():
-clear_output_folder(OUTPUT_FOLDER)
-all_json_files = load_json_files(INPUT_FOLDER)
-process_and_save(all_json_files, OUTPUT_FOLDER)
-
-if **name** == "**main**":
-main()
+_Originally created by Tamara Dowis, April 2025, with assistance from Hypatia (AI pair programmer)._
