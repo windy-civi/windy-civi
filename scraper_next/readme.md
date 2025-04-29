@@ -5,7 +5,7 @@
 ### Communications
 - [Discussion via Slack](https://chihacknight.slack.com/archives/C047500M5RS/p1744230231887699)
 - [Task Board via Slack](https://chihacknight.slack.com/lists/T04KM9VQY/F07ECPCHH5M?view_id=View08NQ33E5R7)
-- (this file) [Collaborative Brainstorming via Git](https://github.com/windy-civi/windy-civi/blob/60-blockchain-open-civic-data/scraper_next/brainstorm.md): Feel free to edit.
+- (this file) [Collaborative Brainstorming via Git](https://github.com/windy-civi/windy-civi/blob/60-blockchain-open-civic-data/scraper_next/readme.md): Feel free to edit.
 
 ### Prior Art
 - [Washington DC made Github](https://github.com/DCCouncil/law-xml) their official law source of truth. It looks immutable.
