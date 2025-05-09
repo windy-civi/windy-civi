@@ -1,15 +1,13 @@
 import os
 import json
 import shutil
+import sys
 from pathlib import Path
 from datetime import datetime
 
 # -------------------------
 # CONFIGURATION
 # -------------------------
-INPUT_FOLDER = "sample_input_files"
-OUTPUT_FOLDER = "sample_open_civic_data_blockchain"
-
 SESSION_MAPPING = {
     "104th": "2023-2024",
     "103rd": "2021-2022",
@@ -153,7 +151,16 @@ def load_json_files(input_folder):
 
 
 def clear_output_folder(output_folder):
-    if os.path.exists(output_folder):
+
+    if os.path.exists(output_folder) and not os.path.isdir(output_folder):
+        print(f"🛑 Aborting program, '{output_folder}' is not a folder.")
+        sys.exit(1)
+
+    if os.listdir(output_folder):
+        if not sys.stdin.isatty():
+            print("🛑 Aborting program, output folder not empty.")
+            sys.exit(1)
+
         confirm = (
             input(
                 f"⚠️ This will delete everything in {output_folder}. Are you sure? (yes/no): "
@@ -189,9 +196,11 @@ def process_and_save(data, output_folder):
 
 
 def main():
-    clear_output_folder(OUTPUT_FOLDER)
-    all_json_files = load_json_files(INPUT_FOLDER)
-    process_and_save(all_json_files, OUTPUT_FOLDER)
+    input_folder = os.getenv("BUILDER_INPUT_FOLDER", "./input")
+    output_folder = os.getenv("BUILDER_OUTPUT_FOLDER", "./output")
+    clear_output_folder(output_folder)
+    all_json_files = load_json_files(input_folder)
+    process_and_save(all_json_files, output_folder)
 
 
 if __name__ == "__main__":

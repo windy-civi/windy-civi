@@ -1,3 +1,5 @@
 Dockerfile
 .dockerignore
-sample_open_civic_data_blockchain/
+sample_input_files/
+input/
+output/

@@ -26,13 +26,16 @@ This Python script processes civic JSON files (bills, vote events, and others) a
 
 ## How to Run
 
-- Update `INPUT_FOLDER` and `OUTPUT_FOLDER` variables in `main.py` as needed.
-- When running the script, it will automatically ask if you want to delete the existing `OUTPUT_FOLDER` before starting.
+- Set environment variables `BUILDER_INPUT_FOLDER` and `BUILDER_OUTPUT_FOLDER` as needed.
+  - Defaults: `./input` & `./output`.
+- When running the script, it will automatically ask if you want to delete the existing `BUILDER_OUTPUT_FOLDER` before starting.
 - If you confirm, it will clear the output for a clean run.
-- A `sample_input_files/` folder is included for testing the script with a small dataset.cd
+- A `sample_input_files/` folder is included for testing the script with a small dataset.
+
+Run with sample input, using the default output directory:
 
 ```bash
-python main.py
+BUILDER_INPUT_FOLDER=sample_input_files python main.py
 ```
 
 ---
