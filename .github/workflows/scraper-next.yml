@@ -1,0 +1,59 @@
+name: Daily Scrape Bills
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Runs daily at 3:00 AM UTC
+  workflow_dispatch:     # Allows manual run from GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Pull and Run IL Scraper
+        run: |
+          mkdir -p scraper_next/blockchain_builder/input_files/il/_data
+          mkdir -p scraper_next/blockchain_builder/input_files/il/_cache
+
+          docker run \
+            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/il/_data:/opt/openstates/openstates/_data \
+            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/il/_cache:/opt/openstates/openstates/_cache \
+            openstates/scrapers il bills --scrape --fastmode
+
+      - name: Pull and Run USA Scraper
+        run: |
+          mkdir -p scraper_next/blockchain_builder/input_files/usa/_data
+          mkdir -p scraper_next/blockchain_builder/input_files/usa/_cache
+
+          docker run \
+            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/usa/_data:/opt/openstates/openstates/_data \
+            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/usa/_cache:/opt/openstates/openstates/_cache \
+            openstates/scrapers usa bills --scrape --fastmode
+            
+      - name: Run Python Filter Script
+        run: |
+          python3 scraper_next/filter_by_date.py
+
+      - name: Run Data Builder Script
+        working-directory: scraper_next/blockchain_builder
+        env:
+          BUILDER_INPUT_FOLDER: input_files
+          BUILDER_OUTPUT_FOLDER: scraped_data
+        run: |
+          mkdir -p scraped_data
+          python3 main.py
+
+      - name: Commit Scraped Files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add scraper_next/blockchain_builder/input_files/
+          git add scraper_next/blockchain_builder/scraped_data/
+          git commit -m "Automated daily scrape $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
