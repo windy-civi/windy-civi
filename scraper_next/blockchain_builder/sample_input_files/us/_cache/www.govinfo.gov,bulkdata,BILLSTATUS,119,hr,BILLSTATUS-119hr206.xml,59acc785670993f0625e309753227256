@@ -1,0 +1,284 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:39:49 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:49:18 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292708dd2b620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>206</number>
+    <updateDate>2025-04-22T08:05:24Z</updateDate>
+    <updateDateIncludingText>2025-04-22T08:05:24Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-03</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 1 (Friday, January 3, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Ms. VELAZQUEZ:H.R. 206.Congress has the power to enact this legislation pursuantto the following:Article I, Section 8, Clause 1The Congress shall have Power to . . . provide for the . .. general Welfare of the United States; . . .The single subject of this legislation is:This bill pertains to the operations and oversight of theDepartment of Housing and Urban Development's Section 8Program.[Page H43]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsju00</systemCode>
+        <name>Judiciary Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:19:45Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hswm00</systemCode>
+        <name>Ways and Means Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:19:40Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsba00</systemCode>
+        <name>Financial Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:19:35Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Financial Services, and in addition to the Committees on Ways and Means, and the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Financial Services, and in addition to the Committees on Ways and Means, and the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hswm00</systemCode>
+            <name>Ways and Means Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Financial Services, and in addition to the Committees on Ways and Means, and the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>V000081</bioguideId>
+        <fullName>Rep. Velázquez, Nydia M. [D-NY-7]</fullName>
+        <firstName>Nydia</firstName>
+        <lastName>Velázquez</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>M.</middleName>
+        <district>7</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>E000297</bioguideId>
+        <fullName>Rep. Espaillat, Adriano [D-NY-13]</fullName>
+        <firstName>Adriano</firstName>
+        <lastName>Espaillat</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <district>13</district>
+        <sponsorshipDate>2025-04-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Housing and Community Development</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Civil actions and liability</name>
+          <updateDate>2025-02-12T18:58:37Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-02-12T18:58:43Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Housing and Urban Development</name>
+          <updateDate>2025-02-12T18:58:49Z</updateDate>
+        </item>
+        <item>
+          <name>Employee hiring</name>
+          <updateDate>2025-02-12T18:58:55Z</updateDate>
+        </item>
+        <item>
+          <name>Government employee pay, benefits, personnel management</name>
+          <updateDate>2025-02-12T18:59:00Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-02-12T18:59:06Z</updateDate>
+        </item>
+        <item>
+          <name>Housing discrimination</name>
+          <updateDate>2025-02-12T18:59:11Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax credits</name>
+          <updateDate>2025-02-12T18:59:18Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-02-12T18:59:26Z</updateDate>
+        </item>
+        <item>
+          <name>Landlord and tenant</name>
+          <updateDate>2025-02-12T18:59:34Z</updateDate>
+        </item>
+        <item>
+          <name>Low- and moderate-income housing</name>
+          <updateDate>2025-02-12T18:59:43Z</updateDate>
+        </item>
+        <item>
+          <name>Residential rehabilitation and home repair</name>
+          <updateDate>2025-02-12T18:59:49Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Housing and Community Development</name>
+        <updateDate>2025-02-04T12:55:47Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-02-12T21:45:06Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Landlord Accountability Act of 2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill prohibits housing discrimination based on income, provides protections to tenants of certain federally assisted housing, and establishes a low-income housing maintenance tax credit for eligible landlords.&lt;/p&gt;&lt;p&gt;Specifically, the bill prohibits discrimination in rental housing and residential real estate transactions based on an individual's source of income and provides for penalties. Protected income sources include&lt;/p&gt;&lt;ul&gt;&lt;li&gt;housing vouchers and rental assistance,&lt;/li&gt;&lt;li&gt;rental and homeownership subsidies,&lt;/li&gt;&lt;li&gt;Social Security and disability income assistance, and&lt;/li&gt;&lt;li&gt;spousal and child support.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Additionally, landlords are prohibited from taking or failing to take certain actions with the intent to make a unit ineligible to receive Department of Housing and Urban Development (HUD) assistance. Landlords that violate this prohibition are subject to penalties and may be sued by harmed tenants. The bill further prohibits property owners of certain multifamily housing projects from intentionally leaving a unit vacant for more than 60 days. Property owners that violate this prohibition are subject to penalties.&lt;/p&gt;&lt;p&gt;The bill also provides protections to tenants of multifamily housing projects, which includes requiring HUD to increase the staffing level for the Multifamily Housing Complaint Line and create a Multifamily Housing Complaint Resolution Program.&lt;/p&gt;&lt;p&gt;In addition, HUD may provide grants to develop, expand, and assist tenant harassment prevention programs.&lt;/p&gt;&lt;p&gt;Finally, the bill establishes a tax credit for qualifying landlords that is equal to the landlord's annual low-income housing maintenance expenses. To qualify, a landlord must have addressed within 30 days any relevant complaints filed under the complaint resolution program.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Landlord Accountability Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Landlord Accountability Act of 2025</title>
+        <updateDate>2025-02-04T05:38:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Landlord Accountability Act of 2025</title>
+        <updateDate>2025-02-04T05:38:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To amend the Fair Housing Act to prohibit discrimination based on use of section 8 vouchers, and for other purposes.</title>
+        <updateDate>2025-02-04T05:33:21Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr206ih/xml/BILLS-119hr206ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-03</actionDate>
+      <text>Referred to the Committee on Financial Services, and in addition to the Committees on Ways and Means, and the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>
