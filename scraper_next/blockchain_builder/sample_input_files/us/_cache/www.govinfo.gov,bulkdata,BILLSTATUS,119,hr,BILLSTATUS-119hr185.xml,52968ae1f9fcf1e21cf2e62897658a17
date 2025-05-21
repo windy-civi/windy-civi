@@ -1,0 +1,1055 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:39:14 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:36:10 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 942926296a01620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>185</number>
+    <updateDate>2025-04-23T13:32:07Z</updateDate>
+    <updateDateIncludingText>2025-04-23T13:32:07Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-03</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 1 (Friday, January 3, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. McGOVERN:H.R. 185.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8The single subject of this legislation is:[Page H42]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsag00</systemCode>
+        <name>Agriculture Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hsag29</systemCode>
+            <name>Livestock, Dairy, and Poultry Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-03-14T20:35:35Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:12:50Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsvr00</systemCode>
+        <name>Veterans' Affairs Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hsvr10</systemCode>
+            <name>Economic Opportunity Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-03-12T17:48:10Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:05Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsba00</systemCode>
+        <name>Financial Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:35Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsbu00</systemCode>
+        <name>Budget Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:30Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hspw00</systemCode>
+        <name>Transportation and Infrastructure Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:25Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsso00</systemCode>
+        <name>Ethics Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:20Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:15Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsap00</systemCode>
+        <name>Appropriations Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:10Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hssy00</systemCode>
+        <name>Science, Space, and Technology Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:05Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hshm00</systemCode>
+        <name>Homeland Security Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:14:00Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsif00</systemCode>
+        <name>Energy and Commerce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:50Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsha00</systemCode>
+        <name>Committee on House Administration</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:45Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:40Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsju00</systemCode>
+        <name>Judiciary Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:35Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hssm00</systemCode>
+        <name>Small Business Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:30Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsed00</systemCode>
+        <name>Education and Workforce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:25Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsfa00</systemCode>
+        <name>Foreign Affairs Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:20Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hlig00</systemCode>
+        <name>Intelligence (Permanent Select) Committee</name>
+        <chamber>House</chamber>
+        <type>Select</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:15Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsgo00</systemCode>
+        <name>Oversight and Government Reform Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:10Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsas00</systemCode>
+        <name>Armed Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:13:00Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hswm00</systemCode>
+        <name>Ways and Means Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:12:45Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Securing Semiconductor Supply Chains Act</title>
+        <congress>119</congress>
+        <number>97</number>
+        <type>S</type>
+        <latestAction>
+          <actionDate>2025-03-12</actionDate>
+          <text>Committee on Commerce, Science, and Transportation. Ordered to be reported without amendment favorably.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Credit Union Board Modernization Act</title>
+        <congress>119</congress>
+        <number>975</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-02-11</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Banking, Housing, and Urban Affairs.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Securing Semiconductor Supply Chains Act of 2025</title>
+        <congress>119</congress>
+        <number>2480</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-04-08</actionDate>
+          <text>Ordered to be Reported by Voice Vote.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-03-14</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsag29</systemCode>
+            <name>Livestock, Dairy, and Poultry Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Livestock, Dairy, and Poultry.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-03-12</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsvr10</systemCode>
+            <name>Economic Opportunity Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Economic Opportunity.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsbu00</systemCode>
+            <name>Budget Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hspw00</systemCode>
+            <name>Transportation and Infrastructure Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsso00</systemCode>
+            <name>Ethics Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsap00</systemCode>
+            <name>Appropriations Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hssy00</systemCode>
+            <name>Science, Space, and Technology Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hshm00</systemCode>
+            <name>Homeland Security Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsif00</systemCode>
+            <name>Energy and Commerce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hssm00</systemCode>
+            <name>Small Business Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsed00</systemCode>
+            <name>Education and Workforce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsfa00</systemCode>
+            <name>Foreign Affairs Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hlig00</systemCode>
+            <name>Intelligence (Permanent Select) Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsgo00</systemCode>
+            <name>Oversight and Government Reform Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsvr00</systemCode>
+            <name>Veterans' Affairs Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsas00</systemCode>
+            <name>Armed Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsag00</systemCode>
+            <name>Agriculture Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Agriculture, Armed Services, Veterans' Affairs, Oversight and Government Reform, Intelligence (Permanent Select), Foreign Affairs, Education and Workforce, Small Business, the Judiciary, Natural Resources, House Administration, Energy and Commerce, Homeland Security, Science, Space, and Technology, Appropriations, Rules, Ethics, Transportation and Infrastructure, the Budget, and Financial Services , for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hswm00</systemCode>
+            <name>Ways and Means Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M000312</bioguideId>
+        <fullName>Rep. McGovern, James P. [D-MA-2]</fullName>
+        <firstName>James</firstName>
+        <lastName>McGovern</lastName>
+        <party>D</party>
+        <state>MA</state>
+        <middleName>P.</middleName>
+        <district>2</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Government Operations and Politics</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Advisory bodies</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Agricultural marketing and promotion</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Appropriations</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Bank accounts, deposits, capital</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Banking and financial institutions regulation</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Business records</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Central Intelligence Agency (CIA)</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Child safety and welfare</name>
+          <updateDate>2025-03-13T15:40:58Z</updateDate>
+        </item>
+        <item>
+          <name>Computers and information technology</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Defense</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Energy</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Health and Human Services</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Homeland Security</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Labor</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Department of State</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Department of the Treasury</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Disability assistance</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Employee benefits and pensions</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Employment discrimination and employee rights</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Executive agency funding and structure</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Financial services and investments</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>First responders and emergency personnel</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Government employee pay, benefits, personnel management</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Higher education</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Historical and cultural resources</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Human trafficking</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax credits</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax deferral</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax exclusion</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Inflation and prices</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Interest, dividends, interest rates</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Law enforcement officers</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Life, casualty, property insurance</name>
+          <updateDate>2025-03-13T15:40:56Z</updateDate>
+        </item>
+        <item>
+          <name>Livestock</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Manufacturing</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Military personnel and dependents</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Museums, exhibitions, cultural centers</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Navigation, waterways, harbors</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Office of Personnel Management (OPM)</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Sales and excise taxes</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Securities</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Small business</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Student aid and college costs</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Tax administration and collection, taxpayers</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>U.S. and foreign investments</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Veterans' education, employment, rehabilitation</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+        <item>
+          <name>Wages and earnings</name>
+          <updateDate>2025-03-13T15:40:57Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Government Operations and Politics</name>
+        <updateDate>2025-03-10T19:28:12Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-17T17:50:23Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Responsible Legislating Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill establishes or modifies various federal programs and requirements, including those related to retirement accounts, penalties for certain sex offenses, foreign investment and ownership, and appropriations.&lt;/p&gt;&lt;p&gt;The bill makes changes to  retirement account  contributions and distributions, including increasing the maximum amount that may be contributed to a Roth Individual Retirement Account&amp;nbsp;(IRA) to include certain contributions to a Savings Incentive Match Plan for Employees (SIMPLE IRA) or Simplified&amp;nbsp;Employee Pension (SEP) plan, subject to limitations.&amp;nbsp;&lt;/p&gt;&lt;p&gt;The bill establishes an enhanced penalty—an additional prison term of up to five years—for certain interstate human trafficking offenses or coercion of sexual activity that occurs in a school zone or related area.&lt;/p&gt;&lt;p&gt;The Department of Commerce must report on efforts to increase foreign direct investment in semiconductor-related manufacturing and production. The Federal Maritime Commission must evaluate the effect of foreign ownership of marine terminals at the 15 largest U.S. container ports on U.S. economic security.&lt;/p&gt;&lt;p&gt;The bill provides additional appropriations for the Departments of Health and Human Services, Agriculture, State, Defense, Homeland Security, and Energy.&lt;/p&gt;&lt;p&gt;The bill extends mandatory livestock market reporting requirements through&amp;nbsp;FY2025.&lt;/p&gt;&lt;p&gt;The bill revises the required frequency of meetings held by a credit union's board of directors by decreasing the frequency for existing credit unions with satisfactory soundness ratings.&amp;nbsp;&lt;/p&gt;&lt;p&gt;The National Aeronautics and Space Administration's (NASA's) enhanced-use leasing authority is reauthorized through 2033.&lt;/p&gt;&lt;p&gt;The bill requires hearings on the bill's implementation within one year of the date of enactment.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Responsible Legislating Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Responsible Legislating Act</title>
+        <updateDate>2025-03-06T07:23:21Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Responsible Legislating Act</title>
+        <updateDate>2025-03-06T07:23:19Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To advance responsible policies.</title>
+        <updateDate>2025-03-06T07:18:37Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr185ih/xml/BILLS-119hr185ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-14</actionDate>
+      <text>Referred to the Subcommittee on Livestock, Dairy, and Poultry.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

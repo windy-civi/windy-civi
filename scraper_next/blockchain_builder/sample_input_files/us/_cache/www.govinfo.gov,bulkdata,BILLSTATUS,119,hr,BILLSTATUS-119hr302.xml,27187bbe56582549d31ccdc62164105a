@@ -1,0 +1,368 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:05 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Tue, 11 Mar 2025 23:03:27 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292a561ca5620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>302</number>
+    <updateDate>2025-03-11T19:01:43Z</updateDate>
+    <updateDateIncludingText>2025-03-11T19:01:43Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-09</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 5 (Thursday, January 9, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Ms. MALOY:H.R. 302.Congress has the power to enact this legislation pursuantto the following:Article 1 Section 8[Page H93]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsag00</systemCode>
+        <name>Agriculture Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hsag14</systemCode>
+            <name>Conservation, Research, and Biotechnology Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-02-14T18:02:56Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:32:20Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Markup By</name>
+            <date>2025-02-12T21:33:59Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:32:15Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-02-14</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsag14</systemCode>
+            <name>Conservation, Research, and Biotechnology Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Conservation, Research, and Biotechnology.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-02-12</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported in the Nature of a Substitute by the Yeas and Nays: 22 - 16.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-02-12</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the Committee on Natural Resources, and in addition to the Committee on Agriculture, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsag00</systemCode>
+            <name>Agriculture Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the Committee on Natural Resources, and in addition to the Committee on Agriculture, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M001228</bioguideId>
+        <fullName>Rep. Maloy, Celeste [R-UT-2]</fullName>
+        <firstName>Celeste</firstName>
+        <lastName>Maloy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>2</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>M001213</bioguideId>
+        <fullName>Rep. Moore, Blake D. [R-UT-1]</fullName>
+        <firstName>Blake</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <middleName>D.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000469</bioguideId>
+        <fullName>Rep. Fulcher, Russ [R-ID-1]</fullName>
+        <firstName>Russ</firstName>
+        <lastName>Fulcher</lastName>
+        <party>R</party>
+        <state>ID</state>
+        <district>1</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001302</bioguideId>
+        <fullName>Rep. Biggs, Andy [R-AZ-5]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Biggs</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>E000298</bioguideId>
+        <fullName>Rep. Estes, Ron [R-KS-4]</fullName>
+        <firstName>Ron</firstName>
+        <lastName>Estes</lastName>
+        <party>R</party>
+        <state>KS</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>O000086</bioguideId>
+        <fullName>Rep. Owens, Burgess [R-UT-4]</fullName>
+        <firstName>Burgess</firstName>
+        <lastName>Owens</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000403</bioguideId>
+        <fullName>Rep. Kennedy, Mike [R-UT-3]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Kennedy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>3</district>
+        <sponsorshipDate>2025-02-11</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <cboCostEstimates>
+      <item>
+        <pubDate>2025-03-10T21:01:00Z</pubDate>
+        <title>H.R. 302, Water Rights Protection Act</title>
+        <url>https://www.cbo.gov/publication/61247</url>
+        <description>As ordered reported by the House Committee on Natural Resources on February 12, 2025</description>
+      </item>
+    </cboCostEstimates>
+    <policyArea>
+      <name>Public Lands and Natural Resources</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Agriculture</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Department of the Interior</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Indian lands and resources rights</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Land use and conservation</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Licensing and registrations</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>State and local government operations</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+        <item>
+          <name>Water use and supply</name>
+          <updateDate>2025-02-28T20:25:16Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Public Lands and Natural Resources</name>
+        <updateDate>2025-02-26T20:55:21Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-09</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-11T19:01:36Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Water Rights Protection Act of 2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill limits the transfer of&amp;nbsp;water rights from water users to the Department of the Interior or the Department of Agriculture (USDA).&lt;/p&gt;&lt;p&gt;First, the bill&amp;nbsp;prohibits Interior and USDA from conditioning the issuance or renewal of&amp;nbsp;land use or occupancy agreements (e.g., permits and leases) on the transfer of any water right to the United States. Next, it prohibits Interior and USDA from&amp;nbsp;requiring water users, including Indian tribes,&amp;nbsp;to acquire water rights in the name of the United States as a condition of the issuance or renewal of a land use or occupancy agreement. Finally, it prohibits Interior and USDA from&amp;nbsp;conditioning or withholding the issuance or renewal of land use or occupancy agreements on (1) limiting the date, time, quantity, location of diversion or pumping, or place of use of a&amp;nbsp;state water right beyond any applicable limitations under&amp;nbsp;state water law; or (2)&amp;nbsp;modifying&amp;nbsp;the terms and conditions of groundwater withdrawal, guidance and reporting procedures, or conservation and source protection measures established by a state.&lt;/p&gt;&lt;p&gt;Interior and&amp;nbsp;USDA must also ensure that federal action imposes no greater restriction or regulatory requirement than under applicable state water law.&lt;/p&gt;&lt;p&gt;Further, Interior and USDA must not take actions that adversely affect state authority in permitting water usage or in adjudicating water rights.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Water Rights Protection Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Water Rights Protection Act of 2025</title>
+        <updateDate>2025-02-06T02:53:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Water Rights Protection Act of 2025</title>
+        <updateDate>2025-02-06T02:53:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To prohibit the conditioning of any permit, lease, or other use agreement on the transfer of any water right to the United States by the Secretary of the Interior and the Secretary of Agriculture, and for other purposes.</title>
+        <updateDate>2025-02-06T02:48:27Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-09T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr302ih/xml/BILLS-119hr302ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-02-14</actionDate>
+      <text>Referred to the Subcommittee on Conservation, Research, and Biotechnology.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

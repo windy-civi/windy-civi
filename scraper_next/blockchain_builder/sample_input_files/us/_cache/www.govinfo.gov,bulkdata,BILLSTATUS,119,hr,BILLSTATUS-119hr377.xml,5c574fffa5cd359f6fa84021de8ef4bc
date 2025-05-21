@@ -1,0 +1,499 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:36 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:41:33 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292b1cbde4620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>377</number>
+    <updateDate>2025-05-09T08:06:01Z</updateDate>
+    <updateDateIncludingText>2025-05-09T08:06:01Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-14</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 7 (Tuesday, January 14, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mrs. BICE:H.R. 377.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8, Clause 18: To make all Laws whichshall be necessary and proper for carrying into Execution theforegoing Powers, and all other Powers vested by thisConstitution in the Government of the United States, or inany Department or Officer thereof.[Page H149]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsju00</systemCode>
+        <name>Judiciary Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-14T15:01:30Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsgo00</systemCode>
+        <name>Oversight and Government Reform Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-14T15:01:25Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Regulation Decimation Act</title>
+        <congress>119</congress>
+        <number>710</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-23</actionDate>
+          <text>Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsgo00</systemCode>
+            <name>Oversight and Government Reform Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>B000740</bioguideId>
+        <fullName>Rep. Bice, Stephanie I. [R-OK-5]</fullName>
+        <firstName>Stephanie</firstName>
+        <lastName>Bice</lastName>
+        <party>R</party>
+        <state>OK</state>
+        <middleName>I.</middleName>
+        <district>5</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>A000369</bioguideId>
+        <fullName>Rep. Amodei, Mark E. [R-NV-2]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Amodei</lastName>
+        <party>R</party>
+        <state>NV</state>
+        <middleName>E.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000446</bioguideId>
+        <fullName>Rep. Feenstra, Randy [R-IA-4]</fullName>
+        <firstName>Randy</firstName>
+        <lastName>Feenstra</lastName>
+        <party>R</party>
+        <state>IA</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001096</bioguideId>
+        <fullName>Rep. Hageman, Harriet M. [R-WY-At Large]</fullName>
+        <firstName>Harriet</firstName>
+        <lastName>Hageman</lastName>
+        <party>R</party>
+        <state>WY</state>
+        <middleName>M.</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001118</bioguideId>
+        <fullName>Rep. Cline, Ben [R-VA-6]</fullName>
+        <firstName>Ben</firstName>
+        <lastName>Cline</lastName>
+        <party>R</party>
+        <state>VA</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001115</bioguideId>
+        <fullName>Rep. Cloud, Michael [R-TX-27]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Cloud</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>27</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001212</bioguideId>
+        <fullName>Rep. Moore, Barry [R-AL-1]</fullName>
+        <firstName>Barry</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>AL</state>
+        <district>1</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>E000071</bioguideId>
+        <fullName>Rep. Ellzey, Jake [R-TX-6]</fullName>
+        <firstName>Jake</firstName>
+        <lastName>Ellzey</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000165</bioguideId>
+        <fullName>Rep. Tiffany, Thomas P. [R-WI-7]</fullName>
+        <firstName>Thomas</firstName>
+        <lastName>Tiffany</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <middleName>P.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000814</bioguideId>
+        <fullName>Rep. Weber, Randy K. Sr. [R-TX-14]</fullName>
+        <firstName>Randy</firstName>
+        <lastName>Weber</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <middleName>K.</middleName>
+        <district>14</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001219</bioguideId>
+        <fullName>Del. Moylan, James C. [R-GU]</fullName>
+        <firstName>James</firstName>
+        <lastName>Moylan</lastName>
+        <party>R</party>
+        <state>GU</state>
+        <middleName>C.</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001120</bioguideId>
+        <fullName>Rep. Crenshaw, Dan [R-TX-2]</fullName>
+        <firstName>Dan</firstName>
+        <lastName>Crenshaw</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000795</bioguideId>
+        <fullName>Rep. Wilson, Joe [R-SC-2]</fullName>
+        <firstName>Joe</firstName>
+        <lastName>Wilson</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000478</bioguideId>
+        <fullName>Rep. Tenney, Claudia [R-NY-24]</fullName>
+        <firstName>Claudia</firstName>
+        <lastName>Tenney</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>24</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001129</bioguideId>
+        <fullName>Rep. Collins, Mike [R-GA-10]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Collins</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>10</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001224</bioguideId>
+        <fullName>Rep. Self, Keith [R-TX-3]</fullName>
+        <firstName>Keith</firstName>
+        <lastName>Self</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>R000619</bioguideId>
+        <fullName>Rep. Rulli, Michael A. [R-OH-6]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Rulli</lastName>
+        <party>R</party>
+        <state>OH</state>
+        <middleName>A.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001172</bioguideId>
+        <fullName>Rep. Smith, Adrian [R-NE-3]</fullName>
+        <firstName>Adrian</firstName>
+        <lastName>Smith</lastName>
+        <party>R</party>
+        <state>NE</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>Y000067</bioguideId>
+        <fullName>Rep. Yakym, Rudy [R-IN-2]</fullName>
+        <firstName>Rudy</firstName>
+        <lastName>Yakym</lastName>
+        <party>R</party>
+        <state>IN</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000590</bioguideId>
+        <fullName>Rep. Green, Mark E. [R-TN-7]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Green</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <middleName>E.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>R000603</bioguideId>
+        <fullName>Rep. Rouzer, David [R-NC-7]</fullName>
+        <firstName>David</firstName>
+        <lastName>Rouzer</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>7</district>
+        <sponsorshipDate>2025-02-06</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>R000612</bioguideId>
+        <fullName>Rep. Rose, John W. [R-TN-6]</fullName>
+        <firstName>John</firstName>
+        <lastName>Rose</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <middleName>W.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-02-10</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>V000133</bioguideId>
+        <fullName>Rep. Van Drew, Jefferson [R-NJ-2]</fullName>
+        <firstName>Jefferson</firstName>
+        <lastName>Van Drew</lastName>
+        <party>R</party>
+        <state>NJ</state>
+        <district>2</district>
+        <sponsorshipDate>2025-02-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001228</bioguideId>
+        <fullName>Rep. Schmidt, Derek [R-KS-2]</fullName>
+        <firstName>Derek</firstName>
+        <lastName>Schmidt</lastName>
+        <party>R</party>
+        <state>KS</state>
+        <district>2</district>
+        <sponsorshipDate>2025-02-24</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001236</bioguideId>
+        <fullName>Rep. Moore, Tim [R-NC-14]</fullName>
+        <firstName>Tim</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>14</district>
+        <sponsorshipDate>2025-05-08</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Government Operations and Politics</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-03-06T16:47:47Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-03-06T16:47:58Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-03-06T16:47:52Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Government Operations and Politics</name>
+        <updateDate>2025-02-27T16:36:17Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-14</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-01T16:23:12Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Regulation Reduction Act of 2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill requires federal agencies to repeal certain existing rules prior to issuing a new rule.&lt;/p&gt;&lt;p&gt;Specifically, the bill prohibits an agency from issuing a rule that imposes a cost or responsibility on a nongovernmental person or a state or local government unless it repeals three or more related rules.&lt;/p&gt;&lt;p&gt;Additionally, an agency may not issue a major rule that imposes such a cost or responsibility unless (1) the agency has repealed three or more related rules, and (2) the cost of the new rule is less than or equal to the cost of the rules being repealed.&amp;nbsp;A&amp;nbsp;&lt;em&gt;major rule&lt;/em&gt; is a rule that has resulted in or is likely to result in (1) an annual economic effect of at least $100 million; (2) a major increase in costs or prices for consumers, individual industries, government agencies, or geographic regions; or (3) significant adverse effects on competition, employment, investment, productivity, or innovation.&lt;/p&gt;&lt;p&gt;Any such repealed rule must be published in the Federal Register.&lt;/p&gt;&lt;p&gt;This bill does not apply to a rule or major rule that (1) relates to an internal agency policy&amp;nbsp;or practice, (2) relates to&amp;nbsp;procurement, or (3) is being revised to be less burdensome to decrease requirements imposed or compliance costs.&lt;/p&gt;&lt;p&gt;Additionally, each federal agency must submit to Congress and the Office of Management and Budget a report that includes a review of each rule of the agency and that identifies whether each rule is costly, ineffective, duplicative, or outdated.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Regulation Reduction Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Regulation Reduction Act of 2025</title>
+        <updateDate>2025-02-11T05:08:17Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Regulation Reduction Act of 2025</title>
+        <updateDate>2025-02-11T05:08:16Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To require agencies to repeal three existing regulations before issuing a new regulation, and for other purposes.</title>
+        <updateDate>2025-02-11T05:03:25Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-14T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr377ih/xml/BILLS-119hr377ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-14</actionDate>
+      <text>Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

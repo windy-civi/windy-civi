@@ -1,0 +1,301 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:41:18 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:43:19 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 942929301d11620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>296</number>
+    <updateDate>2025-04-08T08:06:34Z</updateDate>
+    <updateDateIncludingText>2025-04-08T08:06:34Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-09</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 5 (Thursday, January 9, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. LAWLER:H.R. 296.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8, Clause 18 of the U.S. Constitution[Page H93]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsas00</systemCode>
+        <name>Armed Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:37:00Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Justice for 9/11 Act</title>
+        <congress>119</congress>
+        <number>34</number>
+        <type>S</type>
+        <latestAction>
+          <actionDate>2025-01-08</actionDate>
+          <text>Read twice and referred to the Committee on Armed Services.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the House Committee on Armed Services.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsas00</systemCode>
+            <name>Armed Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>L000599</bioguideId>
+        <fullName>Rep. Lawler, Michael [R-NY-17]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Lawler</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>17</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>T000478</bioguideId>
+        <fullName>Rep. Tenney, Claudia [R-NY-24]</fullName>
+        <firstName>Claudia</firstName>
+        <lastName>Tenney</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>24</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M000317</bioguideId>
+        <fullName>Rep. Malliotakis, Nicole [R-NY-11]</fullName>
+        <firstName>Nicole</firstName>
+        <lastName>Malliotakis</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>11</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000466</bioguideId>
+        <fullName>Rep. Fitzpatrick, Brian K. [R-PA-1]</fullName>
+        <firstName>Brian</firstName>
+        <lastName>Fitzpatrick</lastName>
+        <party>R</party>
+        <state>PA</state>
+        <middleName>K.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000597</bioguideId>
+        <fullName>Rep. Garbarino, Andrew R. [R-NY-2]</fullName>
+        <firstName>Andrew</firstName>
+        <lastName>Garbarino</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <middleName>R.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000583</bioguideId>
+        <fullName>Rep. Loudermilk, Barry [R-GA-11]</fullName>
+        <firstName>Barry</firstName>
+        <lastName>Loudermilk</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>11</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000600</bioguideId>
+        <fullName>Rep. Langworthy, Nicholas A. [R-NY-23]</fullName>
+        <firstName>Nicholas</firstName>
+        <lastName>Langworthy</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <middleName>A.</middleName>
+        <district>23</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>E000071</bioguideId>
+        <fullName>Rep. Ellzey, Jake [R-TX-6]</fullName>
+        <firstName>Jake</firstName>
+        <lastName>Ellzey</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001120</bioguideId>
+        <fullName>Rep. Crenshaw, Dan [R-TX-2]</fullName>
+        <firstName>Dan</firstName>
+        <lastName>Crenshaw</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001196</bioguideId>
+        <fullName>Rep. Stefanik, Elise M. [R-NY-21]</fullName>
+        <firstName>Elise</firstName>
+        <lastName>Stefanik</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <middleName>M.</middleName>
+        <district>21</district>
+        <sponsorshipDate>2025-04-07</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Armed Forces and National Security</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Correctional facilities and imprisonment</name>
+          <updateDate>2025-03-05T16:08:18Z</updateDate>
+        </item>
+        <item>
+          <name>Criminal procedure and sentencing</name>
+          <updateDate>2025-03-05T16:08:18Z</updateDate>
+        </item>
+        <item>
+          <name>Terrorism</name>
+          <updateDate>2025-03-05T16:08:18Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Armed Forces and National Security</name>
+        <updateDate>2025-02-19T15:36:56Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-09</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-03T16:52:53Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Justice for 9/11 Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill provides that any plea agreement entered into by&amp;nbsp;Khalid Shaikh Mohammad, Walid Muhammad Salih Mubarak Bin ‘Attash, or Mustafa Ahmed Adam al Hawsawi for actions involving the terrorist attack on September 11, 2001, and its related judgment must not preclude the trial of such individuals under other provisions of law for that attack. In any trial of such individuals, the death penalty must be available.&lt;/p&gt;&lt;p&gt;In the case of any sentence imposed on&amp;nbsp;Khalid Shaikh Mohammad, Walid Muhammad Salih Mubarak Bin ‘Attash, or Mustafa Ahmed Adam al Hawsawi, the individual must (1) be held at U.S. Naval Station, Guantanamo Bay, Cuba, in solitary confinement; (2) not be provided contact with foreign nationals; (3) not be provided with psychological treatment except that specifically authorized by medical authorities at Guantanamo Bay; and (4) not be transferred to the continental United States or any other country.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Justice for 9/11 Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Justice for 9/11 Act</title>
+        <updateDate>2025-02-06T02:53:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Justice for 9/11 Act</title>
+        <updateDate>2025-02-06T02:53:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To address the plea agreements for certain individuals detained at United States Naval Station, Guantanamo Bay, Cuba, and for other purposes.</title>
+        <updateDate>2025-02-06T02:48:26Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-09T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr296ih/xml/BILLS-119hr296ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-09</actionDate>
+      <text>Referred to the House Committee on Armed Services.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -18,22 +18,22 @@ jobs:
 
       - name: Pull and Run IL Scraper
         run: |
-          mkdir -p scraper_next/blockchain_builder/input_files/il/_data
-          mkdir -p scraper_next/blockchain_builder/input_files/il/_cache
+          mkdir -p scraper_next/input_files/il/_data
+          mkdir -p scraper_next/input_files/il/_cache
 
           docker run \
-            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/il/_data:/opt/openstates/openstates/_data \
-            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/il/_cache:/opt/openstates/openstates/_cache \
+            -v ${{ github.workspace }}/scraper_next/input_files/il/_data:/opt/openstates/openstates/_data \
+            -v ${{ github.workspace }}/scraper_next/input_files/il/_cache:/opt/openstates/openstates/_cache \
             openstates/scrapers il bills --scrape --fastmode
 
       - name: Pull and Run USA Scraper
         run: |
-          mkdir -p scraper_next/blockchain_builder/input_files/usa/_data
-          mkdir -p scraper_next/blockchain_builder/input_files/usa/_cache
+          mkdir -p scraper_next/input_files/usa/_data
+          mkdir -p scraper_next/input_files/usa/_cache
 
           docker run \
-            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/usa/_data:/opt/openstates/openstates/_data \
-            -v ${{ github.workspace }}/scraper_next/blockchain_builder/input_files/usa/_cache:/opt/openstates/openstates/_cache \
+            -v ${{ github.workspace }}/scraper_next/input_files/usa/_data:/opt/openstates/openstates/_data \
+            -v ${{ github.workspace }}/scraper_next/input_files/usa/_cache:/opt/openstates/openstates/_cache \
             openstates/scrapers usa bills --scrape --fastmode
             
       - name: Run Python Filter Script

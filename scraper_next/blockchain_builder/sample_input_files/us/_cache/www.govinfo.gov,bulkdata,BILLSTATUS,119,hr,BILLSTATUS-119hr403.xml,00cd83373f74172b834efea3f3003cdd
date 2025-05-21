@@ -1,0 +1,228 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:35 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:53:12 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292b16099b620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>403</number>
+    <updateDate>2025-04-01T08:05:21Z</updateDate>
+    <updateDateIncludingText>2025-04-01T08:05:21Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-14</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 7 (Tuesday, January 14, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. SWALWELL:H.R. 403.Congress has the power to enact this legislation pursuantto the following:Article I, Section 8, of the United States Constitution,specifically Clause 18 (relating to the power to make alllaws necessary and proper for carrying out the powers vestedin congress).[Page H149]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hspw00</systemCode>
+        <name>Transportation and Infrastructure Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hspw13</systemCode>
+            <name>Economic Development, Public Buildings, and Emergency Management Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-01-15T15:35:54Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-14T15:01:45Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-15</actionDate>
+        <committees>
+          <item>
+            <systemCode>hspw13</systemCode>
+            <name>Economic Development, Public Buildings, and Emergency Management Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Economic Development, Public Buildings, and Emergency Management.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Referred to the House Committee on Transportation and Infrastructure.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hspw00</systemCode>
+            <name>Transportation and Infrastructure Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>S001193</bioguideId>
+        <fullName>Rep. Swalwell, Eric [D-CA-14]</fullName>
+        <firstName>Eric</firstName>
+        <lastName>Swalwell</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>14</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>N000147</bioguideId>
+        <fullName>Del. Norton, Eleanor Holmes [D-DC]</fullName>
+        <firstName>Eleanor</firstName>
+        <lastName>Norton</lastName>
+        <party>D</party>
+        <state>DC</state>
+        <middleName>Holmes</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-15</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000400</bioguideId>
+        <fullName>Rep. Kamlager-Dove, Sydney [D-CA-37]</fullName>
+        <firstName>Sydney</firstName>
+        <lastName>Kamlager-Dove</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>37</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001068</bioguideId>
+        <fullName>Rep. Huffman, Jared [D-CA-2]</fullName>
+        <firstName>Jared</firstName>
+        <lastName>Huffman</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>2</district>
+        <sponsorshipDate>2025-03-31</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Emergency Management</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects/>
+      <policyArea>
+        <name>Emergency Management</name>
+        <updateDate>2025-02-26T21:10:49Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-14</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-19T20:24:20Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Preventing Our Next Natural Disaster Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill modifies the Building Resilient Infrastructure and Communities (BRIC) grant program of the Federal Emergency Management Agency (FEMA).&lt;/p&gt;&lt;p&gt;Specifically, the bill&lt;/p&gt;&lt;ul&gt;&lt;li&gt;increases the amount that may be set aside from FEMA's Disaster Relief Fund for BRIC from 6% to 15% of certain disaster grant amounts;&lt;/li&gt;&lt;li&gt;authorizes FEMA to set aside 2% from the BRIC 15% set-aside for assistance with community planning and capacity building;&lt;/li&gt;&lt;li&gt;provides a 90% federal cost share for BRIC grants to environmental justice communities, and increases the maximum number of people in small impoverished communities, which are also eligible for the 90% BRIC federal cost share; and&lt;/li&gt;&lt;li&gt;authorizes FEMA to develop guidance regarding how to incorporate climate change into the National Risk Index, benefit-cost analyses, and improved codes, specifications, and standards to address natural hazards.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;FEMA must&lt;/p&gt;&lt;ul&gt;&lt;li&gt;prioritize BRIC assistance for high hazard risk communities, environmental justice communities, communities with low tax revenue base per capita, and communities with a low rate of code adoption and enforcement and infrastructure maintenance expenditures;&lt;/li&gt;&lt;li&gt;provide community outreach on project planning and grant administration; and&lt;/li&gt;&lt;li&gt;establish a central federal database to consolidate funding data collected by all local, state, and federal agencies involved in post-disaster response and pre-disaster mitigation spending and categorize the data by type of project, funding source, and hazard types using a user-friendly database and interactive map.&lt;/li&gt;&lt;/ul&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Preventing Our Next Natural Disaster Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Preventing Our Next Natural Disaster Act</title>
+        <updateDate>2025-02-08T07:23:21Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Preventing Our Next Natural Disaster Act</title>
+        <updateDate>2025-02-08T07:23:20Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To enhance predisaster mitigation to prevent future natural disasters, and for other purposes.</title>
+        <updateDate>2025-02-08T07:18:36Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-14T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr403ih/xml/BILLS-119hr403ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-15</actionDate>
+      <text>Referred to the Subcommittee on Economic Development, Public Buildings, and Emergency Management.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

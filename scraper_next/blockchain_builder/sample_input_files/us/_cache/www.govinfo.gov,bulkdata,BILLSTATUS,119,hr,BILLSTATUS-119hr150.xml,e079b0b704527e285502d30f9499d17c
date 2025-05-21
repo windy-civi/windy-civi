@@ -1,0 +1,656 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:40:54 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:47:49 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 9429289bbdd3620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>150</number>
+    <updateDate>2025-04-23T13:32:07Z</updateDate>
+    <updateDateIncludingText>2025-04-23T13:32:07Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-03</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 1 (Friday, January 3, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. DAVIDSON:H.R. 150.Congress has the power to enact this legislation pursuantto the following:``Article I, Section 8, Clause 18: The Congress shall havePower . . . To make all Laws which shall be necessary andproper for carrying into Execution the foregoing Powers, andall other Powers vested by this Constitution in theGovernment of the United States, or in any Department orOfficer thereof.''The single subject of this legislation is:To establish the People-Centered Assistance Reform EffortCommission, to improve the social safety net and increasesocial mobility by increasing access to resources whichaddress the underlying causes of poverty.[Page H41]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsag00</systemCode>
+        <name>Agriculture Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hsag03</systemCode>
+            <name>Nutrition and Foreign Agriculture Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-02-07T17:44:52Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:15Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hspw00</systemCode>
+        <name>Transportation and Infrastructure Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hspw13</systemCode>
+            <name>Economic Development, Public Buildings, and Emergency Management Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-01-04T14:09:11Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:30Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:45Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsju00</systemCode>
+        <name>Judiciary Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:40Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:35Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsba00</systemCode>
+        <name>Financial Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:25Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsif00</systemCode>
+        <name>Energy and Commerce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:20Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsed00</systemCode>
+        <name>Education and Workforce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:10Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hswm00</systemCode>
+        <name>Ways and Means Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:16:05Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-02-07</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsag03</systemCode>
+            <name>Nutrition and Foreign Agriculture Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Nutrition and Foreign Agriculture.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-04</actionDate>
+        <committees>
+          <item>
+            <systemCode>hspw13</systemCode>
+            <name>Economic Development, Public Buildings, and Emergency Management Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Economic Development, Public Buildings, and Emergency Management.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hspw00</systemCode>
+            <name>Transportation and Infrastructure Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsif00</systemCode>
+            <name>Energy and Commerce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsag00</systemCode>
+            <name>Agriculture Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsed00</systemCode>
+            <name>Education and Workforce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the Committee on Ways and Means, and in addition to the Committees on Education and Workforce, Agriculture, Energy and Commerce, Financial Services, Transportation and Infrastructure, Rules, the Judiciary, and Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hswm00</systemCode>
+            <name>Ways and Means Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>D000626</bioguideId>
+        <fullName>Rep. Davidson, Warren [R-OH-8]</fullName>
+        <firstName>Warren</firstName>
+        <lastName>Davidson</lastName>
+        <party>R</party>
+        <state>OH</state>
+        <district>8</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Social Welfare</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Adoption and foster care</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Adult day care</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Advisory bodies</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Aging</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Child care and development</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Child health</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional operations and organization</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Economic development</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Education of the disadvantaged</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Education programs funding</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Elementary and secondary education</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Employment and training programs</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Energy assistance for the poor and aged</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Family planning and birth control</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Food assistance and relief</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Government studies and investigations</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Health care costs and insurance</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Health care coverage and access</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Health programs administration and funding</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Higher education</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Homelessness and emergency shelter</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Housing and community development funding</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Housing finance and home ownership</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Housing for the elderly and disabled</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Immigrant health and welfare</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax credits</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Indian social and development programs</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Lawyers and legal services</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Low- and moderate-income housing</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Medicare</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Migrant, seasonal, agricultural labor</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Minority health</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>National and community service</name>
+          <updateDate>2025-02-24T16:53:35Z</updateDate>
+        </item>
+        <item>
+          <name>Nutrition and diet</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Performance measurement</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Poverty and welfare assistance</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Public housing</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Refugees, asylum, displaced persons</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Rural conditions and development</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Social work, volunteer service, charitable organizations</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Student aid and college costs</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Telecommunication rates and fees</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Wages and earnings</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Women's health</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+        <item>
+          <name>Youth employment and child labor</name>
+          <updateDate>2025-02-24T16:53:34Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Social Welfare</name>
+        <updateDate>2025-02-19T15:09:24Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-02-27T22:03:49Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;People-Centered Assistance Reform Effort Act or the People CARE Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill establishes the People-Centered Assistance Reform Effort Commission within the legislative branch to review federal means-tested programs for potential reform.&lt;/p&gt;&lt;p&gt;Under the bill,&amp;nbsp;means-tested programs are those designed to provide assistance to low-income individuals, including, for example, Medicaid, the Supplemental Nutrition Assistance Program (SNAP), and the Temporary Assistance for Needy Families (TANF) program.&amp;nbsp;The commission is generally directed to review all federal means-tested programs with the exception of certain specified programs, including Social Security, Medicare, and certain veterans’ benefits programs.&lt;/p&gt;&lt;p&gt;The commission is directed to identify and evaluate potential changes to federal means-tested programs, such as consolidation with other programs, delegation of certain functions to states, and the establishment of gradual benefit reductions tied to increases in beneficiaries’ income. The commission is also directed to consider changes that would allow&amp;nbsp;caseworkers to identify all of the appropriate programs for individuals and families. The commission must establish a website through which members of the public may submit suggested reforms for consideration.&amp;nbsp;&lt;/p&gt;&lt;p&gt;The commission is to be comprised of eight members, with an equal number of members&amp;nbsp;appointed by the majority and minority parties. &amp;nbsp;&lt;/p&gt;&lt;p&gt;At the conclusion of its term, the commission must report to Congress with its findings and proposed legislation implementing any recommended changes. Congress must consider the legislation under expedited procedures.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>People CARE Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>People CARE Act</title>
+        <updateDate>2025-02-04T09:08:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>People CARE Act</title>
+        <updateDate>2025-02-04T09:08:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>People-Centered Assistance Reform Effort Act</title>
+        <updateDate>2025-02-04T09:08:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To establish the People-Centered Assistance Reform Effort Commission, to improve the social safety net and increase social mobility by increasing access to resources which address the underlying causes of poverty.</title>
+        <updateDate>2025-02-04T09:03:32Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr150ih/xml/BILLS-119hr150ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-02-07</actionDate>
+      <text>Referred to the Subcommittee on Nutrition and Foreign Agriculture.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -1,0 +1,581 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:43:56 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Sat, 17 May 2025 20:04:36 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292d0d9ba8620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>478</number>
+    <updateDate>2025-05-17T17:06:12Z</updateDate>
+    <updateDateIncludingText>2025-05-17T17:06:12Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-16</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 9 (Thursday, January 16, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. BARR:H.R. 478.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8 of the United States Constitution.[Page H222]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsba00</systemCode>
+        <name>Financial Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported By</name>
+            <date>2025-05-06T19:45:50Z</date>
+          </item>
+          <item>
+            <name>Markup By</name>
+            <date>2025-04-02T15:08:00Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-16T14:01:50Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-90</citation>
+      </committeeReport>
+    </committeeReports>
+    <actions>
+      <item>
+        <actionDate>2025-05-06</actionDate>
+        <text>Placed on the Union Calendar, Calendar No. 64.</text>
+        <type>Calendars</type>
+        <actionCode>H12410</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-06</actionDate>
+        <text>Reported (Amended) by the Committee on Financial Services. H. Rept. 119-90.</text>
+        <type>Committee</type>
+        <actionCode>H12200</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-05-06</actionDate>
+        <text>Reported (Amended) by the Committee on Financial Services. H. Rept. 119-90.</text>
+        <type>Committee</type>
+        <actionCode>5000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-04-02</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported in the Nature of a Substitute by the Yeas and Nays: 28 - 21.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-04-02</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Referred to the House Committee on Financial Services.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsba00</systemCode>
+            <name>Financial Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>B001282</bioguideId>
+        <fullName>Rep. Barr, Andy [R-KY-6]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Barr</lastName>
+        <party>R</party>
+        <state>KY</state>
+        <district>6</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>M001204</bioguideId>
+        <fullName>Rep. Meuser, Daniel [R-PA-9]</fullName>
+        <firstName>Daniel</firstName>
+        <lastName>Meuser</lastName>
+        <party>R</party>
+        <state>PA</state>
+        <district>9</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000634</bioguideId>
+        <fullName>Rep. Downing, Troy [R-MT-2]</fullName>
+        <firstName>Troy</firstName>
+        <lastName>Downing</lastName>
+        <party>R</party>
+        <state>MT</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000583</bioguideId>
+        <fullName>Rep. Loudermilk, Barry [R-GA-11]</fullName>
+        <firstName>Barry</firstName>
+        <lastName>Loudermilk</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>11</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000594</bioguideId>
+        <fullName>Rep. De La Cruz, Monica [R-TX-15]</fullName>
+        <firstName>Monica</firstName>
+        <lastName>De La Cruz</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>15</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001118</bioguideId>
+        <fullName>Rep. Cline, Ben [R-VA-6]</fullName>
+        <firstName>Ben</firstName>
+        <lastName>Cline</lastName>
+        <party>R</party>
+        <state>VA</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>E000071</bioguideId>
+        <fullName>Rep. Ellzey, Jake [R-TX-6]</fullName>
+        <firstName>Jake</firstName>
+        <lastName>Ellzey</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000472</bioguideId>
+        <fullName>Rep. Franklin, Scott [R-FL-18]</fullName>
+        <firstName>Scott</firstName>
+        <lastName>Franklin</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>18</district>
+        <sponsorshipDate>2025-01-23</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001058</bioguideId>
+        <fullName>Rep. Huizenga, Bill [R-MI-4]</fullName>
+        <firstName>Bill</firstName>
+        <lastName>Huizenga</lastName>
+        <party>R</party>
+        <state>MI</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-23</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000405</bioguideId>
+        <fullName>Rep. Knott, Brad [R-NC-13]</fullName>
+        <firstName>Brad</firstName>
+        <lastName>Knott</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>13</district>
+        <sponsorshipDate>2025-01-23</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000480</bioguideId>
+        <fullName>Rep. Timmons, William R. [R-SC-4]</fullName>
+        <firstName>William</firstName>
+        <lastName>Timmons</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <middleName>R.</middleName>
+        <district>4</district>
+        <sponsorshipDate>2025-01-23</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000628</bioguideId>
+        <fullName>Rep. Dunn, Neal P. [R-FL-2]</fullName>
+        <firstName>Neal</firstName>
+        <lastName>Dunn</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <middleName>P.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000816</bioguideId>
+        <fullName>Rep. Williams, Roger [R-TX-25]</fullName>
+        <firstName>Roger</firstName>
+        <lastName>Williams</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>25</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000474</bioguideId>
+        <fullName>Rep. Flood, Mike [R-NE-1]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Flood</lastName>
+        <party>R</party>
+        <state>NE</state>
+        <district>1</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>P000609</bioguideId>
+        <fullName>Rep. Palmer, Gary J. [R-AL-6]</fullName>
+        <firstName>Gary</firstName>
+        <lastName>Palmer</lastName>
+        <party>R</party>
+        <state>AL</state>
+        <middleName>J.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000032</bioguideId>
+        <fullName>Rep. Donalds, Byron [R-FL-19]</fullName>
+        <firstName>Byron</firstName>
+        <lastName>Donalds</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>19</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>R000612</bioguideId>
+        <fullName>Rep. Rose, John W. [R-TN-6]</fullName>
+        <firstName>John</firstName>
+        <lastName>Rose</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <middleName>W.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-02-05</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001240</bioguideId>
+        <fullName>Rep. McDowell, Addison [R-NC-6]</fullName>
+        <firstName>Addison</firstName>
+        <lastName>McDowell</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <middleName>P.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-02-05</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>A000379</bioguideId>
+        <fullName>Rep. Alford, Mark [R-MO-4]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Alford</lastName>
+        <party>R</party>
+        <state>MO</state>
+        <district>4</district>
+        <sponsorshipDate>2025-02-05</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001228</bioguideId>
+        <fullName>Rep. Schmidt, Derek [R-KS-2]</fullName>
+        <firstName>Derek</firstName>
+        <lastName>Schmidt</lastName>
+        <party>R</party>
+        <state>KS</state>
+        <district>2</district>
+        <sponsorshipDate>2025-02-10</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000471</bioguideId>
+        <fullName>Rep. Fitzgerald, Scott [R-WI-5]</fullName>
+        <firstName>Scott</firstName>
+        <lastName>Fitzgerald</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <district>5</district>
+        <sponsorshipDate>2025-02-10</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001229</bioguideId>
+        <fullName>Rep. Shreve, Jefferson [R-IN-6]</fullName>
+        <firstName>Jefferson</firstName>
+        <lastName>Shreve</lastName>
+        <party>R</party>
+        <state>IN</state>
+        <district>6</district>
+        <sponsorshipDate>2025-02-24</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001236</bioguideId>
+        <fullName>Rep. Moore, Tim [R-NC-14]</fullName>
+        <firstName>Tim</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>14</district>
+        <sponsorshipDate>2025-02-24</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000599</bioguideId>
+        <fullName>Rep. Lawler, Michael [R-NY-17]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Lawler</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>17</district>
+        <sponsorshipDate>2025-03-31</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S000250</bioguideId>
+        <fullName>Rep. Sessions, Pete [R-TX-17]</fullName>
+        <firstName>Pete</firstName>
+        <lastName>Sessions</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>17</district>
+        <sponsorshipDate>2025-04-01</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Finance and Financial Sector</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Agricultural prices, subsidies, credit</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Bank accounts, deposits, capital</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Banking and financial institutions regulation</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Credit and credit markets</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Financial services and investments</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Government studies and investigations</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+        <item>
+          <name>Rural conditions and development</name>
+          <updateDate>2025-04-08T14:20:34Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Finance and Financial Sector</name>
+        <updateDate>2025-02-13T16:43:53Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-16</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-02T18:14:36Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Promoting New Bank Formation Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill eliminates and reduces certain requirements applicable to new depository institutions, certain rural community depository institutions, and federal savings associations.&lt;/p&gt;&lt;p&gt;Federal banking agencies must issue rules allowing a new depository institution or depository institution holding company three years to meet capital requirements. During this period, a depository institution or its depository institution holding company may request to deviate from an approved business plan, and the appropriate agency has 30 days to approve or deny the request.&lt;/p&gt;&lt;p&gt;In addition, the community bank leverage ratio—a way of evaluating debt levels—is reduced for new rural community depository institutions. Specifically, new rural community depository institutions must have a ratio of 8%, with a three-year phase-in of the rate. After this period, the ratio rises to its current level of 9%.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Finally, the bill removes certain restrictions to allow federal savings associations to invest in, sell, or otherwise deal in agricultural loans.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Promoting New Bank Formation Act</title>
+    <titles>
+      <item>
+        <titleType>Short Title(s) as Reported to House</titleType>
+        <titleTypeCode>102</titleTypeCode>
+        <title>Promoting New Bank Formation Act</title>
+        <updateDate>2025-05-07T08:23:15Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Reported in House</billTextVersionName>
+        <billTextVersionCode>RH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Promoting New Bank Formation Act</title>
+        <updateDate>2025-04-03T13:57:59Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Promoting New Bank Formation Act</title>
+        <updateDate>2025-02-12T11:08:15Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To require the appropriate Federal banking agencies to establish a 3-year phase-in period for de novo financial institutions to comply with Federal capital standards, to provide relief for de novo rural community banks, and for other purposes.</title>
+        <updateDate>2025-02-12T11:03:29Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Reported in House</type>
+        <date>2025-05-06T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr478rh/xml/BILLS-119hr478rh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-16T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr478ih/xml/BILLS-119hr478ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-05-06</actionDate>
+      <text>Placed on the Union Calendar, Calendar No. 64.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

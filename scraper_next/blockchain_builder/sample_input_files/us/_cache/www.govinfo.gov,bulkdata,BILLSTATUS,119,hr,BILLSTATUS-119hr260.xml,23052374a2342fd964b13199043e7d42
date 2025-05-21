@@ -1,0 +1,522 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:41:40 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:44:49 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 942929bd2b9b620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>260</number>
+    <updateDate>2025-04-29T08:06:11Z</updateDate>
+    <updateDateIncludingText>2025-04-29T08:06:11Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-09</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 5 (Thursday, January 9, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. BURCHETT:H.R. 260.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8[Page H92]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsfa00</systemCode>
+        <name>Foreign Affairs Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Markup By</name>
+            <date>2025-04-09T14:54:00Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:32:10Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>No Tax Dollars for Terrorists Act</title>
+        <congress>119</congress>
+        <number>226</number>
+        <type>S</type>
+        <latestAction>
+          <actionDate>2025-01-23</actionDate>
+          <text>Read twice and referred to the Committee on Foreign Relations.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-04-09</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsfa00</systemCode>
+            <name>Foreign Affairs Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported (Amended) by Voice Vote.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-04-09</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsfa00</systemCode>
+            <name>Foreign Affairs Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the House Committee on Foreign Affairs.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsfa00</systemCode>
+            <name>Foreign Affairs Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>B001309</bioguideId>
+        <fullName>Rep. Burchett, Tim [R-TN-2]</fullName>
+        <firstName>Tim</firstName>
+        <lastName>Burchett</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <district>2</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>G000596</bioguideId>
+        <fullName>Rep. Greene, Marjorie Taylor [R-GA-14]</fullName>
+        <firstName>Marjorie</firstName>
+        <lastName>Greene</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <middleName>Taylor</middleName>
+        <district>14</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M000194</bioguideId>
+        <fullName>Rep. Mace, Nancy [R-SC-1]</fullName>
+        <firstName>Nancy</firstName>
+        <lastName>Mace</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>1</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001321</bioguideId>
+        <fullName>Rep. Barrett, Tom [R-MI-7]</fullName>
+        <firstName>Tom</firstName>
+        <lastName>Barrett</lastName>
+        <party>R</party>
+        <state>MI</state>
+        <district>7</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000814</bioguideId>
+        <fullName>Rep. Weber, Randy K. Sr. [R-TX-14]</fullName>
+        <firstName>Randy</firstName>
+        <lastName>Weber</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <middleName>K.</middleName>
+        <district>14</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001302</bioguideId>
+        <fullName>Rep. Biggs, Andy [R-AZ-5]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Biggs</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000596</bioguideId>
+        <fullName>Rep. Luna, Anna Paulina [R-FL-13]</fullName>
+        <firstName>Anna Paulina</firstName>
+        <lastName>Luna</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>13</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001120</bioguideId>
+        <fullName>Rep. Crenshaw, Dan [R-TX-2]</fullName>
+        <firstName>Dan</firstName>
+        <lastName>Crenshaw</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001260</bioguideId>
+        <fullName>Rep. Buchanan, Vern [R-FL-16]</fullName>
+        <firstName>Vern</firstName>
+        <lastName>Buchanan</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>16</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001157</bioguideId>
+        <fullName>Rep. McCaul, Michael T. [R-TX-10]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>McCaul</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <middleName>T.</middleName>
+        <district>10</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000594</bioguideId>
+        <fullName>Rep. De La Cruz, Monica [R-TX-15]</fullName>
+        <firstName>Monica</firstName>
+        <lastName>De La Cruz</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>15</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B000825</bioguideId>
+        <fullName>Rep. Boebert, Lauren [R-CO-4]</fullName>
+        <firstName>Lauren</firstName>
+        <lastName>Boebert</lastName>
+        <party>R</party>
+        <state>CO</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001216</bioguideId>
+        <fullName>Rep. Mills, Cory [R-FL-7]</fullName>
+        <firstName>Cory</firstName>
+        <lastName>Mills</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>7</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000478</bioguideId>
+        <fullName>Rep. Tenney, Claudia [R-NY-24]</fullName>
+        <firstName>Claudia</firstName>
+        <lastName>Tenney</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>24</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>N000190</bioguideId>
+        <fullName>Rep. Norman, Ralph [R-SC-5]</fullName>
+        <firstName>Ralph</firstName>
+        <lastName>Norman</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001098</bioguideId>
+        <fullName>Rep. Hamadeh, Abraham [R-AZ-8]</fullName>
+        <firstName>Abraham</firstName>
+        <lastName>Hamadeh</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <middleName>J.</middleName>
+        <district>8</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001132</bioguideId>
+        <fullName>Rep. Crane, Elijah [R-AZ-2]</fullName>
+        <firstName>Elijah</firstName>
+        <lastName>Crane</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001240</bioguideId>
+        <fullName>Rep. McDowell, Addison [R-NC-6]</fullName>
+        <firstName>Addison</firstName>
+        <lastName>McDowell</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <middleName>P.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001307</bioguideId>
+        <fullName>Rep. Baird, James R. [R-IN-4]</fullName>
+        <firstName>James</firstName>
+        <lastName>Baird</lastName>
+        <party>R</party>
+        <state>IN</state>
+        <middleName>R.</middleName>
+        <district>4</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001218</bioguideId>
+        <fullName>Rep. McCormick, Richard [R-GA-7]</fullName>
+        <firstName>Richard</firstName>
+        <lastName>McCormick</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>7</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000599</bioguideId>
+        <fullName>Rep. Lawler, Michael [R-NY-17]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Lawler</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <district>17</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001224</bioguideId>
+        <fullName>Rep. Self, Keith [R-TX-3]</fullName>
+        <firstName>Keith</firstName>
+        <lastName>Self</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>V000135</bioguideId>
+        <fullName>Rep. Van Orden, Derrick [R-WI-3]</fullName>
+        <firstName>Derrick</firstName>
+        <lastName>Van Orden</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000626</bioguideId>
+        <fullName>Rep. Davidson, Warren [R-OH-8]</fullName>
+        <firstName>Warren</firstName>
+        <lastName>Davidson</lastName>
+        <party>R</party>
+        <state>OH</state>
+        <district>8</district>
+        <sponsorshipDate>2025-04-07</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001322</bioguideId>
+        <fullName>Rep. Baumgartner, Michael [R-WA-5]</fullName>
+        <firstName>Michael</firstName>
+        <lastName>Baumgartner</lastName>
+        <party>R</party>
+        <state>WA</state>
+        <district>5</district>
+        <sponsorshipDate>2025-04-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <cboCostEstimates>
+      <item>
+        <pubDate>2025-04-21T18:56:00Z</pubDate>
+        <title>H.R. 260, No Tax Dollars for Terrorists Act</title>
+        <url>https://www.cbo.gov/publication/61340</url>
+        <description>As ordered reported by the House Committee on Foreign Affairs on April 9, 2025</description>
+      </item>
+    </cboCostEstimates>
+    <policyArea>
+      <name>International Affairs</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Afghanistan</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+        <item>
+          <name>Asia</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+        <item>
+          <name>Foreign aid and international relief</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+        <item>
+          <name>Foreign and international banking</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+        <item>
+          <name>Foreign loans and debt</name>
+          <updateDate>2025-04-16T17:29:10Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>International Affairs</name>
+        <updateDate>2025-02-20T14:01:40Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-09</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-13T16:47:06Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;No Tax Dollars for Terrorists Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill requires the Department of State to develop and implement a strategy to discourage foreign countries and nongovernmental organizations from providing financial or material support to the&amp;nbsp;Taliban, including by using U.S.-provided foreign assistance to discourage countries and organizations from providing such support to the Taliban.&lt;/p&gt;&lt;p&gt;The State Department must report to Congress&amp;nbsp;on (1) foreign countries and nongovernmental organizations that have provided financial or material support to the Taliban and U.S. efforts to oppose such support; (2) the strategy to discourage such support and a plan for the strategy's implementation; (3) U.S.-funded direct cash assistance programs in Afghanistan; and (4) the Afghan Fund, including Taliban influence over Da Afghanistan Bank (the Afghan central bank).&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>No Tax Dollars for Terrorists Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>No Tax Dollars for Terrorists Act</title>
+        <updateDate>2025-02-05T01:08:19Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>No Tax Dollars for Terrorists Act</title>
+        <updateDate>2025-02-05T01:08:16Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To require a strategy to oppose financial or material support by foreign countries and nongovernmental organizations to the Taliban, and for other purposes.</title>
+        <updateDate>2025-02-05T01:03:23Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-09T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr260ih/xml/BILLS-119hr260ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-04-09</actionDate>
+      <text>Ordered to be Reported (Amended) by Voice Vote.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

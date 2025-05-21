@@ -1,0 +1,214 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:45:25 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:54:00 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292f3cbbfe620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>713</number>
+    <updateDate>2025-04-28T19:01:44Z</updateDate>
+    <updateDateIncludingText>2025-04-28T19:01:44Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-23</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 14 (Thursday, January 23, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Ms. VAN DUYNE:H.R. 713.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8[Page H389]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hswm00</systemCode>
+        <name>Ways and Means Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-23T15:01:00Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsed00</systemCode>
+        <name>Education and Workforce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-23T15:00:50Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Referred to the Committee on Education and Workforce, and in addition to the Committee on Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hswm00</systemCode>
+            <name>Ways and Means Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Referred to the Committee on Education and Workforce, and in addition to the Committee on Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsed00</systemCode>
+            <name>Education and Workforce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>V000134</bioguideId>
+        <fullName>Rep. Van Duyne, Beth [R-TX-24]</fullName>
+        <firstName>Beth</firstName>
+        <lastName>Van Duyne</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>24</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Education</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Civil actions and liability</name>
+          <updateDate>2025-04-07T14:40:38Z</updateDate>
+        </item>
+        <item>
+          <name>Education programs funding</name>
+          <updateDate>2025-04-07T14:40:33Z</updateDate>
+        </item>
+        <item>
+          <name>Government lending and loan guarantees</name>
+          <updateDate>2025-04-07T14:40:28Z</updateDate>
+        </item>
+        <item>
+          <name>Higher education</name>
+          <updateDate>2025-04-07T14:40:18Z</updateDate>
+        </item>
+        <item>
+          <name>Student aid and college costs</name>
+          <updateDate>2025-04-07T14:40:22Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Education</name>
+        <updateDate>2025-02-24T20:26:32Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-23</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-28T18:59:17Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Preventing Financial Exploitation in Higher Education Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill establishes financial penalties for institutions of higher education (IHEs) with endowments of $2.5 billion or more that have specified percentages of current and former students who default, are delinquent, or underpay on their federal student loans. The bill also imposes an increased excise tax on net investment income of certain IHEs that increase tuition beyond certain levels.&lt;/p&gt;&lt;p&gt;Specifically, the bill requires such an IHE to pay&amp;nbsp;penalties to the Department of Education based on the IHE's&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cohort default rate (the percentage of how many&amp;nbsp;borrowers default on their federal student loans in a fiscal year),&lt;/li&gt;&lt;li&gt;cohort delinquency rate (the percentage of borrowers who are between 31- and 360-days past-due on their federal student loans), and&lt;/li&gt;&lt;li&gt;cohort underpayment rate (the percentage of borrowers who are making regular payments on their federal student loans, are neither delinquent nor in default on those loans, but for whom the outstanding balances on their loans exceed the sum of the original loan balances).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For example, for FY2025, an IHE with a cohort default rate of 11% or more must pay a penalty in an amount equal to 30% of the total outstanding balance of principal and interest due on all federal student loans.&lt;/p&gt;&lt;p&gt;The bill also imposes an increased excise tax equal to 25% of the net investment income of an IHE with an endowment of $2.5 billion or more that charges tuition exceeding the inflation adjustment base amount for the taxable year.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Preventing Financial Exploitation in Higher Education Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Preventing Financial Exploitation in Higher Education Act</title>
+        <updateDate>2025-02-21T11:53:21Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Preventing Financial Exploitation in Higher Education Act</title>
+        <updateDate>2025-02-21T11:53:18Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To impose a financial penalty on certain institutions of higher education with high percentages of students who default or make insufficient payments on Federal student loans, and for other purposes.</title>
+        <updateDate>2025-02-21T11:48:33Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-23T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr713ih/xml/BILLS-119hr713ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-23</actionDate>
+      <text>Referred to the Committee on Education and Workforce, and in addition to the Committee on Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

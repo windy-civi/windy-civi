@@ -1,0 +1,719 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:02 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:49:56 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292a43484e620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>307</number>
+    <updateDate>2025-05-09T08:06:10Z</updateDate>
+    <updateDateIncludingText>2025-05-09T08:06:10Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-09</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 5 (Thursday, January 9, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mrs. McIVER:H.R. 307.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8, Clause 1, along with the Necessaryand Proper Clause, Article 1, Section 8, Clause 18.[Page H93]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hswm00</systemCode>
+        <name>Ways and Means Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:36:05Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsif00</systemCode>
+        <name>Energy and Commerce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-09T14:36:00Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Sponsor introductory remarks on measure. (CR H122)</text>
+        <type>IntroReferral</type>
+        <actionCode>B00100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the Committee on Energy and Commerce, and in addition to the Committee on Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hswm00</systemCode>
+            <name>Ways and Means Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Referred to the Committee on Energy and Commerce, and in addition to the Committee on Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsif00</systemCode>
+            <name>Energy and Commerce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-09</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M001229</bioguideId>
+        <fullName>Rep. McIver, LaMonica [D-NJ-10]</fullName>
+        <firstName>LaMonica</firstName>
+        <lastName>McIver</lastName>
+        <party>D</party>
+        <state>NJ</state>
+        <district>10</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>J000309</bioguideId>
+        <fullName>Rep. Jackson, Jonathan L. [D-IL-1]</fullName>
+        <firstName>Jonathan</firstName>
+        <lastName>Jackson</lastName>
+        <party>D</party>
+        <state>IL</state>
+        <middleName>L.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000385</bioguideId>
+        <fullName>Rep. Kelly, Robin L. [D-IL-2]</fullName>
+        <firstName>Robin</firstName>
+        <lastName>Kelly</lastName>
+        <party>D</party>
+        <state>IL</state>
+        <middleName>L.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-09</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000822</bioguideId>
+        <fullName>Rep. Watson Coleman, Bonnie [D-NJ-12]</fullName>
+        <firstName>Bonnie</firstName>
+        <lastName>Watson Coleman</lastName>
+        <party>D</party>
+        <state>NJ</state>
+        <district>12</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001185</bioguideId>
+        <fullName>Rep. Sewell, Terri A. [D-AL-7]</fullName>
+        <firstName>Terri</firstName>
+        <lastName>Sewell</lastName>
+        <party>D</party>
+        <state>AL</state>
+        <middleName>A.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000629</bioguideId>
+        <fullName>Rep. Davids, Sharice [D-KS-3]</fullName>
+        <firstName>Sharice</firstName>
+        <lastName>Davids</lastName>
+        <party>D</party>
+        <state>KS</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>J000288</bioguideId>
+        <fullName>Rep. Johnson, Henry C. "Hank" [D-GA-4]</fullName>
+        <firstName>Henry</firstName>
+        <lastName>Johnson</lastName>
+        <party>D</party>
+        <state>GA</state>
+        <middleName>C. "Hank"</middleName>
+        <district>4</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001143</bioguideId>
+        <fullName>Rep. McCollum, Betty [D-MN-4]</fullName>
+        <firstName>Betty</firstName>
+        <lastName>McCollum</lastName>
+        <party>D</party>
+        <state>MN</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000472</bioguideId>
+        <fullName>Rep. Takano, Mark [D-CA-39]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Takano</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>39</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001285</bioguideId>
+        <fullName>Rep. Brownley, Julia [D-CA-26]</fullName>
+        <firstName>Julia</firstName>
+        <lastName>Brownley</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>26</district>
+        <sponsorshipDate>2025-01-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001137</bioguideId>
+        <fullName>Rep. Meeks, Gregory W. [D-NY-5]</fullName>
+        <firstName>Gregory</firstName>
+        <lastName>Meeks</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>W.</middleName>
+        <district>5</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000230</bioguideId>
+        <fullName>Rep. Davis, Donald G. [D-NC-1]</fullName>
+        <firstName>Donald</firstName>
+        <lastName>Davis</lastName>
+        <party>D</party>
+        <state>NC</state>
+        <middleName>G.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001223</bioguideId>
+        <fullName>Rep. Sykes, Emilia Strong [D-OH-13]</fullName>
+        <firstName>Emilia</firstName>
+        <lastName>Sykes</lastName>
+        <party>D</party>
+        <state>OH</state>
+        <middleName>Strong</middleName>
+        <district>13</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000193</bioguideId>
+        <fullName>Rep. Thompson, Bennie G. [D-MS-2]</fullName>
+        <firstName>Bennie</firstName>
+        <lastName>Thompson</lastName>
+        <party>D</party>
+        <state>MS</state>
+        <middleName>G.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>N000147</bioguideId>
+        <fullName>Del. Norton, Eleanor Holmes [D-DC]</fullName>
+        <firstName>Eleanor</firstName>
+        <lastName>Norton</lastName>
+        <party>D</party>
+        <state>DC</state>
+        <middleName>Holmes</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001091</bioguideId>
+        <fullName>Rep. Castro, Joaquin [D-TX-20]</fullName>
+        <firstName>Joaquin</firstName>
+        <lastName>Castro</lastName>
+        <party>D</party>
+        <state>TX</state>
+        <district>20</district>
+        <sponsorshipDate>2025-01-15</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001067</bioguideId>
+        <fullName>Rep. Clarke, Yvette D. [D-NY-9]</fullName>
+        <firstName>Yvette</firstName>
+        <lastName>Clarke</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>D.</middleName>
+        <district>9</district>
+        <sponsorshipDate>2025-01-15</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000602</bioguideId>
+        <fullName>Rep. Lee, Summer L. [D-PA-12]</fullName>
+        <firstName>Summer</firstName>
+        <lastName>Lee</lastName>
+        <party>D</party>
+        <state>PA</state>
+        <middleName>L.</middleName>
+        <district>12</district>
+        <sponsorshipDate>2025-01-15</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000096</bioguideId>
+        <fullName>Rep. Davis, Danny K. [D-IL-7]</fullName>
+        <firstName>Danny</firstName>
+        <lastName>Davis</lastName>
+        <party>D</party>
+        <state>IL</state>
+        <middleName>K.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000482</bioguideId>
+        <fullName>Rep. Trahan, Lori [D-MA-3]</fullName>
+        <firstName>Lori</firstName>
+        <lastName>Trahan</lastName>
+        <party>D</party>
+        <state>MA</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001281</bioguideId>
+        <fullName>Rep. Beatty, Joyce [D-OH-3]</fullName>
+        <firstName>Joyce</firstName>
+        <lastName>Beatty</lastName>
+        <party>D</party>
+        <state>OH</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000551</bioguideId>
+        <fullName>Rep. Grijalva, Raúl M. [D-AZ-7]</fullName>
+        <firstName>Raúl</firstName>
+        <lastName>Grijalva</lastName>
+        <party>D</party>
+        <state>AZ</state>
+        <middleName>M.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000399</bioguideId>
+        <fullName>Rep. Doggett, Lloyd [D-TX-37]</fullName>
+        <firstName>Lloyd</firstName>
+        <lastName>Doggett</lastName>
+        <party>D</party>
+        <state>TX</state>
+        <district>37</district>
+        <sponsorshipDate>2025-01-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001301</bioguideId>
+        <fullName>Rep. Bergman, Jack [R-MI-1]</fullName>
+        <firstName>Jack</firstName>
+        <lastName>Bergman</lastName>
+        <party>R</party>
+        <state>MI</state>
+        <district>1</district>
+        <sponsorshipDate>2025-02-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001211</bioguideId>
+        <fullName>Rep. Stanton, Greg [D-AZ-4]</fullName>
+        <firstName>Greg</firstName>
+        <lastName>Stanton</lastName>
+        <party>D</party>
+        <state>AZ</state>
+        <district>4</district>
+        <sponsorshipDate>2025-02-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001127</bioguideId>
+        <fullName>Rep. Cherfilus-McCormick, Sheila [D-FL-20]</fullName>
+        <firstName>Sheila</firstName>
+        <lastName>Cherfilus-McCormick</lastName>
+        <party>D</party>
+        <state>FL</state>
+        <district>20</district>
+        <sponsorshipDate>2025-02-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001072</bioguideId>
+        <fullName>Rep. Carson, André [D-IN-7]</fullName>
+        <firstName>André</firstName>
+        <lastName>Carson</lastName>
+        <party>D</party>
+        <state>IN</state>
+        <district>7</district>
+        <sponsorshipDate>2025-02-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001119</bioguideId>
+        <fullName>Rep. Craig, Angie [D-MN-2]</fullName>
+        <firstName>Angie</firstName>
+        <lastName>Craig</lastName>
+        <party>D</party>
+        <state>MN</state>
+        <district>2</district>
+        <sponsorshipDate>2025-02-13</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000808</bioguideId>
+        <fullName>Rep. Wilson, Frederica S. [D-FL-24]</fullName>
+        <firstName>Frederica</firstName>
+        <lastName>Wilson</lastName>
+        <party>D</party>
+        <state>FL</state>
+        <middleName>S.</middleName>
+        <district>24</district>
+        <sponsorshipDate>2025-03-04</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B000490</bioguideId>
+        <fullName>Rep. Bishop, Sanford D. [D-GA-2]</fullName>
+        <firstName>Sanford</firstName>
+        <lastName>Bishop</lastName>
+        <party>D</party>
+        <state>GA</state>
+        <middleName>D.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-03-11</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000398</bioguideId>
+        <fullName>Rep. Kean, Thomas H. [R-NJ-7]</fullName>
+        <firstName>Thomas</firstName>
+        <lastName>Kean</lastName>
+        <party>R</party>
+        <state>NJ</state>
+        <middleName>H.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-03-11</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001219</bioguideId>
+        <fullName>Del. Moylan, James C. [R-GU-At Large]</fullName>
+        <firstName>James</firstName>
+        <lastName>Moylan</lastName>
+        <party>R</party>
+        <state>GU</state>
+        <middleName>C.</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M000687</bioguideId>
+        <fullName>Rep. Mfume, Kweisi [D-MD-7]</fullName>
+        <firstName>Kweisi</firstName>
+        <lastName>Mfume</lastName>
+        <party>D</party>
+        <state>MD</state>
+        <district>7</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000797</bioguideId>
+        <fullName>Rep. Wasserman Schultz, Debbie [D-FL-25]</fullName>
+        <firstName>Debbie</firstName>
+        <lastName>Wasserman Schultz</lastName>
+        <party>D</party>
+        <state>FL</state>
+        <district>25</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>J000310</bioguideId>
+        <fullName>Rep. Johnson, Julie [D-TX-32]</fullName>
+        <firstName>Julie</firstName>
+        <lastName>Johnson</lastName>
+        <party>D</party>
+        <state>TX</state>
+        <district>32</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000187</bioguideId>
+        <fullName>Rep. Waters, Maxine [D-CA-43]</fullName>
+        <firstName>Maxine</firstName>
+        <lastName>Waters</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>43</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000476</bioguideId>
+        <fullName>Rep. Frost, Maxwell [D-FL-10]</fullName>
+        <firstName>Maxwell</firstName>
+        <lastName>Frost</lastName>
+        <party>D</party>
+        <state>FL</state>
+        <district>10</district>
+        <sponsorshipDate>2025-04-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>V000081</bioguideId>
+        <fullName>Rep. Velázquez, Nydia M. [D-NY-7]</fullName>
+        <firstName>Nydia</firstName>
+        <lastName>Velázquez</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>M.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-04-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000477</bioguideId>
+        <fullName>Rep. Foushee, Valerie P. [D-NC-4]</fullName>
+        <firstName>Valerie</firstName>
+        <lastName>Foushee</lastName>
+        <party>D</party>
+        <state>NC</state>
+        <middleName>P.</middleName>
+        <district>4</district>
+        <sponsorshipDate>2025-05-08</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Health</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Cardiovascular and respiratory health</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Digestive and metabolic diseases</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Education programs funding</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Employee benefits and pensions</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health care costs and insurance</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health care coverage and access</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health care quality</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health programs administration and funding</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health promotion and preventive care</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Health technology, devices, supplies</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Home and outpatient care</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Hospital care</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Insurance industry and regulation</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Medicaid</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Medical tests and diagnostic methods</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Medicare</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+        <item>
+          <name>Surgery and anesthesia</name>
+          <updateDate>2025-02-10T19:03:05Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Health</name>
+        <updateDate>2025-02-06T19:49:05Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-09</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-02-19T22:16:10Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Amputation Reduction and Compassion Act of 2025&amp;nbsp;or the ARC Act of &lt;/strong&gt;&lt;strong&gt;2025&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill provides for coverage of peripheral artery disease screening tests without cost-sharing under Medicare and Medicaid for certain at-risk individuals. It also requires the development of certain educational programs, a payment model, and Medicare quality measures to reduce amputations relating to such disease.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>ARC Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>ARC Act of 2025</title>
+        <updateDate>2025-02-06T04:38:20Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>ARC Act of 2025</title>
+        <updateDate>2025-02-06T04:38:18Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Amputation Reduction and Compassion Act of 2025</title>
+        <updateDate>2025-02-06T04:38:18Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To amend titles XVIII and XIX of the Social Security Act to provide for coverage of peripheral artery disease screening tests furnished to at-risk beneficiaries under the Medicare and Medicaid programs without the imposition of cost-sharing requirements, and for other purposes.</title>
+        <updateDate>2025-02-06T04:33:37Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-09T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr307ih/xml/BILLS-119hr307ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-14</actionDate>
+      <text>Sponsor introductory remarks on measure. (CR H122)</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

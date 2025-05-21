@@ -1,0 +1,306 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:45:09 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:52:51 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292ed37dc5620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>602</number>
+    <updateDate>2025-04-04T08:06:40Z</updateDate>
+    <updateDateIncludingText>2025-04-04T08:06:40Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-22</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 13 (Wednesday, January 22, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. BURCHETT:H.R. 602.Congress has the power to enact this legislation pursuantto the following:Article 1, Section 8[Page H300]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsvr00</systemCode>
+        <name>Veterans' Affairs Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>hsvr03</systemCode>
+            <name>Health Subcommittee</name>
+            <activities>
+              <item>
+                <name>Referred to</name>
+                <date>2025-03-04T22:40:29Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-22T15:04:40Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsvr03</systemCode>
+            <name>Health Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Referred to the Subcommittee on Health.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-22</actionDate>
+        <text>Referred to the House Committee on Veterans' Affairs.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsvr00</systemCode>
+            <name>Veterans' Affairs Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-22</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-22</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>B001309</bioguideId>
+        <fullName>Rep. Burchett, Tim [R-TN-2]</fullName>
+        <firstName>Tim</firstName>
+        <lastName>Burchett</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <district>2</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>K000402</bioguideId>
+        <fullName>Rep. Kennedy, Timothy M. [D-NY-26]</fullName>
+        <firstName>Timothy</firstName>
+        <lastName>Kennedy</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>M.</middleName>
+        <district>26</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000596</bioguideId>
+        <fullName>Rep. Luna, Anna Paulina [R-FL-13]</fullName>
+        <firstName>Anna Paulina</firstName>
+        <lastName>Luna</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>13</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001217</bioguideId>
+        <fullName>Rep. Moskowitz, Jared [D-FL-23]</fullName>
+        <firstName>Jared</firstName>
+        <lastName>Moskowitz</lastName>
+        <party>D</party>
+        <state>FL</state>
+        <district>23</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M000194</bioguideId>
+        <fullName>Rep. Mace, Nancy [R-SC-1]</fullName>
+        <firstName>Nancy</firstName>
+        <lastName>Mace</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>1</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>D000230</bioguideId>
+        <fullName>Rep. Davis, Donald G. [D-NC-1]</fullName>
+        <firstName>Donald</firstName>
+        <lastName>Davis</lastName>
+        <party>D</party>
+        <state>NC</state>
+        <middleName>G.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001237</bioguideId>
+        <fullName>Rep. McDonald Rivet, Kristen [D-MI-8]</fullName>
+        <firstName>Kristen</firstName>
+        <lastName>McDonald Rivet</lastName>
+        <party>D</party>
+        <state>MI</state>
+        <district>8</district>
+        <sponsorshipDate>2025-01-31</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000590</bioguideId>
+        <fullName>Rep. Lee, Susie [D-NV-3]</fullName>
+        <firstName>Susie</firstName>
+        <lastName>Lee</lastName>
+        <party>D</party>
+        <state>NV</state>
+        <district>3</district>
+        <sponsorshipDate>2025-04-03</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Armed Forces and National Security</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Assault and harassment offenses</name>
+          <updateDate>2025-03-13T15:39:27Z</updateDate>
+        </item>
+        <item>
+          <name>Health care coverage and access</name>
+          <updateDate>2025-03-13T15:39:35Z</updateDate>
+        </item>
+        <item>
+          <name>Health personnel</name>
+          <updateDate>2025-03-13T15:39:21Z</updateDate>
+        </item>
+        <item>
+          <name>Mental health</name>
+          <updateDate>2025-03-13T15:39:40Z</updateDate>
+        </item>
+        <item>
+          <name>Sex offenses</name>
+          <updateDate>2025-03-13T15:39:31Z</updateDate>
+        </item>
+        <item>
+          <name>Veterans' medical care</name>
+          <updateDate>2025-03-13T15:39:16Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Armed Forces and National Security</name>
+        <updateDate>2025-02-25T14:44:09Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-22</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-11T15:54:50Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Sexual Assault Nurse Examiner in VA Hospitals Act of 2025 or the SANE Act of 2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill requires the Department of Veterans Affairs (VA) to employ at each of its hospitals and urgent care facilities at least one sexual assault nurse examiner or a health care provider who is qualified to conduct a sexual assault forensic examination.&lt;/p&gt;&lt;p&gt;The bill also provides that after examining an individual for sexual assault, a VA health care provider must verbally refer the individual to mental health care services furnished by the VA in a VA hospital or by a non-VA provider under the Veterans Community Care Program if the wait time for services at a VA hospital exceeds 30 days.&lt;/p&gt;&lt;p&gt;In providing such duties related to sexual assault care, the VA must ensure that there is no reduction in, or negative effect on, the patient care responsibilities otherwise carried out by its employees.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>SANE Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>SANE Act of 2025</title>
+        <updateDate>2025-02-21T06:53:21Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>SANE Act of 2025</title>
+        <updateDate>2025-02-21T06:53:20Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Sexual Assault Nurse Examiner in VA Hospitals Act of 2025</title>
+        <updateDate>2025-02-21T06:53:20Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To direct the Secretary of Veterans Affairs to ensure that sexual assault nurse examiners are employed at certain Department of Veterans Affairs medical facilities, and for other purposes.</title>
+        <updateDate>2025-02-21T06:49:32Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-22T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr602ih/xml/BILLS-119hr602ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-04</actionDate>
+      <text>Referred to the Subcommittee on Health.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

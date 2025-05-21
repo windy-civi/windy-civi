@@ -1,0 +1,297 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:38:58 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:38:01 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 942925c96a62620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>60</number>
+    <updateDate>2025-04-22T19:28:18Z</updateDate>
+    <updateDateIncludingText>2025-04-22T19:28:18Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-03</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 1 (Friday, January 3, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. BIGGS of Arizona:H.R. 60.Congress has the power to enact this legislation pursuantto the following:Artcile 1, Section 8The single subject of this legislation is:The single subject of this bill is to protect the right oflaw-abiding citizens to transport knives interstate,notwithstanding a patchwork of State and local prohibitionsthat burden citizens.[Page H37]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsju00</systemCode>
+        <name>Judiciary Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Markup By</name>
+            <date>2025-03-25T16:27:57Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-03T16:07:20Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Knife Owners’ Protection Act of 2025</title>
+        <congress>119</congress>
+        <number>346</number>
+        <type>S</type>
+        <latestAction>
+          <actionDate>2025-01-30</actionDate>
+          <text>Read twice and referred to the Committee on Commerce, Science, and Transportation.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Identical bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-03-25</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported (Amended) by the Yeas and Nays: 13 - 10.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-03-25</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Referred to the House Committee on the Judiciary.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsju00</systemCode>
+            <name>Judiciary Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>B001302</bioguideId>
+        <fullName>Rep. Biggs, Andy [R-AZ-5]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Biggs</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <district>5</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>O000175</bioguideId>
+        <fullName>Rep. Ogles, Andrew [R-TN-5]</fullName>
+        <firstName>Andrew</firstName>
+        <lastName>Ogles</lastName>
+        <party>R</party>
+        <state>TN</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-03</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001212</bioguideId>
+        <fullName>Rep. Moore, Barry [R-AL-1]</fullName>
+        <firstName>Barry</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>AL</state>
+        <district>1</district>
+        <sponsorshipDate>2025-02-25</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000603</bioguideId>
+        <fullName>Rep. Gill, Brandon [R-TX-26]</fullName>
+        <firstName>Brandon</firstName>
+        <lastName>Gill</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>26</district>
+        <sponsorshipDate>2025-03-06</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Crime and Law Enforcement</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Aviation and airports</name>
+          <updateDate>2025-02-06T15:16:28Z</updateDate>
+        </item>
+        <item>
+          <name>Civil actions and liability</name>
+          <updateDate>2025-02-06T15:16:40Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-02-06T15:16:13Z</updateDate>
+        </item>
+        <item>
+          <name>Legal fees and court costs</name>
+          <updateDate>2025-02-06T15:16:44Z</updateDate>
+        </item>
+        <item>
+          <name>Motor vehicles</name>
+          <updateDate>2025-02-06T15:16:24Z</updateDate>
+        </item>
+        <item>
+          <name>State and local government operations</name>
+          <updateDate>2025-02-06T15:16:19Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Crime and Law Enforcement</name>
+        <updateDate>2025-02-04T13:04:39Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-22T19:27:59Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Knife Owners’ Protection Act of 2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill permits an individual to transport a knife between two places (e.g., states) where knife possession, carry, or transport is legal. The knife must be transported in&amp;nbsp;compliance with the bill's&amp;nbsp;accessibility and secure storage requirements, unless it is an emergency knife or tool designed to cut seat belts.&lt;/p&gt;&lt;p&gt;An individual who is transporting a knife in compliance with this bill may not be arrested or detained for a knife violation unless there is probable cause to believe the individual failed to comply with the accessibility or&amp;nbsp;secure storage requirements. An individual may assert compliance with this bill as a claim or defense in any civil or criminal proceeding.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Knife Owners’ Protection Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Knife Owners’ Protection Act of 2025</title>
+        <updateDate>2025-02-04T05:38:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Knife Owners’ Protection Act of 2025</title>
+        <updateDate>2025-02-04T05:38:17Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To protect the right of law-abiding citizens to transport knives interstate, notwithstanding a patchwork of State and local prohibitions that burden citizens.</title>
+        <updateDate>2025-02-04T05:33:19Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr60ih/xml/BILLS-119hr60ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-25</actionDate>
+      <text>Ordered to be Reported (Amended) by the Yeas and Nays: 13 - 10.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

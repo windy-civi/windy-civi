@@ -1,0 +1,466 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:45:22 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Sat, 17 May 2025 04:06:43 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292f29f8a4620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>677</number>
+    <updateDate>2025-05-17T02:53:19Z</updateDate>
+    <updateDateIncludingText>2025-05-17T02:53:19Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-23</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 14 (Thursday, January 23, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Ms. HAGEMAN:H.R. 677.Congress has the power to enact this legislation pursuantto the following:Article I Section 8[Page H388]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>sseg00</systemCode>
+        <name>Energy and Natural Resources Committee</name>
+        <chamber>Senate</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-05-14T15:56:39Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported By</name>
+            <date>2025-05-05T16:22:13Z</date>
+          </item>
+          <item>
+            <name>Markup By</name>
+            <date>2025-04-09T22:03:49Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-23T15:05:40Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-88</citation>
+      </committeeReport>
+    </committeeReports>
+    <actions>
+      <item>
+        <actionDate>2025-05-14</actionDate>
+        <committees>
+          <item>
+            <systemCode>sseg00</systemCode>
+            <name>Energy and Natural Resources Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <name>Senate</name>
+        </sourceSystem>
+        <text>Received in the Senate and Read twice and referred to the Committee on Energy and Natural Resources.</text>
+        <type>IntroReferral</type>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:46:17</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:46:14</actionTime>
+        <text>On motion to suspend the rules and pass the bill, as amended Agreed to by voice vote. (text: CR H1973)</text>
+        <type>Floor</type>
+        <actionCode>H37300</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:46:14</actionTime>
+        <text>Passed/agreed to in House: On motion to suspend the rules and pass the bill, as amended Agreed to by voice vote. (text: CR H1973)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:38:23</actionTime>
+        <text>DEBATE - The House proceeded with forty minutes of debate on H.R. 677.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:38:21</actionTime>
+        <text>Considered under suspension of the rules. (consideration: CR H1973-1974)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-13</actionDate>
+        <actionTime>16:38:11</actionTime>
+        <text>Mr. Westerman moved to suspend the rules and pass the bill, as amended.</text>
+        <type>Floor</type>
+        <actionCode>H30300</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-05</actionDate>
+        <text>Placed on the Union Calendar, Calendar No. 63.</text>
+        <type>Calendars</type>
+        <actionCode>H12410</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-05</actionDate>
+        <text>Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-88.</text>
+        <type>Committee</type>
+        <actionCode>H12200</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-05-05</actionDate>
+        <text>Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-88.</text>
+        <type>Committee</type>
+        <actionCode>5000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-04-09</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported in the Nature of a Substitute by Unanimous Consent.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-04-09</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Referred to the House Committee on Natural Resources.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>H001096</bioguideId>
+        <fullName>Rep. Hageman, Harriet M. [R-WY-At Large]</fullName>
+        <firstName>Harriet</firstName>
+        <lastName>Hageman</lastName>
+        <party>R</party>
+        <state>WY</state>
+        <middleName>M.</middleName>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Government Operations and Politics</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-03-17T17:52:31Z</updateDate>
+        </item>
+        <item>
+          <name>Administrative remedies</name>
+          <updateDate>2025-03-17T17:52:23Z</updateDate>
+        </item>
+        <item>
+          <name>Department of the Interior</name>
+          <updateDate>2025-03-17T17:52:59Z</updateDate>
+        </item>
+        <item>
+          <name>Indian lands and resources rights</name>
+          <updateDate>2025-03-17T17:52:42Z</updateDate>
+        </item>
+        <item>
+          <name>Land transfers</name>
+          <updateDate>2025-03-17T17:52:55Z</updateDate>
+        </item>
+        <item>
+          <name>Land use and conservation</name>
+          <updateDate>2025-03-17T17:52:49Z</updateDate>
+        </item>
+        <item>
+          <name>Mining</name>
+          <updateDate>2025-03-17T17:52:37Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Government Operations and Politics</name>
+        <updateDate>2025-02-26T20:26:15Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-23</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-05-12T13:22:42Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Expedited Appeals Review Act or the&amp;nbsp;EARA&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill authorizes a party that files an appeal of a Department of the Interior&amp;nbsp;decision with&amp;nbsp;the&amp;nbsp;Interior Board of Land Appeals to submit a written request for expedited review of the appeal. (The mission of the board is to provide an impartial forum within Interior for the resolution of disputes involving public lands and natural resources under Interior's jurisdiction.)&lt;/p&gt;&lt;p&gt;If a party submits such a&amp;nbsp;request, the board must issue a final decision on the appeal not later than six months after the date on which the request for expedited review was received. However, the deadline may not be earlier than 18 months after the date on which the appeal was initially filed with the board.&lt;/p&gt;&lt;p&gt;If the deadline for expedited review is not met, Interior's decision is deemed a final agency action and&amp;nbsp;is subject to de novo judicial review (i.e., without deference to the agency's decision).&lt;/p&gt;&lt;p&gt;This bill applies to appeals pending as of the date of enactment of this bill and appeals filed after the date of enactment.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>EARA</title>
+    <titles>
+      <item>
+        <titleType>Short Titles from RFS (Referred to Senate) bill text</titleType>
+        <titleTypeCode>255</titleTypeCode>
+        <title>EARA</title>
+        <updateDate>2025-05-17T02:53:19Z</updateDate>
+        <chamberCode>S</chamberCode>
+        <chamberName>Senate</chamberName>
+        <billTextVersionName>Referred in Senate</billTextVersionName>
+        <billTextVersionCode>RFS</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Titles from RFS (Referred to Senate) bill text</titleType>
+        <titleTypeCode>255</titleTypeCode>
+        <title>Expedited Appeals Review Act</title>
+        <updateDate>2025-05-17T02:53:19Z</updateDate>
+        <chamberCode>S</chamberCode>
+        <chamberName>Senate</chamberName>
+        <billTextVersionName>Referred in Senate</billTextVersionName>
+        <billTextVersionCode>RFS</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Passed House</titleType>
+        <titleTypeCode>104</titleTypeCode>
+        <title>Expedited Appeals Review Act</title>
+        <updateDate>2025-05-15T03:38:24Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Passed House</titleType>
+        <titleTypeCode>104</titleTypeCode>
+        <title>EARA</title>
+        <updateDate>2025-05-15T03:38:24Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Reported to House</titleType>
+        <titleTypeCode>102</titleTypeCode>
+        <title>EARA</title>
+        <updateDate>2025-05-06T06:53:16Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Reported in House</billTextVersionName>
+        <billTextVersionCode>RH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Reported to House</titleType>
+        <titleTypeCode>102</titleTypeCode>
+        <title>Expedited Appeals Review Act</title>
+        <updateDate>2025-05-06T06:53:16Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Reported in House</billTextVersionName>
+        <billTextVersionCode>RH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>EARA</title>
+        <updateDate>2025-02-22T08:08:23Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>EARA</title>
+        <updateDate>2025-02-22T08:08:18Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Expedited Appeals Review Act</title>
+        <updateDate>2025-02-22T08:08:18Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To establish a process to expedite the review of appeals of certain decisions by the Department of the Interior.</title>
+        <updateDate>2025-02-22T08:03:44Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Referred in Senate</type>
+        <date>2025-05-14T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr677rfs/xml/BILLS-119hr677rfs.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-05-13T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr677eh/xml/BILLS-119hr677eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Reported in House</type>
+        <date>2025-05-05T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr677rh/xml/BILLS-119hr677rh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-23T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr677ih/xml/BILLS-119hr677ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-05-14</actionDate>
+      <text>Received in the Senate and Read twice and referred to the Committee on Energy and Natural Resources.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

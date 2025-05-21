@@ -1,0 +1,232 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:39 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:50:25 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292b2ef8c5620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>376</number>
+    <updateDate>2025-05-01T20:09:24Z</updateDate>
+    <updateDateIncludingText>2025-05-01T20:09:24Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-14</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 7 (Tuesday, January 14, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. KENNEDY of Utah:H.R. 376.Congress has the power to enact this legislation pursuantto the following:Article 1 Section 8[Page H149]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-14T15:03:00Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Historic Roadways Protection Act</title>
+        <congress>119</congress>
+        <number>90</number>
+        <type>S</type>
+        <latestAction>
+          <actionDate>2025-01-14</actionDate>
+          <text>Read twice and referred to the Committee on Energy and Natural Resources.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Identical bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Referred to the House Committee on Natural Resources.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-14</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>K000403</bioguideId>
+        <fullName>Rep. Kennedy, Mike [R-UT-3]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Kennedy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>3</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>O000086</bioguideId>
+        <fullName>Rep. Owens, Burgess [R-UT-4]</fullName>
+        <firstName>Burgess</firstName>
+        <lastName>Owens</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001213</bioguideId>
+        <fullName>Rep. Moore, Blake D. [R-UT-1]</fullName>
+        <firstName>Blake</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <middleName>D.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001228</bioguideId>
+        <fullName>Rep. Maloy, Celeste [R-UT-2]</fullName>
+        <firstName>Celeste</firstName>
+        <lastName>Maloy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-14</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Public Lands and Natural Resources</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Land use and conservation</name>
+          <updateDate>2025-03-03T18:48:47Z</updateDate>
+        </item>
+        <item>
+          <name>Roads and highways</name>
+          <updateDate>2025-03-03T18:48:47Z</updateDate>
+        </item>
+        <item>
+          <name>Utah</name>
+          <updateDate>2025-03-03T18:48:47Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Public Lands and Natural Resources</name>
+        <updateDate>2025-02-27T18:47:28Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-14</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-11T16:48:27Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Historic Roadways Protection Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill prohibits the Bureau for Land Management (BLM) from closing historical roads on public lands in certain areas of Utah until the Federal District Court for Utah makes a decision on each of the&amp;nbsp;R.S. 2477 cases, which are cases brought by Utah and counties to keep historical roads on BLM land in Utah open for public use.&lt;/p&gt;&lt;p&gt;By way of background, a provision of the Mining Law of 1866, commonly known as&amp;nbsp;R.S. 2477, granted rights-of-way to states and counties across public lands for the construction of roads for public use in order to promote settlement of the American West. In 1976, Congress repealed R.S. 2477 when it enacted the Federal Land Policy and Management Act (FLPMA), but FLPMA preserved rights-of-way that had been established under R.S. 2477. After the BLM released travel management plans that closed some historical roads, Utah and 22 counties filed lawsuits about their rights-of-way across public lands for historical roads.&lt;/p&gt;&lt;p&gt;Until the BLM certifies that those cases have been decided, the bill prohibits the BLM from obligating or expending federal funds to (1) finalize or implement a new travel management plan for certain travel management areas in Utah; or (2) implement, with respect to land within the boundary of Utah, the Indian Creek (Canyon Rims) Travel Management Plan, the San Rafael Desert Travel Management Plan, the San Rafael Swell Travel Management Plan, or the Labyrinth/Gemini Bridges Travel Management Plan.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Historic Roadways Protection Act</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Historic Roadways Protection Act</title>
+        <updateDate>2025-02-11T09:08:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Historic Roadways Protection Act</title>
+        <updateDate>2025-02-11T09:08:16Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To prohibit the use of funds by the Secretary of the Interior to finalize and implement certain travel management plans in the State of Utah.</title>
+        <updateDate>2025-02-11T09:03:34Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-14T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr376ih/xml/BILLS-119hr376ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-14</actionDate>
+      <text>Referred to the House Committee on Natural Resources.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -1,0 +1,360 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:42:21 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 15:40:29 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292abdff2c620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>369</number>
+    <updateDate>2025-05-08T08:06:11Z</updateDate>
+    <updateDateIncludingText>2025-05-08T08:06:11Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-13</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 6 (Monday, January 13, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. ROUZER:H.R. 369.Congress has the power to enact this legislation pursuantto the following:Article I, Section VIII[Page H112]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>hsed00</systemCode>
+        <name>Education and Workforce Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-13T17:02:15Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-13</actionDate>
+        <text>Referred to the House Committee on Education and Workforce.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsed00</systemCode>
+            <name>Education and Workforce Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-13</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-13</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>R000603</bioguideId>
+        <fullName>Rep. Rouzer, David [R-NC-7]</fullName>
+        <firstName>David</firstName>
+        <lastName>Rouzer</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>7</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>E000246</bioguideId>
+        <fullName>Rep. Edwards, Chuck [R-NC-11]</fullName>
+        <firstName>Chuck</firstName>
+        <lastName>Edwards</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>11</district>
+        <sponsorshipDate>2025-02-05</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001052</bioguideId>
+        <fullName>Rep. Harris, Andy [R-MD-1]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Harris</lastName>
+        <party>R</party>
+        <state>MD</state>
+        <district>1</district>
+        <sponsorshipDate>2025-03-06</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001301</bioguideId>
+        <fullName>Rep. Bergman, Jack [R-MI-1]</fullName>
+        <firstName>Jack</firstName>
+        <lastName>Bergman</lastName>
+        <party>R</party>
+        <state>MI</state>
+        <district>1</district>
+        <sponsorshipDate>2025-03-10</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001240</bioguideId>
+        <fullName>Rep. McDowell, Addison [R-NC-6]</fullName>
+        <firstName>Addison</firstName>
+        <lastName>McDowell</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <middleName>P.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-03-14</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000405</bioguideId>
+        <fullName>Rep. Knott, Brad [R-NC-13]</fullName>
+        <firstName>Brad</firstName>
+        <lastName>Knott</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>13</district>
+        <sponsorshipDate>2025-03-18</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001212</bioguideId>
+        <fullName>Rep. Moore, Barry [R-AL-1]</fullName>
+        <firstName>Barry</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>AL</state>
+        <district>1</district>
+        <sponsorshipDate>2025-03-26</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000795</bioguideId>
+        <fullName>Rep. Wilson, Joe [R-SC-2]</fullName>
+        <firstName>Joe</firstName>
+        <lastName>Wilson</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>2</district>
+        <sponsorshipDate>2025-03-27</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001204</bioguideId>
+        <fullName>Rep. Meuser, Daniel [R-PA-9]</fullName>
+        <firstName>Daniel</firstName>
+        <lastName>Meuser</lastName>
+        <party>R</party>
+        <state>PA</state>
+        <district>9</district>
+        <sponsorshipDate>2025-04-09</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001091</bioguideId>
+        <fullName>Rep. Hinson, Ashley [R-IA-2]</fullName>
+        <firstName>Ashley</firstName>
+        <lastName>Hinson</lastName>
+        <party>R</party>
+        <state>IA</state>
+        <district>2</district>
+        <sponsorshipDate>2025-04-28</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000490</bioguideId>
+        <fullName>Rep. Taylor, David J. [R-OH-2]</fullName>
+        <firstName>David</firstName>
+        <lastName>Taylor</lastName>
+        <party>R</party>
+        <state>OH</state>
+        <middleName>J.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-05-07</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Education</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Accounting and auditing</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Appropriations</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Education</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Disability and health-based discrimination</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Education programs funding</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Elementary and secondary education</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Employment and training programs</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Executive agency funding and structure</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Government studies and investigations</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Higher education</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Racial and ethnic relations</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Sex, gender, sexual orientation discrimination</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Special education</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>State and local finance</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>State and local government operations</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Teaching, teachers, curricula</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+        <item>
+          <name>Wages and earnings</name>
+          <updateDate>2025-02-24T20:31:17Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Education</name>
+        <updateDate>2025-02-13T19:33:19Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-13</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-07T20:21:02Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;States' Education Reclamation Act of &lt;/strong&gt;&lt;strong&gt;2025&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill abolishes the Department of Education (ED) and repeals any program for which it has administrative responsibility.&lt;/p&gt;&lt;p&gt;The Department of the Treasury must provide grants to states, for FY2025-FY2033, for elementary, secondary, and postsecondary education purposes permitted by state law. The level of funding is set at the amount provided to states for federal elementary and secondary education programs and the amount provided for federal postsecondary education programs, respectively, for FY2025, minus the funding provided for education programs that the bill transfers to other federal agencies.&lt;/p&gt;&lt;p&gt;States must contract for an annual audit of their expenditures or transfers of grant funds.&lt;/p&gt;&lt;p&gt;Program administrative responsibility and delegation of authority are transferred as follows:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;ED's job training programs to the Department of Labor,&lt;/li&gt;&lt;li&gt;each special education grant program under the Individuals with Disabilities Education Act to the Department of Health and Human Services (HHS),&lt;/li&gt;&lt;li&gt;ED's Indian education programs to the Department of the Interior,&lt;/li&gt;&lt;li&gt;each Impact Aid program under the Elementary and Secondary Education Act of 1965 to the Department of Defense,&lt;/li&gt;&lt;li&gt;the Federal Pell Grant program and each federal student loan program to Treasury, and&lt;/li&gt;&lt;li&gt;programs under the jurisdiction of the Institute of Education Sciences or the D.C. Opportunity Scholarship Program to HHS.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The&amp;nbsp;Government Accountability Office must report to Congress on (1) the feasibility of reducing the federal tax burden and eliminating federal involvement in providing grants for education programs, and (2) the feasibility of successor federal agencies maintaining transferred education programs.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>States’ Education Reclamation Act of 2025</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>States’ Education Reclamation Act of 2025</title>
+        <updateDate>2025-02-11T09:08:18Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>States’ Education Reclamation Act of 2025</title>
+        <updateDate>2025-02-11T09:08:16Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To provide for the elimination of the Department of Education, and for other purposes.</title>
+        <updateDate>2025-02-11T09:03:35Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-13T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr369ih/xml/BILLS-119hr369ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-13</actionDate>
+      <text>Referred to the House Committee on Education and Workforce.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

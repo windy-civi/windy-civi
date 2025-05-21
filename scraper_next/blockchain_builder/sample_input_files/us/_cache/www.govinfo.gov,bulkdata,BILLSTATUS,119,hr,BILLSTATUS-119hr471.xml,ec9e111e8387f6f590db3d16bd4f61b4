@@ -1,0 +1,1525 @@
+status: 200
+encoding: ISO-8859-1
+Date: Tue, 20 May 2025 04:44:07 GMT
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000; preload
+Last-Modified: Thu, 15 May 2025 20:41:41 GMT
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+Content-Security-Policy: default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'   https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' http://insideanalytics.gpo.gov https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 94292d506a2c620e-ORD
+Content-Encoding: gzip
+
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>471</number>
+    <updateDate>2025-05-15T10:23:52Z</updateDate>
+    <updateDateIncludingText>2025-05-15T10:23:52Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HR</type>
+    <introducedDate>2025-01-16</introducedDate>
+    <congress>119</congress>
+    <cdata>
+      <constitutionalAuthorityStatementText>&lt;pre&gt;[Congressional Record Volume 171, Number 9 (Thursday, January 16, 2025)][House]From the Congressional Record Online through the Government Publishing Office [&lt;a href="https://www.gpo.gov"&gt;www.gpo.gov&lt;/a&gt;]By Mr. WESTERMAN:H.R. 471.Congress has the power to enact this legislation pursuantto the following:Article I of the U.S. Constitution[Page H221]&lt;/pre&gt;</constitutionalAuthorityStatementText>
+    </cdata>
+    <committees>
+      <item>
+        <systemCode>ssaf00</systemCode>
+        <name>Agriculture, Nutrition, and Forestry Committee</name>
+        <chamber>Senate</chamber>
+        <type>Standing</type>
+        <subcommittees>
+          <item>
+            <systemCode>ssaf14</systemCode>
+            <name>Conservation, Climate, Forestry, and Natural Resources Subcommittee</name>
+            <activities>
+              <item>
+                <name>Hearings By (subcommittee)</name>
+                <date>2025-03-06T16:00:00Z</date>
+              </item>
+            </activities>
+          </item>
+        </subcommittees>
+      </item>
+      <item>
+        <systemCode>hssy00</systemCode>
+        <name>Science, Space, and Technology Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-16T14:02:45Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsag00</systemCode>
+        <name>Agriculture Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-16T14:02:40Z</date>
+          </item>
+        </activities>
+      </item>
+      <item>
+        <systemCode>hsii00</systemCode>
+        <name>Natural Resources Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-16T14:02:35Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Providing for consideration of the bill (H.R. 471) to expedite under the National Environmental Policy Act of 1969 and improve forest management activities on National Forest System lands, on public lands under the jurisdiction of the Bureau of Land Management, and on Tribal lands to return resilience to overgrown, fire-prone forested lands, and for other purposes, and providing for consideration of the bill (S. 5) to require the Secretary of Homeland Security to take into custody aliens who have been charged in the United States with theft, and for other purposes.</title>
+        <congress>119</congress>
+        <number>53</number>
+        <type>HRES</type>
+        <latestAction>
+          <actionDate>2025-01-22</actionDate>
+          <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+          <actionTime>14:07:22</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally-related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>FIR Act</title>
+        <congress>119</congress>
+        <number>598</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-02-28</actionDate>
+          <text>Referred to the Subcommittee on Forestry and Horticulture.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>The White Oak Resilience Act</title>
+        <congress>119</congress>
+        <number>2405</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-04-18</actionDate>
+          <text>Referred to the Subcommittee on Conservation, Research, and Biotechnology.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-03-06</actionDate>
+        <committees>
+          <item>
+            <systemCode>ssaf14</systemCode>
+            <name>Conservation, Climate, Forestry, and Natural Resources Subcommittee</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <name>Senate</name>
+        </sourceSystem>
+        <text>Committee on Agriculture, Nutrition, and Forestry Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology. Hearings held.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-01-28</actionDate>
+        <sourceSystem>
+          <name>Senate</name>
+        </sourceSystem>
+        <text>Received in the Senate.</text>
+        <type>IntroReferral</type>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>15:45:55</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>15:45:53</actionTime>
+        <text>On passage Passed by the Yeas and Nays: 279 - 141 (Roll no. 25). (text: CR H321-333)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>25</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll025.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-23T20:45:53Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>15:45:53</actionTime>
+        <text>Passed/agreed to in House: On passage Passed by the Yeas and Nays: 279 - 141 (Roll no. 25). (text: CR H321-333)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>25</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll025.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-23T20:45:53Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>15:38:41</actionTime>
+        <text>Considered as unfinished business. (consideration: CR H346-347)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:53:05</actionTime>
+        <text>POSTPONED PROCEEDINGS - At the conclusion of debate on H.R. 471, the Chair put the question on passage of the bill and by voice vote, announced that the ayes had prevailed. Mr. Peters demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:51:57</actionTime>
+        <text>The House adopted the amendments en gros as agreed to by the Committee of the Whole House on the state of the Union.</text>
+        <type>Floor</type>
+        <actionCode>H34400</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:51:43</actionTime>
+        <text>The previous question was ordered pursuant to the rule.</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:50:55</actionTime>
+        <text>The House rose from the Committee of the Whole House on the state of the Union to report H.R. 471.</text>
+        <type>Floor</type>
+        <actionCode>H32600</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:43:19</actionTime>
+        <text>DEBATE - Pursuant to the provisions of H.Res. 53, the Committee of the Whole proceeded with 10 minutes of debate on the Carbajal amendment No. 2.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>13:34:18</actionTime>
+        <text>DEBATE - Pursuant to the provisions of H.Res. 53, the Committee of the Whole proceeded with 10 minutes of debate on the Perry amendment No. 1.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>12:28:54</actionTime>
+        <text>GENERAL DEBATE - The Committee of the Whole proceeded with one hour of general debate on H.R. 471.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>12:28:07</actionTime>
+        <text>The Speaker designated the Honorable Dale W. Strong to act as Chairman of the Committee.</text>
+        <type>Floor</type>
+        <actionCode>H32400</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>12:28:06</actionTime>
+        <text>House resolved itself into the Committee of the Whole House on the state of the Union pursuant to H. Res. 53 and Rule XVIII.</text>
+        <type>Floor</type>
+        <actionCode>H32020</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>12:27:35</actionTime>
+        <text>Rule provides for consideration of H.R. 471 and S. 5. The resolution provides for consideration of H.R. 471 under a structured rule with one hour of general debate and one motion to recommit. Also, the resolution provides for consideration of S. 5 under a closed rule with one hour of general debate and one motion to commit.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-23</actionDate>
+        <actionTime>12:27:30</actionTime>
+        <text>Considered under the provisions of rule H. Res. 53. (consideration: CR H312-335)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-21</actionDate>
+        <actionTime>19:28:38</actionTime>
+        <text>Rules Committee Resolution H. Res. 53 Reported to House. Rule provides for consideration of H.R. 471 and S. 5. The resolution provides for consideration of H.R. 471 under a structured rule with one hour of general debate and one motion to recommit. Also, the resolution provides for consideration of S. 5 under a closed rule with one hour of general debate and one motion to commit.</text>
+        <type>Floor</type>
+        <actionCode>H1L210</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Referred to the Committee on Natural Resources, and in addition to the Committees on Agriculture, and Science, Space, and Technology, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hssy00</systemCode>
+            <name>Science, Space, and Technology Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Referred to the Committee on Natural Resources, and in addition to the Committees on Agriculture, and Science, Space, and Technology, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsag00</systemCode>
+            <name>Agriculture Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Referred to the Committee on Natural Resources, and in addition to the Committees on Agriculture, and Science, Space, and Technology, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsii00</systemCode>
+            <name>Natural Resources Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>Intro-H</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-16</actionDate>
+        <text>Introduced in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>W000821</bioguideId>
+        <fullName>Rep. Westerman, Bruce [R-AR-4]</fullName>
+        <firstName>Bruce</firstName>
+        <lastName>Westerman</lastName>
+        <party>R</party>
+        <state>AR</state>
+        <district>4</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>P000608</bioguideId>
+        <fullName>Rep. Peters, Scott H. [D-CA-50]</fullName>
+        <firstName>Scott</firstName>
+        <lastName>Peters</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <middleName>H.</middleName>
+        <district>50</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000165</bioguideId>
+        <fullName>Rep. Tiffany, Thomas P. [R-WI-7]</fullName>
+        <firstName>Thomas</firstName>
+        <lastName>Tiffany</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <middleName>P.</middleName>
+        <district>7</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>P000613</bioguideId>
+        <fullName>Rep. Panetta, Jimmy [D-CA-19]</fullName>
+        <firstName>Jimmy</firstName>
+        <lastName>Panetta</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>19</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001212</bioguideId>
+        <fullName>Rep. Stauber, Pete [R-MN-8]</fullName>
+        <firstName>Pete</firstName>
+        <lastName>Stauber</lastName>
+        <party>R</party>
+        <state>MN</state>
+        <district>8</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000830</bioguideId>
+        <fullName>Rep. Whitesides, George [D-CA-27]</fullName>
+        <firstName>George</firstName>
+        <lastName>Whitesides</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>27</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001129</bioguideId>
+        <fullName>Rep. Collins, Mike [R-GA-10]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Collins</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>10</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>V000136</bioguideId>
+        <fullName>Rep. Vasquez, Gabe [D-NM-2]</fullName>
+        <firstName>Gabe</firstName>
+        <lastName>Vasquez</lastName>
+        <party>D</party>
+        <state>NM</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000397</bioguideId>
+        <fullName>Rep. Kim, Young [R-CA-40]</fullName>
+        <firstName>Young</firstName>
+        <lastName>Kim</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>40</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001059</bioguideId>
+        <fullName>Rep. Costa, Jim [D-CA-21]</fullName>
+        <firstName>Jim</firstName>
+        <lastName>Costa</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>21</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>Z000018</bioguideId>
+        <fullName>Rep. Zinke, Ryan K. [R-MT-1]</fullName>
+        <firstName>Ryan</firstName>
+        <lastName>Zinke</lastName>
+        <party>R</party>
+        <state>MT</state>
+        <middleName>K.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001090</bioguideId>
+        <fullName>Rep. Harder, Josh [D-CA-9]</fullName>
+        <firstName>Josh</firstName>
+        <lastName>Harder</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>9</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>J000301</bioguideId>
+        <fullName>Rep. Johnson, Dusty [R-SD-At Large]</fullName>
+        <firstName>Dusty</firstName>
+        <lastName>Johnson</lastName>
+        <party>R</party>
+        <state>SD</state>
+        <district>0</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001287</bioguideId>
+        <fullName>Rep. Bera, Ami [D-CA-6]</fullName>
+        <firstName>Ami</firstName>
+        <lastName>Bera</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000399</bioguideId>
+        <fullName>Rep. Kiggans, Jennifer A. [R-VA-2]</fullName>
+        <firstName>Jennifer</firstName>
+        <lastName>Kiggans</lastName>
+        <party>R</party>
+        <state>VA</state>
+        <middleName>A.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000559</bioguideId>
+        <fullName>Rep. Garamendi, John [D-CA-8]</fullName>
+        <firstName>John</firstName>
+        <lastName>Garamendi</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>8</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001228</bioguideId>
+        <fullName>Rep. Maloy, Celeste [R-UT-2]</fullName>
+        <firstName>Celeste</firstName>
+        <lastName>Maloy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>T000460</bioguideId>
+        <fullName>Rep. Thompson, Mike [D-CA-4]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Thompson</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001323</bioguideId>
+        <fullName>Rep. Begich, Nicholas [R-AK-At Large]</fullName>
+        <firstName>Nicholas</firstName>
+        <lastName>Begich</lastName>
+        <party>R</party>
+        <state>AK</state>
+        <middleName>J.</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001110</bioguideId>
+        <fullName>Rep. Correa, J. Luis [D-CA-46]</fullName>
+        <firstName>J.</firstName>
+        <lastName>Correa</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <middleName>Luis</middleName>
+        <district>46</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001137</bioguideId>
+        <fullName>Rep. Crank, Jeff [R-CO-5]</fullName>
+        <firstName>Jeff</firstName>
+        <lastName>Crank</lastName>
+        <party>R</party>
+        <state>CO</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000592</bioguideId>
+        <fullName>Rep. Golden, Jared F. [D-ME-2]</fullName>
+        <firstName>Jared</firstName>
+        <lastName>Golden</lastName>
+        <party>D</party>
+        <state>ME</state>
+        <middleName>F.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>E000235</bioguideId>
+        <fullName>Rep. Ezell, Mike [R-MS-4]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Ezell</lastName>
+        <party>R</party>
+        <state>MS</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001225</bioguideId>
+        <fullName>Rep. Mullin, Kevin [D-CA-15]</fullName>
+        <firstName>Kevin</firstName>
+        <lastName>Mullin</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>15</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001100</bioguideId>
+        <fullName>Rep. Hurd, Jeff [R-CO-3]</fullName>
+        <firstName>Jeff</firstName>
+        <lastName>Hurd</lastName>
+        <party>R</party>
+        <state>CO</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000590</bioguideId>
+        <fullName>Rep. Lee, Susie [D-NV-3]</fullName>
+        <firstName>Susie</firstName>
+        <lastName>Lee</lastName>
+        <party>D</party>
+        <state>NV</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>V000129</bioguideId>
+        <fullName>Rep. Valadao, David G. [R-CA-22]</fullName>
+        <firstName>David</firstName>
+        <lastName>Valadao</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <middleName>G.</middleName>
+        <district>22</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000605</bioguideId>
+        <fullName>Rep. Gray, Adam [D-CA-13]</fullName>
+        <firstName>Adam</firstName>
+        <lastName>Gray</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>13</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B001282</bioguideId>
+        <fullName>Rep. Barr, Andy [R-KY-6]</fullName>
+        <firstName>Andy</firstName>
+        <lastName>Barr</lastName>
+        <party>R</party>
+        <state>KY</state>
+        <district>6</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H000874</bioguideId>
+        <fullName>Rep. Hoyer, Steny H. [D-MD-5]</fullName>
+        <firstName>Steny</firstName>
+        <lastName>Hoyer</lastName>
+        <party>D</party>
+        <state>MD</state>
+        <middleName>H.</middleName>
+        <district>5</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C001103</bioguideId>
+        <fullName>Rep. Carter, Earl L. "Buddy" [R-GA-1]</fullName>
+        <firstName>Earl</firstName>
+        <lastName>Carter</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <middleName>L. "Buddy"</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>P000620</bioguideId>
+        <fullName>Rep. Pettersen, Brittany [D-CO-7]</fullName>
+        <firstName>Brittany</firstName>
+        <lastName>Pettersen</lastName>
+        <party>D</party>
+        <state>CO</state>
+        <district>7</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>J000302</bioguideId>
+        <fullName>Rep. Joyce, John [R-PA-13]</fullName>
+        <firstName>John</firstName>
+        <lastName>Joyce</lastName>
+        <party>R</party>
+        <state>PA</state>
+        <district>13</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>O000019</bioguideId>
+        <fullName>Rep. Obernolte, Jay [R-CA-23]</fullName>
+        <firstName>Jay</firstName>
+        <lastName>Obernolte</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>23</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000798</bioguideId>
+        <fullName>Rep. Walberg, Tim [R-MI-5]</fullName>
+        <firstName>Tim</firstName>
+        <lastName>Walberg</lastName>
+        <party>R</party>
+        <state>MI</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>L000578</bioguideId>
+        <fullName>Rep. LaMalfa, Doug [R-CA-1]</fullName>
+        <firstName>Doug</firstName>
+        <lastName>LaMalfa</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>1</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>G000565</bioguideId>
+        <fullName>Rep. Gosar, Paul A. [R-AZ-9]</fullName>
+        <firstName>Paul</firstName>
+        <lastName>Gosar</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <middleName>A.</middleName>
+        <district>9</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B000825</bioguideId>
+        <fullName>Rep. Boebert, Lauren [R-CO-4]</fullName>
+        <firstName>Lauren</firstName>
+        <lastName>Boebert</lastName>
+        <party>R</party>
+        <state>CO</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001177</bioguideId>
+        <fullName>Rep. McClintock, Tom [R-CA-5]</fullName>
+        <firstName>Tom</firstName>
+        <lastName>McClintock</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>5</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>I000056</bioguideId>
+        <fullName>Rep. Issa, Darrell [R-CA-48]</fullName>
+        <firstName>Darrell</firstName>
+        <lastName>Issa</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>48</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000480</bioguideId>
+        <fullName>Rep. Fong, Vince [R-CA-20]</fullName>
+        <firstName>Vince</firstName>
+        <lastName>Fong</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>20</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001096</bioguideId>
+        <fullName>Rep. Hageman, Harriet M. [R-WY-At Large]</fullName>
+        <firstName>Harriet</firstName>
+        <lastName>Hageman</lastName>
+        <party>R</party>
+        <state>WY</state>
+        <middleName>M.</middleName>
+        <district>0</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>F000478</bioguideId>
+        <fullName>Rep. Fry, Russell [R-SC-7]</fullName>
+        <firstName>Russell</firstName>
+        <lastName>Fry</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>7</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>A000369</bioguideId>
+        <fullName>Rep. Amodei, Mark E. [R-NV-2]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Amodei</lastName>
+        <party>R</party>
+        <state>NV</state>
+        <middleName>E.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-16</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001240</bioguideId>
+        <fullName>Rep. McDowell, Addison [R-NC-6]</fullName>
+        <firstName>Addison</firstName>
+        <lastName>McDowell</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <middleName>P.</middleName>
+        <district>6</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>B000668</bioguideId>
+        <fullName>Rep. Bentz, Cliff [R-OR-2]</fullName>
+        <firstName>Cliff</firstName>
+        <lastName>Bentz</lastName>
+        <party>R</party>
+        <state>OR</state>
+        <district>2</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001095</bioguideId>
+        <fullName>Rep. Hunt, Wesley [R-TX-38]</fullName>
+        <firstName>Wesley</firstName>
+        <lastName>Hunt</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>38</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000829</bioguideId>
+        <fullName>Rep. Wied, Tony [R-WI-8]</fullName>
+        <firstName>Tony</firstName>
+        <lastName>Wied</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <district>8</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000401</bioguideId>
+        <fullName>Rep. Kiley, Kevin [R-CA-3]</fullName>
+        <firstName>Kevin</firstName>
+        <lastName>Kiley</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S001201</bioguideId>
+        <fullName>Rep. Suozzi, Thomas R. [D-NY-3]</fullName>
+        <firstName>Thomas</firstName>
+        <lastName>Suozzi</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>R.</middleName>
+        <district>3</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>W000804</bioguideId>
+        <fullName>Rep. Wittman, Robert J. [R-VA-1]</fullName>
+        <firstName>Robert</firstName>
+        <lastName>Wittman</lastName>
+        <party>R</party>
+        <state>VA</state>
+        <middleName>J.</middleName>
+        <district>1</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>N000189</bioguideId>
+        <fullName>Rep. Newhouse, Dan [R-WA-4]</fullName>
+        <firstName>Dan</firstName>
+        <lastName>Newhouse</lastName>
+        <party>R</party>
+        <state>WA</state>
+        <district>4</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>C000059</bioguideId>
+        <fullName>Rep. Calvert, Ken [R-CA-41]</fullName>
+        <firstName>Ken</firstName>
+        <lastName>Calvert</lastName>
+        <party>R</party>
+        <state>CA</state>
+        <district>41</district>
+        <sponsorshipDate>2025-01-21</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>M001233</bioguideId>
+        <fullName>Rep. Messmer, Mark [R-IN-8]</fullName>
+        <firstName>Mark</firstName>
+        <lastName>Messmer</lastName>
+        <party>R</party>
+        <state>IN</state>
+        <middleName>B.</middleName>
+        <district>8</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>K000403</bioguideId>
+        <fullName>Rep. Kennedy, Mike [R-UT-3]</fullName>
+        <firstName>Mike</firstName>
+        <lastName>Kennedy</lastName>
+        <party>R</party>
+        <state>UT</state>
+        <district>3</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>H001072</bioguideId>
+        <fullName>Rep. Hill, J. French [R-AR-2]</fullName>
+        <firstName>J.</firstName>
+        <lastName>Hill</lastName>
+        <party>R</party>
+        <state>AR</state>
+        <middleName>French</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-22</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+      <item>
+        <bioguideId>S000250</bioguideId>
+        <fullName>Rep. Sessions, Pete [R-TX-17]</fullName>
+        <firstName>Pete</firstName>
+        <lastName>Sessions</lastName>
+        <party>R</party>
+        <state>TX</state>
+        <district>17</district>
+        <sponsorshipDate>2025-01-23</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Public Lands and Natural Resources</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Agricultural practices and innovations</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Alternative and renewable resources</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Building construction</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>California</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Climate change and greenhouse gases</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Community life and organization</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Computers and information technology</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Department of Agriculture</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Department of the Interior</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Ecology</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Emergency planning and evacuation</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Environmental assessment, monitoring, research</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Executive agency funding and structure</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Federal officials</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Fires</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>First responders and emergency personnel</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Forests, forestry, trees</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Geography and mapping</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Government studies and investigations</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Hazardous wastes and toxic substances</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Horticulture and plants</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Indian lands and resources rights</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Internet, web applications, social media</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Judicial procedure and administration</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Judicial review and appeals</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Land use and conservation</name>
+          <updateDate>2025-01-22T14:40:50Z</updateDate>
+        </item>
+        <item>
+          <name>Licensing and registrations</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Motor fuels</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Nevada</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Public contracts and procurement</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Public participation and lobbying</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Public-private cooperation</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>Research and development</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Roads and highways</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Rural conditions and development</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>Soil pollution</name>
+          <updateDate>2025-01-22T14:40:54Z</updateDate>
+        </item>
+        <item>
+          <name>State and local finance</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+        <item>
+          <name>State and local government operations</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Technology transfer and commercialization</name>
+          <updateDate>2025-01-22T14:40:53Z</updateDate>
+        </item>
+        <item>
+          <name>Water use and supply</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Watersheds</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Wilderness and natural areas, wildlife refuges, wild rivers, habitats</name>
+          <updateDate>2025-01-22T14:40:51Z</updateDate>
+        </item>
+        <item>
+          <name>Wildlife conservation and habitat protection</name>
+          <updateDate>2025-01-22T14:40:52Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Public Lands and Natural Resources</name>
+        <updateDate>2025-01-17T15:30:23Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-16</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-01-24T14:29:44Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;&lt;strong&gt;Fix Our Forests Act&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This bill establishes requirements for managing forests on federal land, including requirements concerning reducing wildfire threats, expediting the review of certain forest management projects, and implementing forest management projects and other activities.&lt;/p&gt;&lt;p&gt;Specifically, the bill (1)&amp;nbsp;designates certain firesheds&amp;nbsp;at high risk for wildfires as fireshed management areas; (2) directs the U.S. Forest Service and U.S. Geological Survey to jointly establish an interagency Fireshed Center that is responsible for duties related to assessing and predicting fire, including maintaining a fireshed registry on a publicly accessible website that provides interactive geospatial data on individual firesheds; and (3) makes other requirements related to reducing wildfire.&lt;/p&gt;&lt;p&gt;Next, the bill expedites the review of certain forest management projects under the National Environmental Policy Act (NEPA) of 1969 and exempts certain activities from NEPA review. It also establishes intra-agency strike teams to accelerate the review and any interagency consultation processes under NEPA, the Endangered Species Act of 1973, and the National Historic Preservation Act. It also limits consultation requirements concerning threatened and endangered species under the Forest and Rangeland Renewable Resources Planning Act of 1974 and the Federal Land Management and Policy Act of 1976. Finally, it limits litigation involving fireshed management projects and limits remedies that courts may provide.&lt;/p&gt;&lt;p&gt;Additionally, the bill supports reducing community wildfire risks, carrying out forest restoration and stewardship activities (including watershed protection and restoration), conducting biochar demonstration projects, advancing technologies to address forest wildfires, and assisting wildland firefighters and their families.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Fix Our Forests Act</title>
+    <titles>
+      <item>
+        <titleType>Short Title(s) as Passed House</titleType>
+        <titleTypeCode>104</titleTypeCode>
+        <title>Fix Our Forests Act</title>
+        <updateDate>2025-01-28T05:23:17Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Fix Our Forests Act</title>
+        <updateDate>2025-01-17T09:23:16Z</updateDate>
+      </item>
+      <item>
+        <titleType>Short Title(s) as Introduced</titleType>
+        <titleTypeCode>101</titleTypeCode>
+        <title>Fix Our Forests Act</title>
+        <updateDate>2025-01-17T09:23:15Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>To expedite under the National Environmental Policy Act of 1969 and improve forest management activities on National Forest System lands, on public lands under the jurisdiction of the Bureau of Land Management, and on Tribal lands to return resilience to overgrown, fire-prone forested lands, and for other purposes.</title>
+        <updateDate>2025-01-17T09:18:19Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+    </titles>
+    <amendments>
+      <amendment>
+        <number>3</number>
+        <congress>119</congress>
+        <type>HAMDT</type>
+        <description>An amendment numbered 2 printed in House Report 119-1 to allow the U.S. Forest Service to approve the removal of hazardous trees near power lines on federal land without requiring a timber sale, easing a serious threat that has in the past been a major cause of destructive wildfires.</description>
+        <updateDate>2025-01-24T16:49:24Z</updateDate>
+        <latestAction>
+          <actionDate>2025-01-23</actionDate>
+          <text>On agreeing to the Carbajal amendment (A002) Agreed to by voice vote.</text>
+          <actionTime>13:50:33</actionTime>
+        </latestAction>
+        <sponsors>
+          <item>
+            <bioguideId>C001112</bioguideId>
+            <fullName>Rep. Carbajal, Salud O. [D-CA-24]</fullName>
+            <firstName>Salud</firstName>
+            <lastName>Carbajal</lastName>
+            <party>D</party>
+            <state>CA</state>
+            <middleName>O.</middleName>
+            <district>24</district>
+          </item>
+        </sponsors>
+        <submittedDate>2025-01-23T05:00:00Z</submittedDate>
+        <chamber>House of Representatives</chamber>
+        <amendedBill>
+          <congress>119</congress>
+          <type>HR</type>
+          <originChamber>House</originChamber>
+          <originChamberCode>H</originChamberCode>
+          <number>471</number>
+          <title>Fix Our Forests Act</title>
+          <updateDateIncludingText>2025-05-15</updateDateIncludingText>
+        </amendedBill>
+        <actions>
+          <count>4</count>
+          <actions>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:50:33</actionTime>
+              <text>On agreeing to the Carbajal amendment (A002) Agreed to by voice vote.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:43:00</actionTime>
+              <text>Amendment (A002) offered by Mr. Carbajal. (consideration: CR H334-335; text: CR H334)</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:43:00</actionTime>
+              <text>House Amendment Offered</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:50:33</actionTime>
+              <text>House amendment agreed to: On agreeing to the Carbajal amendment (A002) Agreed to by voice vote.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+          </actions>
+        </actions>
+      </amendment>
+      <amendment>
+        <number>2</number>
+        <congress>119</congress>
+        <type>HAMDT</type>
+        <description>An amendment numbered 1 printed in House Report 119-1 to strike carbon sequestration and ecosystem services prioritization from section 301 biochar demonstration projects.</description>
+        <updateDate>2025-01-24T16:40:41Z</updateDate>
+        <latestAction>
+          <actionDate>2025-01-23</actionDate>
+          <text>On agreeing to the Perry amendment (A001) Agreed to by voice vote.</text>
+          <actionTime>13:42:44</actionTime>
+        </latestAction>
+        <sponsors>
+          <item>
+            <bioguideId>P000605</bioguideId>
+            <fullName>Rep. Perry, Scott [R-PA-10]</fullName>
+            <firstName>Scott</firstName>
+            <lastName>Perry</lastName>
+            <party>R</party>
+            <state>PA</state>
+            <district>10</district>
+          </item>
+        </sponsors>
+        <submittedDate>2025-01-23T05:00:00Z</submittedDate>
+        <chamber>House of Representatives</chamber>
+        <amendedBill>
+          <congress>119</congress>
+          <type>HR</type>
+          <originChamber>House</originChamber>
+          <originChamberCode>H</originChamberCode>
+          <number>471</number>
+          <title>Fix Our Forests Act</title>
+          <updateDateIncludingText>2025-05-15</updateDateIncludingText>
+        </amendedBill>
+        <actions>
+          <count>4</count>
+          <actions>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:42:44</actionTime>
+              <text>On agreeing to the Perry amendment (A001) Agreed to by voice vote.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:34:03</actionTime>
+              <text>Amendment (A001) offered by Mr. Perry. (consideration: CR H333-334; text: CR H333)</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:34:03</actionTime>
+              <text>House Amendment Offered</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-01-23</actionDate>
+              <actionTime>13:42:44</actionTime>
+              <text>House amendment agreed to: On agreeing to the Perry amendment (A001) Agreed to by voice vote.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+          </actions>
+        </actions>
+      </amendment>
+    </amendments>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-01-23T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr471eh/xml/BILLS-119hr471eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-16T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hr471ih/xml/BILLS-119hr471ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-06</actionDate>
+      <text>Committee on Agriculture, Nutrition, and Forestry Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology. Hearings held.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>
