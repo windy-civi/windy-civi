@@ -1,0 +1,5 @@
+Dockerfile
+.dockerignore
+sample_input_files/
+input/
+output/
