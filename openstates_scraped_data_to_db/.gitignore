@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Ignore all contents of these folders
+scraped_state_data/*
+data_output/*
+sessions/*
+
+# But don’t ignore the folders themselves
+!scraped_state_data/.gitkeep
+!data_output/.gitkeep
+!sessions/.gitkeep
+
+# OS / Editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Session logs
+new_sessions_added.txt
+
+# Python cache or history
+*.pyc
+*.pkl
+*.sqlite
+.history
+
+# Jupyter notebook checkpoints (just in case)
+.ipynb_checkpoints/
+
+# Zips or temp files
+*.zip
+*.tmp
+
