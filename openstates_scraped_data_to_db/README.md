@@ -49,7 +49,9 @@ These folders are present but empty, tracked with `.gitkeep`:
 
 1. Set up your own environment and database connection (no pre-written config file is included).
 
-2. Add OpenStates JSON data to the appropriate folder:
+2. Make sure PostgreSQL is installed and running, and that you have a local database created.
+
+3. Add OpenStates JSON data to the appropriate folder:
 
    ```
    scraped_state_data/[STATE_ABBR]/
@@ -57,13 +59,13 @@ These folders are present but empty, tracked with `.gitkeep`:
 
    For example, if your folder is `scraped_state_data/il`, set `STATE_ABBR = "il"`.
 
-3. In `main.py`, update the `STATE_ABBR` variable:
+4. In `main.py`, update the `STATE_ABBR` variable:
 
    ```python
    STATE_ABBR = "il"  # or "tx", etc.
    ```
 
-4. Run the main loader:
+5. Run the main loader:
 
    ```bash
    python main.py
