@@ -8,14 +8,15 @@ This project parses OpenStates-style legislative JSON files and saves them into 
 
 ## Features
 
-* Optional upload of source PDFs alongside bill processing (toggle enabled)
-* Saves each bill and vote event into timestamped `.json` files
-* Organizes output by session, chamber, and bill identifier
+* Optional upload of source PDFs alongside bill processing (toggle enabled: default is turned off)
+* Auto-delete of existing output folders before processing (toggle enabled: default is turned on)
+* Saves each bill, event, and vote event into timestamped `.json` files
+* Organizes output by session and bill identifier using nested folders. Each bill folder contains a logs/ directory for timestamped .json records (e.g. full bill texts, vote events) and a files/ directory reserved for any attachments or source PDFs.
 * Logs every processing step to `data_processed/` and error cases to `data_not_processed/`
 * Auto-creates placeholder files when votes reference missing bills
-* Prompts user for missing `legislative_session` (optional toggle), enabling real-time error correction without restarting the script
+* Prompts user for missing `legislative_session` (optional toggle: default is on), enabling real-time error correction without restarting the script
 * Tracks new sessions entered via prompt in `new_sessions_added.txt`
-* Modular file structure using `handlers/`, `utils/`, and per-state `blockchain/{state}` folders
+* Modular file structure using handlers/, utils/, and per-state blockchain/{state} folders for eventual action-based logging
 
 ---
 
@@ -88,20 +89,18 @@ data_output/
 
 ### ⚙️ Configuration Notes
 
-* To enable PDF uploads, set the `UPLOAD_PDFS = True` toggle in your configuration or state module.
-* For automated environments, set `SKIP_DELETE_PROMPT = True` to disable prompts when clearing output directories.
+* To enable PDF uploads, set the `DOWNLOAD_PDFS = True` toggle in your configuration or state module. Found in `db_handlers/bill.py`. 
+* To enable interactive prompts when clearing output directories set `ENABLE_DELETE_PROMPT = True ` . Found in `utils/interactive.py`
 
 1. Ensure you have **Python 3.9+**
 2. Clone the repo
-3. Add your scraped `.json` files to `sample_scraped_data/{state}/`
+3. Add your scraped `.json` files to `state_scraped_data/{state}/`
 
 Run the pipeline:
 
 ```bash
 python main.py
 ```
-
-By default, you'll be prompted before clearing output directories. In automation, this can be disabled by setting `SKIP_DELETE_PROMPT = True`. Missing sessions will prompt for manual mapping and be saved to `new_sessions_added.txt`.
 
 ---
 
