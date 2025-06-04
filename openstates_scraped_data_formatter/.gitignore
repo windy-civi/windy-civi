@@ -8,14 +8,8 @@ __pycache__/
 env/
 venv/
 
-# Ignore all contents of these folders
-scraped_state_data/*
-data_output/*
-sessions/*
-
-# But don’t ignore the folders themselves
-!scraped_state_data/.gitkeep
-!data_output/.gitkeep
+# Ignore data filder
+/data/
 
 # OS / Editor files
 .DS_Store
