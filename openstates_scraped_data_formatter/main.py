@@ -9,8 +9,9 @@ from postprocessors.event_bill_linker import link_events_to_bills_pipeline
 # Define state abbreviation and paths
 STATE_ABBR = "il"
 BASE_FOLDER = Path(__file__).parent
-INPUT_FOLDER = BASE_FOLDER / "scraped_state_data" / STATE_ABBR
-DATA_OUTPUT = BASE_FOLDER / "data_output" / STATE_ABBR
+DATA_FOLDER = BASE_FOLDER / "data"
+INPUT_FOLDER = DATA_FOLDER / "scraped_state_data" / STATE_ABBR
+DATA_OUTPUT = DATA_FOLDER / "data_output" / STATE_ABBR
 DATA_PROCESSED_FOLDER = DATA_OUTPUT / "data_processed"
 DATA_NOT_PROCESSED_FOLDER = DATA_OUTPUT / "data_not_processed"
 EVENT_ARCHIVE_FOLDER = DATA_OUTPUT / "event_archive"
@@ -26,7 +27,7 @@ def main():
 
     # 2. Ensure session mapping is available
     SESSION_MAPPING.update(
-        ensure_session_mapping(STATE_ABBR, BASE_FOLDER, INPUT_FOLDER)
+        ensure_session_mapping(STATE_ABBR, DATA_FOLDER, INPUT_FOLDER)
     )
 
     # 3. Load and parse all input JSON files
