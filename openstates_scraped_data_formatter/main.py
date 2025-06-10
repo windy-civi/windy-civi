@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 from utils.io_utils import load_json_files
 from utils.file_utils import ensure_session_mapping
@@ -10,7 +11,11 @@ from postprocessors.event_bill_linker import link_events_to_bills_pipeline
 STATE_ABBR = "il"
 BASE_FOLDER = Path(__file__).parent
 DATA_FOLDER = BASE_FOLDER / "data"
-INPUT_FOLDER = DATA_FOLDER / "scraped_state_data" / STATE_ABBR
+
+INPUT_FOLDER = os.getenv(
+    "FORMATTER_INPUT_FOLDER", DATA_FOLDER / "scraped_state_data" / STATE_ABBR
+)
+
 DATA_OUTPUT = DATA_FOLDER / "data_output" / STATE_ABBR
 DATA_PROCESSED_FOLDER = DATA_OUTPUT / "data_processed"
 DATA_NOT_PROCESSED_FOLDER = DATA_OUTPUT / "data_not_processed"
