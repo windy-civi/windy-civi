@@ -1,0 +1,12 @@
+{
+  "action": {
+    "description": "House Committee Amendment No. 1 Adopted in Adoption & Child Welfare Committee;  by Voice Vote",
+    "date": "2025-03-18",
+    "organization_id": "~{\"classification\": \"lower\"}",
+    "classification": [
+      "amendment-passage"
+    ],
+    "related_entities": []
+  },
+  "bill_id": "HB871"
+}

@@ -7,6 +7,8 @@ name = "pypi"
 sort_pipfile = true
 
 [packages]
+click = "*"
+pytest = "*"
 requests = "*"
 
 [dev-packages]

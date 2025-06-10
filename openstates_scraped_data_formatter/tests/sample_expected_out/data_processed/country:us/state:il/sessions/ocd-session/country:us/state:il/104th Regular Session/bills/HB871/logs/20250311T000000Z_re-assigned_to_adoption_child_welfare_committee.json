@@ -1,0 +1,12 @@
+{
+  "action": {
+    "description": "Re-assigned to Adoption & Child Welfare Committee",
+    "date": "2025-03-11",
+    "organization_id": "~{\"classification\": \"lower\"}",
+    "classification": [
+      "referral-committee"
+    ],
+    "related_entities": []
+  },
+  "bill_id": "HB871"
+}

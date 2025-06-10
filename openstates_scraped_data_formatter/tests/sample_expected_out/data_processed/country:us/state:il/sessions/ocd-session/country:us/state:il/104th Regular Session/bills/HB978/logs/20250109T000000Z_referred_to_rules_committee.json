@@ -1,0 +1,10 @@
+{
+  "action": {
+    "description": "Referred to Rules Committee",
+    "date": "2025-01-09",
+    "organization_id": "~{\"classification\": \"lower\"}",
+    "classification": [],
+    "related_entities": []
+  },
+  "bill_id": "HB978"
+}

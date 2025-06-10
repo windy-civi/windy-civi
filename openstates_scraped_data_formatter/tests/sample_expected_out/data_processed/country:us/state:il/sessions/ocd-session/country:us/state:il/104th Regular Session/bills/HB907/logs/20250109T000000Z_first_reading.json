@@ -1,0 +1,12 @@
+{
+  "action": {
+    "description": "First Reading",
+    "date": "2025-01-09",
+    "organization_id": "~{\"classification\": \"lower\"}",
+    "classification": [
+      "reading-1"
+    ],
+    "related_entities": []
+  },
+  "bill_id": "HB907"
+}

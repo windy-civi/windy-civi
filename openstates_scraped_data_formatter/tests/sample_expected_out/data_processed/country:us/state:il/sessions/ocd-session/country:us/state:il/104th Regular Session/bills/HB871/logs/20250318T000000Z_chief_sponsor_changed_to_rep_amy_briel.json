@@ -1,0 +1,10 @@
+{
+  "action": {
+    "description": "Chief Sponsor Changed to Rep. Amy Briel",
+    "date": "2025-03-18",
+    "organization_id": "~{\"classification\": \"lower\"}",
+    "classification": [],
+    "related_entities": []
+  },
+  "bill_id": "HB871"
+}
