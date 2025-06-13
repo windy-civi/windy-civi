@@ -1,5 +1,6 @@
 from pathlib import Path
 import click
+from tempfile import mkdtemp
 
 from utils.io_utils import load_json_files
 from utils.file_utils import ensure_session_mapping
@@ -10,11 +11,6 @@ from postprocessors.event_bill_linker import link_events_to_bills_pipeline
 # Define state abbreviation and paths
 STATE_ABBR = "usa"
 BASE_FOLDER = Path(__file__).parent
-DATA_FOLDER = BASE_FOLDER / "data"
-
-_DEFAULT_INPUT_FOLDER = DATA_FOLDER / "scraped_state_data" / STATE_ABBR
-_DEFAULT_OUTPUT_FOLDER = DATA_FOLDER / "data_output" / STATE_ABBR
-
 BILL_SESSION_MAPPING_FILE = BASE_FOLDER / "bill_session_mapping" / f"{STATE_ABBR}.json"
 SESSION_MAPPING_FILE = BASE_FOLDER / "sessions" / f"{STATE_ABBR}.json"
 SESSION_MAPPING = {}
@@ -24,21 +20,29 @@ SESSION_MAPPING = {}
 @click.option(
     "--input-folder",
     type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=Path),
-    default=_DEFAULT_INPUT_FOLDER,
+    required=True,
     help="Path to the input folder containing JSON files.",
 )
 @click.option(
     "--output-folder",
     type=click.Path(file_okay=False, dir_okay=True, path_type=Path),
-    default=_DEFAULT_OUTPUT_FOLDER,
+    required=True,
     help="Path to the output folder.",
+)
+@click.option(
+    "--cache-folder",
+    type=click.Path(file_okay=False, dir_okay=True, path_type=Path),
+    default=mkdtemp(),
+    help="Path to a temporary cache folder.",
 )
 @click.option(
     "--allow-session-fix/--no-allow-session-fix",
     default=True,
     help="Allow interactive session fixes when session names are missing.",
 )
-def main(input_folder: Path, output_folder: Path, allow_session_fix: bool):
+def main(
+    input_folder: Path, output_folder: Path, cache_folder: Path, allow_session_fix: bool
+):
     DATA_PROCESSED_FOLDER = output_folder / "data_processed"
     DATA_NOT_PROCESSED_FOLDER = output_folder / "data_not_processed"
     EVENT_ARCHIVE_FOLDER = output_folder / "event_archive"
@@ -50,7 +54,7 @@ def main(input_folder: Path, output_folder: Path, allow_session_fix: bool):
 
     # 2. Ensure state specific session mapping is available
     SESSION_MAPPING.update(
-        ensure_session_mapping(STATE_ABBR, DATA_FOLDER, input_folder)
+        ensure_session_mapping(STATE_ABBR, cache_folder, input_folder)
     )
 
     # 3. Load and parse all input JSON files
