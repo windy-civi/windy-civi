@@ -1,46 +1,61 @@
 import json
 from pathlib import Path
-from utils.file_utils import list_json_files
 
 
 def load_bill_to_session_mapping(
-    mapping_file: Path, data_processed_folder: Path, force_rebuild: bool = False
+    mapping_file: Path,
+    data_processed_folder: Path,
+    session_mapping: dict = None,
+    force_rebuild: bool = False,
 ) -> dict:
     """
-    Loads or rebuilds a mapping from bill IDs to session names.
-
-    If the mapping file exists and force_rebuild is False, load it.
-    Otherwise, walk the processed data folders and build a new mapping.
+    Loads or rebuilds a mapping from bill IDs to full session metadata.
 
     Args:
         mapping_file (Path): Path to the bill-session mapping JSON.
-        data_processed_folder (Path): Root of the structured output data.
-        force_rebuild (bool): If True, rebuild the mapping from scratch.
+        data_processed_folder (Path): Folder where processed bills are stored.
+        session_mapping (dict): Optional session metadata with name and date_folder.
+        force_rebuild (bool): If True, rebuild mapping from folder structure.
 
     Returns:
-        dict: A dictionary mapping bill identifiers to session names.
+        dict: {
+            "HR 1234": {
+                "name": "119th Congress",
+                "date_folder": "2023-2024"
+            }, ...
+        }
     """
     if mapping_file.exists() and not force_rebuild:
-        print(f"📂 Loading existing bill-to-session mapping from {mapping_file}")
         with open(mapping_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
     print("🔄 Rebuilding bill-to-session mapping from saved bill data...")
-
     bill_to_session = {}
 
-    sessions_root = data_processed_folder / "country:us"
-    for bill_folder in sessions_root.glob(
-        "state:*/sessions/ocd-session/country:us/state:*/*/bills/*"
-    ):
-        if bill_folder.is_dir():
-            bill_id = bill_folder.name
-            session_name = bill_folder.parent.parent.name
-            bill_to_session[bill_id] = session_name
+    if session_mapping is None:
+        raise ValueError("❌ session_mapping is required when rebuilding.")
 
-    # Save the rebuilt mapping for future use
-    mapping_file.parent.mkdir(parents=True, exist_ok=True)
+    for bill_path in data_processed_folder.glob("**/bills/*"):
+        if not bill_path.is_dir():
+            continue
+        bill_id = bill_path.name
+
+        try:
+            session_name = bill_path.parent.parent.name
+        except IndexError:
+            continue
+
+        # Match session metadata
+        for meta in session_mapping.values():
+            if meta["name"] == session_name:
+                bill_to_session[bill_id] = {
+                    "name": session_name,
+                    "date_folder": meta["date_folder"],
+                }
+                break
+
     with open(mapping_file, "w", encoding="utf-8") as f:
         json.dump(bill_to_session, f, indent=2)
-    print("🔄 Rebuilding bill-to-session mapping from saved bill data...")
+    print(f"✅ Saved bill-to-session mapping to {mapping_file}")
+
     return bill_to_session
