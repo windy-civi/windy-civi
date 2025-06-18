@@ -2,7 +2,7 @@ import os
 import shutil
 from pathlib import Path
 
-SKIP_DELETE_PROMPT = True  # Toggle True to disable interactive prompt (for automation)
+SKIP_DELETE_PROMPT = True  # Toggle False to enable interactive CLI prompt for deletions
 
 
 def clear_DATA_OUTPUT_FOLDER(output_folder):

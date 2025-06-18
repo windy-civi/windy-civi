@@ -1,9 +1,8 @@
 from pathlib import Path
 import json
 import re
-import requests
+from urllib import request
 from urllib.parse import urlparse
-
 from utils.file_utils import format_timestamp, record_error_file, write_action_logs
 
 
@@ -21,7 +20,7 @@ def download_bill_pdf(content, save_path, bill_identifier):
             url = link.get("url")
             if url and url.endswith(".pdf"):
                 try:
-                    response = requests.get(url, timeout=10)
+                    response = request.get(url, timeout=10)
                     if response.status_code == 200:
                         filename = f"{bill_identifier}.pdf"
                         file_path = files_dir / filename
@@ -37,7 +36,13 @@ def download_bill_pdf(content, save_path, bill_identifier):
 
 
 def handle_bill(
-    STATE_ABBR, content, session_name, output_folder, error_folder, filename
+    STATE_ABBR,
+    content,
+    session_name,
+    date_folder,
+    output_folder,
+    error_folder,
+    filename,
 ):
     """
     Handles a bill JSON file by saving:
@@ -51,7 +56,10 @@ def handle_bill(
     Returns:
         bool: True if saved successfully, False if skipped due to missing identifier.
     """
-    DOWNLOAD_PDFS = False  # Toggle PDF downloading here
+
+    # Optional: Download linked PDF files (⚠️ very slow).
+    # Default is OFF to preserve performance.
+    DOWNLOAD_PDFS = False
 
     bill_identifier = content.get("identifier")
     if not bill_identifier:
@@ -72,6 +80,7 @@ def handle_bill(
         "ocd-session",
         f"country:us",
         f"state:{STATE_ABBR}",
+        date_folder,
         session_name,
         "bills",
         bill_identifier,
@@ -101,7 +110,7 @@ def handle_bill(
     if actions:
         write_action_logs(actions, bill_identifier, save_path / "logs")
 
-    # Download associated bill PDFs if enabled
+    # Download associated bill PDFs: if enabled
     if DOWNLOAD_PDFS:
         download_bill_pdf(content, save_path, bill_identifier)
 

@@ -2,7 +2,8 @@ import re
 from datetime import datetime
 import json
 from pathlib import Path
-import requests
+from urllib import request
+
 
 def format_timestamp(date_str):
     try:
@@ -23,11 +24,31 @@ def extract_session_mapping(jurisdiction_data):
     }
 
 
+def extract_session_mapping(jurisdiction_data):
+    session_mapping = {}
+    for session in jurisdiction_data.get("legislative_sessions", []):
+        identifier = session.get("identifier")
+        name = session.get("name")
+        start = session.get("start_date", "")[:4]
+        end = session.get("end_date", "")[:4]
+        if identifier and name and start and end:
+            session_mapping[identifier] = {
+                "name": name,
+                "date_folder": f"{start}-{end}",
+            }
+    return session_mapping
+
+
 def ensure_session_mapping(state_abbr, base_path, input_folder):
     """
     Ensures sessions/{state_abbr}.json exists.
     - If jurisdiction_*.json is found, extract and overwrite session cache.
     - If not found, fallback to OpenStates API only if cache doesn't already exist.
+    Returns a dictionary like:
+    {
+        "119": {"name": "119th Congress", "date_folder": "2023-2024"},
+        ...
+    }
     """
     session_cache_path = base_path / "sessions" / f"{state_abbr}.json"
     sessions_folder = base_path / "sessions"
@@ -43,7 +64,7 @@ def ensure_session_mapping(state_abbr, base_path, input_folder):
         if session_mapping:
             with open(session_cache_path, "w", encoding="utf-8") as f:
                 json.dump(session_mapping, f, indent=2)
-            print(f"📥 Wrote extracted session mapping to sessions/{state_abbr}.json")
+            print(f"📅 Wrote extracted session mapping to sessions/{state_abbr}.json")
             return session_mapping
 
     # 2. If no jurisdiction file, use existing session cache if it exists
@@ -56,14 +77,20 @@ def ensure_session_mapping(state_abbr, base_path, input_folder):
     print(f"🌐 Fetching session list from OpenStates API")
     url = f"https://v3.openstates.org/jurisdictions/{state_abbr}/sessions"
     try:
-        response = requests.get(url, timeout=10)
+        response = request.get(url, timeout=10)
         if response.status_code == 200:
             sessions = response.json()
-            session_mapping = {
-                s["identifier"]: s["name"]
-                for s in sessions
-                if "identifier" in s and "name" in s
-            }
+            session_mapping = {}
+            for s in sessions:
+                identifier = s.get("identifier")
+                name = s.get("name")
+                start = s.get("start_date", "")[:4]
+                end = s.get("end_date", "")[:4]
+                if identifier and name and start and end:
+                    session_mapping[identifier] = {
+                        "name": name,
+                        "date_folder": f"{start}-{end}",
+                    }
             with open(session_cache_path, "w", encoding="utf-8") as f:
                 json.dump(session_mapping, f, indent=2)
             print(f"✅ Wrote session mapping to sessions/{state_abbr}.json")
@@ -119,6 +146,7 @@ def write_action_logs(actions, bill_identifier, log_folder):
             json.dump({"action": action, "bill_id": bill_identifier}, f, indent=2)
 
 
+
 def write_vote_event_log(vote_event, bill_identifier, log_folder):
     """
     Saves a single vote_event file as a timestamped log with result-based suffix.
@@ -133,8 +161,6 @@ def write_vote_event_log(vote_event, bill_identifier, log_folder):
     output_file = Path(log_folder) / filename
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(vote_event, f, indent=2)
-
-        # utils/file_utils.py
 
 
 def list_json_files(folder: Path) -> list[Path]:
@@ -151,4 +177,3 @@ def list_json_files(folder: Path) -> list[Path]:
         return []
 
     return sorted(folder.glob("*.json"))
-
