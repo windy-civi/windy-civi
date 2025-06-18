@@ -9,14 +9,16 @@ from utils.process_utils import process_and_save
 from postprocessors.event_bill_linker import link_events_to_bills_pipeline
 
 # Define state abbreviation and paths
-STATE_ABBR = "usa"
 BASE_FOLDER = Path(__file__).parent
-BILL_SESSION_MAPPING_FILE = BASE_FOLDER / "bill_session_mapping" / f"{STATE_ABBR}.json"
-SESSION_MAPPING_FILE = BASE_FOLDER / "sessions" / f"{STATE_ABBR}.json"
 SESSION_MAPPING = {}
 
 
 @click.command()
+@click.option(
+    "--jur",
+    required=True,
+    help="Jurisdiction code to process.",
+)
 @click.option(
     "--input-folder",
     type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=Path),
@@ -41,12 +43,19 @@ SESSION_MAPPING = {}
     help="Allow interactive session fixes when session names are missing.",
 )
 def main(
-    input_folder: Path, output_folder: Path, cache_folder: Path, allow_session_fix: bool
+    jur: str,
+    input_folder: Path,
+    output_folder: Path,
+    cache_folder: Path,
+    allow_session_fix: bool,
 ):
+    STATE_ABBR = jur
     DATA_PROCESSED_FOLDER = output_folder / "data_processed"
     DATA_NOT_PROCESSED_FOLDER = output_folder / "data_not_processed"
     EVENT_ARCHIVE_FOLDER = output_folder / "event_archive"
     EVENT_ARCHIVE_FOLDER.mkdir(parents=True, exist_ok=True)
+    BILL_SESSION_MAPPING_FILE = BASE_FOLDER / "bill_session_mapping" / f"{STATE_ABBR}.json"
+    SESSION_MAPPING_FILE = BASE_FOLDER / "sessions" / f"{STATE_ABBR}.json"
     SESSION_LOG_PATH = output_folder / "new_sessions_added.txt"
 
     # 1. Clean previous outputs

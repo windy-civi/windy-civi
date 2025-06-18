@@ -13,7 +13,15 @@ def test_main(tmpdir):
     output_folder = tmpdir.mkdir("out")
     runner = CliRunner()
     result = runner.invoke(
-        main.main, ["--input-folder", input_folder, "--output-folder", output_folder]
+        main.main,
+        [
+            "--jur",
+            "il",
+            "--input-folder",
+            input_folder,
+            "--output-folder",
+            output_folder,
+        ],
     )
 
     with tarfile.open("tests/sample_expected_out.tgz", "r:gz") as tar:
