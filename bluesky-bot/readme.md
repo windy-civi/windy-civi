@@ -20,6 +20,7 @@ nvm use 20
 echo "20" > .nvmrc
 npm init -y
 npm install @atproto/api dotenv cron
+npm i @atproto/api cron dotenv fast-glob
 npm install -D typescript tsx @types/node
 npx tsc --init
 npm install
@@ -37,4 +38,10 @@ npm install -D @types/node
 
 ```
 npm run dev
+```
+
+For Hoan Huynh billBot.ts:
+
+```
+npx ts-node billBot.ts
 ```
