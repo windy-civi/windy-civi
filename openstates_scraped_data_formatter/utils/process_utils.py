@@ -1,8 +1,8 @@
+import click
+
 from handlers import bill, vote_event, event
 from utils.file_utils import record_error_file
 from utils.interactive import prompt_for_session_fix
-
-ALLOW_SESSION_FIX = True
 
 
 def count_successful_saves(files, handler_function):
@@ -78,7 +78,7 @@ def process_and_save(
         session_metadata = SESSION_MAPPING.get(session)
 
         # Prompt user to fix if session is unknown: by default is toggled off
-        if not session_metadata and ALLOW_SESSION_FIX:
+        if not session_metadata and click.get_current_context().params["allow_session_fix"]:
             new_session = prompt_for_session_fix(
                 filename, session, log_path=SESSION_LOG_PATH
             )

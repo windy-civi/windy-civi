@@ -76,3 +76,24 @@ jobs:
       - name: 🔬 Typecheck | Lint | Format | Spellcheck
         working-directory: web-app
         run: npm run quality
+
+   
+  openstates_scraped_data_formatter-quality:
+    name: 🔬  openstates_scraped_data_formatter-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: ⬇️  Install dependencies
+        run: |
+          cd openstates_scraped_data_formatter
+          python -m pip install --upgrade pip
+          pip install pytest
+          # Install any other dependencies from requirements.txt if you have one
+          # pip install -r requirements.txt
+      
+      - name: 🧪 Run tests with pytest
+        run: cd openstates_scraped_data_formatter && pytest
+
