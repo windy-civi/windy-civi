@@ -86,9 +86,14 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
       - name: 🎟️ Checkout repository
         uses: actions/checkout@v3
-      - name: 🧪 Run Tests
+      - name: ⬇️  Install dependencies
         run: |
-          pip install pipenv
-          pipenv install
-          pipenv run pytest
+          cd openstates_scraped_data_formatter
+          python -m pip install --upgrade pip
+          pip install pytest
+          # Install any other dependencies from requirements.txt if you have one
+          # pip install -r requirements.txt
+      
+      - name: 🧪 Run tests with pytest
+        run: cd openstates_scraped_data_formatter && pytest
 
