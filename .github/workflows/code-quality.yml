@@ -76,3 +76,19 @@ jobs:
       - name: 🔬 Typecheck | Lint | Format | Spellcheck
         working-directory: web-app
         run: npm run quality
+
+   
+  openstates_scraped_data_formatter-quality:
+    name: 🔬  openstates_scraped_data_formatter-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - name: 🎟️ Checkout repository
+        uses: actions/checkout@v3
+      - name: 🧪 Run Tests
+        run: |
+          pip install pipenv
+          pipenv install
+          pipenv run pytest
+
